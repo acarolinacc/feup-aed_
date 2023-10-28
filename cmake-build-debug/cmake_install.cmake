@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Rodrigo/Desktop/program/aed/projeto aed/feup_aed1
+# Install script for directory: C:/Users/Rodrigo/Desktop/program/aed/projeto aed/feup-aed1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Rodrigo/Desktop/program/aed/projeto aed/feup_aed1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Rodrigo/Desktop/program/aed/projeto aed/feup-aed1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
