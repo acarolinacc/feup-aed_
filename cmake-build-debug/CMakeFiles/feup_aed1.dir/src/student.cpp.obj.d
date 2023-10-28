@@ -1,6 +1,6 @@
 CMakeFiles/feup_aed1.dir/src/student.cpp.obj: \
  C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\student.cpp \
- C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\student.h \
+ C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\Student.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
