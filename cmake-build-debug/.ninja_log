@@ -1,0 +1,14 @@
+# ninja log v5
+20	765	7202254890321259	CMakeFiles/feup_aed1.dir/src/turma.cpp.obj	df5837655bb45bd0
+1	822	7202254890695225	CMakeFiles/feup_aed1.dir/src/slot.cpp.obj	119a5bbe8450e4ae
+27	894	7202254891657041	CMakeFiles/feup_aed1.dir/src/uc.cpp.obj	988280d964673cae
+13	917	7202254891932556	CMakeFiles/feup_aed1.dir/src/ClassUC.cpp.obj	3ce388957c1b06e6
+7	1021	7202254893010349	CMakeFiles/feup_aed1.dir/src/student.cpp.obj	f47718b279b0a03
+33	1507	7202254897842510	CMakeFiles/feup_aed1.dir/src/Menu.cpp.obj	b0f8dc82348e66a3
+767	1574	7202254898541400	CMakeFiles/feup_aed1.dir/src/main.cpp.obj	32968dd753f2cee8
+822	2086	7202254903657341	CMakeFiles/feup_aed1.dir/src/DataManager.cpp.obj	9a53b9cf0241f84b
+2089	2401	7202254906764813	feup_aed1.exe	d9922c94dcd20f01
+21	5180	7202256360965972	CMakeFiles/feup_aed1.dir/src/main.cpp.obj	32968dd753f2cee8
+8	5727	7202256367580501	CMakeFiles/feup_aed1.dir/src/Menu.cpp.obj	b0f8dc82348e66a3
+3	1039	7202258419687504	CMakeFiles/feup_aed1.dir/src/Menu.cpp.obj	b0f8dc82348e66a3
+1039	1603	7202258424746646	feup_aed1.exe	d9922c94dcd20f01
