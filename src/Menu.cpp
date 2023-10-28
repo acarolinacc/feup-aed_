@@ -554,9 +554,6 @@ void Menu::consultarUcsComMaisEstudantes() {
     cout << "Opção: Consultar as UCs com maior número de estudantes" << endl;
 }
 
-
-
-
 void Menu::realizarAlteracoes() {
     int choice;
     do {
@@ -576,10 +573,10 @@ void Menu::realizarAlteracoes() {
 
         switch (choice) {
             case 1:
-                // realizar alterações em UC.
+                realizarAlteracoesUC();
                 break;
             case 2:
-                //  realizar alterações em turmas.
+                realizarAlteracoesTurma();
                 break;
             case 3:
                 cout << "A voltar ao menu principal." << endl;
@@ -589,4 +586,55 @@ void Menu::realizarAlteracoes() {
                 break;
         }
     } while (choice != 3);
+}
+
+void Menu::realizarAlteracoesUC() {
+    int choice;
+    do {
+        // Menu de Alterações nas UCs
+        cout << "╔═══════════════════════════════════╗" << endl;
+        cout << "║  Realizar Alterações nas UCs      ║" << endl;
+        cout << "║                                   ║" << endl;
+        cout << "║ 1. Ingressar numa UC              ║" << endl;
+        cout << "║ 2. Sair de uma UC                 ║" << endl;
+        cout << "║ 3. Voltar ao menu principal       ║" << endl;
+        cout << "║                                   ║" << endl;
+        cout << "╚═══════════════════════════════════╝" << endl;
+        cout << "Por favor, escolha uma opção (1-3): ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                ingressarEmUC();
+                break;
+            case 2:
+                sairDeUC();
+                break;
+            case 3:
+                cout << "A voltar ao menu principal." << endl;
+                break;
+            default:
+                cout << "Opção inválida. Por favor, escolha uma opção válida (1-3)." << endl;
+                break;
+        }
+    } while (choice != 3);
+}
+
+
+void Menu::ingressarEmUC() {
+
+}
+
+
+
+
+
+
+void Menu::sairDeUC() {
+
+}
+
+
+void Menu::realizarAlteracoesTurma() {
+
 }
