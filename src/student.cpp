@@ -1,3 +1,4 @@
+
 #include "Student.h"
 
 using namespace std;
@@ -16,14 +17,7 @@ string Student::getName() const {
     return name;
 }
 
-void Student::addSloth(const Slot& slot) {
-    sloths.push_back(slot);
-}
 
-
-const list<Slot>& Student::getSloths() const {
-    return sloths;
-}
 void Student::addClassUC(const ClassUC& newClassUc){
     classes.push_back(newClassUc);
 }
@@ -54,3 +48,17 @@ void Student::print() const{
 vector<ClassUC> Student::getclassUC() const {
     return classes;
 }
+map<ClassUC, vector<Slot>> Student::getSchedule() const {
+    return schedule;
+
+}
+
+
+void Student::removeSchedule(const ClassUC& classUc){
+    schedule.erase(classUc);
+}
+void Student::addSchedule(const ClassUC& classUc, Slot slot) {
+    schedule[classUc].push_back(slot);
+}
+
+

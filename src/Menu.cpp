@@ -157,36 +157,32 @@ void Menu::consultarHorarioAluno() {
 
 
 //consultar o horário de uma turma
-void Menu::consultarHorarioTurma() {
+void Menu::consultarHorarioUCTurma() {
     string classCode;
+    string ucCode;
     cout << "--------------------------------------------------\n";
-    cout << "Por favor, insira o código da turma: ";
+    cout << "Por favor, insira o código da turma:";
     cin >> classCode;
+    cout << "Por favor, insira o código da Uc:";
+    cin >> ucCode;
     cout << endl;
-
-    bool isValid = false;
-    const vector<ClassUC>& allUCs = management_.getAllUC();
-
-    for (const ClassUC& uc : allUCs) {
-        if (isClassCodeValid(classCode, uc.getClassCode())) {
-            isValid = true;
-            displayClassSchedule(uc);
-        }
-    }
-
-    if (!isValid) {
-        cout << "That's not a valid input." << endl;
+    ClassUC classUc1=ClassUC(ucCode,classCode);
+    const vector<Slot>& ucS = management_.getClassUCSchedule(classUc1);
+    if (isClassCodeValid(ucS)) {
+        cout << "That's not a valid input." << endl;}
+    else{
+        cout << ucS.size();
+        displayClassUcSchedule(ucS,classUc1);
     }
 }
 
-bool Menu::isClassCodeValid(const string& input, const string& target) const {
-    return to_lower(input) == to_lower(target);
+bool Menu::isClassCodeValid(const vector<Slot>& ucS) const {
+    return ucS.empty();
 }
 
-void Menu::displayClassSchedule(const ClassUC& uc) const {
-    cout << uc.getUcCode() << endl;
-
-    for (const Slot& a : uc.getSchedule()) {
+void Menu::displayClassUcSchedule(const vector<Slot>& ucS,const ClassUC& classUc) const {
+    cout << "UcCode:"<< classUc.getUcCode()<<"ClassCode:"<<classUc.getClassCode()<<  endl;
+    for (const Slot& a : ucS) {
         cout << '\t' << a.getDay() << ' ' << a.getStart() << ' ' << a.getDuration() << ' ' << a.getType() << '\n';
     }
 }
@@ -202,29 +198,25 @@ void Menu::consultarHorarioUC() {
     cout << "Digite o Código da UC: ";
     cin >> ucCode;
     cout << endl;
+    const vector<Slot>& ucS = management_.getUcSchedule(ucCode);
 
-    const vector<ClassUC>& todasAsTurmas = management_.getAllUC();
-    bool encontrouUC = false;
 
-    for (const ClassUC& turma : todasAsTurmas) {
-        if (correspondeCodigoUC(turma, ucCode)) {
-            encontrouUC = true;
-            exibirHorarioDaUC(turma);
-        }
-    }
-
-    if (!encontrouUC) {
+    if (ucS.empty()) {
         cout << "Código de UC inválido." << endl;
     }
+    else{
+        exibirHorarioDaUC(ucS,ucCode);
+    }
+
 }
 
 bool Menu::correspondeCodigoUC(const ClassUC& turma, const string& ucCode) const {
     return compararIgnorandoMaiusculas(turma.getUcCode(), ucCode);
 }
 
-void Menu::exibirHorarioDaUC(const ClassUC& turma) const {
-    cout << turma.getClassCode() << endl;
-    for (const Slot& horario : turma.getSchedule()) {
+void Menu::exibirHorarioDaUC(const vector<Slot> ucS,string ucCode) const {
+    cout << ucCode<< endl;
+    for (const Slot& horario : ucS) {
         cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
     }
 }
@@ -240,39 +232,31 @@ bool Menu::compararIgnorandoMaiusculas(const string& str1, const string& str2) c
 
 
 //consultar o horário de uma UC/Turma
-void Menu::consultarHorarioUCTurma() {
-    string uccode;
+void Menu::consultarHorarioTurma() {
     string classcode;
 
     cout << "--------------------------------------------------\n";
-    cout << "Digite o Código da UC: ";
-    cin >> uccode;
     cout << "Digite o Código da Turma: ";
     cin >> classcode;
     cout << endl;
-
-    const vector<ClassUC>& todasAsTurmas = management_.getAllUC();
-    bool encontrouTurma = false;
-
-    for (const ClassUC& turma : todasAsTurmas) {
-        if (correspondeCodigoUcETurma(turma, uccode, classcode)) {
-            encontrouTurma = true;
-            exibirHorarioDaTurma(turma);
-        }
+    const vector<Slot>& ucS = management_.getClassSchedule(classcode);
+    if (isClassCodeValid(ucS)) {
+        cout << "That's not a valid input." << endl;}
+    else{
+        displayClassSchedule(ucS,classcode);
     }
 
-    if (!encontrouTurma) {
-        cout << "Código de UC ou Turma inválido." << endl;
-    }
 }
+
+
 
 bool Menu::correspondeCodigoUcETurma(const ClassUC& turma, const string& uccode, const string& classcode) const {
     return (compararIgnorandoMaiusculas(turma.getUcCode(), uccode) && compararIgnorandoMaiusculas(turma.getClassCode(), classcode));
 }
 
-void Menu::exibirHorarioDaTurma(const ClassUC& turma) const {
-    cout << turma.getUcCode() << " -- " << turma.getClassCode() << endl;
-    for (const Slot& horario : turma.getSchedule()) {
+void Menu::displayClassSchedule(const vector<Slot>& ucS,const string& turma) const {
+    cout << "class code:"<<turma << endl;
+    for (const Slot& horario : ucS) {
         cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
     }
 }

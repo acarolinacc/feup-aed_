@@ -19,6 +19,7 @@ public:
     const vector<ClassUC>& getAllUC() const;
     void addStudent(const Student& student);
     void addClassUC(const ClassUC& classUC);
+    void addSlothStudents();
     void readClasses();
     void readStudentClasses();
     void readClassesPerUC();
@@ -28,11 +29,15 @@ public:
     vector<ClassUC> ucWithXStudents(int x);
     int numberStudentsUc(const string& ucId)const;
     int studentregisterUCs(int n);
-
     bool sorterOccupation(const ClassUC& a, const ClassUC& b) const;
     bool sorter(const ClassUC& a, const ClassUC& b);
+    vector<Slot> getClassUCSchedule(const ClassUC classUc2);
+    vector<Slot> getClassSchedule(const string classCode);
+    vector<Slot> getUcSchedule(const string& UcId);
+
     vector<ClassUC> sortAllU();
     vector<ClassUC> sortAllU_occupation();
+
 private:
     set<Student>students;
     vector<Slot> classes;
@@ -40,7 +45,6 @@ private:
 
     vector<Student> StudentsOfClassUc(const string &uc_id, const string &class_id);
 
-    string getStudentSchedule(int studentId) const;
 };
 
 #endif

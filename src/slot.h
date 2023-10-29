@@ -8,6 +8,8 @@ using namespace std;
 
 class Slot {
 public:
+    Slot();
+
     Slot(const string &day, const string &start, const string &duration, const string &type);
 
     const string &getDay() const;

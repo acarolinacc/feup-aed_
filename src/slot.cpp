@@ -18,3 +18,10 @@ const string &Slot::getDuration() const {
 const string &Slot::getType() const {
     return type_;
 }
+
+Slot::Slot() {
+    day_="0";
+    start_="0";
+    duration_="0";
+    type_="0";
+}

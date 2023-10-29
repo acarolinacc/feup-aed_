@@ -9,6 +9,7 @@
 #include "turma.h"
 #include <iostream>
 #include "ClassUC.h"
+#include <map>
 using namespace std;
 
 class Student {
@@ -20,12 +21,10 @@ public:
 
     string getName() const;
 
-    void addSloth(const Slot& slot);
 
-
-    const list<Slot>& getSloths() const;
-    void removeSloth(const Slot& slot);
-    const list<Slot>& getSloth() const;
+    void removeSchedule(const ClassUC& classUc);
+    map<ClassUC, vector<Slot>> getSchedule() const;
+    void addSchedule(const ClassUC& classUc, Slot slot);
     void addClassUC(const ClassUC& newClassUc);
     bool operator<(const Student &other) const;
     bool operator==(const Student &other) const;
@@ -36,12 +35,12 @@ public:
 private:
     int code;
     string name;
-    list<Slot> sloths;
     vector<ClassUC> classes;
+    map<ClassUC,vector<Slot>> schedule;
+
 
 
 
 };
 
 #endif
-

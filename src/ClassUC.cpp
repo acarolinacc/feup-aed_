@@ -25,9 +25,15 @@ ClassUC::ClassUC(const std::string &ucCode, const std::string &classCode) {
     vector<Slot> clear;
     this->ucCode_=ucCode;
     this->classCode_=classCode;
-    this->schedule_=clear;
+    //this->schedule_=clear;
 }
 
 const vector<Slot> &ClassUC::getSchedule() const {
     return schedule_;
+}
+bool ClassUC::operator<(const ClassUC& other) const{
+    return ucCode_<other.getUcCode();  //this can be changed
+}
+bool ClassUC::operator==(const ClassUC& other) const{
+    return ucCode_==other.getUcCode();
 }

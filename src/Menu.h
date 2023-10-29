@@ -12,6 +12,7 @@ public:
 
 private:
     DataManager management;
+    DataManager& management_;
     void printStudentInfo(const Student& student);
     bool areStringsEqualIgnoreCase(const std::string& str1, const std::string& str2);
     void consultarHorarios();
@@ -32,15 +33,15 @@ private:
     void  consultarTurmasUC();
     void consultarUcDeUmAno();
     void consultarUcComXOcupações();
-    DataManager& management_;
+
 
     void consultarAlunosPorTurma();
 
     void consultarAlunosPorAno();
 
-    bool isClassCodeValid(const string &input, const string &target) const;
+    bool isClassCodeValid(const vector<Slot>& ucS) const;
 
-    void displayClassSchedule(const ClassUC &uc) const;
+    void displayClassUcSchedule( const vector<Slot>& ucS,const ClassUC& classUc) const;
 
     bool isStudentValid(const string &input, const Student &student) const;
 
@@ -48,8 +49,8 @@ private:
 
     bool correspondeCodigoUcETurma(const ClassUC &turma, const string &uccode, const string &classcode) const;
 
-    void exibirHorarioDaTurma(const ClassUC &turma) const;
-    void exibirHorarioDaUC(const ClassUC &turma) const;
+    void displayClassSchedule(const vector<Slot>& ucS,const string& turma) const;
+    void exibirHorarioDaUC(const vector<Slot> ucS,string ucCode) const;
     bool compararIgnorandoMaiusculas(const string &str1, const string &str2) const;
 
     bool correspondeCodigoUC(const ClassUC &turma, const string &ucCode) const;

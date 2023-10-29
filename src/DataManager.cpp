@@ -128,6 +128,34 @@ void DataManager::readClassesPerUC() {
     }
 }
 
+/*
+//void DataManager::addSlothStudents() {
+    vector<ClassUC> classuc;
+    auto it=students.begin();
+
+    while (it!=students.end()){
+        classuc=it->getclassUC();
+        for(int i=0;i<classuc.size();i++){
+
+        }
+    }
+
+
+
+
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -267,4 +295,38 @@ vector<Student> DataManager::StudentsOfClassUc(const string& uc_id,const string&
     return students_class;
 
 }
+
+vector<Slot> DataManager::getClassUCSchedule(const ClassUC classUc2) {
+    vector<Slot> schedule;
+    for (auto uc : allUC_) {
+        if(uc.getClassCode()==classUc2.getClassCode() and uc.getUcCode()==classUc2.getUcCode()){
+            schedule = uc.getSchedule();
+        }
+    }
+    return schedule;
+}
+
+vector<Slot> DataManager::getUcSchedule(const string &UcId) {
+    vector<Slot> schedule;
+    for (const ClassUC& uc : allUC_) {
+        if(uc.getUcCode()==UcId){
+            for(auto slot:uc.getSchedule())
+                schedule.push_back(slot);
+        }
+    }
+    return schedule;
+}
+
+vector<Slot> DataManager::getClassSchedule(const string classCode) {
+    vector<Slot> schedule;
+    for (const ClassUC& uc : allUC_) {
+        if(uc.getClassCode()==classCode){
+            for(auto slot:uc.getSchedule())
+                schedule.push_back(slot);
+        }
+    }
+    return schedule;
+}
+
+
 

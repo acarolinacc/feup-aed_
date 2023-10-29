@@ -11,6 +11,8 @@ public:
     ClassUC(const std::string &ucCode, const std::string &classCode, const std::vector<Slot> &schedule);
     ClassUC(const std::string &ucCode, const std::string &classCode);
     void addSlot(Slot slot);
+    bool operator<(const ClassUC& other) const;
+    bool operator==(const ClassUC& other) const;
 
     const std::string &getClassCode() const;
     const std::string &getUcCode() const;
