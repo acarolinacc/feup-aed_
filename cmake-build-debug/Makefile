@@ -224,6 +224,30 @@ src/Request.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/Request.cpp.s
 .PHONY : src/Request.cpp.s
 
+src/RequestManager.obj: src/RequestManager.cpp.obj
+.PHONY : src/RequestManager.obj
+
+# target to build an object file
+src/RequestManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/RequestManager.cpp.obj
+.PHONY : src/RequestManager.cpp.obj
+
+src/RequestManager.i: src/RequestManager.cpp.i
+.PHONY : src/RequestManager.i
+
+# target to preprocess a source file
+src/RequestManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/RequestManager.cpp.i
+.PHONY : src/RequestManager.cpp.i
+
+src/RequestManager.s: src/RequestManager.cpp.s
+.PHONY : src/RequestManager.s
+
+# target to generate assembly for a file
+src/RequestManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/RequestManager.cpp.s
+.PHONY : src/RequestManager.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -365,6 +389,9 @@ help:
 	@echo ... src/Request.obj
 	@echo ... src/Request.i
 	@echo ... src/Request.s
+	@echo ... src/RequestManager.obj
+	@echo ... src/RequestManager.i
+	@echo ... src/RequestManager.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

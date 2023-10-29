@@ -108,6 +108,12 @@
 		<Unit filename="C:/Users/Rodrigo/Desktop/program/aed/projeto aed/feup-aed_/src/Request.h">
 			<Option target="feup_aed1"/>
 		</Unit>
+		<Unit filename="C:/Users/Rodrigo/Desktop/program/aed/projeto aed/feup-aed_/src/RequestManager.cpp">
+			<Option target="feup_aed1"/>
+		</Unit>
+		<Unit filename="C:/Users/Rodrigo/Desktop/program/aed/projeto aed/feup-aed_/src/RequestManager.h">
+			<Option target="feup_aed1"/>
+		</Unit>
 		<Unit filename="C:/Users/Rodrigo/Desktop/program/aed/projeto aed/feup-aed_/src/main.cpp">
 			<Option target="feup_aed1"/>
 		</Unit>

@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/feup_aed1.dir/src/Menu.cpp.obj.d"
   "CMakeFiles/feup_aed1.dir/src/Request.cpp.obj"
   "CMakeFiles/feup_aed1.dir/src/Request.cpp.obj.d"
+  "CMakeFiles/feup_aed1.dir/src/RequestManager.cpp.obj"
+  "CMakeFiles/feup_aed1.dir/src/RequestManager.cpp.obj.d"
   "CMakeFiles/feup_aed1.dir/src/main.cpp.obj"
   "CMakeFiles/feup_aed1.dir/src/main.cpp.obj.d"
   "CMakeFiles/feup_aed1.dir/src/slot.cpp.obj"
