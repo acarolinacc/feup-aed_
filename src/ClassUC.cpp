@@ -14,6 +14,10 @@ const string &ClassUC::getUcCode() const {
 void ClassUC::addSlot(Slot b){
     schedule_.push_back(b);
 }
+ClassUC::ClassUC() {
+this->ucCode_ = "";
+this->classCode_ = "";
+}
 
 ClassUC::ClassUC(const string &ucCode, const string &classCode, const vector<Slot> &schedule) : ucCode_(ucCode),classCode_(classCode),schedule_(schedule) {}
 

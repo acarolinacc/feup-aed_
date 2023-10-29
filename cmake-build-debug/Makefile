@@ -200,6 +200,30 @@ src/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/Menu.cpp.s
 .PHONY : src/Menu.cpp.s
 
+src/Request.obj: src/Request.cpp.obj
+.PHONY : src/Request.obj
+
+# target to build an object file
+src/Request.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/Request.cpp.obj
+.PHONY : src/Request.cpp.obj
+
+src/Request.i: src/Request.cpp.i
+.PHONY : src/Request.i
+
+# target to preprocess a source file
+src/Request.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/Request.cpp.i
+.PHONY : src/Request.cpp.i
+
+src/Request.s: src/Request.cpp.s
+.PHONY : src/Request.s
+
+# target to generate assembly for a file
+src/Request.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\feup_aed1.dir\build.make CMakeFiles/feup_aed1.dir/src/Request.cpp.s
+.PHONY : src/Request.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -338,6 +362,9 @@ help:
 	@echo ... src/Menu.obj
 	@echo ... src/Menu.i
 	@echo ... src/Menu.s
+	@echo ... src/Request.obj
+	@echo ... src/Request.i
+	@echo ... src/Request.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

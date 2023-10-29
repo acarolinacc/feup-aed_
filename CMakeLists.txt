@@ -21,5 +21,7 @@ add_executable(feup_aed1
         src/main.cpp
         src/Menu.cpp
         src/Menu.h
+        src/Request.cpp
+        src/Request.h
 )
 

@@ -2,6 +2,10 @@
 
 using namespace std;
 
+Student::Student() {
+    this->code = 0;
+    this->name = "";
+}
 Student::Student(int code, const string& name) : code(code), name(name) {}
 
 int Student::getCode() const {

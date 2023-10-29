@@ -13,6 +13,7 @@ using namespace std;
 
 class Student {
 public:
+    Student();
     Student(int code, const string& name);
 
     int getCode() const;
