@@ -56,10 +56,10 @@ void DataManager::readClasses() {
     string fname = "../data/classes.csv";
     ifstream file(fname);
 
-    std::string line = "";
-    std::string str = "";
-    std::string previousUC = ""; //compares current uc code with the last one
-    vector<std::string> temp;
+    string line = "";
+    string str = "";
+    string previousUC = ""; //compares current uc code with the last one
+    vector<string> temp;
 
 
     if (file.is_open()) {
@@ -202,6 +202,11 @@ vector<ClassUC> DataManager::ucWithXStudents(int x){
     return uc_classes;
 }
 
+
+
+
+
+
 vector<ClassUC> DataManager::sortAllU_occupation(){
     vector<ClassUC> sortedAlluc=allUC_;
     DataManager dataManager;
@@ -233,15 +238,19 @@ vector<ClassUC> DataManager::sortAllU(){
 
 
 int DataManager::studentregisterUCs(int n) {
-    int count = 0;
-    for (const auto&  student : students) {
-        int size = student.getclassUC().size();
-        if (size >= n){
+    int count2 = 0;
+    for (auto  student : students) {
+        int count = 0;
+        for (auto c : student.getclassUC()){
             count++;
         }
+        if(count >= n){
+            count2++;
+        }
     }
-    return count;
+    return count2;
 }
+
 vector<Student> DataManager::StudentsOfClassUc(const string& uc_id,const string& class_id){
     vector<Student> students_class;
     auto it=students.begin();
@@ -258,3 +267,4 @@ vector<Student> DataManager::StudentsOfClassUc(const string& uc_id,const string&
     return students_class;
 
 }
+

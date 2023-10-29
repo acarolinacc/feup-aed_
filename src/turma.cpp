@@ -15,4 +15,3 @@ void Turma::addSloth(const Slot& slot) {
 const list<Slot>& Turma::getSlots() const {
     return slots;
 }
-

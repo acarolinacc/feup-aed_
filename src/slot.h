@@ -1,3 +1,4 @@
+
 #ifndef SLOT_H
 #define SLOT_H
 
@@ -22,3 +23,4 @@ private:
 };
 
 #endif //UNTITLED_SLOT_H
+

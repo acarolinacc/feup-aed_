@@ -1,3 +1,4 @@
+
 #ifndef MENU_H
 #define MENU_H
 
@@ -61,8 +62,14 @@ private:
 
     void sairDeUC();
 
-    void realizarAlteracoesTurma();
     void realizarAlteracoesUC();
+
+    void realizarAlteracoesTurma();
+
+    void visualizarHistoricoPedidos();
+
+    void processarPedidos();
 };
 
 #endif
+

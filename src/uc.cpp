@@ -1,3 +1,4 @@
+
 #include "uc.h"
 
 Uc::Uc(string ucId,int ucYear,int ucSemester,vector<Slot> ucSlot) {
@@ -21,6 +22,4 @@ string Uc::getUcId() const {
 void Uc::addUcSlot(const Slot& slot){
     ucSlot.push_back(slot);
 }
-
-
 

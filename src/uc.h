@@ -1,3 +1,6 @@
+
+
+
 #ifndef UC_H
 #define UC_H
 #include <string>
@@ -22,9 +25,6 @@ private:
     int ucSemester;
     vector<Slot> ucSlot;
 };
-
-
-
 
 
 #endif
