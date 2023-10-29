@@ -119,9 +119,37 @@ void Menu::consultarHorarios() {
 
 //consultar o horário de um aluno
 void Menu::consultarHorarioAluno() {
+    string id;
+    cout << "--------------------------------------------------\n";
+    cout << "Introduza o nome do estudante ou número UP:";
+    cin >> id;
+    cout << endl;
+    bool isValid = false;
 
+    for (const Student& stu : management_.getStudents()) {
+        if (std::to_string(stu.getCode()) == id || to_lower(stu.getName()) == to_lower(id)) {
+            isValid = true;
+            cout << "O estudante " << stu.getName() << " (" << stu.getCode()
+                 << ") tem o seguinte horário:\n" << endl;
 
+            vector<ClassUC> listC = stu.getclassUC();
+
+            for (const ClassUC& turmaAluno : listC) {
+                cout << turmaAluno.getUcCode() << " -- " << turmaAluno.getClassCode() << endl;
+
+                for (const Slot& horario : turmaAluno.getSchedule()) {
+                    cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
+                }
+            }
+            cout << endl;
+        }
+    }
+
+    if (!isValid) {
+        cout << "Nome/número de estudante inválido.\n";
+    }
 }
+
 
 //consultar o horário de um aluno
 
