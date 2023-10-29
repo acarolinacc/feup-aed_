@@ -1,6 +1,6 @@
 CMakeFiles/feup_aed1.dir/src/turma.cpp.obj: \
- C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\turma.cpp \
- C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\Turma.h \
+ C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed_\src\turma.cpp \
+ C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed_\src\Turma.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -93,4 +93,4 @@ CMakeFiles/feup_aed1.dir/src/turma.cpp.obj: \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocated_ptr.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/list.tcc \
- C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\slot.h
+ C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed_\src\slot.h

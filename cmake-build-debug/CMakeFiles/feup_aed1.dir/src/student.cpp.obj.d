@@ -1,6 +1,6 @@
 CMakeFiles/feup_aed1.dir/src/student.cpp.obj: \
- C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\student.cpp \
- C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\Student.h \
+ C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed_\src\student.cpp \
+ C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed_\src\Student.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -93,14 +93,14 @@ CMakeFiles/feup_aed1.dir/src/student.cpp.obj: \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocated_ptr.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/list.tcc \
- C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\slot.h \
+ C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed_\src\slot.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\uc.h \
- C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\turma.h \
+ C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed_\src\uc.h \
+ C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed_\src\turma.h \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
@@ -148,4 +148,4 @@ CMakeFiles/feup_aed1.dir/src/student.cpp.obj: \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  D:/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
- C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed1\src\ClassUC.h
+ C:\Users\Rodrigo\Desktop\program\aed\projeto\ aed\feup-aed_\src\ClassUC.h
