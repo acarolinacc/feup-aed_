@@ -46,6 +46,10 @@ public:
     bool sorter(const ClassUC& a, const ClassUC& b);
 
 
+    bool ingressarEmUC(const string &upNumber, const string &ucCode);
+
+    bool sairDeUC(const string &upNumber, const string &ucCode);
+
 private:
     set<Student>students;
     vector<Slot> classes;
@@ -53,6 +57,14 @@ private:
 
 
 
+    Student getStudentByUP(const string &upNumber);
+
+    ClassUC getClassUCByCode(const string &ucCode);
+
+    bool haveScheduleConflict(const ClassUC &studentClass, const ClassUC &newClass) const;
+
 };
 
 #endif
+
+
