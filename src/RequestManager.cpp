@@ -63,19 +63,24 @@ bool RequestManager::checkIfBalanceOcuppation(const Request &request) {//non tes
 
 
 
-/*
-bool RequestManager::checkIfTheSchedulesOverlap(const Request& request) {
+
+bool RequestManager::checkIfTheSchedulesOverlap(const Request& request) {//non tested
     ClassUC requestclass=request.getClassUc();
     Student requestStudent=request.getStudent();
     requestStudent=manager.findStudent(requestStudent);//i dont think is need but is to make sure that this student have classes;
     requestStudent=manager.getStudentSchedule(requestStudent);
-
-
-
-
-
+    vector<Slot> classShedule=manager.getClassUCSchedule(requestclass);
+    requestclass=ClassUC(requestclass.getUcCode(),requestclass.getClassCode(),classShedule);
+    requestclass.sortShedule();  //sort each slots to be easier to make the overlaping
+    for(const auto& mape:requestStudent.getSchedule()){
+        for(const auto& slots_Student:mape.second){
+            for(const auto& slot_uc:requestclass.getSchedule()){
+                if(slots_Student.overlaps(slot_uc)){return true;}
+            }
+        }
+    }
+    return false;
 }
 
-*/
 
 

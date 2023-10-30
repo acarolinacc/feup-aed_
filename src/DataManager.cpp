@@ -311,12 +311,13 @@ Student DataManager::getStudentSchedule(const Student& student) {
     }
     for(auto i: wanted.getclassUC()){
         vector<Slot> slots= getClassUCSchedule(i);
+
         wanted.addSchedule(i,slots);
     }
     return wanted;
 }
 
-Student DataManager::findStudent(const Student& student) {
+Student DataManager::findStudent(const Student& student) {//with a name and the up code,get the classes of the student
     auto  it=students.find(student);
     return *it;
 }

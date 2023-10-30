@@ -62,5 +62,15 @@ void Student::removeSchedule(const ClassUC& classUc){
 void Student::addSchedule(const ClassUC& classUc, const vector<Slot>& slot)  {
     schedule[classUc] = slot;
 }
+bool slotSorter_student(const Slot& a,const Slot& b){
+    return a.getStart()<b.getStart();
+
+}
+
+void Student::sortSchedule() {
+    for(auto a:schedule){
+        sort(a.second.begin(),a.second.end(), slotSorter_student);
+    }
+}
 
 

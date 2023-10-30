@@ -1,4 +1,5 @@
 #include <string>
+#include <utility>
 #include <vector>
 #include "ClassUC.h"
 
@@ -36,4 +37,18 @@ bool ClassUC::operator<(const ClassUC& other) const{
 }
 bool ClassUC::operator==(const ClassUC& other) const{
     return ucCode_==other.getUcCode();
+}
+bool slotSorter(const Slot& a,const Slot& b){
+    return a.getStart()<b.getStart();
+
+}
+
+void ClassUC::sortShedule() {
+    sort(schedule_.begin(),schedule_.end(), slotSorter);
+
+}
+
+void ClassUC::setSlots(vector<Slot> slots) {
+    schedule_=slots;
+
 }
