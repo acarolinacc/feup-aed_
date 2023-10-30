@@ -16,7 +16,7 @@ public:
     bool checkIfTheCapIsExceeded(const Request& request);
     bool checkIfBalanceOcuppation(const Request& request);
     bool  checkIfTheSchedulesOverlap(const Request& request);
-
+    bool checkClassRequest(const Request& request);
 
 
 

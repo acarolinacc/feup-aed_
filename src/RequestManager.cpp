@@ -64,7 +64,7 @@ bool RequestManager::checkIfBalanceOcuppation(const Request &request) {//non tes
 
 
 
-bool RequestManager::checkIfTheSchedulesOverlap(const Request& request) {//non tested
+bool RequestManager::checkIfTheSchedulesOverlap(const Request& request) {
     ClassUC requestclass=request.getClassUc();
     Student requestStudent=request.getStudent();
     requestStudent=manager.findStudent(requestStudent);//i dont think is need but is to make sure that this student have classes;
@@ -81,6 +81,12 @@ bool RequestManager::checkIfTheSchedulesOverlap(const Request& request) {//non t
     }
     return false;
 }
-
+/*
+bool RequestManager::checkClassRequest(const Request &request) {
+    if(checkOneClassUcPerStudent(request) and !checkIfTheSchedulesOverlap(request) and checkIfBalanceOcuppation(request) and
+       checkIfTheCapIsExceeded(request)){return true};
+    return false;
+}
+*/
 
 
