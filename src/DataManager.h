@@ -39,6 +39,10 @@ public:
     vector<ClassUC> sortAllU();
     vector<ClassUC> sortAllU_occupation();
 
+    bool ingressarEmUC(const string &upNumber, const string &ucCode);
+
+    bool sairDeUC(const string &upNumber, const string &ucCode);
+
 private:
     set<Student>students;
     vector<Slot> classes;
@@ -46,6 +50,14 @@ private:
 
     vector<Student> StudentsOfClassUc(const string &uc_id, const string &class_id);
 
+    Student getStudentByUP(const string &upNumber);
+
+    ClassUC getClassUCByCode(const string &ucCode);
+
+    bool haveScheduleConflict(const ClassUC &studentClass, const ClassUC &newClass) const;
+
 };
 
 #endif
+
+

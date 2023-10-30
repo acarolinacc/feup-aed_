@@ -585,18 +585,40 @@ void Menu::realizarAlteracoesUC() {
 
 
 void Menu::ingressarEmUC() {
+    cout << "--------------------------------------------------\n";
+    cout << "Ingressar em uma UC\n";
+    string upNumber;
+    string ucCode;
 
+    cout << "Digite o UP do estudante: ";
+    cin >> upNumber;
+
+    cout << "Digite o código da UC desejada: ";
+    cin >> ucCode;
+
+    if (management.ingressarEmUC(upNumber, ucCode)) {
+        cout << "O estudante foi inscrito com sucesso na UC " << ucCode << endl;
+    } else {
+        cout << "Não foi possível ingressar na UC " << ucCode << ". Verifique as regras e a disponibilidade de vagas." << endl;
+    }
 }
-
-
-
-
 
 
 void Menu::sairDeUC() {
+    string upNumber;
+    cout << "Digite o número UP do estudante: ";
+    cin >> upNumber;
 
+    string ucCode;
+    cout << "Digite o código da UC da qual o estudante deseja sair: ";
+    cin >> ucCode;
+
+    if (management.sairDeUC(upNumber, ucCode)) {
+        cout << "Estudante saiu com sucesso da UC." << endl;
+    } else {
+        cout << "Falha ao sair da UC. Verifique os dados inseridos." << endl;
+    }
 }
-
 
 void Menu::realizarAlteracoesTurma() {
 
