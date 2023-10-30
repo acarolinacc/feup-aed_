@@ -79,7 +79,7 @@ void DataManager::readClasses() {
             string start = temp[3];
             string duration = temp[4];
             string type = temp[5];
-            Slot slot (day, start, duration, type);
+            Slot slot (day, stof(start), stof(duration), type);
 
 
 
@@ -207,6 +207,7 @@ vector<ClassUC> DataManager::ucWithXStudents(int x){
 
 
 
+
 vector<ClassUC> DataManager::sortAllU_occupation(){
     vector<ClassUC> sortedAlluc=allUC_;
     DataManager dataManager;
@@ -251,13 +252,13 @@ int DataManager::studentregisterUCs(int n) {
     return count2;
 }
 
-vector<Student> DataManager::StudentsOfClassUc(const string& uc_id,const string& class_id){
+vector<Student> DataManager::studentsOfClassUc(const ClassUC&  classUc){
     vector<Student> students_class;
     auto it=students.begin();
     while(it!=students.end()) {
         int size_class = it->getclassUC().size();
         for (int i = 0; i < size_class; i++) {
-            if (it->getclassUC()[i].getUcCode() == uc_id and it->getclassUC()[i].getClassCode() == class_id) {
+            if (it->getclassUC()[i].getUcCode() == classUc.getUcCode() and it->getclassUC()[i].getClassCode() == classUc.getClassCode()) {
                 students_class.push_back(*it);
             }
 
@@ -300,7 +301,7 @@ vector<Slot> DataManager::getClassSchedule(const string& classCode) {
     return schedule;
 }
 
-Student DataManager::addSlothStudents(const Student& student) {
+Student DataManager::getStudentSchedule(const Student& student) {
     auto it=students.find(student);
     Student wanted;
     if(it==students.end()){
@@ -315,5 +316,25 @@ Student DataManager::addSlothStudents(const Student& student) {
     return wanted;
 }
 
+Student DataManager::findStudent(const Student& student) {
+    auto  it=students.find(student);
+    return *it;
+}
+
+bool DataManager::classUcHaveLessThenXStudents(const ClassUC& classUc, int x) {
+    auto it=students.begin();
+    int c=0;
+    while (it!=students.end()){
+        for(const ClassUC& i:it->getclassUC()){
+            if(classUc.getUcCode()==i.getUcCode() and classUc.getClassCode()==i.getClassCode()){
+                c++;
+            }
+        }
+        it++;
+        if (c >= x) {
+            return false;}
+    }
+    return c<x;
+}
 
 

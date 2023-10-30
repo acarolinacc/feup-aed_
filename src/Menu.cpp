@@ -128,7 +128,7 @@ void Menu::consultarHorarioAluno() {
     cin >>name;
     cout << endl;
     Student student=Student(id,name);
-    Student wanted = management_.addSlothStudents(student);
+    Student wanted = management_.getStudentSchedule(student);
     displayStudentSchedule(wanted);
 }
 void Menu::displayStudentSchedule(const Student &student) const{

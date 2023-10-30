@@ -20,31 +20,38 @@ public:
     const vector<ClassUC>& getAllUC() const;
     void addStudent(const Student& student);
     void addClassUC(const ClassUC& classUC);
-    Student addSlothStudents(const Student& student);
+
     void readClasses();
     void readStudentClasses();
     void readClassesPerUC();
+    vector<Student> studentsOfClassUc(const ClassUC& classUc);
     vector<Student> UCstudents(const string& ucId) const ;
     vector<ClassUC> classOfUc(const string& ucId)const;
     vector<ClassUC> classuC_x_year(char year)const;
     vector<ClassUC> ucWithXStudents(int x);
     int numberStudentsUc(const string& ucId)const;
     int studentregisterUCs(int n);
-    bool sorterOccupation(const ClassUC& a, const ClassUC& b) const;
-    bool sorter(const ClassUC& a, const ClassUC& b);
+
     vector<Slot> getClassUCSchedule(const ClassUC& classUc2);
     vector<Slot> getClassSchedule(const string& classCode);
     vector<Slot> getUcSchedule(const string& UcId);
+    Student getStudentSchedule(const Student& student);
+    Student findStudent(const Student& student); //recebe um id e um nome e retorna o estudante com as suas turmas;
+
+    bool classUcHaveLessThenXStudents(const ClassUC& classUc, int x);
 
     vector<ClassUC> sortAllU();
     vector<ClassUC> sortAllU_occupation();
+    bool sorterOccupation(const ClassUC& a, const ClassUC& b) const;
+    bool sorter(const ClassUC& a, const ClassUC& b);
+
 
 private:
     set<Student>students;
     vector<Slot> classes;
     vector<ClassUC> allUC_ ;
 
-    vector<Student> StudentsOfClassUc(const string &uc_id, const string &class_id);
+
 
 };
 

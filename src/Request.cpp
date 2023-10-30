@@ -2,7 +2,7 @@
 
 #include <utility>
 
-Request::Request(Student &student, ClassUC &wantedClass, string &type) {
+Request::Request(Student &student, ClassUC &wantedClass, string type) {
     this->student=student;
     this->wantedClass=wantedClass;
     this->type=type;

@@ -6,7 +6,7 @@
 
 class Request {
 public:
-    Request(Student &student,ClassUC &wantedClass,string &type);
+    Request(Student &student,ClassUC &wantedClass,string type);
      Student getStudent() const;
      ClassUC getClassUc() const;
      string getType() const;
