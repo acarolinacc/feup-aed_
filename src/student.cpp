@@ -1,4 +1,6 @@
 
+#include <utility>
+
 #include "Student.h"
 
 using namespace std;
@@ -57,8 +59,8 @@ map<ClassUC, vector<Slot>> Student::getSchedule() const {
 void Student::removeSchedule(const ClassUC& classUc){
     schedule.erase(classUc);
 }
-void Student::addSchedule(const ClassUC& classUc, Slot slot) {
-    schedule[classUc].push_back(slot);
+void Student::addSchedule(const ClassUC& classUc, const vector<Slot>& slot)  {
+    schedule[classUc] = slot;
 }
 
 

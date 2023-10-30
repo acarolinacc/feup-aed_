@@ -3,7 +3,7 @@
 #include "ClassUC.h"
 
 
-set<Student> DataManager::getStudents() const{
+set<Student> DataManager::getStudents() {
     return students;
 }
 
@@ -128,35 +128,7 @@ void DataManager::readClassesPerUC() {
     }
 }
 
-/*
-//void DataManager::addSlothStudents() {
-    vector<ClassUC> classuc;
-    auto it=students.begin();
-
-    while (it!=students.end()){
-        classuc=it->getclassUC();
-        for(int i=0;i<classuc.size();i++){
-
-        }
-    }
-
-
-
-
-}
-
-*/
-
-
-
-
-
-
-
-
-
-
-
+//erro ao alterar o estudante
 
 
 void DataManager::addStudent(const Student& student) {
@@ -245,8 +217,8 @@ vector<ClassUC> DataManager::sortAllU_occupation(){
 bool DataManager::sorter(const ClassUC& a, const ClassUC& b){
     char yearA=a.getClassCode()[0];
     char yearB=b.getClassCode()[0];
-    string Acode=a.getUcCode();
-    string Bcode=b.getUcCode();
+    const string& Acode=a.getUcCode();
+    const string& Bcode=b.getUcCode();
     if(yearA!=yearB){
         return yearA<yearB;
     }
@@ -267,7 +239,7 @@ vector<ClassUC> DataManager::sortAllU(){
 
 int DataManager::studentregisterUCs(int n) {
     int count2 = 0;
-    for (auto  student : students) {
+    for (const auto&  student : students) {
         int count = 0;
         for (auto c : student.getclassUC()){
             count++;
@@ -296,7 +268,7 @@ vector<Student> DataManager::StudentsOfClassUc(const string& uc_id,const string&
 
 }
 
-vector<Slot> DataManager::getClassUCSchedule(const ClassUC classUc2) {
+vector<Slot> DataManager::getClassUCSchedule(const ClassUC& classUc2) {
     vector<Slot> schedule;
     for (auto uc : allUC_) {
         if(uc.getClassCode()==classUc2.getClassCode() and uc.getUcCode()==classUc2.getUcCode()){
@@ -317,7 +289,7 @@ vector<Slot> DataManager::getUcSchedule(const string &UcId) {
     return schedule;
 }
 
-vector<Slot> DataManager::getClassSchedule(const string classCode) {
+vector<Slot> DataManager::getClassSchedule(const string& classCode) {
     vector<Slot> schedule;
     for (const ClassUC& uc : allUC_) {
         if(uc.getClassCode()==classCode){
@@ -326,6 +298,21 @@ vector<Slot> DataManager::getClassSchedule(const string classCode) {
         }
     }
     return schedule;
+}
+
+Student DataManager::addSlothStudents(const Student& student) {
+    auto it=students.find(student);
+    Student wanted;
+    if(it==students.end()){
+        cout<<"student not found"<<endl;}
+    else{
+       wanted=*it;
+    }
+    for(auto i: wanted.getclassUC()){
+        vector<Slot> slots= getClassUCSchedule(i);
+        wanted.addSchedule(i,slots);
+    }
+    return wanted;
 }
 
 

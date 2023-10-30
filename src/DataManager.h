@@ -10,16 +10,17 @@
 #include <set>
 #include <algorithm>
 #include <uc.h>
+#include <map>
 class DataManager{
 
 
 public:
     //DataManager();
-    set<Student> getStudents() const;
+    set<Student> getStudents() ;
     const vector<ClassUC>& getAllUC() const;
     void addStudent(const Student& student);
     void addClassUC(const ClassUC& classUC);
-    void addSlothStudents();
+    Student addSlothStudents(const Student& student);
     void readClasses();
     void readStudentClasses();
     void readClassesPerUC();
@@ -31,8 +32,8 @@ public:
     int studentregisterUCs(int n);
     bool sorterOccupation(const ClassUC& a, const ClassUC& b) const;
     bool sorter(const ClassUC& a, const ClassUC& b);
-    vector<Slot> getClassUCSchedule(const ClassUC classUc2);
-    vector<Slot> getClassSchedule(const string classCode);
+    vector<Slot> getClassUCSchedule(const ClassUC& classUc2);
+    vector<Slot> getClassSchedule(const string& classCode);
     vector<Slot> getUcSchedule(const string& UcId);
 
     vector<ClassUC> sortAllU();

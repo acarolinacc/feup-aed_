@@ -24,7 +24,7 @@ public:
 
     void removeSchedule(const ClassUC& classUc);
     map<ClassUC, vector<Slot>> getSchedule() const;
-    void addSchedule(const ClassUC& classUc, Slot slot);
+    void addSchedule(const ClassUC& classUc, const vector<Slot>& slot) ;
     void addClassUC(const ClassUC& newClassUc);
     bool operator<(const Student &other) const;
     bool operator==(const Student &other) const;

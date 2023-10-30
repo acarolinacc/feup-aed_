@@ -119,40 +119,34 @@ void Menu::consultarHorarios() {
 
 //consultar o horário de um aluno
 void Menu::consultarHorarioAluno() {
-    string id;
+    int id;
+    string name;
     cout << "--------------------------------------------------\n";
-    cout << "Introduza o nome do estudante ou número UP:";
+    cout << "Introduza o número UP:";
     cin >> id;
+    cout << "Introduza o nome do estudante:";
+    cin >>name;
     cout << endl;
-    bool isValid = false;
+    Student student=Student(id,name);
+    Student wanted = management_.addSlothStudents(student);
+    displayStudentSchedule(wanted);
+}
+void Menu::displayStudentSchedule(const Student &student) const{
+    if (student.getCode() != 0) {
+        for (const ClassUC& classUc : student.getclassUC()) {
+            cout << classUc.getUcCode() << "|" << classUc.getClassCode()<<endl;
+            map<ClassUC, vector<Slot>> d=student.getSchedule();
+            for (const Slot& a :d[classUc] ) {
 
-    for (const Student& stu : management_.getStudents()) {
-        if (std::to_string(stu.getCode()) == id || to_lower(stu.getName()) == to_lower(id)) {
-            isValid = true;
-            cout << "O estudante " << stu.getName() << " (" << stu.getCode()
-                 << ") tem o seguinte horário:\n" << endl;
-
-            vector<ClassUC> listC = stu.getclassUC();
-
-            for (const ClassUC& turmaAluno : listC) {
-                cout << turmaAluno.getUcCode() << " -- " << turmaAluno.getClassCode() << endl;
-
-                for (const Slot& horario : turmaAluno.getSchedule()) {
-                    cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
-                }
+                cout << '\t' << a.getDay() << ' ' << a.getStart() << ' ' << a.getDuration() << ' ' << a.getType() << '\n';
             }
-            cout << endl;
         }
-    }
-
-    if (!isValid) {
-        cout << "Nome/número de estudante inválido.\n";
+    } else {
+        cout << "Numero ou nome do estudante invalido" << endl;
     }
 }
 
-
 //consultar o horário de um aluno
-
 
 
 
@@ -199,8 +193,6 @@ void Menu::consultarHorarioUC() {
     cin >> ucCode;
     cout << endl;
     const vector<Slot>& ucS = management_.getUcSchedule(ucCode);
-
-
     if (ucS.empty()) {
         cout << "Código de UC inválido." << endl;
     }
