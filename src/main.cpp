@@ -14,7 +14,7 @@ int main() {
     student=management.findStudent(student);
     ClassUC classUc=ClassUC("L.EIC013","2LEIC15");
     Request request2=Request(student,classUc,"bila");
-   bool a= requestManager.checkIfTheSchedulesOverlap(request2);
+   bool a= requestManager.checkIfBalanceOcuppation(request2);
     cout << a;
 
 

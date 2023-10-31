@@ -81,12 +81,12 @@ bool RequestManager::checkIfTheSchedulesOverlap(const Request& request) {
     }
     return false;
 }
-/*
+
 bool RequestManager::checkClassRequest(const Request &request) {
     if(checkOneClassUcPerStudent(request) and !checkIfTheSchedulesOverlap(request) and checkIfBalanceOcuppation(request) and
-       checkIfTheCapIsExceeded(request)){return true};
+       checkIfTheCapIsExceeded(request)){return true;}
     return false;
 }
-*/
+
 
 
