@@ -19,3 +19,5 @@ ClassUC Request::getClassUc() const {
 string Request::getType() const {
     return type;
 }
+
+

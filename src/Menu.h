@@ -71,7 +71,6 @@ private:
 
 
     void realizarAlteracoesTurma();
-
     void ingressarNumaTurma();
     void sairDeUmaTurma();
     void mudarDeTurma();

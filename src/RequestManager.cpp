@@ -49,11 +49,13 @@ bool RequestManager::checkIfTheCapIsExceeded(const Request &request) {
 bool RequestManager::checkIfBalanceOcuppation(const Request &request) {//non tested
     int mins=CAP;int maxs=0;
     const int MAXDIFFERENCE=4;
+    string type=request.getType();
     vector<ClassUC> allClassOfUc=manager.classOfUc(request.getClassUc().getUcCode());//vector with all classes of a uc;
     for(const ClassUC& classUc:allClassOfUc){
         int size_class=manager.studentsOfClassUc(classUc).size();
         if(classUc.getClassCode()==request.getClassUc().getClassCode()){//we want to check if the addition of the student will cause an imbalance so we need to add the student to the size of the requested_class
-            size_class++;
+            if(type[0]=='S'){size_class--;}//if the student want to left the class the size of the class will decrease
+            if(type[0]=='E'){size_class++;}//if the student want to join the class the size of the class will encrease
         }
         if(size_class>maxs){maxs=size_class;}
         if(size_class<mins){mins=size_class;}
@@ -67,7 +69,7 @@ bool RequestManager::checkIfBalanceOcuppation(const Request &request) {//non tes
 bool RequestManager::checkIfTheSchedulesOverlap(const Request& request) {
     ClassUC requestclass=request.getClassUc();
     Student requestStudent=request.getStudent();
-    requestStudent=manager.findStudent(requestStudent);//i dont think is need but is to make sure that this student have classes;
+    if(requestStudent.getSchedule().empty()){requestStudent=manager.findStudent(requestStudent);}//i dont think is need but is to make sure that this student have classes;
     requestStudent=manager.getStudentSchedule(requestStudent);
     vector<Slot> classShedule=manager.getClassUCSchedule(requestclass);
     requestclass=ClassUC(requestclass.getUcCode(),requestclass.getClassCode(),classShedule);

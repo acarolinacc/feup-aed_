@@ -11,6 +11,7 @@ public:
     RequestManager(DataManager &manager);
     RequestManager();
     void addResquest(const Request& newRequest);
+    void addDinedRequest(const Request& newRequest);
     queue<Request> getRequest() const;
     //class Changes:
     bool checkOneClassUcPerStudent(const Request& request);
@@ -29,6 +30,7 @@ public:
 private:
     queue<Request> requests;
     DataManager manager;
+    queue<Request>deniedRequest;
 };
 
 
