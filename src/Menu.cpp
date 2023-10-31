@@ -25,6 +25,7 @@ string to_lower (string str)
 void Menu::start() {
     management_.readStudentClasses();
     management_.readClasses();
+   RequestManager(management_)=requestManager_;
     int choice;
     do {
         // Menu Principal
@@ -621,8 +622,65 @@ void Menu::sairDeUC() {
 }
 
 void Menu::realizarAlteracoesTurma() {
+    int choice;
+    do {
+
+        cout << "╔═══════════════════════════════════╗" << endl;
+        cout << "║  Realizar Alterações nas turma    ║" << endl;
+        cout << "║                                   ║" << endl;
+        cout << "║ 1. Ingressar numa turma           ║" << endl;
+        cout << "║ 2. Sair de uma turma              ║" << endl;
+        cout << "║ 3. Mudar de turmar                ║" << endl;
+        cout << "║ 4. Voltar ao menu principal       ║" << endl;
+        cout << "║                                   ║" << endl;
+        cout << "╚═══════════════════════════════════╝" << endl;
+        cout << "Por favor, escolha uma opção (1-3): ";
+        cin >> choice;
+
+
+        switch (choice) {
+            case 1:
+                ingressarNumaTurma();
+                break;
+            case 2:
+                sairDeUmaTurma();
+                break;
+            case 3:
+                mudarDeTurma();
+                break;
+            case 4:
+                cout << "A voltar ao menu principal." << endl;
+                break;
+            default:
+                cout << "Opção inválida. Por favor, escolha uma opção válida (1-4)." << endl;
+                break;
+        }
+
+    } while (choice!=4);
+
+
+
 
 }
+void Menu::ingressarNumaTurma() {
+    int upNumber;string studentName;
+    cout << "Digite o número UP do estudante: ";
+    cin >> upNumber;
+    cout <<"Digite o nome de estudante";
+    cin>>studentName;
+    string ucCode,classCode;
+    cout << "Digite o código UC da turma da qual o estudante deseja entrar: ";
+    cin >> ucCode;
+    cout << "Digite o código  da turma da qual o estudante deseja entrar: ";
+    cin >> classCode;
+    Student student=Student(upNumber,studentName);
+    student=management_.findStudent(student);//students got the classes
+    ClassUC classUc=ClassUC(ucCode,classCode);
+    Request request=Request(student,classUc,"EU");
+    requestManager_.addResquest(request);
+
+}
+
 
 
 
@@ -633,4 +691,13 @@ void Menu::visualizarHistoricoPedidos() {
 void Menu::processarPedidos() {
 
 }
+
+void Menu::mudarDeTurma() {
+
+}
+
+void Menu::sairDeUmaTurma() {
+
+}
+
 

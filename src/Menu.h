@@ -3,6 +3,7 @@
 #define MENU_H
 
 #include "DataManager.h"
+#include "RequestManager.h"
 
 class Menu {
 public:
@@ -11,6 +12,7 @@ public:
     void start();
 
 private:
+    RequestManager requestManager_;
     DataManager management;
     DataManager& management_;
     void printStudentInfo(const Student& student);
@@ -65,7 +67,21 @@ private:
 
     void realizarAlteracoesUC();
 
+
+
+
     void realizarAlteracoesTurma();
+
+    void ingressarNumaTurma();
+    void sairDeUmaTurma();
+    void mudarDeTurma();
+
+
+
+
+
+
+
 
     void visualizarHistoricoPedidos();
 

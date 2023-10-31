@@ -88,5 +88,7 @@ bool RequestManager::checkClassRequest(const Request &request) {
     return false;
 }
 
+RequestManager::RequestManager() = default;
+
 
 

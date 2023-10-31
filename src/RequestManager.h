@@ -9,6 +9,7 @@
 class RequestManager {
 public:
     RequestManager(DataManager &manager);
+    RequestManager();
     void addResquest(const Request& newRequest);
     queue<Request> getRequest() const;
     //class Changes:

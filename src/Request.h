@@ -16,7 +16,9 @@ private:
     Student student;
     ClassUC wantedClass;
     string type;
-
+//type apresenta uma string com o tipo de operaçao, exemplo sair uc(SU)
+//Entrar-E,Sair-S,Mudar-M,Uc-U,CLass-C
+//
 
 };
 
