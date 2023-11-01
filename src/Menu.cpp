@@ -661,12 +661,12 @@ void Menu::ingressarNumaTurma() { //erro student not found
     int upNumber;string studentName;
     cout << "Digite o número UP do estudante: ";
     cin >> upNumber;
-    cout <<"Digite o nome de estudante";
+    cout <<"Digite o nome de estudante: ";
     cin>>studentName;
     string ucCode,classCode;
     cout << "Digite o código UC da turma da qual o estudante deseja entrar: ";
     cin >> ucCode;
-    cout << "Digite o código  da turma da qual o estudante deseja entrar: ";
+    cout << "Digite o código da turma da qual o estudante deseja entrar: ";
     cin >> classCode;
     Student student=Student(upNumber,studentName);
     student=management_.findStudent(student);//students got the classes
@@ -676,7 +676,7 @@ void Menu::ingressarNumaTurma() { //erro student not found
         cout<<"Valid request"<<endl;
         requestManager_.addResquest(request);
     }
-    else{cout<<"Unvalid request,make other request"<<endl;}
+    else{cout<<"Unvalid request, make other request"<<endl;}
 }
 
 
@@ -686,14 +686,14 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
     int upNumber;string studentName;
     cout << "Digite o número UP do estudante: ";
     cin >> upNumber;
-    cout <<"Digite o nome de estudante";
+    cout <<"Digite o nome de estudante: ";
     cin>>studentName;
     Student student=Student(upNumber,studentName);
     student=management_.findStudent(student);//students got the classes
     string ucCode,classCode;
     cout << "Digite o código UC da turma da qual o estudante deseja sair: ";
     cin >> ucCode;
-    cout << "Digite o código  da turma da qual o estudante deseja sair: ";
+    cout << "Digite o código da turma da qual o estudante deseja sair: ";
     cin >> classCode;
     ClassUC old_classUc=ClassUC(ucCode,classCode);
     Request request=Request(student,old_classUc,"SC");
@@ -702,7 +702,7 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
         requestManager_.addResquest(request);
         cout << "Digite o código UC da turma da qual o estudante deseja entrar: ";
         cin >> ucCode;
-        cout << "Digite o código  da turma da qual o estudante deseja entrar: ";
+        cout << "Digite o código da turma da qual o estudante deseja entrar: ";
         cin >> classCode;
         ClassUC new_classUc=ClassUC(ucCode,classCode);
         Request request2=Request(student,new_classUc,"EC");
@@ -710,24 +710,24 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
             cout<<"Valid request"<<endl;
             requestManager_.addResquest(request2);
         }
-        else{ cout<<"Unvalid request,make other request"<<endl;}
+        else{ cout<<"Unvalid request, make other request"<<endl;}
 
     }
 
     else{
-        cout<<"Unvalid request,make other request"<<endl;
+        cout<<"Unvalid request, make other request"<<endl;
     }
 }
 void Menu::sairDeUmaTurma() {
     int upNumber;string studentName;
     cout << "Digite o número UP do estudante: ";
     cin >> upNumber;
-    cout <<"Digite o nome de estudante";
+    cout <<"Digite o nome de estudante: ";
     cin>>studentName;
     string ucCode,classCode;
     cout << "Digite o código UC da turma da qual o estudante deseja sair: ";
     cin >> ucCode;
-    cout << "Digite o código  da turma da qual o estudante deseja sair: ";
+    cout << "Digite o código da turma da qual o estudante deseja sair: ";
     cin >> classCode;
     Student student=Student(upNumber,studentName);
     student=management_.findStudent(student);//students got the classes
@@ -738,7 +738,7 @@ void Menu::sairDeUmaTurma() {
         requestManager_.addResquest(request);
     }
     else{
-        cout<<"Unvalid request,make other request"<<endl;
+        cout<<"Unvalid request, make other request"<<endl;
     }
 
 }
