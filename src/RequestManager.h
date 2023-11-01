@@ -19,7 +19,19 @@ public:
     bool checkIfBalanceOcuppation(const Request& request);
     bool  checkIfTheSchedulesOverlap(const Request& request);
     bool checkClassRequest(const Request& request);
+    bool sairDeUC(const string &upNumber, const string &ucCode);
 
+    bool haveScheduleConflict(const ClassUC &studentClass, const ClassUC &newClass) const;
+
+    ClassUC getClassUCByCode(const string &ucCode);
+
+    Student getStudentByUP(const string &upNumber);
+
+    bool ingressarEmUC(const string &upNumber, const string &ucCode);
+
+    const vector<ClassUC> &getAllUC() const;
+
+    set<Student> getStudents();
 
 
 
@@ -31,6 +43,10 @@ private:
     queue<Request> requests;
     DataManager manager;
     queue<Request>deniedRequest;
+    set<Student>students;
+    vector<ClassUC> allUC_ ;
+
+
 };
 
 
