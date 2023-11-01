@@ -596,7 +596,7 @@ void Menu::ingressarEmUC() {
     cout << "Digite o código da UC desejada: ";
     cin >> ucCode;
 
-    if (management.ingressarEmUC(upNumber, ucCode)) {
+    if (requestManager_.ingressarEmUC(upNumber, ucCode)) {
         cout << "O estudante foi inscrito com sucesso na UC " << ucCode << endl;
     } else {
         cout << "Não foi possível ingressar na UC " << ucCode << ". Verifique as regras e a disponibilidade de vagas." << endl;
@@ -613,7 +613,7 @@ void Menu::sairDeUC() {
     cout << "Digite o código da UC da qual o estudante deseja sair: ";
     cin >> ucCode;
 
-    if (management.sairDeUC(upNumber, ucCode)) {
+    if (requestManager_.sairDeUC(upNumber, ucCode)) {
         cout << "Estudante saiu com sucesso da UC." << endl;
     } else {
         cout << "Falha ao sair da UC. Verifique os dados inseridos." << endl;
