@@ -586,7 +586,6 @@ void Menu::realizarAlteracoesUC() {
 
 void Menu::ingressarEmUC() {
     cout << "--------------------------------------------------\n";
-    cout << "Ingressar em uma UC\n";
     string upNumber;
     string ucCode;
 
