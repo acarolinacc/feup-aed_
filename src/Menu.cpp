@@ -5,8 +5,7 @@
 #include <iostream>
 
 
-Menu::Menu(DataManager& management) : management_(management) {
-
+Menu::Menu(DataManager& management) : management_(management), requestManager_(management) {
 }
 
 
@@ -25,7 +24,7 @@ string to_lower (string str)
 void Menu::start() {
     management_.readStudentClasses();
     management_.readClasses();
-   RequestManager(management_)=requestManager_;
+    requestManager_.setManager(management_);
     int choice;
     do {
         // Menu Principal

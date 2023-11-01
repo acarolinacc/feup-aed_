@@ -46,7 +46,7 @@ bool RequestManager::checkIfTheCapIsExceeded(const Request &request) {
     return result;
 }
 
-bool RequestManager::checkIfBalanceOcuppation(const Request &request) {//non tested
+bool RequestManager::checkIfBalanceOcuppation(const Request &request) {// tested
     int mins=CAP;int maxs=0;
     const int MAXDIFFERENCE=4;
     string type=request.getType();
@@ -88,6 +88,11 @@ bool RequestManager::checkClassRequest(const Request &request) {
     if(checkOneClassUcPerStudent(request) and !checkIfTheSchedulesOverlap(request) and checkIfBalanceOcuppation(request) and
        checkIfTheCapIsExceeded(request)){return true;}
     return false;
+}
+
+void RequestManager::setManager(DataManager manager) {
+    this->manager=manager;
+
 }
 
 RequestManager::RequestManager() = default;

@@ -10,6 +10,7 @@ class RequestManager {
 public:
     RequestManager(DataManager &manager);
     RequestManager();
+    void setManager(DataManager manager);
     void addResquest(const Request& newRequest);
     void addDinedRequest(const Request& newRequest);
     queue<Request> getRequest() const;
