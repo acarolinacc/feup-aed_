@@ -20,4 +20,17 @@ string Request::getType() const {
     return type;
 }
 
+void Request::printRequest() {
+    std::cout << "Request Details:" << std::endl;
+    std::cout << "Student:" << std::endl;
+    student.print();
+    std::cout << "Wanted Class: " << std::endl;
+    wantedClass.print();
+    std::cout << "Type: " << type << std::endl;
+}
+
+
+
+
+
 

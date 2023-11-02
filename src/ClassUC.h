@@ -19,6 +19,7 @@ public:
     const std::string &getUcCode() const;
     const std::vector<Slot> &getSchedule() const;
     void sortShedule();
+    void print();
 private:
     std::string ucCode_;
     std::string classCode_;

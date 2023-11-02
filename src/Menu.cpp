@@ -68,10 +68,10 @@ void Menu::start() {
                 cout << "A sair do programa." << endl;
                 break;
             default:
-                cout << "Opção inválida. Por favor, escolha uma opção válida (1-5)." << endl;
+                cout << "Opção inválida. Por favor, escolha uma opção válida (1-7)." << endl;
                 break;
         }
-    } while (choice != 5);
+    } while (choice != 7);
 }
 
 void Menu::consultarHorarios() {
@@ -268,10 +268,11 @@ void Menu::consultarInformacoesAlunos() {
     cout << "║ 2. Consultar número de          ║" << endl;
     cout << "║    estudantes inscritos em,     ║" << endl;
     cout << "║    pelo menos, n UCs            ║" << endl;
-    cout << "║ 3. Voltar ao menu principal     ║" << endl;
+    cout << "║ 3. Consultar turmas de um aluno ║" << endl;
+    cout << "║ 4. Voltar ao menu principal     ║" << endl;
     cout << "║                                 ║" << endl;
     cout << "╚═════════════════════════════════╝" << endl;
-    cout << "Por favor, escolha uma opção (1-3): ";
+    cout << "Por favor, escolha uma opção (1-4): ";
 
     int escolha;
     cin >> escolha;
@@ -283,12 +284,34 @@ void Menu::consultarInformacoesAlunos() {
         case 2: {
             int n;
             consultarNumEstudantesInscritosN_UC(n);
-        }
             break;
+        }
+        case 3:{
+            consultarTurmasDoAluno();
+            break;
+
+        }
         default:
             cout << "Escolha uma opção válida." << endl;
     }
 }
+
+void Menu::consultarTurmasDoAluno() {
+    int id;
+    string name;
+    cout << "--------------------------------------------------\n";
+    cout << "Introduza o número UP:";
+    cin >> id;
+    cout << "Introduza o nome do estudante:";
+    cin >>name;
+    cout << endl;
+    Student student=Student(id,name);
+    student=management_.findStudent(student);
+    for(auto a:student.getclassUC()){
+        a.print();
+    }
+}
+
 
 
 void Menu::consultarAlunosTurmaCursoAno() {
@@ -596,7 +619,7 @@ void Menu::ingressarEmUC() {
     cin >> ucCode;
 
     if (requestManager_.ingressarEmUC(upNumber, ucCode)) {
-        cout << "O estudante foi inscrito com sucesso na UC " << ucCode << endl;
+        cout << "O pedido do estudante foi aceite" << ucCode << endl;
     } else {
         cout << "Não foi possível ingressar na UC " << ucCode << ". Verifique as regras e a disponibilidade de vagas." << endl;
     }
@@ -656,7 +679,7 @@ void Menu::realizarAlteracoesTurma() {
 
     } while (choice!=4);
 }
-void Menu::ingressarNumaTurma() { //erro student not found
+void Menu::ingressarNumaTurma() {
     int upNumber;string studentName;
     cout << "Digite o número UP do estudante: ";
     cin >> upNumber;
@@ -746,8 +769,12 @@ void Menu::visualizarHistoricoPedidos() {
 }
 
 void Menu::processarPedidos() {
-    cout<<requestManager_.getRequest().size();
-
+  if(requestManager_.getRequest().empty()){
+      cout<<"There is no request to process "<<endl;
+  }
+  else {
+      requestManager_.requestProcess();
+  }
 }
 
 

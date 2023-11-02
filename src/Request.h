@@ -10,6 +10,7 @@ public:
      Student getStudent() const;
      ClassUC getClassUc() const;
      string getType() const;
+     void printRequest();
 
 
 private:

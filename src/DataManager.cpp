@@ -6,6 +6,10 @@
 set<Student> DataManager::getStudents() {
     return students;
 }
+void DataManager::setStudents(set<Student> newStudents) {
+    students=newStudents;
+}
+
 
 void DataManager::readStudentClasses(){
     ifstream file("../data/students_classes.csv");
@@ -315,3 +319,4 @@ bool DataManager::classUcHaveLessThenXStudents(const ClassUC& classUc, int x) {
     }
     return c<x;
 }
+

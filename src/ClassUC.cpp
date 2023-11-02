@@ -1,6 +1,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <iostream>
 #include "ClassUC.h"
 
 
@@ -51,4 +52,9 @@ void ClassUC::sortShedule() {
 void ClassUC::setSlots(vector<Slot> slots) {
     schedule_=slots;
 
+}
+
+void ClassUC::print() {
+    std::cout << "UC Code: " << ucCode_ << std::endl;
+    std::cout << "Class Code: " << classCode_ << std::endl;
 }

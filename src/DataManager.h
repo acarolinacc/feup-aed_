@@ -20,6 +20,7 @@ public:
     const vector<ClassUC>& getAllUC() const;
     void addStudent(const Student& student);
     void addClassUC(const ClassUC& classUC);
+    void setStudents( set<Student> newStudents);
 
     void readClasses();
     void readStudentClasses();

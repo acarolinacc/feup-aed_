@@ -22,6 +22,7 @@ public:
     bool checkIfBalanceOcuppation(const Request& request);
     bool  checkIfTheSchedulesOverlap(const Request& request);
     bool checkClassRequest(const Request& request);
+    bool checkClassStudent(const Request& request);
 
 
     //uc changes;
@@ -33,6 +34,9 @@ public:
 
     void requestProcess();
     bool UcProcess(const Request& request);
+    bool changeCLass(const Request& request);
+    bool changeUC(const Request& request);
+    ClassUC findClassinUc(Student student, const string& ucCode);
 
 
 

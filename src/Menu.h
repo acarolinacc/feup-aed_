@@ -29,6 +29,7 @@ private:
     void consultarInformacoesAlunos();
     void consultarNumEstudantesInscritosN_UC(int n);
     void consultarAlunosTurmaCursoAno();
+    void consultarTurmasDoAluno();
     void consultarUcsComMaisEstudantes();
 
     void consultarTurmaAnoCursoUC();
