@@ -586,7 +586,7 @@ void Menu::realizarAlteracoesUC() {
 
 void Menu::ingressarEmUC() {
     cout << "--------------------------------------------------\n";
-    string upNumber;
+    int upNumber;
     string ucCode;
 
     cout << "Digite o UP do estudante: ";
@@ -604,7 +604,7 @@ void Menu::ingressarEmUC() {
 
 
 void Menu::sairDeUC() {
-    string upNumber;
+    int upNumber;
     cout << "Digite o número UP do estudante: ";
     cin >> upNumber;
 

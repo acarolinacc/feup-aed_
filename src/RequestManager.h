@@ -13,6 +13,8 @@ public:
     void setManager(DataManager manager);
     void addResquest(const Request& newRequest);
     void addDinedRequest(const Request& newRequest);
+    void addAcceptRequest(const Request& newRequest);
+
     queue<Request> getRequest() const;
     //class Changes:
     bool checkOneClassUcPerStudent(const Request& request);
@@ -20,19 +22,17 @@ public:
     bool checkIfBalanceOcuppation(const Request& request);
     bool  checkIfTheSchedulesOverlap(const Request& request);
     bool checkClassRequest(const Request& request);
-    bool sairDeUC(const string &upNumber, const string &ucCode);
 
+
+    //uc changes;
     bool haveScheduleConflict(const ClassUC &studentClass, const ClassUC &newClass) const;
-
     ClassUC getClassUCByCode(const string &ucCode);
+    Student getStudentByUP(const int &upNumber);
+    bool ingressarEmUC(const int &upNumber, const string &ucCode);
+    bool sairDeUC(int upNumber, const string &ucCode);
 
-    Student getStudentByUP(const string &upNumber);
-
-    bool ingressarEmUC(const string &upNumber, const string &ucCode);
-
-    const vector<ClassUC> &getAllUC() const;
-
-    set<Student> getStudents();
+    void requestProcess();
+    bool UcProcess(const Request& request);
 
 
 
@@ -43,9 +43,9 @@ public:
 private:
     queue<Request> requests;
     DataManager manager;
+    queue<Request>acceptRequest;
     queue<Request>deniedRequest;
-    set<Student>students;
-    vector<ClassUC> allUC_ ;
+
 
 
 };

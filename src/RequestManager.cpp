@@ -14,6 +14,16 @@ queue<Request> RequestManager::getRequest() const {
     return requests;
 }
 
+void RequestManager::addDinedRequest(const Request &newRequest) {
+    deniedRequest.push(newRequest);
+}
+
+void RequestManager::addAcceptRequest(const Request &newRequest) {
+    acceptRequest.push(newRequest);
+}
+
+
+
 
 bool classUCSorter(const ClassUC& a,const ClassUC& b){
     return  a.getClassCode()<b.getClassCode();
@@ -97,15 +107,9 @@ void RequestManager::setManager(DataManager manager) {
 
 RequestManager::RequestManager() = default;
 
-const vector<ClassUC> &RequestManager::getAllUC() const {
-    return allUC_;
-}
 
-set<Student> RequestManager::getStudents() {
-    return students;
-}
 
-bool RequestManager::ingressarEmUC(const string& upNumber, const string& ucCode) {
+bool RequestManager::ingressarEmUC(const int &upNumber, const string& ucCode) {
     Student student = getStudentByUP(upNumber);
     if (student.getCode() == 0) {
         cout << "Estudante com UP " << upNumber << " não encontrado." << endl;
@@ -142,9 +146,9 @@ bool RequestManager::ingressarEmUC(const string& upNumber, const string& ucCode)
     return true;
 }
 
-Student RequestManager::getStudentByUP(const string& upNumber) {
-    for (const Student& student : students) {
-        if (student.getCode() == stoi(upNumber)) {
+Student RequestManager::getStudentByUP(const int &upNumber) {
+    for (const Student& student : manager.getStudents()) {
+        if (student.getCode() == (upNumber)) {
             return student;
         }
     }
@@ -154,7 +158,7 @@ Student RequestManager::getStudentByUP(const string& upNumber) {
 
 
 ClassUC RequestManager::getClassUCByCode(const string& ucCode) {
-    for (const ClassUC& uc : allUC_) {
+    for (const ClassUC& uc : manager.getAllUC()) {
         if (uc.getUcCode() == ucCode) {
             return uc;
         }
@@ -190,7 +194,7 @@ bool RequestManager::haveScheduleConflict(const ClassUC& studentClass, const Cla
     return false;
 }
 
-bool RequestManager::sairDeUC(const string& upNumber, const string& ucCode) {
+bool RequestManager::sairDeUC(const int upNumber, const string& ucCode) {
     Student student = getStudentByUP(upNumber);
     if (student.getCode() == 0) {
         cout << "Estudante com UP " << upNumber << " não encontrado." << endl;
@@ -218,3 +222,49 @@ bool RequestManager::sairDeUC(const string& upNumber, const string& ucCode) {
     cout << "O estudante " << student.getName() << " saiu com sucesso da UC " << ucCode << "." << endl;
     return true;
 }
+/*
+bool RequestManager::UcProcess(const Request& request) {
+    char type_c=request.getType()[0];
+    int upNumber=request.getStudent().getCode();
+    string UcNumber=request.getClassUc().getUcCode();
+    switch (type_c) {
+        case 'S':
+            return sairDeUC(upNumber,UcNumber);
+            break;
+        case 'E':
+            return
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+void RequestManager::requestProcess() {
+    while (!requests.empty()) {
+        Request actual_request = requests.front();
+        if(actual_request.getType()[1]=='U') {//UC request;
+
+
+
+
+
+        }
+        else if(actual_request.getType()[1]=='C'){//Class request;
+
+
+    }
+
+        else{//request need to be dined;
+            addDinedRequest(actual_request);
+        }
+        requests.pop();//pop the request readed
+    }
+}
+*/
