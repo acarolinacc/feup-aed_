@@ -25,6 +25,7 @@ public:
     bool checkClassStudent(const Request& request);
 
 
+
     //uc changes;
     bool haveScheduleConflict(const ClassUC &studentClass, const ClassUC &newClass) const;
     ClassUC getClassUCByCode(const string &ucCode);
@@ -37,6 +38,9 @@ public:
     bool changeCLass(const Request& request,DataManager &newManager);
     bool changeUC(const Request& request,DataManager &newManager);
     ClassUC findClassinUc(Student student, const string& ucCode);
+    bool undorequest();
+    void restore(const Request& request);
+    bool canundo(const Request &request);
 
 
 
@@ -49,6 +53,7 @@ private:
     DataManager manager;
     queue<Request>acceptRequest;
     queue<Request>deniedRequest;
+    queue<Request> undoneRequests;
 
 
 

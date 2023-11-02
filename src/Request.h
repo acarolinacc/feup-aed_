@@ -12,6 +12,10 @@ public:
      string getType() const;
      void printRequest();
 
+    bool operator==(const Request& other) const {
+
+        return (student == other.student) && (wantedClass == other.wantedClass) && (type == other.type);
+    }
 
 private:
     Student student;

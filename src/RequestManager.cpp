@@ -371,3 +371,53 @@ void RequestManager::requestProcess(DataManager &newManager) {
     }
 }
 
+bool RequestManager::canundo(const Request &request) {
+
+    if (!requests.empty()) {
+        if (requests.front() == request) {
+            return true;
+        }
+    }
+    return false;
+
+}
+
+
+bool RequestManager::undorequest() {
+    if (!acceptRequest.empty()) {
+        Request lastAcceptedRequest = acceptRequest.front();
+        if (lastAcceptedRequest.getType() == "E") {
+            if (sairDeUC(lastAcceptedRequest.getStudent().getCode(), lastAcceptedRequest.getClassUc().getUcCode())) {
+                undoneRequests.push(lastAcceptedRequest);
+                acceptRequest.pop();
+                return true;
+            }
+        } else if (lastAcceptedRequest.getType() == "S") {
+            if (ingressarEmUC(lastAcceptedRequest.getStudent().getCode(), lastAcceptedRequest.getClassUc().getUcCode())) {
+                undoneRequests.push(lastAcceptedRequest);
+                acceptRequest.pop();
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
+
+void RequestManager::restore(const Request &request) {
+    if (request.getType() == "E") {
+        if (!undoneRequests.empty() && undoneRequests.front() == request) {
+            Request undoneRequest = undoneRequests.front();
+            sairDeUC(undoneRequest.getStudent().getCode(), undoneRequest.getClassUc().getUcCode());
+            undoneRequests.pop();
+        }
+    } else if (request.getType() == "S") {
+
+        if (!undoneRequests.empty() && undoneRequests.front() == request) {
+            Request undoneRequest = undoneRequests.front();
+            ingressarEmUC(undoneRequest.getStudent().getCode(), undoneRequest.getClassUc().getUcCode());
+            undoneRequests.pop();
+        }
+    }
+}
