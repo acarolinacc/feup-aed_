@@ -610,16 +610,21 @@ void Menu::realizarAlteracoesUC() {
 void Menu::ingressarEmUC() {
     cout << "--------------------------------------------------\n";
     int upNumber;
-    string ucCode;
-
-    cout << "Digite o UP do estudante: ";
+    string studentName;
+    cout << "Digite o número UP do estudante: ";
     cin >> upNumber;
-
-    cout << "Digite o código da UC desejada: ";
+    cout <<"Digite o nome de estudante: ";
+    cin>>studentName;
+    string ucCode;
+    cout << "Digite o código da UC da qual o estudante deseja entrar: ";
     cin >> ucCode;
-
+    Student student=Student(upNumber,studentName);
+    student=management_.findStudent(student);//students got the classes
+    ClassUC classUc=ClassUC(ucCode,"");
+    Request request=Request(student,classUc,"EU");
     if (requestManager_.ingressarEmUC(upNumber, ucCode)) {
-        cout << "O pedido do estudante foi aceite" << ucCode << endl;
+        cout << "O pedido do estudante foi aceite:" << ucCode << endl;
+        requestManager_.addResquest(request);
     } else {
         cout << "Não foi possível ingressar na UC " << ucCode << ". Verifique as regras e a disponibilidade de vagas." << endl;
     }
@@ -628,15 +633,21 @@ void Menu::ingressarEmUC() {
 
 void Menu::sairDeUC() {
     int upNumber;
+    string studentName;
     cout << "Digite o número UP do estudante: ";
     cin >> upNumber;
-
+    cout <<"Digite o nome de estudante: ";
+    cin>>studentName;
     string ucCode;
     cout << "Digite o código da UC da qual o estudante deseja sair: ";
     cin >> ucCode;
-
+    Student student=Student(upNumber,studentName);
+    student=management_.findStudent(student);//students got the classes
+    ClassUC classUc=ClassUC(ucCode,"");
+    Request request=Request(student,classUc,"SU");
     if (requestManager_.sairDeUC(upNumber, ucCode)) {
-        cout << "Estudante saiu com sucesso da UC." << endl;
+        cout << "Pedido aceite com sucesso ." << endl;
+        requestManager_.addResquest(request);
     } else {
         cout << "Falha ao sair da UC. Verifique os dados inseridos." << endl;
     }
@@ -769,11 +780,13 @@ void Menu::visualizarHistoricoPedidos() {
 }
 
 void Menu::processarPedidos() {
-  if(requestManager_.getRequest().empty()){
+  DataManager newManager;
+    if(requestManager_.getRequest().empty()){
       cout<<"There is no request to process "<<endl;
   }
   else {
-      requestManager_.requestProcess();
+      requestManager_.requestProcess(newManager);
+      management_=newManager;
   }
 }
 

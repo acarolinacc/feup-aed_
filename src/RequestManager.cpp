@@ -134,7 +134,7 @@ RequestManager::RequestManager() = default;
 
 
 
-bool RequestManager::ingressarEmUC(const int &upNumber, const string& ucCode) {
+bool RequestManager::ingressarEmUC(const int &upNumber, const string& ucCode) {//alterar para request
     Student student = getStudentByUP(upNumber);
     if (student.getCode() == 0) {
         cout << "Estudante com UP " << upNumber << " não encontrado." << endl;
@@ -218,7 +218,7 @@ bool RequestManager::haveScheduleConflict(const ClassUC& studentClass, const Cla
     return false;
 }
 
-bool RequestManager::sairDeUC(const int upNumber, const string& ucCode) {
+bool RequestManager::sairDeUC(const int upNumber, const string& ucCode) {//alterar para request
     Student student = getStudentByUP(upNumber);
     if (student.getCode() == 0) {
         cout << "Estudante com UP " << upNumber << " não encontrado." << endl;
@@ -232,13 +232,13 @@ bool RequestManager::sairDeUC(const int upNumber, const string& ucCode) {
     }
 
     vector<ClassUC> studentClasses = student.getclassUC();
-    auto it = find(studentClasses.begin(), studentClasses.end(), uc);
-    if (it == studentClasses.end()) {
+    for(auto classuc:studentClasses){
+        if(classuc.getUcCode()==ucCode){
+           return true;
+        }
+    }
         cout << "O estudante não está inscrito na UC " << ucCode << ". Não é possível sair." << endl;
         return false;
-    }
-
-    return true;
 }
 
 bool RequestManager::UcProcess(const Request& request) {
@@ -254,7 +254,7 @@ bool RequestManager::UcProcess(const Request& request) {
     return false;
 }
 
-bool RequestManager::changeCLass(const Request& request) {//if the request was accepted,the class need to be change
+bool RequestManager::changeCLass(const Request& request,DataManager &newManager) {//if the request was accepted,the class need to be change
     if(checkClassRequest(request)) {//check if the request is valid
         set<Student> students = manager.getStudents();
         auto it = students.find(request.getStudent());
@@ -275,6 +275,7 @@ bool RequestManager::changeCLass(const Request& request) {//if the request was a
             students.erase(it);
             students.insert(copyStudent);       //i need to remove the student and then add it again
             manager.setStudents(students);
+            newManager=manager;
             return true;
         } else {
             cout << "student not found" << endl;
@@ -297,7 +298,7 @@ ClassUC RequestManager::findClassinUc(Student student, const string &ucCode) {
 }
 
 
-bool RequestManager::changeUC(const Request &request) {//non tested
+bool RequestManager::changeUC(const Request &request,DataManager &newManager) {//non tested
     if(UcProcess(request)) { //check if the request is valid
         set<Student> students = manager.getStudents();
         string uccode = request.getClassUc().getUcCode();
@@ -305,9 +306,11 @@ bool RequestManager::changeUC(const Request &request) {//non tested
         if (it != students.end()) {
             Student copyStudent = *it;
             if (request.getType()[0] == 'S') {//we need to remove the request class in the classes of the student
-                for (auto d = it->getclassUC().begin(); d != it->getclassUC().end();) {
+                vector<ClassUC> classes=copyStudent.getclassUC();
+                for (auto d = classes.begin(); d != it->getclassUC().end();) {
                     if (uccode == d->getUcCode()) {
-                        copyStudent.getclassUC().erase(d);
+                        classes.erase(d);
+                        copyStudent.setCLassUc(classes);
                         break;
                     } else { d++; }
                 }
@@ -324,6 +327,7 @@ bool RequestManager::changeUC(const Request &request) {//non tested
             students.erase(it);
             students.insert(copyStudent);       //i need to remove the student and then add it again
             manager.setStudents(students);
+            newManager=manager;
             return true;
         } else {
             cout << "student not found" << endl;
@@ -334,11 +338,11 @@ bool RequestManager::changeUC(const Request &request) {//non tested
 }
 
 
-void RequestManager::requestProcess() {
+void RequestManager::requestProcess(DataManager &newManager) {
     while (!requests.empty()) {
         Request actual_request = requests.front();
         if(actual_request.getType()[1]=='U') {//UC request;
-            if(changeUC(actual_request)){
+            if(changeUC(actual_request,newManager)){
                 addAcceptRequest(actual_request);
             }
             else{
@@ -348,7 +352,7 @@ void RequestManager::requestProcess() {
             }
         }
         else if(actual_request.getType()[1]=='C'){//Class request;
-            if(changeCLass(actual_request)){
+            if(changeCLass(actual_request,newManager)){
                 addAcceptRequest(actual_request);
             }
             else{
@@ -363,6 +367,7 @@ void RequestManager::requestProcess() {
             actual_request.printRequest();
         }
         requests.pop();//pop the request readed
+
     }
 }
 

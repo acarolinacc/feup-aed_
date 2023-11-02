@@ -32,10 +32,10 @@ public:
     bool ingressarEmUC(const int &upNumber, const string &ucCode);
     bool sairDeUC(int upNumber, const string &ucCode);
 
-    void requestProcess();
+    void requestProcess(DataManager &newManager);
     bool UcProcess(const Request& request);
-    bool changeCLass(const Request& request);
-    bool changeUC(const Request& request);
+    bool changeCLass(const Request& request,DataManager &newManager);
+    bool changeUC(const Request& request,DataManager &newManager);
     ClassUC findClassinUc(Student student, const string& ucCode);
 
 

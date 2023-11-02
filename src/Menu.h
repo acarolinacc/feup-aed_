@@ -14,6 +14,7 @@ public:
 private:
     RequestManager requestManager_;
     DataManager management;
+
     DataManager& management_;
     void printStudentInfo(const Student& student);
     bool areStringsEqualIgnoreCase(const std::string& str1, const std::string& str2);
