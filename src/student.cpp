@@ -73,4 +73,7 @@ void Student::sortSchedule() {
     }
 }
 
+void Student::setCLassUc(vector<ClassUC> classe) {
+classes=classe;
+}
 

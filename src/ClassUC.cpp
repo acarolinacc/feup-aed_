@@ -37,7 +37,7 @@ bool ClassUC::operator<(const ClassUC& other) const{
     return ucCode_<other.getUcCode();  //this can be changed
 }
 bool ClassUC::operator==(const ClassUC& other) const{
-    return ucCode_==other.getUcCode();
+    return (ucCode_==other.getUcCode() and classCode_==other.getClassCode());
 }
 bool slotSorter(const Slot& a,const Slot& b){
     return a.getStart()<b.getStart();

@@ -254,7 +254,6 @@ bool RequestManager::UcProcess(const Request& request) {
     return false;
 }
 
-//NON TESTED
 bool RequestManager::changeCLass(const Request& request) {//if the request was accepted,the class need to be change
     if(checkClassRequest(request)) {//check if the request is valid
         set<Student> students = manager.getStudents();
@@ -262,9 +261,11 @@ bool RequestManager::changeCLass(const Request& request) {//if the request was a
         if (it != students.end()) {
             Student copyStudent = *it;
             if (request.getType()[0] == 'S') {//we need to remove the request class in the classes of the student
-                for (auto d = it->getclassUC().begin(); d != it->getclassUC().end();) {
+                vector<ClassUC> studentClasses=copyStudent.getclassUC();
+                for (auto d =studentClasses.begin(); d !=studentClasses.end();) {
                     if (request.getClassUc() == *d) {
-                        copyStudent.getclassUC().erase(d);
+                        studentClasses.erase(d);
+                        copyStudent.setCLassUc(studentClasses);
                         break;
                     } else { d++; }
                 }
@@ -296,7 +297,7 @@ ClassUC RequestManager::findClassinUc(Student student, const string &ucCode) {
 }
 
 
-bool RequestManager::changeUC(const Request &request) {
+bool RequestManager::changeUC(const Request &request) {//non tested
     if(UcProcess(request)) { //check if the request is valid
         set<Student> students = manager.getStudents();
         string uccode = request.getClassUc().getUcCode();

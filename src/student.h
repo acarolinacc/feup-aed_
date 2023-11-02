@@ -21,8 +21,7 @@ public:
     int getCode() const;
 
     string getName() const;
-
-
+    void setCLassUc( vector<ClassUC> classe);
     void removeSchedule(const ClassUC& classUc);
     map<ClassUC, vector<Slot>> getSchedule() const;
     void addSchedule(const ClassUC& classUc, const vector<Slot>& slot) ;
