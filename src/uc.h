@@ -1,12 +1,12 @@
-
-
-
 #ifndef UC_H
 #define UC_H
 #include <string>
 #include "slot.h"
 #include <vector>
 using  namespace std;
+/**
+ * @brief class to show the curricular unit
+ */
 class Uc{
 public:
     Uc(string ucId,int ucYear,int ucSemester,vector<Slot> ucSlot);

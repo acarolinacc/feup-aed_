@@ -5,7 +5,9 @@
 #include <string>
 
 using namespace std;
-
+/**
+ * @brief class to show the duration of the class, the time of the class, and the day
+ */
 class Slot {
 public:
     Slot();

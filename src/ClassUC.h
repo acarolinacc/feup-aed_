@@ -5,6 +5,10 @@
 #include <vector>
 #include "slot.h"
 #include <algorithm>
+
+/**
+ * @brief class to show tha class uc
+ */
 class ClassUC {
 public:
     ClassUC();
