@@ -4,9 +4,13 @@
 
 /**
  * @brief Constructor for the request class
+ *
  * @param studentThe student making the request.
+ *
  * @param wantedClass The class that the student wants.
+ *
  * @param type The type of the request.
+ *
  * Time complexity O(1)
  */
 Request::Request(Student &student, ClassUC &wantedClass, string type) {
@@ -17,7 +21,9 @@ Request::Request(Student &student, ClassUC &wantedClass, string type) {
 
 /**
  * @brief function to get the ClassUC associated with the request.
+ *
  * @return the class that the student wants
+ *
  * Time complexity O(1)
  */
 Student Request::getStudent() const {
@@ -26,7 +32,9 @@ Student Request::getStudent() const {
 
 /**
  * @brief function to get the type of the request
+ *
  * @return
+ *
  * Time complexity O(1)
  */
 ClassUC Request::getClassUc() const {
@@ -35,6 +43,7 @@ ClassUC Request::getClassUc() const {
 
 /**
  * @brief function to print the details of the request, including the student, wanted class, and request type.
+ *
  * @return
  */
 string Request::getType() const {

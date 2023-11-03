@@ -2,10 +2,15 @@
 
 /**
  * @brief Constructor for the Slot class.
+ *
  * @param day The day of the slot.
+ *
  * @param start The start time of the slot.
+ *
  * @param duration The duration of the slot.
+ *
  * @param type The type of the slot.
+ *
  * Time Complexity: O(1)
  */
 
@@ -15,7 +20,9 @@ Slot::Slot(const string &day, const float &start, const float &duration, const s
 
 /**
  * @brief function to get the day of the slot
+ *
  * @return the day of the slot.
+ *
  * Time Complexity: O(1)
  */
 const string &Slot::getDay() const {
@@ -24,7 +31,9 @@ const string &Slot::getDay() const {
 
 /**
  * @brief function to get the start time of the slot
+ *
  * @return the start time of the slot.
+ *
  * Time Complexity: O(1)
  */
 
@@ -34,7 +43,9 @@ const float &Slot::getStart() const {
 
 /**
  * @brief function to get duration of the slot
+ *
  * @return the duration of the slot.
+ *
  * Time complexity O(1)
  */
 
@@ -44,7 +55,9 @@ const float &Slot::getDuration() const {
 
 /**
  * @brief function to get the type of the slot
+ *
  * @return the type of the slot.
+ *
  * Time complexity 0(1)
  */
 const string &Slot::getType() const {
@@ -53,7 +66,9 @@ const string &Slot::getType() const {
 
 /**
  * @brief function to get the end time of the slot.
+ *
  * @return the end time of the slot.
+ *
  * Time Complexity: O(1)
  */
 float Slot::getEndTime() const {
@@ -62,6 +77,7 @@ float Slot::getEndTime() const {
 
 /**
  * @brief Default constructor for the slot class.
+ *
  * Time complexity 0(1)
  */
 
@@ -75,8 +91,11 @@ Slot::Slot() {
 
 /**
  * @brief function to check if the current slot overlaps with another slot.
+ *
  * @param other The other slot to check for overlap.
+ *
  * @return True if the slots overlap, otherwise false.
+ *
  * Time Complexity: O(1)
  */
 bool Slot::overlaps(const Slot &other) const {

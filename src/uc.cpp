@@ -16,7 +16,9 @@ Uc::Uc(string ucId,int ucYear,int ucSemester,vector<Slot> ucSlot) {
 
 /**
  * @brief function to get te year of the UC
+ *
  * @return the year of the UC
+ *
  * Time complexity O(1)
  */
 int Uc::getUcYear() const{
@@ -25,7 +27,9 @@ int Uc::getUcYear() const{
 
 /**
  * @brief function to get the semester of the UC
+ *
  * @return the semester of the Uc.
+ *
  * Time complexity O(1)
  */
 int Uc::getUcSemester() const{
@@ -34,8 +38,11 @@ int Uc::getUcSemester() const{
 
 /**
  * @brief function to get the list of slots
+ *
  * @return vector of slot
+ *
  * Time complexity O(1)
+ *
  */
 vector<Slot> Uc::getUcSlot() const {
     return ucSlot;
@@ -43,7 +50,9 @@ vector<Slot> Uc::getUcSlot() const {
 
 /**
  * @brief function to get the identifier of the Uc
+ *
  * @return the identifier of the Uc
+ *
  * Time complexity O(1)
  */
 string Uc::getUcId() const {
@@ -52,7 +61,9 @@ string Uc::getUcId() const {
 
 /**
  * @brief function to add a Slot to the list of slots associated with the Uc
+ *
  * @param slot The Slot to add to the Uc
+ *
  * Time Complexity: O(1)
  */
 void Uc::addUcSlot(const Slot& slot){

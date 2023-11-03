@@ -67,6 +67,7 @@ bool Student::operator==(const Student &other) const{
 
 /**
  * @brief function to print the student information
+ *
  * Time Complexity O(1)
  */
 void Student::print_student() const{
@@ -75,6 +76,7 @@ void Student::print_student() const{
 
 /**
  * @brief function to print the classes that the student is enrolled
+ *
  * Time complexity O(n)
  */
 void Student::print_classes() const{
@@ -84,6 +86,7 @@ void Student::print_classes() const{
 }
 /**
  * @brief function to print the student information and their enrolled class
+ *
  * Time complexity O(1)
  */
 void Student::print() const{
@@ -94,7 +97,9 @@ void Student::print() const{
 
 /**
  * @brief function to get the list of ClassUC objects the student is enrolled in.
+ *
  * @return A vector of ClassUC objects.
+ *
  * Time complexity O(1)
  */
 vector<ClassUC> Student::getclassUC() const {
@@ -102,7 +107,9 @@ vector<ClassUC> Student::getclassUC() const {
 }
 /**
  * @brief function to get the schedule of the student, mapping ClassUC to a vector of slots.
+ *
  * @return A map of ClassUC to a vector of slots.
+ *
  * Time complexity O(1)
  */
 map<ClassUC, vector<Slot>> Student::getSchedule() const {
@@ -112,7 +119,9 @@ map<ClassUC, vector<Slot>> Student::getSchedule() const {
 
 /**
  * @brief function to remove the schedule for a specific ClassUC.
+ *
  * @param classUc the ClassUC for which to remove the schedule.
+ *
  * Time complexity O(1)
  */
 void Student::removeSchedule(const ClassUC& classUc){
@@ -120,8 +129,11 @@ void Student::removeSchedule(const ClassUC& classUc){
 }
 /**
  * @brief function to add the schedule for a specific ClassUC, mapping it to a vector of slots..
+ *
  * @param classUc the ClassUC for which to add the schedule.
+ *
  * @param slot the vector of slots to add to the schedule.
+ *
  * Time complexity O(1)
  */
 void Student::addSchedule(const ClassUC& classUc, const vector<Slot>& slot)  {
@@ -129,8 +141,11 @@ void Student::addSchedule(const ClassUC& classUc, const vector<Slot>& slot)  {
 }
 /**
  * @brief function to Compare function to sort slots for the student's schedule.
+ *
  * @param a The first slot.
+ *
  * @param b The second slot
+ *
  * Time complexity O(1)
  */
 bool slotSorter_student(const Slot& a,const Slot& b){
@@ -139,7 +154,9 @@ bool slotSorter_student(const Slot& a,const Slot& b){
 }
 /**
  * @brief function to remove the schedule for a specific ClassUC.
+ *
  * Time complexity  O(M * N * log N),  M is the number of elemets of schedule e N is the medium size medium of  vectors in schedule
+ *
  */
 
 void Student::sortSchedule() {
@@ -149,7 +166,9 @@ void Student::sortSchedule() {
 }
 /**
  * @brief function Set the list of ClassUC objects for the student.
+ *
  * @param classe The new list of ClassUC objects.
+ *
  * Time complexity O(1)
  */
 
