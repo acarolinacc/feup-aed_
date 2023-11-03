@@ -810,10 +810,10 @@ void Menu::ingressarNumaTurma() {
     ClassUC classUc=ClassUC(ucCode,classCode);
     Request request=Request(student,classUc,"EC");
     if(requestManager_.checkClassRequest(request)){
-        cout<<"Valid request"<<endl;
+        cout<<"Solicitação válida!"<<endl;
         requestManager_.addResquest(request);
     }
-    else{cout<<"Unvalid request, make other request"<<endl;}
+    else{cout<<"Solicitação inválida, faça outra solicitação."<<endl;}
 }
 
 
@@ -847,12 +847,12 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
             cout<<"Valid request"<<endl;
             requestManager_.addResquest(request2);
         }
-        else{ cout<<"Unvalid request, make other request"<<endl;}
+        else{ cout<<"Solicitação inválida, faça outra solicitação."<<endl;}
 
     }
 
     else{
-        cout<<"Unvalid request, make other request"<<endl;
+        cout<<"Solicitação inválida, faça outra solicitação."<<endl;
     }
 }
 void Menu::sairDeUmaTurma() {
@@ -875,7 +875,7 @@ void Menu::sairDeUmaTurma() {
         requestManager_.addResquest(request);
     }
     else{
-        cout<<"Unvalid request, make other request"<<endl;
+        cout<<"Solicitação inválida, faça outra solicitação."<<endl;
     }
 
 }
@@ -887,7 +887,7 @@ void Menu::visualizarHistoricoPedidos() {
 void Menu::processarPedidos() {
   DataManager newManager;
     if(requestManager_.getRequest().empty()){
-      cout<<"There is no request to process "<<endl;
+      cout<<"Não há pedidos para processar"<<endl;
   }
   else {
       requestManager_.requestProcess(newManager);
@@ -935,7 +935,7 @@ void Menu::undoPedidos() {
     DataManager newManager;
     requestManager_.processUndoRequest(newManager);
     management_=newManager;
-    cout <<"all changes were cancel"<<endl;
+    cout <<"Todas as alterações foram canceladas."<<endl;
 
 }
 
