@@ -147,7 +147,7 @@ void Menu::consultarHorarios() {
 //consultar o horário de um aluno
 /**
  * @brief funtion to consult schedule of the student
- * Time complexity O(n)
+ * Time complexity O(n) where n is the number of students in the system, as it may require searching for the student by UP number and name.
  */
 void Menu::consultarHorarioAluno() {
     int id;
@@ -186,7 +186,7 @@ void Menu::displayStudentSchedule(const Student &student) const{
 //consultar o horário de uma turma
 /**
  * @brief function to consult the schedule of a Turma
- * Time complexity O(n)
+ * Time complexity O(n) where n is the number of slots.
  */
 void Menu::consultarHorarioUCTurma() {
     string classCode;
