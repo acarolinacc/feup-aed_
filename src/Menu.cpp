@@ -163,7 +163,11 @@ void Menu::consultarHorarioAluno() {
     displayStudentSchedule(wanted);
 }
 
-
+/**
+ * @brief function to display thr schedule of a student
+ * @param student student object whose schedule should be displayed.
+ * Time complexity O(n), where n is the total number of slots in the schedule.
+ */
 void Menu::displayStudentSchedule(const Student &student) const{
     if (student.getCode() != 0) {
         for (const ClassUC& classUc : student.getclassUC()) {
@@ -208,9 +212,9 @@ void Menu::consultarHorarioUCTurma() {
 }
 
 /**
- *
- * @param ucS
- * @return
+ * @brief
+ * @param ucS slots associated with a class code.
+ * @return True if ucS is empty, or false if its not empty
  */
 bool Menu::isClassCodeValid(const vector<Slot>& ucS) const {
     return ucS.empty();
