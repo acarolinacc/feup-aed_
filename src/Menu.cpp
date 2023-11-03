@@ -821,25 +821,25 @@ void Menu::ingressarNumaTurma() {
 
 void Menu::mudarDeTurma() {//this type of request is 2 request in one:
     int upNumber;string studentName;
-    cout << "Digite o número UP do estudante: ";
+    cout << "Digite o número UP do estudante: "<<endl;
     cin >> upNumber;
-    cout <<"Digite o nome de estudante: ";
+    cout <<"Digite o nome de estudante: "<<endl;
     cin>>studentName;
     Student student=Student(upNumber,studentName);
     student=management_.findStudent(student);//students got the classes
     string ucCode,classCode;
-    cout << "Digite o código UC da turma da qual o estudante deseja sair: ";
+    cout << "Digite o código UC da turma da qual o estudante deseja sair: "<<endl;
     cin >> ucCode;
-    cout << "Digite o código da turma da qual o estudante deseja sair: ";
+    cout << "Digite o código da turma da qual o estudante deseja sair: "<<endl;
     cin >> classCode;
     ClassUC old_classUc=ClassUC(ucCode,classCode);
     Request request=Request(student,old_classUc,"SC");
     if(requestManager_.checkClassRequest(request)){
         cout<<"Valid request"<<endl;
         requestManager_.addResquest(request);
-        cout << "Digite o código UC da turma da qual o estudante deseja entrar: ";
+        cout << "Digite o código UC da turma da qual o estudante deseja entrar: "<<endl;
         cin >> ucCode;
-        cout << "Digite o código da turma da qual o estudante deseja entrar: ";
+        cout << "Digite o código da turma da qual o estudante deseja entrar: "<<endl;
         cin >> classCode;
         ClassUC new_classUc=ClassUC(ucCode,classCode);
         Request request2=Request(student,new_classUc,"EC");
@@ -889,7 +889,7 @@ void Menu::processarPedidos() {
       cout<<"There is no request to process "<<endl;
   }
   else {
-      requestManager_.requestProcess(newManager, true);
+      requestManager_.requestProcess(newManager);
       management_=newManager;
   }
 }
@@ -934,6 +934,7 @@ void Menu::undoPedidos() {
     DataManager newManager;
     requestManager_.processUndoRequest(newManager);
     management_=newManager;
+    cout <<"all changes were cancel"<<endl;
 
 }
 

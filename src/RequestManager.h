@@ -37,20 +37,19 @@ public:
     Student getStudentByUP(const int &upNumber);
     bool ingressarEmUC(const int &upNumber, const string &ucCode);
     bool sairDeUC(int upNumber, const string &ucCode);
-    void changeUndoUc(const Request& request,DataManager &manager);
+
 
 
     //processRequest
-    void requestProcess(DataManager &newManager,bool action);
+    void requestProcess(DataManager &newManager);
     bool UcProcess(const Request& request);
     bool changeCLass(const Request& request,DataManager &newManager);
     bool changeUC(const Request& request,DataManager &newManager);
     ClassUC findClassinUc(Student student, const string& ucCode);
 
     //processUndoRequest
-    bool undorequestUC(Request ucResquest);
-    bool undorequestClass(Request classResquest);
-    void undoRequest();
+    void undorequestUC(const Request& ucResquest,DataManager& newmanager);
+    void undorequestClass(const Request& classResquest,DataManager &newManager);
     void processUndoRequest(DataManager &newManager);
 
 

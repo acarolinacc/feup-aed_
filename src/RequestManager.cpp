@@ -79,7 +79,9 @@ bool RequestManager::checkIfBalanceOcuppation(const Request &request) {// tested
 bool RequestManager::checkIfTheSchedulesOverlap(const Request& request) {
     ClassUC requestclass=request.getClassUc();
     Student requestStudent=request.getStudent();
-    if(requestStudent.getSchedule().empty()){requestStudent=manager.findStudent(requestStudent);}//i dont think is need but is to make sure that this student have classes;
+    if(requestStudent.getSchedule().empty()){
+        requestStudent=manager.findStudent(requestStudent);//i dont think is need but is to make sure that this student have classes;
+    }
     requestStudent=manager.getStudentSchedule(requestStudent);
     vector<Slot> classShedule=manager.getClassUCSchedule(requestclass);
     requestclass=ClassUC(requestclass.getUcCode(),requestclass.getClassCode(),classShedule);
@@ -102,8 +104,6 @@ bool RequestManager::checkClassStudent(const Request &request) {//check if the s
     }
     return false;
 }
-
-
 
 
 
@@ -226,13 +226,13 @@ bool RequestManager::sairDeUC(const int upNumber, const string& ucCode) {//alter
     }
 
     ClassUC uc = getClassUCByCode(ucCode);
-    if (uc.getUcCode() == "") {
+    if (uc.getUcCode().empty()) {
         cout << "UC com código " << ucCode << " não encontrada." << endl;
         return false;
     }
 
     vector<ClassUC> studentClasses = student.getclassUC();
-    for(auto classuc:studentClasses){
+    for(const ClassUC& classuc:studentClasses){
         if(classuc.getUcCode()==ucCode){
            return true;
         }
@@ -315,9 +315,8 @@ bool RequestManager::changeUC(const Request &request,DataManager &newManager) {/
                     } else { d++; }
                 }
             } else if (request.getType()[0] == 'E') {
-                ClassUC newClassUC = findClassinUc(request.getStudent(),
-                                                   uccode);//search for the class that is compatible
-                if (newClassUC.getUcCode() == " ") {
+                ClassUC newClassUC = findClassinUc(request.getStudent(),uccode);//search for the class that is compatible
+                if (newClassUC.getUcCode().empty()) {
                     cout << "class not found" << endl;
                     return false;
                 } else {
@@ -338,77 +337,48 @@ bool RequestManager::changeUC(const Request &request,DataManager &newManager) {/
 }
 
 
-void RequestManager::requestProcess(DataManager &newManager,bool action) {//if the action is true the requestProcess,will process normal requests,if its true it will process undo requests
-    queue<Request> requests_action;
-    if(action){
-        requests_action=requests;
-    }
-    else{
-        requests_action=undoneRequests;
-    }
-    while (!requests_action.empty()) {
-        Request actual_request = requests_action.front();
-        if(actual_request.getType()[1]=='U' and (action or actual_request.getType()[0]=='S' )) {//UC request;
-            if(changeUC(actual_request,newManager)){
+void RequestManager::requestProcess(DataManager &newManager) {//if the action is true the requestProcess,will process normal requests,if its true it will process undo requests
+
+    while (!requests.empty()) {
+        Request actual_request = requests.front();
+        if (actual_request.getType()[1] == 'U') {//UC request;
+            if (changeUC(actual_request, newManager)) {
                 addAcceptRequest(actual_request);
             }
-            else{
+            else {
                 addDinedRequest(actual_request);
-                cout <<"Request was dined,Request info:"<<endl;
+                cout << "Request was dined,Request info:" << endl;
                 actual_request.printRequest();
             }
         }
-        else if(actual_request.getType()[1]=='U' and !action and actual_request.getType()[0]=='E'){
-            changeUndoUc(actual_request,manager);
-
-        }
-
-        else if(actual_request.getType()[1]=='C'){//Class request;
-            if(changeCLass(actual_request,newManager)){
+        else if(actual_request.getType()[1] == 'C') {//Class request;
+            if (changeCLass(actual_request, newManager)) {
                 addAcceptRequest(actual_request);
-            }
-            else{
+            } else {
                 addDinedRequest(actual_request);
-                cout <<"Request was dined,Request info:"<<endl;
+                cout << "Request was dined,Request info:" << endl;
                 actual_request.printRequest();
             }
-    }
-        else{//request need to be dined;
+        }
+        else {//request need to be dined;
             addDinedRequest(actual_request);
-            cout <<"Request was dined,Request info:"<<endl;
+            cout << "Request was dined,Request info:" << endl;
             actual_request.printRequest();
         }
-        requests_action.pop();//pop the request readed
+        requests.pop();//pop the request readed
 
-    }
-    if(action){
-        requests=requests_action;
-    }
-    else{
-        undoneRequests=requests_action;
     }
 }
-
-
-
 
 void RequestManager::processUndoRequest(DataManager &newManager) {
-    undoRequest();
-    requestProcess(newManager, false);
-}
-
-
-
-void  RequestManager::undoRequest(){
     while (!acceptRequest.empty()){
         Request lastAcceptedRequest = acceptRequest.front();
         if(lastAcceptedRequest.getType()[1]=='U'){
-            undorequestUC(lastAcceptedRequest);
-
+            undorequestUC(lastAcceptedRequest,newManager);
 
         }
         else if(lastAcceptedRequest.getType()[1]=='C'){
-            undorequestClass(lastAcceptedRequest);
+            undorequestClass(lastAcceptedRequest,newManager);
 
         }
         else{//if the undo request is not accepted
@@ -420,49 +390,56 @@ void  RequestManager::undoRequest(){
 }
 
 
-bool RequestManager::undorequestUC(Request ucResquest) {
-    if (ucResquest.getType() == "E") {
-        ucResquest.setType("SU");
-        //if (sairDeUC(ucResquest.getStudent().getCode(), ucResquest.getClassUc().getUcCode())) {
-        undoneRequests.push(ucResquest);
-        return true;
 
-    }
-    else if (ucResquest.getType() == "S") {
-        ucResquest.setType("EU");
-       // if (ingressarEmUC(ucResquest.getStudent().getCode(), ucResquest.getClassUc().getUcCode())) {
-       undoneRequests.push(ucResquest);
-       return true;
 
+void RequestManager::undorequestUC(const Request& ucResquest,DataManager& newmanager) {
+    set<Student> students=manager.getStudents();
+    auto it = students.find(ucResquest.getStudent());
+    Student copyStudent=*it;
+    vector<ClassUC>classes=ucResquest.getStudent().getclassUC();
+    string uccode = ucResquest.getClassUc().getUcCode();
+    if (ucResquest.getType()[0] == 'E') {//sair da uc que entrou
+        for (auto d = classes.begin(); d != it->getclassUC().end();) {
+            if (uccode == d->getUcCode()) {
+                classes.erase(d);
+                copyStudent.setCLassUc(classes);
+                break;
+            } else { d++; }
+        }
     }
-    cout<< "fail to undo_requestUc"<< endl;
-    return false;
+    else if (ucResquest.getType()[0] == 'S') {
+        copyStudent.addClassUC(ucResquest.getClassUc());
+    }
+    students.erase(it);
+    students.insert(copyStudent);       //i need to remove the student and then add it again
+    manager.setStudents(students);
+    newmanager=manager;
 }
 
-bool RequestManager::undorequestClass(Request classResquest){
-    if(classResquest.getType()[0]=='E'){
-        classResquest.setType("SC");
+
+void  RequestManager::undorequestClass(const Request& classResquest,DataManager &newManager){
+    set<Student> students = manager.getStudents();
+    auto it = students.find(classResquest.getStudent());
+    Student copyStudent=*it;
+    if(classResquest.getType()[0]=='E') {//neeed exit the class
+        vector<ClassUC> studentClasses = copyStudent.getclassUC();
+        for (auto d = studentClasses.begin(); d != studentClasses.end();) {
+            if (classResquest.getClassUc() == *d) {
+                studentClasses.erase(d);
+                copyStudent.setCLassUc(studentClasses);
+                break;
+            } else { d++; }
+        }
     }
     else if(classResquest.getType()[0]=='S'){
-        classResquest.setType("EC");
+            copyStudent.addClassUC(classResquest.getClassUc());
     }
-    if(checkClassRequest(classResquest)){
-        undoneRequests.push(classResquest);
-        return true;
-    }
-    cout<< "fail to undo_requestClass"<< endl;
-    return false;
+    students.erase(it);
+    students.insert(copyStudent);       //i need to remove the student and then add it again
+    manager.setStudents(students);
+    newManager=manager;
+
 }
 
-void RequestManager::changeUndoUc(const Request& request,DataManager &manager) {
-    set<Student> students=manager.getStudents();
-    if(request.getType()[0]=='E'){
-        auto it=students.find(request.getStudent());
-        Student copyStudent=*it;
-        copyStudent.addClassUC(request.getClassUc());
-        students.erase(it);
-        students.insert(copyStudent);
-        manager.setStudents(students);
-    }
-}
+
 
