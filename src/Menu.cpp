@@ -790,7 +790,7 @@ void Menu::processarPedidos() {
       cout<<"There is no request to process "<<endl;
   }
   else {
-      requestManager_.requestProcess(newManager);
+      requestManager_.processUndoRequest(newManager);
       management_=newManager;
   }
 }
