@@ -53,6 +53,14 @@ public:
     void processUndoRequest(DataManager &newManager);
 
 
+    //historico de pedidos
+    void showAllChanges();
+    int showrequests();
+    int showAccept();
+    int showDinie();
+    int showUndo();
+
+
 
 
 

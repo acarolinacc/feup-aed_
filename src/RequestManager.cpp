@@ -442,4 +442,67 @@ void  RequestManager::undorequestClass(const Request& classResquest,DataManager 
 }
 
 
+void RequestManager::showAllChanges() {
+    if(showrequests()==0 and showAccept()==0 and showDinie()==0 and showUndo()==0){
+        cout<< "There is no registed requests "<<endl;
+    }
+    else {
+        showUndo();
+        showrequests();
+        showAccept();
+        showDinie();
+    }
+
+}
+
+int RequestManager::showUndo() {
+    int c=0;
+    queue<Request>undorequests=undoneRequests;
+    while (!undorequests.empty()){
+        cout<< "Requests that were undone"<<endl;
+        undorequests.front().printRequest();
+        undorequests.pop();
+        c++;
+    }
+    return c;
+}
+
+int RequestManager::showrequests() {
+    int c=0;
+    queue<Request>copyRequests=requests;
+    while (!copyRequests.empty()){
+        cout<< "Non process requests"<<endl;
+        copyRequests.front().printRequest();
+        copyRequests.pop();
+        c++;
+    }
+    return c;
+}
+
+int RequestManager::showAccept() {
+    int c=0;
+    queue<Request>copyAccept=acceptRequest;
+    while (!copyAccept.empty()){
+        cout<< "Accepted requests"<<endl;
+        copyAccept.front().printRequest();
+        copyAccept.pop();
+        c++;
+    }
+
+
+    return c;
+}
+int RequestManager::showDinie() {
+    int c=0;
+    queue<Request>copydinied=deniedRequest;
+    while (!copydinied.empty()){
+        cout<< "Dinied requests"<<endl;
+        copydinied.front().printRequest();
+        copydinied.pop();
+        c++;
+    }
+
+    return c;
+}
+
 

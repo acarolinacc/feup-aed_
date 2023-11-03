@@ -880,6 +880,7 @@ void Menu::sairDeUmaTurma() {
 
 }
 void Menu::visualizarHistoricoPedidos() {
+    requestManager_.showAllChanges();
 
 }
 
