@@ -207,10 +207,19 @@ void Menu::consultarHorarioUCTurma() {
     }
 }
 
+/**
+ *
+ * @param ucS
+ * @return
+ */
 bool Menu::isClassCodeValid(const vector<Slot>& ucS) const {
     return ucS.empty();
 }
-
+/**
+ *
+ * @param ucS
+ * @param classUc
+ */
 void Menu::displayClassUcSchedule(const vector<Slot>& ucS,const ClassUC& classUc) const {
     cout << "UcCode:"<< classUc.getUcCode()<<"ClassCode:"<<classUc.getClassCode()<<  endl;
     for (const Slot& a : ucS) {
@@ -222,6 +231,9 @@ void Menu::displayClassUcSchedule(const vector<Slot>& ucS,const ClassUC& classUc
 
 
 //consultar o horário de uma UC
+/**
+ *
+ */
 void Menu::consultarHorarioUC() {
     string ucCode;
 
@@ -239,10 +251,21 @@ void Menu::consultarHorarioUC() {
 
 }
 
+/**
+ *
+ * @param turma
+ * @param ucCode
+ * @return
+ */
 bool Menu::correspondeCodigoUC(const ClassUC& turma, const string& ucCode) const {
     return compararIgnorandoMaiusculas(turma.getUcCode(), ucCode);
 }
 
+/**
+ *
+ * @param ucS
+ * @param ucCode
+ */
 void Menu::exibirHorarioDaUC(const vector<Slot> ucS,string ucCode) const {
     cout << ucCode<< endl;
     for (const Slot& horario : ucS) {
@@ -250,6 +273,12 @@ void Menu::exibirHorarioDaUC(const vector<Slot> ucS,string ucCode) const {
     }
 }
 
+/**
+ *
+ * @param str1
+ * @param str2
+ * @return
+ */
 bool Menu::compararIgnorandoMaiusculas(const string& str1, const string& str2) const {
     // Função para comparar strings ignorando maiúsculas e minúsculas
     return to_lower(str1) == to_lower(str2);
@@ -261,6 +290,9 @@ bool Menu::compararIgnorandoMaiusculas(const string& str1, const string& str2) c
 
 
 //consultar o horário de uma UC/Turma
+/**
+ *
+ */
 void Menu::consultarHorarioTurma() {
     string classcode;
 
@@ -278,7 +310,14 @@ void Menu::consultarHorarioTurma() {
 }
 
 
-
+/**
+ *
+ *
+ * @param turma
+ * @param uccode
+ * @param classcode
+ * @return
+ */
 bool Menu::correspondeCodigoUcETurma(const ClassUC& turma, const string& uccode, const string& classcode) const {
     return (compararIgnorandoMaiusculas(turma.getUcCode(), uccode) && compararIgnorandoMaiusculas(turma.getClassCode(), classcode));
 }
@@ -472,7 +511,10 @@ void Menu::consultarNumEstudantesInscritosN_UC(int n) {
     cout << "O numero de estudantes em pelo menos "<< n <<" UC's é: "  << x << endl;
 }
 
-
+/**
+ * @brief this function allows the user to choose between different options on the menu of the course
+ * Time complexity O(1)
+ */
 void Menu::consultarTurmaAnoCursoUC() {
 
     int opcao;
@@ -507,6 +549,11 @@ void Menu::consultarTurmaAnoCursoUC() {
     }
 
 }
+/**
+ * @brief function to consult the class of Uc
+ * Time complexity: O(n + m), where 'n' is the number of ClassUC objects retrieved for the specified UC, and 'm' is the time complexity of fetching the total number of students for that UC.
+ */
+
 void Menu::consultarTurmasUC() {
     string ucId;
     cout << "Por favor, insira o código da UC: " << endl;
@@ -527,7 +574,10 @@ void Menu::consultarTurmasUC() {
 
     std::cout << "Número de estudantes da UC: " << management_.numberStudentsUc(ucCode) << endl;
 }
-
+/**
+ * @brief function to consult Uc of a year
+ * Time complexity: O(n + m), where 'n' is the number of ClassUC objects retrieved for the specified year, and 'm' is the sum of the time complexity of fetching UC information for each ClassUC object.
+ */
 
 void Menu::consultarUcDeUmAno() {
     char ano;
@@ -553,7 +603,9 @@ void Menu::consultarUcDeUmAno() {
         cout << "-------------------------" << endl;
     }
 }
-
+/**
+ * @brief
+ */
 void Menu::consultarUcComXOcupações() {
     int x;
     cout << "Por favor, insira o valor de ocupação desejado: ";
