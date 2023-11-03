@@ -29,6 +29,11 @@ void Request::printRequest() {
     std::cout << "Type: " << type << std::endl;
 }
 
+void Request::setType(string newType) {
+    type=newType;
+
+}
+
 
 
 

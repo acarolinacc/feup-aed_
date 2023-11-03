@@ -39,7 +39,8 @@ void Menu::start() {
         cout << "║ 5. Histórico de Pedidos         ║" << endl;
         cout << "║    Pendentes                    ║" << endl;
         cout << "║ 6. Processar pedidos            ║" << endl;
-        cout << "║ 7. Sair do programa             ║" << endl;
+        cout << "║ 7. confirmar/cancelar alterações║" << endl;
+        cout << "║ 8. Sair do programa             ║" << endl;
         cout << "║                                 ║" << endl;
         cout << "╚═════════════════════════════════╝" << endl;
         cout << "Por favor, escolha uma opção (1-7): ";
@@ -65,13 +66,17 @@ void Menu::start() {
                 processarPedidos();
                 break;
             case 7:
+
+
+
+                case 8:
                 cout << "A sair do programa." << endl;
                 break;
             default:
                 cout << "Opção inválida. Por favor, escolha uma opção válida (1-7)." << endl;
                 break;
         }
-    } while (choice != 7);
+    } while (choice != 8);
 }
 
 void Menu::consultarHorarios() {
@@ -788,6 +793,53 @@ void Menu::processarPedidos() {
       requestManager_.requestProcess(newManager);
       management_=newManager;
   }
+}
+
+void Menu::confirmar_cancelar(){
+    int choice;
+    do {
+
+        cout << "╔═══════════════════════════════════╗" << endl;
+        cout << "║  Realizar Alterações nas turma    ║" << endl;
+        cout << "║                                   ║" << endl;
+        cout << "║ 1. Aceitar alterações             ║" << endl;
+        cout << "║ 2. Cancelar alterações            ║" << endl;
+        cout << "║ 3. Voltar ao menu principal       ║" << endl;
+        cout << "║                                   ║" << endl;
+        cout << "╚═══════════════════════════════════╝" << endl;
+        cout << "Por favor, escolha uma opção (1-3): ";
+        cin >> choice;
+
+
+        switch (choice) {
+            case 1:
+                escrver_alteraçoes();
+                break;
+            case 2:
+                undoPedidos();
+                break;
+            case 3:
+                cout << "A voltar ao menu principal." << endl;
+                break;
+            default:
+                cout << "Opção inválida. Por favor, escolha uma opção válida (1-4)." << endl;
+                break;
+        }
+
+    } while (choice!=3);
+}
+
+
+
+void Menu::undoPedidos() {
+    DataManager newManager;
+    requestManager_.processUndoRequest(newManager);
+    management_=newManager;
+
+}
+
+void Menu::escrver_alteraçoes() {
+
 }
 
 
