@@ -348,7 +348,7 @@ void RequestManager::requestProcess(DataManager &newManager,bool action) {//if t
     }
     while (!requests_action.empty()) {
         Request actual_request = requests_action.front();
-        if(actual_request.getType()[1]=='U') {//UC request;
+        if(actual_request.getType()[1]=='U' and (action or actual_request.getType()[0]=='S' )) {//UC request;
             if(changeUC(actual_request,newManager)){
                 addAcceptRequest(actual_request);
             }
@@ -358,6 +358,11 @@ void RequestManager::requestProcess(DataManager &newManager,bool action) {//if t
                 actual_request.printRequest();
             }
         }
+        else if(actual_request.getType()[1]=='U' and !action and actual_request.getType()[0]=='E'){
+            changeUndoUc(actual_request,manager);
+
+        }
+
         else if(actual_request.getType()[1]=='C'){//Class request;
             if(changeCLass(actual_request,newManager)){
                 addAcceptRequest(actual_request);
@@ -418,21 +423,19 @@ void  RequestManager::undoRequest(){
 bool RequestManager::undorequestUC(Request ucResquest) {
     if (ucResquest.getType() == "E") {
         ucResquest.setType("SU");
-        if (sairDeUC(ucResquest.getStudent().getCode(), ucResquest.getClassUc().getUcCode())) {
-            undoneRequests.push(ucResquest);
+        //if (sairDeUC(ucResquest.getStudent().getCode(), ucResquest.getClassUc().getUcCode())) {
+        undoneRequests.push(ucResquest);
+        return true;
 
-            return true;
-        }
     }
     else if (ucResquest.getType() == "S") {
         ucResquest.setType("EU");
-        if (ingressarEmUC(ucResquest.getStudent().getCode(), ucResquest.getClassUc().getUcCode())) {
-            undoneRequests.push(ucResquest);
+       // if (ingressarEmUC(ucResquest.getStudent().getCode(), ucResquest.getClassUc().getUcCode())) {
+       undoneRequests.push(ucResquest);
+       return true;
 
-            return true;
-        }
     }
-
+    cout<< "fail to undo_requestUc"<< endl;
     return false;
 }
 
@@ -447,22 +450,19 @@ bool RequestManager::undorequestClass(Request classResquest){
         undoneRequests.push(classResquest);
         return true;
     }
+    cout<< "fail to undo_requestClass"<< endl;
     return false;
 }
 
-void RequestManager::restore(const Request &request) {
-    if (request.getType() == "E") {
-        if (!undoneRequests.empty() && undoneRequests.front() == request) {
-            Request undoneRequest = undoneRequests.front();
-            sairDeUC(undoneRequest.getStudent().getCode(), undoneRequest.getClassUc().getUcCode());
-            undoneRequests.pop();
-        }
-    } else if (request.getType() == "S") {
-
-        if (!undoneRequests.empty() && undoneRequests.front() == request) {
-            Request undoneRequest = undoneRequests.front();
-            ingressarEmUC(undoneRequest.getStudent().getCode(), undoneRequest.getClassUc().getUcCode());
-            undoneRequests.pop();
-        }
+void RequestManager::changeUndoUc(const Request& request,DataManager &manager) {
+    set<Student> students=manager.getStudents();
+    if(request.getType()[0]=='E'){
+        auto it=students.find(request.getStudent());
+        Student copyStudent=*it;
+        copyStudent.addClassUC(request.getClassUc());
+        students.erase(it);
+        students.insert(copyStudent);
+        manager.setStudents(students);
     }
 }
+

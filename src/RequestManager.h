@@ -8,6 +8,7 @@
 #include <algorithm>
 class RequestManager {
 public:
+
     RequestManager(DataManager &manager);
     RequestManager();
     void setManager(DataManager manager);
@@ -32,17 +33,22 @@ public:
     Student getStudentByUP(const int &upNumber);
     bool ingressarEmUC(const int &upNumber, const string &ucCode);
     bool sairDeUC(int upNumber, const string &ucCode);
+    void changeUndoUc(const Request& request,DataManager &manager);
 
+
+    //processRequest
     void requestProcess(DataManager &newManager,bool action);
     bool UcProcess(const Request& request);
     bool changeCLass(const Request& request,DataManager &newManager);
     bool changeUC(const Request& request,DataManager &newManager);
     ClassUC findClassinUc(Student student, const string& ucCode);
+
+    //processUndoRequest
     bool undorequestUC(Request ucResquest);
     bool undorequestClass(Request classResquest);
     void undoRequest();
     void processUndoRequest(DataManager &newManager);
-    void restore(const Request& request);
+
 
 
 

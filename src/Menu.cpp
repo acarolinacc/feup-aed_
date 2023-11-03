@@ -66,10 +66,9 @@ void Menu::start() {
                 processarPedidos();
                 break;
             case 7:
-
-
-
-                case 8:
+                confirmar_cancelar();
+                break;
+            case 8:
                 cout << "A sair do programa." << endl;
                 break;
             default:
@@ -635,6 +634,17 @@ void Menu::ingressarEmUC() {
     }
 }
 
+ClassUC findCLassByuc(Student student,string uc_code,DataManager manager){
+    ClassUC null;
+    student=manager.findStudent(student);
+    for(ClassUC classuc:student.getclassUC()){
+        if(classuc.getUcCode()==uc_code){
+            return classuc;
+        }
+
+    }
+    return  null;
+}
 
 void Menu::sairDeUC() {
     int upNumber;
@@ -648,7 +658,8 @@ void Menu::sairDeUC() {
     cin >> ucCode;
     Student student=Student(upNumber,studentName);
     student=management_.findStudent(student);//students got the classes
-    ClassUC classUc=ClassUC(ucCode,"");
+
+    ClassUC classUc= findCLassByuc(student,ucCode,management_); //just to be easier to undo the uc request
     Request request=Request(student,classUc,"SU");
     if (requestManager_.sairDeUC(upNumber, ucCode)) {
         cout << "Pedido aceite com sucesso ." << endl;
@@ -790,7 +801,7 @@ void Menu::processarPedidos() {
       cout<<"There is no request to process "<<endl;
   }
   else {
-      requestManager_.processUndoRequest(newManager);
+      requestManager_.requestProcess(newManager, true);
       management_=newManager;
   }
 }
