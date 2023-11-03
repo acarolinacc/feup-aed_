@@ -6,6 +6,10 @@
 #include "student.h"
 #include "Request.h"
 #include <algorithm>
+
+/**
+ * @brief function to manage the requests
+ */
 class RequestManager {
 public:
     RequestManager(DataManager &manager);

@@ -12,7 +12,9 @@
 #include <map>
 #include <algorithm>
 using namespace std;
-
+/**
+ * @brief class for students representation
+ */
 class Student {
 public:
     Student();
@@ -33,6 +35,7 @@ public:
     void print()const;
     void sortSchedule();
     vector<ClassUC>getclassUC() const;
+
 private:
     int code;
     string name;

@@ -4,6 +4,9 @@
 #include "student.h"
 #include "ClassUC.h"
 
+/**
+ * @brief function to register the requests made by the students
+ */
 class Request {
 public:
     Request(Student &student,ClassUC &wantedClass,string type);

@@ -4,15 +4,30 @@
 
 #include <iostream>
 
-
+/**
+ * @brief Constructor for the Menu class
+ * @param management
+ * Time Complexity: O(1)
+ */
 Menu::Menu(DataManager& management) : management_(management), requestManager_(management) {
 }
 
+/**
+ * @brief set the DataManager for the Menu
+ * @param management reference to the DataManager object
+ * Time Complexity O(1)
+ */
 
 void Menu::setManagement(const DataManager &management) {
     management_ = management;
 }
 
+/**
+ * @brief function to convert string to lowercase
+ * @param str input string
+ * @return The input string converted to lowercase
+ * Time Complexity: O(n), where n is the length of the input string.
+ */
 string to_lower (string str)
 {
     for(auto& elem : str)
@@ -20,7 +35,10 @@ string to_lower (string str)
     return str;
 }
 
-
+/**
+ * @brief Start the main menu loop
+ * Time Complexity: O(n), where n is the number of iterations in the main menu loop.
+ */
 void Menu::start() {
     management_.readStudentClasses();
     management_.readClasses();
@@ -74,6 +92,10 @@ void Menu::start() {
     } while (choice != 7);
 }
 
+/**
+ * @brief Display the menu to consult schedules
+ * Time Complexity: O(n), where n is the number of iterations in the schedule consultation menu loop.
+ */
 void Menu::consultarHorarios() {
     int choice;
     do {
@@ -118,6 +140,10 @@ void Menu::consultarHorarios() {
 
 
 //consultar o horário de um aluno
+/**
+ * @brief funtion to consult schedule of the student
+ * Time complexity O(n)
+ */
 void Menu::consultarHorarioAluno() {
     int id;
     string name;
@@ -131,6 +157,8 @@ void Menu::consultarHorarioAluno() {
     Student wanted = management_.getStudentSchedule(student);
     displayStudentSchedule(wanted);
 }
+
+
 void Menu::displayStudentSchedule(const Student &student) const{
     if (student.getCode() != 0) {
         for (const ClassUC& classUc : student.getclassUC()) {
@@ -151,6 +179,10 @@ void Menu::displayStudentSchedule(const Student &student) const{
 
 
 //consultar o horário de uma turma
+/**
+ * @brief function to consult the schedule of a Turma
+ * Time complexity O(n)
+ */
 void Menu::consultarHorarioUCTurma() {
     string classCode;
     string ucCode;

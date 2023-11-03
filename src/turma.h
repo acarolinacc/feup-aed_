@@ -4,8 +4,11 @@
 #include <string>
 #include <list>
 #include "slot.h"
-
 using namespace std;
+/**
+ * @brief class to show the class of a student
+ */
+
 
 class Turma {
 public:

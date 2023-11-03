@@ -5,6 +5,9 @@
 #include "DataManager.h"
 #include "RequestManager.h"
 
+/**
+ * @brief function for user interface to show the menu
+ */
 class Menu {
 public:
     void setManagement(const DataManager &management);
