@@ -13,6 +13,7 @@ public:
      Student getStudent() const;
      ClassUC getClassUc() const;
      string getType() const;
+     void setType(string newType);
      void printRequest();
 
     bool operator==(const Request& other) const {

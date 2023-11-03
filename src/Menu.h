@@ -79,15 +79,16 @@ private:
     void ingressarNumaTurma();
     void sairDeUmaTurma();
     void mudarDeTurma();
-
+    void confirmar_cancelar();
+    void escrver_alteraçoes();
 
 
 
 
 
     void visualizarHistoricoPedidos();
-
     void processarPedidos();
+    void undoPedidos();
 };
 
 #endif

@@ -338,9 +338,16 @@ bool RequestManager::changeUC(const Request &request,DataManager &newManager) {/
 }
 
 
-void RequestManager::requestProcess(DataManager &newManager) {
-    while (!requests.empty()) {
-        Request actual_request = requests.front();
+void RequestManager::requestProcess(DataManager &newManager,bool action) {//if the action is true the requestProcess,will process normal requests,if its true it will process undo requests
+    queue<Request> requests_action;
+    if(action){
+        requests_action=requests;
+    }
+    else{
+        requests_action=undoneRequests;
+    }
+    while (!requests_action.empty()) {
+        Request actual_request = requests_action.front();
         if(actual_request.getType()[1]=='U') {//UC request;
             if(changeUC(actual_request,newManager)){
                 addAcceptRequest(actual_request);
@@ -366,44 +373,82 @@ void RequestManager::requestProcess(DataManager &newManager) {
             cout <<"Request was dined,Request info:"<<endl;
             actual_request.printRequest();
         }
-        requests.pop();//pop the request readed
+        requests_action.pop();//pop the request readed
 
+    }
+    if(action){
+        requests=requests_action;
+    }
+    else{
+        undoneRequests=requests_action;
     }
 }
 
-bool RequestManager::canundo(const Request &request) {
 
-    if (!requests.empty()) {
-        if (requests.front() == request) {
+
+
+void RequestManager::processUndoRequest(DataManager &newManager) {
+    undoRequest();
+    requestProcess(newManager, false);
+}
+
+
+
+void  RequestManager::undoRequest(){
+    while (!acceptRequest.empty()){
+        Request lastAcceptedRequest = acceptRequest.front();
+        if(lastAcceptedRequest.getType()[1]=='U'){
+            undorequestUC(lastAcceptedRequest);
+
+
+        }
+        else if(lastAcceptedRequest.getType()[1]=='C'){
+            undorequestClass(lastAcceptedRequest);
+
+        }
+        else{//if the undo request is not accepted
+
+            deniedRequest.push(lastAcceptedRequest);
+        }
+        acceptRequest.pop();
+    }
+}
+
+
+bool RequestManager::undorequestUC(Request ucResquest) {
+    if (ucResquest.getType() == "E") {
+        ucResquest.setType("SU");
+        if (sairDeUC(ucResquest.getStudent().getCode(), ucResquest.getClassUc().getUcCode())) {
+            undoneRequests.push(ucResquest);
+
             return true;
         }
     }
-    return false;
+    else if (ucResquest.getType() == "S") {
+        ucResquest.setType("EU");
+        if (ingressarEmUC(ucResquest.getStudent().getCode(), ucResquest.getClassUc().getUcCode())) {
+            undoneRequests.push(ucResquest);
 
+            return true;
+        }
+    }
+
+    return false;
 }
 
-
-bool RequestManager::undorequest() {
-    if (!acceptRequest.empty()) {
-        Request lastAcceptedRequest = acceptRequest.front();
-        if (lastAcceptedRequest.getType() == "E") {
-            if (sairDeUC(lastAcceptedRequest.getStudent().getCode(), lastAcceptedRequest.getClassUc().getUcCode())) {
-                undoneRequests.push(lastAcceptedRequest);
-                acceptRequest.pop();
-                return true;
-            }
-        } else if (lastAcceptedRequest.getType() == "S") {
-            if (ingressarEmUC(lastAcceptedRequest.getStudent().getCode(), lastAcceptedRequest.getClassUc().getUcCode())) {
-                undoneRequests.push(lastAcceptedRequest);
-                acceptRequest.pop();
-                return true;
-            }
-        }
+bool RequestManager::undorequestClass(Request classResquest){
+    if(classResquest.getType()[0]=='E'){
+        classResquest.setType("SC");
+    }
+    else if(classResquest.getType()[0]=='S'){
+        classResquest.setType("EC");
+    }
+    if(checkClassRequest(classResquest)){
+        undoneRequests.push(classResquest);
+        return true;
     }
     return false;
 }
-
-
 
 void RequestManager::restore(const Request &request) {
     if (request.getType() == "E") {

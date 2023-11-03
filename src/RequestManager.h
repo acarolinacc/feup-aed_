@@ -37,14 +37,17 @@ public:
     bool ingressarEmUC(const int &upNumber, const string &ucCode);
     bool sairDeUC(int upNumber, const string &ucCode);
 
-    void requestProcess(DataManager &newManager);
+    void requestProcess(DataManager &newManager,bool action);
     bool UcProcess(const Request& request);
     bool changeCLass(const Request& request,DataManager &newManager);
     bool changeUC(const Request& request,DataManager &newManager);
     ClassUC findClassinUc(Student student, const string& ucCode);
-    bool undorequest();
+    bool undorequestUC(Request ucResquest);
+    bool undorequestClass(Request classResquest);
+    void undoRequest();
+    void processUndoRequest(DataManager &newManager);
     void restore(const Request& request);
-    bool canundo(const Request &request);
+
 
 
 
