@@ -7,7 +7,7 @@
 #include <algorithm>
 
 /**
- * @brief class to show tha class uc
+ * @brief class to show the class uc
  */
 class ClassUC {
 public:
