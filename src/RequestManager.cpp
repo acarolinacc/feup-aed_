@@ -461,7 +461,7 @@ bool RequestManager::changeCLass(const Request& request,DataManager &newManager)
             newManager=manager;
             return true;
         } else {
-            cout << "student not found" << endl;
+            cout << "Estudante nao encontrado" << endl;
             return false;
         }
     }
@@ -522,7 +522,7 @@ bool RequestManager::changeUC(const Request &request,DataManager &newManager) {/
             } else if (request.getType()[0] == 'E') {
                 ClassUC newClassUC = findClassinUc(request.getStudent(),uccode);//search for the class that is compatible
                 if (newClassUC.getUcCode().empty()) {
-                    cout << "class not found" << endl;
+                    cout << "Turma não encontrada" << endl;
                     return false;
                 } else {
                     copyStudent.addClassUC(newClassUC);
@@ -534,7 +534,7 @@ bool RequestManager::changeUC(const Request &request,DataManager &newManager) {/
             newManager=manager;
             return true;
         } else {
-            cout << "student not found" << endl;
+            cout << "Estudante nao encontrado" << endl;
             return false;
         }
     }
@@ -558,7 +558,7 @@ void RequestManager::requestProcess(DataManager &newManager) {//if the action is
             }
             else {
                 addDinedRequest(actual_request);
-                cout << "Request was dined,Request info:" << endl;
+                cout << "Pedido foi negado, informação do pedido:" << endl;
                 actual_request.printRequest();
             }
         }
@@ -567,13 +567,13 @@ void RequestManager::requestProcess(DataManager &newManager) {//if the action is
                 addAcceptRequest(actual_request);
             } else {
                 addDinedRequest(actual_request);
-                cout << "Request was dined,Request info:" << endl;
+                cout << "Pedido foi negado, informação do pedido:" << endl;
                 actual_request.printRequest();
             }
         }
         else {//request need to be dined;
             addDinedRequest(actual_request);
-            cout << "Request was dined,Request info:" << endl;
+            cout << "Pedido foi negado, informação do pedido:" << endl;
             actual_request.printRequest();
         }
         requests.pop();//pop the request readed
@@ -681,7 +681,7 @@ void  RequestManager::undorequestClass(const Request& classResquest,DataManager 
  * Time Complexity: O(n), where 'n' is the number of requests and undo requests
  */
 void RequestManager::showAllChanges() {
-
+   
         showUndo();
         showrequests();
         showAccept();
@@ -700,6 +700,9 @@ int RequestManager::showUndo() {
     int c=0;
     queue<Request>undorequests=undoneRequests;
     while (!undorequests.empty()){
+
+        cout<< "Pedidos que foram desfeitos"<<endl;
+
         cout<< "Pedidos que foram cancelados"<<endl;
         undorequests.front().printRequest();
         undorequests.pop();
@@ -722,6 +725,7 @@ int RequestManager::showrequests() {
     int c=0;
     queue<Request>copyRequests=requests;
     while (!copyRequests.empty()){
+        cout<< "Pedidos não processados"<<endl;
         cout<< "Pedidos para serem processados"<<endl;
         copyRequests.front().printRequest();
         copyRequests.pop();
@@ -768,6 +772,7 @@ int RequestManager::showDinie() {
     int c=0;
     queue<Request>copydinied=deniedRequest;
     while (!copydinied.empty()){
+        cout<< "Pedidos negados"<<endl;
         cout<< "Pedidos rejeitados"<<endl;
         copydinied.front().printRequest();
         copydinied.pop();

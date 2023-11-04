@@ -156,6 +156,6 @@ void ClassUC::setSlots(vector<Slot> slots) {
  * Time complexity O(1)
  */
 void ClassUC::print() {
-    std::cout << "UC Code: " << ucCode_ << std::endl;
-    std::cout << "Class Code: " << classCode_ << std::endl;
+    std::cout << "Codigo da UC: " << ucCode_ << std::endl;
+    std::cout << "Codigo da Turma: " << classCode_ << std::endl;
 }

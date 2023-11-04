@@ -30,7 +30,7 @@ void DataManager::setStudents(set<Student> newStudents) {
 void DataManager::readStudentClasses(){
     ifstream file("../data/students_classes.csv");
     if (!file.is_open()) {
-        cout << "erro a abrir fichiro"<< endl;
+        cout << "erro ao abrir o ficheiro"<< endl;
         return;
     }
     string line;
@@ -135,7 +135,7 @@ void DataManager::readClasses() {
         }
 
     }
-    else {cout << "Didn't manage to open classes.csv." << endl; }
+    else {cout << "Não foi possivel abrir o ficheiro classes.csv." << endl; }
 
 
 }
@@ -461,7 +461,7 @@ Student DataManager::getStudentSchedule(const Student& student) {
     auto it=students.find(student);
     Student wanted;
     if(it==students.end()){
-        cout<<"student not found"<<endl;}
+        cout<<"Estudante nao encontrado"<<endl;}
     else{
        wanted=*it;
     }

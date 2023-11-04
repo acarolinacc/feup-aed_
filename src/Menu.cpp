@@ -219,7 +219,7 @@ void Menu::consultarHorarioUCTurma() {
     ClassUC classUc1=ClassUC(ucCode,classCode);
     const vector<Slot>& ucS = management_.getClassUCSchedule(classUc1);
     if (isClassCodeValid(ucS)) {
-        cout << "That's not a valid input." << endl;}
+        cout << "Essa não é uma entrada válida" << endl;}
     else{
         cout << ucS.size();
         displayClassUcSchedule(ucS,classUc1);
@@ -249,7 +249,7 @@ bool Menu::isClassCodeValid(const vector<Slot>& ucS) const {
  *
  */
 void Menu::displayClassUcSchedule(const vector<Slot>& ucS,const ClassUC& classUc) const {
-    cout << "UcCode:"<< classUc.getUcCode()<<"ClassCode:"<<classUc.getClassCode()<<  endl;
+    cout << "Codigo da UC:"<< classUc.getUcCode()<<"Codigo da turma:"<<classUc.getClassCode()<<  endl;
     for (const Slot& a : ucS) {
         cout << '\t' << a.getDay() << ' ' << a.getStart() << ' ' << a.getDuration() << ' ' << a.getType() << '\n';
     }
@@ -348,7 +348,7 @@ void Menu::consultarHorarioTurma() {
     cout << endl;
     const vector<Slot>& ucS = management_.getClassSchedule(classcode);
     if (isClassCodeValid(ucS)) {
-        cout << "That's not a valid input." << endl;}
+        cout << "Essa não é uma entrada válida." << endl;}
     else{
         displayClassSchedule(ucS,classcode);
     }
@@ -384,7 +384,7 @@ bool Menu::correspondeCodigoUcETurma(const ClassUC& turma, const string& uccode,
  * Time complexity O(n), where 'n' is the number of Slot objects in the ucS
  */
 void Menu::displayClassSchedule(const vector<Slot>& ucS,const string& turma) const {
-    cout << "class code:"<<turma << endl;
+    cout << "Codigo da turma:"<<turma << endl;
     for (const Slot& horario : ucS) {
         cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
     }
@@ -600,11 +600,11 @@ void Menu::consultarAlunosPorAno() {
 
 
 /**
- * @brief function to consult and display the number of students registered in at least 'n' UCs.
+ * @brief function to consult and display the number of students registered in at least 'n' UCs
  *
- * @param n The minimum number of UCs a student must be registered in to be counted.
+ * @param n The minimum number of UCs a student must be registered in to be counted
  *
- * Time complexity O(n), where 'n' is the number of students in the system.
+ * Time complexity O(n), where 'n' is the number of students in the system
  */
 void Menu::consultarNumEstudantesInscritosN_UC(int n) {
     // consultar o número de estudantes inscritos em pelo menos n UCs.
@@ -999,7 +999,7 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
         ClassUC new_classUc=ClassUC(ucCode,classCode);
         Request request2=Request(student,new_classUc,"EC");
         if(requestManager_.checkClassRequest(request2)){
-            cout<<"Valid request"<<endl;
+            cout<<"Pedido valido"<<endl;
             requestManager_.addResquest(request2);
         }
         else{ cout<<"Solicitação inválida, faça outra solicitação."<<endl;}

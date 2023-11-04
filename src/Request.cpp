@@ -58,11 +58,12 @@ string Request::getType() const {
  * Time complexity O(1)
  */
 void Request::printRequest() {
-    std::cout << "Request Details:" << std::endl;
+    std::cout << "Detalhes do pedido:" << std::endl;
+    std::cout << "Estudante:" << std::endl;
     student.print();
-    std::cout << "Wanted Class: " << std::endl;
+    std::cout << "Turma Desejada: " << std::endl;
     wantedClass.print();
-    std::cout << "Type: " << type << std::endl;
+    std::cout << "Tipo: " << type << std::endl;
 }
 
 /**
