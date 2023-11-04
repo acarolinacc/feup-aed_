@@ -546,15 +546,19 @@ void DataManager::sortStudent(vector<Student>& students, string type) {
 
 vector<Student> DataManager::studentYear(char year) {
     vector<Student> students_class;
+    bool verify= false;
     auto it=students.begin();
     while(it!=students.end()) {
         int size_class = it->getclassUC().size();
         for (int i = 0; i < size_class; i++) {
             if (it->getclassUC()[i].getClassCode()[0]==year) {
-                students_class.push_back(*it);
+                verify= true;
+                break;
             }
-
         }
+        if(verify== true){
+        students_class.push_back(*it);}
+        verify=false;
         it++;
     }
     return students_class;
