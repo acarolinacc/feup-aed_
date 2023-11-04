@@ -131,7 +131,7 @@ bool slotSorter(const Slot& a,const Slot& b){
 /**
  * @brief this function sort the schedule of time slots in ascending order of start times
  *
- * Time complexity O(n*log(n)), where 'n' is the size of the 'schedule'
+ * Time complexity O(n log n), where 'n' is the size of the 'schedule'
  */
 void ClassUC::sortShedule() {
     sort(schedule_.begin(),schedule_.end(), slotSorter);

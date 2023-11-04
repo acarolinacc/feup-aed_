@@ -157,6 +157,7 @@ void DataManager::addStudent(const Student& student) {
  * @brief this function add a ClassUC object to the DataManager's vector of UCs
  *
  * @param classUC The ClassUC object to be added
+ *
  * Time complexity  is O(1)
  */
 void DataManager::addClassUC(const ClassUC& classUC) {
@@ -287,7 +288,7 @@ vector<ClassUC> DataManager::ucWithXStudents(int x){
  *
  * @return A sorted vector of ClassUC objects
  *
- * Time complexity O(K * log(K)), where K is the number of ClassUC objects in the `allUC_`
+ * Time complexity O(n log n), where 'n' is the number of ClassUC objects in the `allUC_`
  */
 vector<ClassUC> DataManager::sortAllU_occupation(){
     vector<ClassUC> sortedAlluc=allUC_;
@@ -328,7 +329,7 @@ bool DataManager::sorter(const ClassUC& a, const ClassUC& b){
  *
  * @return A sorted vector of ClassUC objects
  *
- * Time complexity  O(n * log(n)), where 'n' is the number of ClassUC objects in the `allUC_` vector
+ * Time complexity  O(n  log n), where 'n' is the number of ClassUC objects in the `allUC_` vector
  */
 vector<ClassUC> DataManager::sortAllU(){
     vector<ClassUC> sortedAlluc=allUC_;

@@ -232,6 +232,8 @@ void Menu::consultarHorarioUCTurma() {
  * @param ucS slots associated with a class code.
  *
  * @return True if ucS is empty, or false if its not empty
+ *
+ * Time complexity O(1)
  */
 bool Menu::isClassCodeValid(const vector<Slot>& ucS) const {
     return ucS.empty();
@@ -319,7 +321,7 @@ void Menu::exibirHorarioDaUC(const vector<Slot> ucS,string ucCode) const {
  *
  * @return True if the two strings are equal, false otherwise.
  *
- * Time complexity of this function is O(n), where 'n' is the length of the longer of the two input strings.
+ * Time complexity  O(n), where 'n' is the length of the longer of the two input strings.
  */
 bool Menu::compararIgnorandoMaiusculas(const string& str1, const string& str2) const {
     // Função para comparar strings ignorando maiúsculas e minúsculas
@@ -355,7 +357,7 @@ void Menu::consultarHorarioTurma() {
 
 
 /**
- * @brief Checks if the given ClassUC corresponds to the specified UC code and class code
+ * @brief this function checks if the given ClassUC corresponds to the specified UC code and class code
  *
  * @param turma The ClassUC object to compare
  *
@@ -536,7 +538,7 @@ void Menu::consultarAlunosPorTurma() {
 }
 
 /**
- * @brief Check if a student belongs to a specific UC and class within that Uc.
+ * @brief this function checks if a student belongs to a specific UC and class within that Uc.
  *
  * @param student The student to check for enrollment.
  *
@@ -844,9 +846,11 @@ void Menu::ingressarEmUC() {
 /**
  * @brief this function finds and return a ClassUC object for a given UC code associated with a student.
  *
- * @param student The student for whom to find the ClassUC object.
- * @param uc_code The UC code to search for.
- * @param manager The DataManager containing the data.
+ * @param student The student for whom to find the ClassUC object
+ *
+ * @param uc_code The UC code to search for
+ *
+ * @param manager The DataManager containing the data
  *
  * @return A ClassUC object with the matching UC code, or a null ClassUC object if not found
  *
@@ -865,7 +869,7 @@ ClassUC findCLassByuc(Student student,string uc_code,DataManager manager){
 }
 
 /**
- * @brief  this function allows a student to leave  a specific UC
+ * @brief this function allows a student to leave  a specific UC
  *
  * Time complexity O(1)
  */
@@ -1063,7 +1067,7 @@ void Menu::processarPedidos() {
 }
 
 /**
- * @brief Allows confirming or canceling alterations to classes.
+ * @brief this function allows confirming or canceling alterations to classes.
  *
  * Time complexity O(1)
  */
@@ -1103,7 +1107,7 @@ void Menu::confirmar_cancelar(){
 
 
 /**
- * @brief Undoes all pending changes to the class schedule.
+ * @brief this function undoes all pending changes to the class schedule.
  *
  *  Time complexity: O(n) where 'n' is the number of requests processed  of pending changes
  */
