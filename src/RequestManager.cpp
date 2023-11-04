@@ -682,7 +682,7 @@ void  RequestManager::undorequestClass(const Request& classResquest,DataManager 
  */
 void RequestManager::showAllChanges() {
     if(showrequests()==0 and showAccept()==0 and showDinie()==0 and showUndo()==0){
-        cout<< "There is no registed requests "<<endl;
+        cout<< "Nao ha pedidos registrados "<<endl;
     }
     else {
         showUndo();
@@ -704,10 +704,13 @@ int RequestManager::showUndo() {
     int c=0;
     queue<Request>undorequests=undoneRequests;
     while (!undorequests.empty()){
-        cout<< "Requests that were undone"<<endl;
+        cout<< "Pedidos que foram cancelados"<<endl;
         undorequests.front().printRequest();
         undorequests.pop();
         c++;
+    }
+    if(c==0){
+        cout<<"Nao ha pedidos cancelados"<<endl;
     }
     return c;
 }
@@ -723,11 +726,13 @@ int RequestManager::showrequests() {
     int c=0;
     queue<Request>copyRequests=requests;
     while (!copyRequests.empty()){
-        cout<< "Non process requests"<<endl;
+        cout<< "Pedidos para serem processados"<<endl;
         copyRequests.front().printRequest();
         copyRequests.pop();
         c++;
     }
+    if(c==0){
+        cout<<"Não ha pedidos para serem processados"<<endl;}
     return c;
 }
 
@@ -744,11 +749,13 @@ int RequestManager::showAccept() {
     int c=0;
     queue<Request>copyAccept=acceptRequest;
     while (!copyAccept.empty()){
-        cout<< "Accepted requests"<<endl;
+        cout<< "Pedidos aceites"<<endl;
         copyAccept.front().printRequest();
         copyAccept.pop();
         c++;
     }
+    if(c==0){
+        cout<<"Não ha pedidos aceites"<<endl;}
 
 
     return c;
@@ -765,11 +772,13 @@ int RequestManager::showDinie() {
     int c=0;
     queue<Request>copydinied=deniedRequest;
     while (!copydinied.empty()){
-        cout<< "Dinied requests"<<endl;
+        cout<< "Pedidos rejeitados"<<endl;
         copydinied.front().printRequest();
         copydinied.pop();
         c++;
     }
+    if(c==0){
+        cout<<"Não ha pedidos rejeitados"<<endl;}
 
     return c;
 }
