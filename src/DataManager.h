@@ -13,7 +13,9 @@
 #include <map>
 class DataManager{
 
-
+/**
+ * @brief the DataManager class manages data related to students and Ucs.
+ */
 public:
     //DataManager();
     set<Student> getStudents() ;

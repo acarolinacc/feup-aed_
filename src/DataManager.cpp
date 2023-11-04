@@ -2,15 +2,31 @@
 #include "DataManager.h"
 #include "ClassUC.h"
 
-
+/**
+ * @brief this function get a set of all the students in the DataManager
+ *
+ * Time complexity O(n), where 'n' is the number of students in the DataManager
+ */
 set<Student> DataManager::getStudents() {
     return students;
 }
+/**
+ * @brief Set the students in the DataManager to a new set of students
+ *
+ * @param newStudents The new set of students to be stored in the DataManager
+ *
+ * Time complexity O(n), where 'n' is the number of students in the new set
+ */
+
 void DataManager::setStudents(set<Student> newStudents) {
     students=newStudents;
 }
 
-
+/**
+ * @brief this function reads student class information and update the DataManager's student set.
+ *
+ * Time complexity O(n), where 'n' is the number of entries in the file
+ */
 void DataManager::readStudentClasses(){
     ifstream file("../data/students_classes.csv");
     if (!file.is_open()) {
@@ -51,10 +67,22 @@ void DataManager::readStudentClasses(){
     file.close();
 }
 
+/**
+ * @brief Get a constant reference to the vector of all UCs stored in the DataManager
+ *
+ * @return A constant reference to the vector of all UCs
+ *
+ * Time complexity O(1)
+ */
 const vector<ClassUC> &DataManager::getAllUC() const {
     return allUC_;
 }
 
+/**
+ * @brief this function Read class information from a file and update the DataManager's vector of UCs
+ *
+ * Time complexity O(n), where 'n' is the number of entries in the file
+ */
 void DataManager::readClasses() {
 
     string fname = "../data/classes.csv";
@@ -113,15 +141,37 @@ void DataManager::readClasses() {
 }
 
 
+/**
+ * @brief this function add a student to the DataManager's set of students
+ *
+ * @param student The Student object to be added.
+ *
+ * Time complexity is O(log n), where 'n' is the number of students in the set
+ */
+
 void DataManager::addStudent(const Student& student) {
     students.insert(student);
 }
 
+/**
+ * @brief this function add a ClassUC object to the DataManager's vector of UCs
+ *
+ * @param classUC The ClassUC object to be added
+ * Time complexity  is O(1)
+ */
 void DataManager::addClassUC(const ClassUC& classUC) {
     allUC_.push_back(classUC);
 }
 
-
+/**
+ * @brief this function gets a vector of students enrolled in a specific UC.
+ *
+ * @param ucId The UC code for which to retrieve enrolled students.
+ *
+ * @return A vector of students who are enrolled in the specified UC.
+ *
+ * Time complexity O(n * m), where 'n is the number of students and 'n' is the average number of UCs associated with each student
+ */
 vector<Student> DataManager::UCstudents(const string& ucId) const {//iterar pela classes dos estudantes e por no vetor as classes que tem id
     vector<Student> studentUC;
     auto it=students.begin();
@@ -137,6 +187,15 @@ vector<Student> DataManager::UCstudents(const string& ucId) const {//iterar pela
     return studentUC;
 }
 
+/**
+ * @brief this function gets a vector of classes associated with a specific UC
+ *
+ * @param ucId The UC code for which to retrieve associated classes.
+ *
+ * @return A vector of classes associated with the specified UC.
+ *
+ * Time complexity O(n), where 'n is the number of classes in the `allUC_`
+ */
 vector<ClassUC> DataManager::classOfUc(const string& ucId)const{//iterate throw allUc and get only the ucClasses with ucID;
     vector<ClassUC> uc_classes;
     for (const auto& classUc:allUC_){
@@ -147,17 +206,46 @@ vector<ClassUC> DataManager::classOfUc(const string& ucId)const{//iterate throw 
     return uc_classes;
 }
 
+/**
+ * @brief Get the number of students enrolled in a specific UC
+ *
+ * @param ucId The UC code for which to count the enrolled students
+ *
+ * @return The number of students enrolled in the specified UC
+ *
+ * Time complexity O(n * m), where 'n' is the number of students and 'm' is the average number of UCs associated with each student
+ */
 int DataManager::numberStudentsUc(const string& ucId)const{
     vector<Student> studentUC= UCstudents(ucId);
     return  studentUC.size();
 }
+
+/**
+ * @brief this function compares two ClassUC objects based on UC student occupation
+ *
+ * @param a The first ClassUC object to compare
+ *
+ * @param b The second ClassUC object to compare
+ *
+ * @return True if the UC associated with 'a' has more students enrolled than the UC associated with 'b' ,otherwise false.
+ *
+ * Time complexity  O(n * m), where 'n' is the number of students, and 'm' is the average number of UCs associated with each studen
+ */
 bool DataManager::sorterOccupation(const ClassUC& a, const ClassUC& b) const{
     const string& Acode=a.getUcCode();
     const string& Bcode=b.getUcCode();
     return (numberStudentsUc(Acode)> numberStudentsUc(Bcode));
 }
 
-
+/**
+ * @brief this function gets a vector of ClassUC objects associated with a specific year identifier
+ *
+ * @param year The year identifier to filter the classes
+ *
+ * @return A vector of ClassUC objects associated with the specified year
+ *
+ * Time complexity O(n), where 'n' is the number of ClassUC objects in the `allUC_
+ */
 vector<ClassUC> DataManager::classuC_x_year(char year)const{
     vector<ClassUC> uc_classes;
     for (const auto& classUc:allUC_){
@@ -170,6 +258,15 @@ vector<ClassUC> DataManager::classuC_x_year(char year)const{
     return uc_classes;
 }
 
+/**
+ * @brief this function gets a vector of ClassUC objects with a specific number of enrolled students
+ *
+ * @param x The number of students for filtering
+ *
+ * @return A vector of ClassUC objects with 'x' enrolled students
+ *
+ * Time complexity O(n), where 'n' is the number of ClassUC objects in the `allUC_
+ */
 vector<ClassUC> DataManager::ucWithXStudents(int x){
     vector<ClassUC> sorted_alluc=sortAllU();
     vector<ClassUC> uc_classes;
@@ -185,11 +282,13 @@ vector<ClassUC> DataManager::ucWithXStudents(int x){
 }
 
 
-
-
-
-
-
+/**
+ * @brief this function sort the `allUC_` vector by UC student occupation
+ *
+ * @return A sorted vector of ClassUC objects
+ *
+ * Time complexity O(K * log(K)), where K is the number of ClassUC objects in the `allUC_`
+ */
 vector<ClassUC> DataManager::sortAllU_occupation(){
     vector<ClassUC> sortedAlluc=allUC_;
     DataManager dataManager;
@@ -197,6 +296,17 @@ vector<ClassUC> DataManager::sortAllU_occupation(){
     return sortedAlluc;
 }
 
+/**
+ * @brief Comparison function for sorting ClassUC objects
+ *
+ * @param a The first ClassUC object to compare
+ *
+ * @param b The second ClassUC object to compare
+ *
+ * @return True if 'a' should come before 'b' in the sorted order, otherwise false
+ *
+ * Time complexity O(n * m), where 'n' is the number of students and 'm' is the average number of UCs associated with each student
+ */
 bool DataManager::sorter(const ClassUC& a, const ClassUC& b){
     char yearA=a.getClassCode()[0];
     char yearB=b.getClassCode()[0];
@@ -211,7 +321,15 @@ bool DataManager::sorter(const ClassUC& a, const ClassUC& b){
     return (UCstudents(Acode).size()< UCstudents(Bcode).size());
 }
 
-
+/**
+ * @brief this function sort the `allUC_` vector using the `sorter` comparison function
+ *
+ * This method sorts the `allUC_` vector based on the comparison function `sorter`
+ *
+ * @return A sorted vector of ClassUC objects
+ *
+ * Time complexity  O(n * log(n)), where 'n' is the number of ClassUC objects in the `allUC_` vector
+ */
 vector<ClassUC> DataManager::sortAllU(){
     vector<ClassUC> sortedAlluc=allUC_;
     DataManager dataManager;
@@ -219,6 +337,15 @@ vector<ClassUC> DataManager::sortAllU(){
     return  sortedAlluc;
 }
 
+/**
+ * @brief Count students who are registered in at least 'n' UCs
+ *
+ * @param n The minimum number of UCs a student should be registered in
+ *
+ * @return The count of students meeting the criteria
+ *
+ * Time complexity O(n * m), where 'n' is the number of students and 'm' is the average number of UCs associated with each student
+ */
 
 int DataManager::studentregisterUCs(int n) {
     int count2 = 0;
@@ -234,6 +361,15 @@ int DataManager::studentregisterUCs(int n) {
     return count2;
 }
 
+/**
+ * @brief this function gets a vector of students enrolled in a specific ClassUC
+ *
+ * @param classUc The ClassUC object for which to retrieve enrolled students
+ *
+ * @return A vector of students enrolled in the specified ClassUC.
+ *
+ * Time complexity O(n * m), where 'n' is the number of students and 'm' is the average number of UCs associated with each student
+ */
 vector<Student> DataManager::studentsOfClassUc(const ClassUC&  classUc){
     vector<Student> students_class;
     auto it=students.begin();
@@ -251,6 +387,16 @@ vector<Student> DataManager::studentsOfClassUc(const ClassUC&  classUc){
 
 }
 
+/**
+ * @brief this function gets the schedule of a specific ClassUC
+ *
+ * @param classUc2 The ClassUC for which to retrieve the schedule
+ *
+ * @return A vector of Slot objects representing the schedule of the specified ClassUC
+ *
+ * Time complexity O(n), where 'n' is the number of ClassUC objects in the allUC_
+ */
+
 vector<Slot> DataManager::getClassUCSchedule(const ClassUC& classUc2) {
     vector<Slot> schedule;
     for (auto uc : allUC_) {
@@ -261,6 +407,15 @@ vector<Slot> DataManager::getClassUCSchedule(const ClassUC& classUc2) {
     return schedule;
 }
 
+/**
+ * @brief this function gets the schedule of a specific UC (University Course).
+ *
+ * @param UcId The UC code for which to retrieve the schedule.
+ *
+ * @return A vector of Slot objects representing the schedule of the specified UC.
+ *
+ * Time complexity O(n), where 'n' is the number of ClassUC objects in the allUC_
+ */
 vector<Slot> DataManager::getUcSchedule(const string &UcId) {
     vector<Slot> schedule;
     for (const ClassUC& uc : allUC_) {
@@ -272,6 +427,15 @@ vector<Slot> DataManager::getUcSchedule(const string &UcId) {
     return schedule;
 }
 
+/**
+ * @brief this function gets the schedule of a specific class.
+ *
+ * @param classCode The class code for which to retrieve the schedule.
+ *
+ * @return A vector of Slot objects representing the schedule of the specified class.
+ *
+ * Time complexity O(n), where 'n' is the number of ClassUC objects in the allUC_
+ */
 vector<Slot> DataManager::getClassSchedule(const string& classCode) {
     vector<Slot> schedule;
     for (const ClassUC& uc : allUC_) {
@@ -283,6 +447,15 @@ vector<Slot> DataManager::getClassSchedule(const string& classCode) {
     return schedule;
 }
 
+/**
+ * @brief this function gets the schedule of a specific student
+ *
+ * @param student The Student object for which to retrieve the schedule.
+ *
+ * @return A Student object with an updated schedule based on the student's enrolled classes.
+ *
+ *  Time complexity of O(n), where 'n' is the number of ClassUC
+ */
 Student DataManager::getStudentSchedule(const Student& student) {
     auto it=students.find(student);
     Student wanted;
@@ -299,10 +472,31 @@ Student DataManager::getStudentSchedule(const Student& student) {
     return wanted;
 }
 
+/**
+ * @brief this function finds a specific student
+ *
+ * @param student The Student object to find
+ *
+ * @return The found Student object
+ *
+ * Time complexity O(log n), where 'n' is the number of students
+ */
 Student DataManager::findStudent(const Student& student) {//with a name and the up code,get the classes of the student
     auto  it=students.find(student);
     return *it;
 }
+
+/**
+ * @brief this function checks if a specific ClassUC has less than 'x' students
+ *
+ * @param classUc The ClassUC to check for student enrollment
+ *
+ * @param x The threshold number of students to compare against
+ *
+ * @return True if the ClassUC has fewer than 'x' students, otherwise false
+ *
+ * Time complexity  O(n * m), where 'n' is the number of students and 'm' is the average number of UCs associated with each student
+ */
 
 bool DataManager::classUcHaveLessThenXStudents(const ClassUC& classUc, int x) {
     auto it=students.begin();
