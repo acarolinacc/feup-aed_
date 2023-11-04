@@ -6,6 +6,7 @@
 using namespace std;
 /**
  * @brief Default constructor for the student class
+ *
  * Time Complexity O(1)
  */
 Student::Student() {
@@ -14,22 +15,30 @@ Student::Student() {
 }
 /**
  * @brief Constructor of the class Student
+ *
  * @param code of the Student
+ *
  * @param name of the Student
+ *
  * Time Complexity O(1)
  */
 Student::Student(int code, const string& name) : code(code), name(name) {}
 
 /**
  * @brief function to get the student code
+ *
  * @return code of the student
+ *
+ * Time complexity O(1)
  */
 int Student::getCode() const {
     return code;
 }
  /**
   * @brief function to get the student name
+  *
   * @return name of the student
+  *
   * Time Complexity O(1)
   */
 string Student::getName() const {
@@ -37,8 +46,10 @@ string Student::getName() const {
 }
 
 /**
- * @brief Add a ClassUC to the student's list of classes.
+ * @brief Add a ClassUC to the student's list of classes
+ *
  * @param newClassUc the classUc to be added
+ *
  * Time Complexity O(1)
  */
 void Student::addClassUC(const ClassUC& newClassUc){
@@ -46,18 +57,24 @@ void Student::addClassUC(const ClassUC& newClassUc){
 }
 
 /**
- * @brief Overloaded less than operator for comparing students based on their codes.
- * @param other The students to compere with
- * @return True if this student's code is less than the other student's code, otherwise false.
+ * @brief Overloaded less than operator for comparing students based on their codes
+ *
+ * @param other The students to compare with
+ *
+ * @return True if this student's code is less than the other student's code, otherwise false
+ *
  * Time Complexity O(1)
  */
 bool Student::operator<(const Student &other) const {
     return this->code<other.code;
 }
 /**
- * @brief Overloaded equality operator for comparing students based on their codes and name.
+ * @brief Overloaded equality operator for comparing students based on their codes and name
+ *
  * @param other The students to compere with
+ *
  * @return True if the name and the code are same, otherwise false
+ *
  * Time Complexity O(1)
  */
 bool Student::operator==(const Student &other) const{

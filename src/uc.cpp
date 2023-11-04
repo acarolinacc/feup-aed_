@@ -1,12 +1,17 @@
 #include "uc.h"
 
 /**
- * @brief Constructor for the Uc class.
- * @param ucId The identifier of the Uc.
- * @param ucYear The year of the Uc.
- * @param ucSemester The semester of the Uc.
- * @param ucSlot A vector of slots associated with the Uc.
- * Time Complexity: O(n), where 'n' is the number of slots in 'ucSlot'.
+ * @brief Constructor for the Uc class
+ *
+ * @param ucId The identifier of the Uc
+ *
+ * @param ucYear The year of the Uc
+ *
+ * @param ucSemester The semester of the Uc
+ *
+ * @param ucSlot A vector of slots associated with the Uc
+ *
+ * Time Complexity: O(n), where 'n' is the number of slots in 'ucSlot'
  */
 Uc::Uc(string ucId,int ucYear,int ucSemester,vector<Slot> ucSlot) {
     this->ucId=ucId;
