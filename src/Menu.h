@@ -13,13 +13,6 @@ public:
     void setManagement(const DataManager &management);
     Menu(DataManager& management);
     void start();
-
-private:
-    RequestManager requestManager_;
-    DataManager management;
-
-    DataManager& management_;
-
     void consultarHorarios();
 
     void consultarHorarioAluno();
@@ -87,6 +80,14 @@ private:
     void consultarUcsComMaisEstudantes();
     bool isStudentValid(const string &input, const Student &student) const;
     void consultarInformacoesUCs();
+
+private:
+    RequestManager requestManager_;
+    DataManager management;
+
+    DataManager& management_;
+
+
 };
 
 #endif

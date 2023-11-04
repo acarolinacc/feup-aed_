@@ -6,7 +6,9 @@
 
 /**
  * @brief Constructor for the Menu class
+ *
  * @param management
+ *
  * Time Complexity: O(1)
  */
 Menu::Menu(DataManager& management) : management_(management), requestManager_(management) {
@@ -14,7 +16,9 @@ Menu::Menu(DataManager& management) : management_(management), requestManager_(m
 
 /**
  * @brief set the DataManager for the Menu
+ *
  * @param management reference to the DataManager object
+ *
  * Time Complexity O(1)
  */
 
@@ -24,9 +28,13 @@ void Menu::setManagement(const DataManager &management) {
 
 /**
  * @brief function to convert string to lowercase
+ *
  * @param str input string
+ *
  * @return The input string converted to lowercase
+ *
  * Time Complexity: O(n), where n is the length of the input string.
+ *
  */
 string to_lower (string str)
 {
@@ -37,6 +45,7 @@ string to_lower (string str)
 
 /**
  * @brief Start the main menu loop
+ *
  * Time Complexity: O(n), where n is the number of iterations in the main menu loop.
  */
 void Menu::start() {
@@ -97,7 +106,9 @@ void Menu::start() {
 }
 
 /**
+ *
  * @brief Display the menu to consult schedules
+ *
  * Time Complexity: O(n), where n is the number of iterations in the schedule consultation menu loop.
  */
 void Menu::consultarHorarios() {
@@ -146,6 +157,7 @@ void Menu::consultarHorarios() {
 //consultar o horário de um aluno
 /**
  * @brief funtion to consult schedule of the student
+ *
  * Time complexity O(n) where n is the number of students in the system, as it may require searching for the student by UP number and name.
  */
 void Menu::consultarHorarioAluno() {
@@ -164,7 +176,9 @@ void Menu::consultarHorarioAluno() {
 
 /**
  * @brief function to display thr schedule of a student
+ *
  * @param student student object whose schedule should be displayed.
+ *
  * Time complexity O(n), where n is the total number of slots in the schedule.
  */
 void Menu::displayStudentSchedule(const Student &student) const{
@@ -189,7 +203,9 @@ void Menu::displayStudentSchedule(const Student &student) const{
 //consultar o horário de uma turma
 /**
  * @brief function to consult the schedule of a Turma
+ *
  * Time complexity O(n) where n is the number of slots.
+ *
  */
 void Menu::consultarHorarioUCTurma() {
     string classCode;
@@ -211,17 +227,24 @@ void Menu::consultarHorarioUCTurma() {
 }
 
 /**
- * @brief
+ * @brief function to indicating a valid class code.
+ *
  * @param ucS slots associated with a class code.
+ *
  * @return True if ucS is empty, or false if its not empty
  */
 bool Menu::isClassCodeValid(const vector<Slot>& ucS) const {
     return ucS.empty();
 }
 /**
+ * @brief function to Display the schedule of  a specific ClassUc
  *
  * @param ucS
+ *
  * @param classUc
+ *
+ * Time complexity O(n), where 'n' is the number of slots in the provided 'ucS' vector.
+ *
  */
 void Menu::displayClassUcSchedule(const vector<Slot>& ucS,const ClassUC& classUc) const {
     cout << "UcCode:"<< classUc.getUcCode()<<"ClassCode:"<<classUc.getClassCode()<<  endl;
@@ -235,7 +258,9 @@ void Menu::displayClassUcSchedule(const vector<Slot>& ucS,const ClassUC& classUc
 
 //consultar o horário de uma UC
 /**
+ * @brief Function to consult the schedule of a specific UC.
  *
+ * Time complexity O(1)
  */
 void Menu::consultarHorarioUC() {
     string ucCode;
@@ -255,19 +280,28 @@ void Menu::consultarHorarioUC() {
 }
 
 /**
+ * @brief function to checks if the given ClassUC corresponds to the specified UC code
  *
- * @param turma
- * @param ucCode
- * @return
+ * @param turma The ClassUC object to compare
+ *
+ * @param ucCode The UC code to check for correspondence
+ *
+ * @return True if th Uc code corresponds, false otherwise
+ *
+ * Time complexity O(n), where 'n' is the length of the input string ucCode
  */
 bool Menu::correspondeCodigoUC(const ClassUC& turma, const string& ucCode) const {
     return compararIgnorandoMaiusculas(turma.getUcCode(), ucCode);
 }
 
 /**
+ * @brief function to display the schedule for a specific UC
  *
- * @param ucS
- * @param ucCode
+ * @param ucS The vector of Slot objects representing the UC schedule
+ *
+ * @param ucCode The code of the UC for which the schedule is displayed
+ *
+ * Time complexity is O(n), where 'n' is the number of Slot objects in the ucS
  */
 void Menu::exibirHorarioDaUC(const vector<Slot> ucS,string ucCode) const {
     cout << ucCode<< endl;
@@ -277,10 +311,15 @@ void Menu::exibirHorarioDaUC(const vector<Slot> ucS,string ucCode) const {
 }
 
 /**
+ * @brief function to compare two strings
  *
- * @param str1
- * @param str2
- * @return
+ * @param str1 the first string to compare
+ *
+ * @param str2 the second string to compare
+ *
+ * @return True if the two strings are equal, false otherwise.
+ *
+ * Time complexity of this function is O(n), where 'n' is the length of the longer of the two input strings.
  */
 bool Menu::compararIgnorandoMaiusculas(const string& str1, const string& str2) const {
     // Função para comparar strings ignorando maiúsculas e minúsculas
@@ -294,7 +333,9 @@ bool Menu::compararIgnorandoMaiusculas(const string& str1, const string& str2) c
 
 //consultar o horário de uma UC/Turma
 /**
+ * @brief function to consult the schedule of a class
  *
+ * Time complexity O(n), where 'n' is the number of slots in the class schedule.
  */
 void Menu::consultarHorarioTurma() {
     string classcode;
@@ -314,17 +355,32 @@ void Menu::consultarHorarioTurma() {
 
 
 /**
+ * @brief Checks if the given ClassUC corresponds to the specified UC code and class code
  *
+ * @param turma The ClassUC object to compare
  *
- * @param turma
- * @param uccode
- * @param classcode
- * @return
+ * @param uccode The UC code to check
+ *
+ * @param classcode The class code to check
+ *
+ * @return True if the UC code and class code match (case-insensitive), false otherwise
+ *
+ * Time complexity  O(n), where 'n' is the length of the longer of the two input strings.
  */
 bool Menu::correspondeCodigoUcETurma(const ClassUC& turma, const string& uccode, const string& classcode) const {
     return (compararIgnorandoMaiusculas(turma.getUcCode(), uccode) && compararIgnorandoMaiusculas(turma.getClassCode(), classcode));
 }
 
+
+/**
+ * @brief function to displays the schedule for a specific class
+ *
+ * @param ucS The vector of Slot objects representing the class schedule.
+ *
+ * @param turma The code of the class for which the schedule is displayed.
+ *
+ * Time complexity O(n), where 'n' is the number of Slot objects in the ucS
+ */
 void Menu::displayClassSchedule(const vector<Slot>& ucS,const string& turma) const {
     cout << "class code:"<<turma << endl;
     for (const Slot& horario : ucS) {
@@ -336,7 +392,11 @@ void Menu::displayClassSchedule(const vector<Slot>& ucS,const string& turma) con
 
 
 
-
+/**
+ * @brief function to displays a menu for the student information.
+ *
+ * Time complexity O(1)
+ */
 void Menu::consultarInformacoesAlunos() {
     cout << "╔═════════════════════════════════╗" << endl;
     cout << "║  Página de Consulta de Dados    ║" << endl;
@@ -375,6 +435,11 @@ void Menu::consultarInformacoesAlunos() {
     }
 }
 
+/**
+ * @brief function to consult and display the classes of a specific student.
+ *
+ * Time complexity O(n), where 'n' is the number of students in the system.
+ */
 void Menu::consultarTurmasDoAluno() {
     int id;
     string name;
@@ -392,7 +457,11 @@ void Menu::consultarTurmasDoAluno() {
 }
 
 
-
+/**
+ * @brief Function to consult students by class or year.
+ *
+ * Time complexity O(1)
+ */
 void Menu::consultarAlunosTurmaCursoAno() {
     // Consultar alunos por turma ou ano.
 
@@ -432,6 +501,11 @@ void Menu::consultarAlunosTurmaCursoAno() {
 
 
 //Consultar alunos por UCs e por turmas
+/**
+ * @brief function to consult and displays students belonging to a specific UC and class.
+ *
+ * Time complexity O(n), where 'n' is the number of students in the system
+ */
 void Menu::consultarAlunosPorTurma() {
     cout << "Consulta de Alunos por UCs e Turmas" << endl;
 
@@ -461,6 +535,19 @@ void Menu::consultarAlunosPorTurma() {
     }
 }
 
+/**
+ * @brief Check if a student belongs to a specific UC and class within that Uc.
+ *
+ * @param student The student to check for enrollment.
+ *
+ * @param ucCode The code of the UC to check for.
+ *
+ * @param classCode The code of the class within the UC to check for.
+ *
+ * @return True if the student belongs to the specific Uc and class, false otherwise
+ *
+ * Time complexity O(n), where 'n' is the number of ClassUC
+ */
 bool Menu::studentBelongsToUCAndClass(const Student& student, const string& ucCode, const string& classCode) {
     for (const ClassUC& classUC : student.getclassUC()) {
         if (to_lower(classUC.getUcCode()) == to_lower(ucCode) &&
@@ -478,6 +565,11 @@ bool Menu::studentBelongsToUCAndClass(const Student& student, const string& ucCo
 
 
 //Consultar alunos por Ano
+/**
+ * @brief Function to consult and display students based on the specified academic year
+ *
+ * Time complexity O(n * m), where 'n' is the number of students in the system and 'm' is the average number of classes per student
+ */
 void Menu::consultarAlunosPorAno() {
     cout << "Consultar alunos por ano (1-3)." << endl;
 
@@ -505,7 +597,13 @@ void Menu::consultarAlunosPorAno() {
 
 
 
-
+/**
+ * @brief function to consult and display the number of students registered in at least 'n' UCs.
+ *
+ * @param n The minimum number of UCs a student must be registered in to be counted.
+ *
+ * Time complexity O(n), where 'n' is the number of students in the system.
+ */
 void Menu::consultarNumEstudantesInscritosN_UC(int n) {
     // consultar o número de estudantes inscritos em pelo menos n UCs.
     cout << "Digite o número mínimo de UCs:";
@@ -516,6 +614,7 @@ void Menu::consultarNumEstudantesInscritosN_UC(int n) {
 
 /**
  * @brief this function allows the user to choose between different options on the menu of the course
+ *
  * Time complexity O(1)
  */
 void Menu::consultarTurmaAnoCursoUC() {
@@ -552,8 +651,10 @@ void Menu::consultarTurmaAnoCursoUC() {
     }
 
 }
+
 /**
  * @brief function to consult the class of Uc
+ *
  * Time complexity: O(n + m), where 'n' is the number of ClassUC objects retrieved for the specified UC, and 'm' is the time complexity of fetching the total number of students for that UC.
  */
 
@@ -577,8 +678,10 @@ void Menu::consultarTurmasUC() {
 
     std::cout << "Número de estudantes da UC: " << management_.numberStudentsUc(ucCode) << endl;
 }
+
 /**
  * @brief function to consult Uc of a year
+ *
  * Time complexity: O(n + m), where 'n' is the number of ClassUC objects retrieved for the specified year, and 'm' is the sum of the time complexity of fetching UC information for each ClassUC object.
  */
 
@@ -607,7 +710,9 @@ void Menu::consultarUcDeUmAno() {
     }
 }
 /**
- * @brief
+ * @brief function to consult UCs with a minimum number of students
+ *
+ * Time complexity: O(n), where 'n' is the number of UCs with student occupancy greater than or equal to 'x'.
  */
 void Menu::consultarUcComXOcupações() {
     int x;
@@ -631,7 +736,11 @@ void Menu::consultarUcComXOcupações() {
     }
 }
 
-
+/**
+ * @brief function to display a menu for performing various types of changes.
+ *
+ * Time complexity O(1)
+ */
 void Menu::realizarAlteracoes() {
     int choice;
     do {
@@ -666,6 +775,11 @@ void Menu::realizarAlteracoes() {
     } while (choice != 3);
 }
 
+/**
+ * @brief this function allows the user to perform changes related to UCs.
+ *
+ * Time complexity O(1)
+ */
 void Menu::realizarAlteracoesUC() {
     int choice;
     do {
@@ -698,7 +812,11 @@ void Menu::realizarAlteracoesUC() {
     } while (choice != 3);
 }
 
-
+/**
+ * @brief this function allows a student to enroll in a specific UC if eligible
+ *
+ * Time complexity O(n), where 'n' represents the number of students in the system.
+ */
 void Menu::ingressarEmUC() {
     cout << "--------------------------------------------------\n";
     int upNumber;
@@ -722,6 +840,18 @@ void Menu::ingressarEmUC() {
     }
 }
 
+
+/**
+ * @brief this function finds and return a ClassUC object for a given UC code associated with a student.
+ *
+ * @param student The student for whom to find the ClassUC object.
+ * @param uc_code The UC code to search for.
+ * @param manager The DataManager containing the data.
+ *
+ * @return A ClassUC object with the matching UC code, or a null ClassUC object if not found
+ *
+ * Time complexity O(n), where 'n' is the number of ClassUC objects associated with the student
+ */
 ClassUC findCLassByuc(Student student,string uc_code,DataManager manager){
     ClassUC null;
     student=manager.findStudent(student);
@@ -734,6 +864,11 @@ ClassUC findCLassByuc(Student student,string uc_code,DataManager manager){
     return  null;
 }
 
+/**
+ * @brief  this function allows a student to leave  a specific UC
+ *
+ * Time complexity O(1)
+ */
 void Menu::sairDeUC() {
     int upNumber;
     string studentName;
@@ -757,6 +892,12 @@ void Menu::sairDeUC() {
     }
 }
 
+/**
+ * @brief Allows the user to perform various class-related operations such as joining, leaving, or changing classes
+ *
+ * Time complexity O(n), where 'n' is the number of available classes.
+ *
+ */
 void Menu::realizarAlteracoesTurma() {
     int choice;
     do {
@@ -794,6 +935,12 @@ void Menu::realizarAlteracoesTurma() {
 
     } while (choice!=4);
 }
+
+/**
+ * @brief Allows a student to join a specific class
+ *
+ * Time complexity O(n), where 'n' where 'n' represents the number of students in the system
+ */
 void Menu::ingressarNumaTurma() {
     int upNumber;string studentName;
     cout << "Digite o número UP do estudante: ";
@@ -818,7 +965,11 @@ void Menu::ingressarNumaTurma() {
 
 
 
-
+/**
+ *  @brief this function allows a student to change from one class to another in a specific UC
+ *
+ * Time complexity O(n), where 'n' is the number of classes
+ */
 void Menu::mudarDeTurma() {//this type of request is 2 request in one:
     int upNumber;string studentName;
     cout << "Digite o número UP do estudante: "<<endl;
@@ -855,6 +1006,12 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
         cout<<"Unvalid request, make other request"<<endl;
     }
 }
+
+/**
+ *  @brief this function allows a student to leave a specific class in a  specific UC
+ *
+ * Time complexity O(n), where 'n' is the number of classes
+ */
 void Menu::sairDeUmaTurma() {
     int upNumber;string studentName;
     cout << "Digite o número UP do estudante: ";
@@ -879,11 +1036,21 @@ void Menu::sairDeUmaTurma() {
     }
 
 }
+/**
+ * @brief this function allows to visualize the history of requests
+ *
+ * Time complexity O(n), where 'n' is the number of requests in each queue.
+ */
 void Menu::visualizarHistoricoPedidos() {
     requestManager_.showAllChanges();
 
 }
 
+/**
+ * @brief this function process the requests
+ *
+ * Time complexity O(1)
+ */
 void Menu::processarPedidos() {
   DataManager newManager;
     if(requestManager_.getRequest().empty()){
@@ -895,6 +1062,11 @@ void Menu::processarPedidos() {
   }
 }
 
+/**
+ * @brief Allows confirming or canceling alterations to classes.
+ *
+ * Time complexity O(1)
+ */
 void Menu::confirmar_cancelar(){
     int choice;
     do {
@@ -930,7 +1102,11 @@ void Menu::confirmar_cancelar(){
 }
 
 
-
+/**
+ * @brief Undoes all pending changes to the class schedule.
+ *
+ *  Time complexity: O(n) where 'n' is the number of requests processed  of pending changes
+ */
 void Menu::undoPedidos() {
     DataManager newManager;
     requestManager_.processUndoRequest(newManager);
@@ -938,7 +1114,9 @@ void Menu::undoPedidos() {
     cout <<"all changes were cancel"<<endl;
 
 }
-
+/**
+ * @brief this function writes alteration
+ */
 void Menu::escrver_alteraçoes() {
 
 }
