@@ -9,7 +9,6 @@
 #include <sstream>
 #include <set>
 #include <algorithm>
-#include <uc.h>
 #include <map>
 class DataManager{
 
@@ -26,8 +25,8 @@ public:
     //read
     void readClasses();
     void readStudentClasses();
-    void readClassesPerUC();
     //students
+    vector<Student> studentYear(char year);
     vector<Student> studentsOfClassUc(const ClassUC& classUc);
     vector<Student> UCstudents(const string& ucId) const ;
     Student findStudent(const Student& student); //recebe um id e um nome e retorna o estudante com as suas turmas;
@@ -53,8 +52,7 @@ public:
     bool sorter(const ClassUC& a, const ClassUC& b);
     //auxiliar
     bool classUcHaveLessThenXStudents(const ClassUC& classUc, int x);
-
-
+    void sortStudent(vector<Student>& students,string type);
 
 private:
     set<Student>students;

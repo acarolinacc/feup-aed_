@@ -5,8 +5,6 @@
 #include <list>
 #include "slot.h"
 #include <vector>
-#include "uc.h"
-#include "turma.h"
 #include <iostream>
 #include "ClassUC.h"
 #include <map>

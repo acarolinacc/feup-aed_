@@ -219,7 +219,7 @@ void Menu::consultarHorarioUCTurma() {
     ClassUC classUc1=ClassUC(ucCode,classCode);
     const vector<Slot>& ucS = management_.getClassUCSchedule(classUc1);
     if (isClassCodeValid(ucS)) {
-        cout << "Essa não é uma entrada válida" << endl;}
+        cout << "That's not a valid input." << endl;}
     else{
         cout << ucS.size();
         displayClassUcSchedule(ucS,classUc1);
@@ -249,7 +249,7 @@ bool Menu::isClassCodeValid(const vector<Slot>& ucS) const {
  *
  */
 void Menu::displayClassUcSchedule(const vector<Slot>& ucS,const ClassUC& classUc) const {
-    cout << "Codigo da UC:"<< classUc.getUcCode()<<"Codigo da turma:"<<classUc.getClassCode()<<  endl;
+    cout << "UcCode:"<< classUc.getUcCode()<<"ClassCode:"<<classUc.getClassCode()<<  endl;
     for (const Slot& a : ucS) {
         cout << '\t' << a.getDay() << ' ' << a.getStart() << ' ' << a.getDuration() << ' ' << a.getType() << '\n';
     }
@@ -348,7 +348,7 @@ void Menu::consultarHorarioTurma() {
     cout << endl;
     const vector<Slot>& ucS = management_.getClassSchedule(classcode);
     if (isClassCodeValid(ucS)) {
-        cout << "Essa não é uma entrada válida." << endl;}
+        cout << "That's not a valid input." << endl;}
     else{
         displayClassSchedule(ucS,classcode);
     }
@@ -384,7 +384,7 @@ bool Menu::correspondeCodigoUcETurma(const ClassUC& turma, const string& uccode,
  * Time complexity O(n), where 'n' is the number of Slot objects in the ucS
  */
 void Menu::displayClassSchedule(const vector<Slot>& ucS,const string& turma) const {
-    cout << "Codigo da turma:"<<turma << endl;
+    cout << "class code:"<<turma << endl;
     for (const Slot& horario : ucS) {
         cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
     }
@@ -458,6 +458,45 @@ void Menu::consultarTurmasDoAluno() {
     }
 }
 
+string Menu::Student_sort_type() {
+    int opcao;
+    cout << "╔════════════════════════════════╗" << endl;
+    cout << "║  Página de escolha do tipo de  ║" << endl;
+    cout << "║      organizaçao dos alunos    ║" << endl;
+    cout << "║                                ║" << endl;
+    cout << "║ 1. Ordem alfabetica            ║" << endl;
+    cout << "║ 2. Ordem alfabetica reverse    ║" << endl;
+    cout << "║ 3. Ordem numerica              ║" << endl;
+    cout << "║ 4. Ordem numerica reverse      ║" << endl;
+    cout << "║                                ║" << endl;
+    cout << "╚════════════════════════════════╝" << endl;
+
+    cout << "Por favor, escolha uma opção (1-4): ";
+    cin >> opcao;
+    switch (opcao) {
+        case 1:
+            return "alphabetical";
+            break;
+        case 2:
+            return "reverse alphabetical";
+            break;
+        case 3:
+            return "numerical";
+            break;
+        case 4:
+            return "reverse numerical";
+            break;
+
+        default:
+            cout << "Opção inválida." << endl;
+            return  "";
+            break;
+
+    }
+
+}
+
+
 
 /**
  * @brief Function to consult students by class or year.
@@ -466,7 +505,7 @@ void Menu::consultarTurmasDoAluno() {
  */
 void Menu::consultarAlunosTurmaCursoAno() {
     // Consultar alunos por turma ou ano.
-
+    string type=Student_sort_type();
     int opcao;
     cout << "╔════════════════════════════════╗" << endl;
     cout << "║  Página de Consulta de Alunos  ║" << endl;
@@ -484,10 +523,10 @@ void Menu::consultarAlunosTurmaCursoAno() {
 
     switch (opcao) {
         case 1:
-            consultarAlunosPorTurma();
+            consultarAlunosPorTurma(type);
             break;
         case 2:
-            consultarAlunosPorAno();
+            consultarAlunosPorAno(type);
             break;
         case 3:
             // Voltar ao menu principal.
@@ -508,7 +547,7 @@ void Menu::consultarAlunosTurmaCursoAno() {
  *
  * Time complexity O(n), where 'n' is the number of students in the system
  */
-void Menu::consultarAlunosPorTurma() {
+void Menu::consultarAlunosPorTurma(string type) {
     cout << "Consulta de Alunos por UCs e Turmas" << endl;
 
     string ucCode;
@@ -518,23 +557,20 @@ void Menu::consultarAlunosPorTurma() {
     string classCode;
     cout << "Por favor, insira o código da turma: ";
     cin >> classCode;
+    ClassUC classUc=ClassUC(ucCode,classCode);
 
     cout << "Alunos pertencentes à UC " << ucCode << " e à turma " << classCode << ":" << endl;
-
-    bool alunosEncontrados = false;
-
-    for (const Student& student : management_.getStudents()) {
-        if (studentBelongsToUCAndClass(student, ucCode, classCode)) {
-            alunosEncontrados = true;
+    vector<Student> students=management_.studentsOfClassUc(classUc);
+    management_.sortStudent(students,type);
+    for (const Student& student : students) {
             cout << "Nome do aluno: " << student.getName() << endl;
             cout << "Número de estudante: " << student.getCode() << endl;
             cout << endl;
-        }
     }
-
-    if (!alunosEncontrados) {
+    if(students.empty()){
         cout << "Nenhum aluno encontrado para a UC e turma especificadas." << endl;
     }
+
 }
 
 /**
@@ -572,7 +608,7 @@ bool Menu::studentBelongsToUCAndClass(const Student& student, const string& ucCo
  *
  * Time complexity O(n * m), where 'n' is the number of students in the system and 'm' is the average number of classes per student
  */
-void Menu::consultarAlunosPorAno() {
+void Menu::consultarAlunosPorAno(string type) {
     cout << "Consultar alunos por ano (1-3)." << endl;
 
     char yearChar;
@@ -581,17 +617,15 @@ void Menu::consultarAlunosPorAno() {
     cout << endl;
 
     if (yearChar >= '1' && yearChar <= '3') {
-        for (const Student& student : management_.getStudents()) {
-            for (const ClassUC& classUC : student.getclassUC()) {
-                if (classUC.getClassCode().front() == yearChar) {
-                    cout << "Nome do aluno: " << student.getName() << endl;
-                    cout << "Número de estudante: " << student.getCode() << endl;
-                    cout << "Código da Turma: " << classUC.getClassCode() << endl;
-                    cout << endl;
-                }
-            }
+        vector<Student> students=management_.studentYear(yearChar);
+        management_.sortStudent(students,type);
+        for (const Student& student : students) {
+            cout << "Nome do aluno: " << student.getName() << endl;
+            cout << "Número de estudante: " << student.getCode() << endl;
+            cout << endl;
         }
-    } else {
+    }
+    else {
         cout << "Ano inválido. Insira um ano de 1 a 3." << endl;
     }
 }
@@ -600,11 +634,11 @@ void Menu::consultarAlunosPorAno() {
 
 
 /**
- * @brief function to consult and display the number of students registered in at least 'n' UCs
+ * @brief function to consult and display the number of students registered in at least 'n' UCs.
  *
- * @param n The minimum number of UCs a student must be registered in to be counted
+ * @param n The minimum number of UCs a student must be registered in to be counted.
  *
- * Time complexity O(n), where 'n' is the number of students in the system
+ * Time complexity O(n), where 'n' is the number of students in the system.
  */
 void Menu::consultarNumEstudantesInscritosN_UC(int n) {
     // consultar o número de estudantes inscritos em pelo menos n UCs.
@@ -999,7 +1033,7 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
         ClassUC new_classUc=ClassUC(ucCode,classCode);
         Request request2=Request(student,new_classUc,"EC");
         if(requestManager_.checkClassRequest(request2)){
-            cout<<"Pedido valido"<<endl;
+            cout<<"Valid request"<<endl;
             requestManager_.addResquest(request2);
         }
         else{ cout<<"Solicitação inválida, faça outra solicitação."<<endl;}
@@ -1140,6 +1174,7 @@ void Menu::escrver_alteraçoes() {
 
 
 }
+
 
 
 

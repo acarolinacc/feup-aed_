@@ -681,7 +681,7 @@ void  RequestManager::undorequestClass(const Request& classResquest,DataManager 
  * Time Complexity: O(n), where 'n' is the number of requests and undo requests
  */
 void RequestManager::showAllChanges() {
-   
+
         showUndo();
         showrequests();
         showAccept();

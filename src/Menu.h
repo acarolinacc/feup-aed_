@@ -27,8 +27,8 @@ public:
 
     void consultarInformacoesAlunos();
 
-    void consultarAlunosPorTurma();
-    void consultarAlunosPorAno();
+    void consultarAlunosPorTurma(string type);
+    void consultarAlunosPorAno(string type);
     void consultarNumEstudantesInscritosN_UC(int n);
     void consultarTurmasDoAluno();
 
@@ -37,6 +37,7 @@ public:
     void  consultarTurmasUC();
     void consultarUcDeUmAno();
     void consultarUcComXOcupações();
+    string Student_sort_type();
 
     bool isClassCodeValid(const vector<Slot>& ucS) const;
     void displayClassUcSchedule( const vector<Slot>& ucS,const ClassUC& classUc) const;
@@ -72,14 +73,7 @@ public:
 
 
 
-    //not use functions
-    void printStudentInfo(const Student& student);
-    bool areStringsEqualIgnoreCase(const std::string& str1, const std::string& str2);
-    bool isNameOrUpValid(const string &input, const string &name, const string &upNumber) const;
-    void displayClassHorario(const ClassUC &uc) const;
-    void consultarUcsComMaisEstudantes();
-    bool isStudentValid(const string &input, const Student &student) const;
-    void consultarInformacoesUCs();
+
 
 private:
     RequestManager requestManager_;

@@ -297,6 +297,15 @@ vector<ClassUC> DataManager::sortAllU_occupation(){
     return sortedAlluc;
 }
 
+
+//void DataManager::sortStudentsAlpha(vector<Student> allStudent) {
+
+
+
+
+
+
+
 /**
  * @brief Comparison function for sorting ClassUC objects
  *
@@ -514,4 +523,43 @@ bool DataManager::classUcHaveLessThenXStudents(const ClassUC& classUc, int x) {
     }
     return c<x;
 }
+
+void DataManager::sortStudent(vector<Student>& students, string type) {
+    if (type == "alphabetical") {
+        sort(students.begin(), students.end(), [](const Student &a, const Student &b) { return a.getName() < b.getName(); });   //O(d log d) where d is the number of students in a given uc
+    }
+    else if (type == "reverse alphabetical") {
+        sort(students.rbegin(), students.rend(), [](const Student &a, const Student &b) { return a.getName() < b.getName(); }); //O(d log d)
+    }
+    else if (type == "numerical") {
+        sort(students.begin(), students.end(),[](const Student &a, const Student &b) { return a.getCode() < b.getCode(); }); //O(d log d)
+    }
+    else if (type== "reverse numerical") {
+        sort(students.rbegin(), students.rend(),[](const Student &a, const Student &b) { return a.getCode() > b.getCode(); }); //O(d log d)
+    }
+    else {
+        cout << "Tipo invalid" << endl;
+        return;
+    }
+
+}
+
+vector<Student> DataManager::studentYear(char year) {
+    vector<Student> students_class;
+    auto it=students.begin();
+    while(it!=students.end()) {
+        int size_class = it->getclassUC().size();
+        for (int i = 0; i < size_class; i++) {
+            if (it->getclassUC()[i].getClassCode()[0]==year) {
+                students_class.push_back(*it);
+            }
+
+        }
+        it++;
+    }
+    return students_class;
+
+}
+
+
 
