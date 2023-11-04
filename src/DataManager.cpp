@@ -11,7 +11,7 @@ set<Student> DataManager::getStudents() {
     return students;
 }
 /**
- * @brief Set the students in the DataManager to a new set of students
+ * @brief this function set the students in the DataManager to a new set of students
  *
  * @param newStudents The new set of students to be stored in the DataManager
  *
@@ -68,7 +68,7 @@ void DataManager::readStudentClasses(){
 }
 
 /**
- * @brief Get a constant reference to the vector of all UCs stored in the DataManager
+ * @brief this function gets a constant reference to the vector of all UCs stored in the DataManager
  *
  * @return A constant reference to the vector of all UCs
  *
@@ -79,7 +79,7 @@ const vector<ClassUC> &DataManager::getAllUC() const {
 }
 
 /**
- * @brief this function Read class information from a file and update the DataManager's vector of UCs
+ * @brief this function reads class information from a file and update the DataManager's vector of UCs
  *
  * Time complexity O(n), where 'n' is the number of entries in the file
  */
@@ -207,7 +207,7 @@ vector<ClassUC> DataManager::classOfUc(const string& ucId)const{//iterate throw 
 }
 
 /**
- * @brief Get the number of students enrolled in a specific UC
+ * @brief this function gets the number of students enrolled in a specific UC
  *
  * @param ucId The UC code for which to count the enrolled students
  *
@@ -338,7 +338,7 @@ vector<ClassUC> DataManager::sortAllU(){
 }
 
 /**
- * @brief Count students who are registered in at least 'n' UCs
+ * @brief this function counts students who are registered in at least 'n' UCs
  *
  * @param n The minimum number of UCs a student should be registered in
  *
