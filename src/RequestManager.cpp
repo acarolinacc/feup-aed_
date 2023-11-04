@@ -681,15 +681,11 @@ void  RequestManager::undorequestClass(const Request& classResquest,DataManager 
  * Time Complexity: O(n), where 'n' is the number of requests and undo requests
  */
 void RequestManager::showAllChanges() {
-    if(showrequests()==0 and showAccept()==0 and showDinie()==0 and showUndo()==0){
-        cout<< "Nao ha pedidos registrados "<<endl;
-    }
-    else {
+
         showUndo();
         showrequests();
         showAccept();
         showDinie();
-    }
 
 }
 
@@ -781,6 +777,21 @@ int RequestManager::showDinie() {
         cout<<"Não ha pedidos rejeitados"<<endl;}
 
     return c;
+}
+
+void RequestManager::writeFiles() {
+    ofstream  file;
+    set<Student> students=manager.getStudents();
+    file.open("../data/students_classes.csv");
+    file << "StudentCode,StudentName,UcCode,ClassCode" << endl;
+    auto it=students.begin();
+    while (it!=students.end()){
+        for(const ClassUC& classes:it->getclassUC()){
+            file << it->getCode() << "," << it->getName() << "," << classes.getUcCode() << "," << classes.getClassCode() << endl;
+        }
+        it++;
+    }
+
 }
 
 

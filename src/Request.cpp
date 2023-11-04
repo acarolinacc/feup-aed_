@@ -59,7 +59,6 @@ string Request::getType() const {
  */
 void Request::printRequest() {
     std::cout << "Request Details:" << std::endl;
-    std::cout << "Student:" << std::endl;
     student.print();
     std::cout << "Wanted Class: " << std::endl;
     wantedClass.print();

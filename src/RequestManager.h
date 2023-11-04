@@ -60,6 +60,9 @@ public:
     int showDinie();
     int showUndo();
 
+    //escrever os dados
+    void writeFiles();
+
 
 
 

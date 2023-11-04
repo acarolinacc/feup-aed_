@@ -947,14 +947,14 @@ void Menu::realizarAlteracoesTurma() {
  */
 void Menu::ingressarNumaTurma() {
     int upNumber;string studentName;
-    cout << "Digite o número UP do estudante: ";
+    cout << "Digite o número UP do estudante: "<<endl;;
     cin >> upNumber;
-    cout <<"Digite o nome de estudante: ";
+    cout <<"Digite o nome de estudante: "<<endl;;
     cin>>studentName;
     string ucCode,classCode;
-    cout << "Digite o código UC da turma da qual o estudante deseja entrar: ";
+    cout << "Digite o código UC da turma da qual o estudante deseja entrar: "<<endl;;
     cin >> ucCode;
-    cout << "Digite o código da turma da qual o estudante deseja entrar: ";
+    cout << "Digite o código da turma da qual o estudante deseja entrar: "<<endl;;
     cin >> classCode;
     Student student=Student(upNumber,studentName);
     student=management_.findStudent(student);//students got the classes
@@ -1018,14 +1018,14 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
  */
 void Menu::sairDeUmaTurma() {
     int upNumber;string studentName;
-    cout << "Digite o número UP do estudante: ";
+    cout << "Digite o número UP do estudante: "<<endl;;
     cin >> upNumber;
-    cout <<"Digite o nome de estudante: ";
+    cout <<"Digite o nome de estudante: "<<endl;;
     cin>>studentName;
     string ucCode,classCode;
-    cout << "Digite o código UC da turma da qual o estudante deseja sair: ";
+    cout << "Digite o código UC da turma da qual o estudante deseja sair: "<<endl;;
     cin >> ucCode;
-    cout << "Digite o código da turma da qual o estudante deseja sair: ";
+    cout << "Digite o código da turma da qual o estudante deseja sair: "<<endl;;
     cin >> classCode;
     Student student=Student(upNumber,studentName);
     student=management_.findStudent(student);//students got the classes
@@ -1057,12 +1057,13 @@ void Menu::visualizarHistoricoPedidos() {
  */
 void Menu::processarPedidos() {
   DataManager newManager;
-    if(requestManager_.getRequest().empty()){
+  if(requestManager_.getRequest().empty()){
       cout<<"Não há pedidos para processar"<<endl;
   }
   else {
       requestManager_.requestProcess(newManager);
       management_=newManager;
+        cout<<"Pedido processado com sucesso"<<endl;
   }
 }
 
@@ -1079,7 +1080,7 @@ void Menu::confirmar_cancelar(){
         cout << "║  Realizar Alterações nas turma    ║" << endl;
         cout << "║                                   ║" << endl;
         cout << "║ 1. Aceitar alterações             ║" << endl;
-        cout << "║ 2. Cancelar alterações            ║" << endl;
+        cout << "║ 2. Cancelar alterações/fechar     ║" << endl;
         cout << "║ 3. Voltar ao menu principal       ║" << endl;
         cout << "║                                   ║" << endl;
         cout << "╚═══════════════════════════════════╝" << endl;
@@ -1122,6 +1123,21 @@ void Menu::undoPedidos() {
  * @brief this function writes alteration
  */
 void Menu::escrver_alteraçoes() {
+    char result;
+    cout<<"Pretendes aceitar as alterações feitas?"<<endl;
+    cout<<"Quando aceitares,não podes cancelar as alteraçoes feitas"<<endl;
+    cout<<"S/N:"<<endl;;
+    cin >>result;
+    if(result=='N' or result=='n'){
+        confirmar_cancelar();
+    }
+    else{
+        cout<<"Alterações realizadas com sucesso"<<endl;;
+        requestManager_.writeFiles();
+        cout<<"O programa vai fechar"<<endl;
+        exit(0);
+    }
+
 
 }
 
