@@ -682,7 +682,11 @@ void  RequestManager::undorequestClass(const Request& classResquest,DataManager 
  */
 void RequestManager::showAllChanges() {
     if(showrequests()==0 and showAccept()==0 and showDinie()==0 and showUndo()==0){
+
         cout<< "Não existe pedidos registados"<<endl;
+
+        cout<< "Nao ha pedidos registrados "<<endl;
+
     }
     else {
         showUndo();
@@ -704,10 +708,16 @@ int RequestManager::showUndo() {
     int c=0;
     queue<Request>undorequests=undoneRequests;
     while (!undorequests.empty()){
+
         cout<< "Pedidos que foram desfeitos"<<endl;
+
+        cout<< "Pedidos que foram cancelados"<<endl;
         undorequests.front().printRequest();
         undorequests.pop();
         c++;
+    }
+    if(c==0){
+        cout<<"Nao ha pedidos cancelados"<<endl;
     }
     return c;
 }
@@ -724,10 +734,13 @@ int RequestManager::showrequests() {
     queue<Request>copyRequests=requests;
     while (!copyRequests.empty()){
         cout<< "Pedidos não processados"<<endl;
+        cout<< "Pedidos para serem processados"<<endl;
         copyRequests.front().printRequest();
         copyRequests.pop();
         c++;
     }
+    if(c==0){
+        cout<<"Não ha pedidos para serem processados"<<endl;}
     return c;
 }
 
@@ -749,6 +762,8 @@ int RequestManager::showAccept() {
         copyAccept.pop();
         c++;
     }
+    if(c==0){
+        cout<<"Não ha pedidos aceites"<<endl;}
 
 
     return c;
@@ -766,10 +781,13 @@ int RequestManager::showDinie() {
     queue<Request>copydinied=deniedRequest;
     while (!copydinied.empty()){
         cout<< "Pedidos negados"<<endl;
+        cout<< "Pedidos rejeitados"<<endl;
         copydinied.front().printRequest();
         copydinied.pop();
         c++;
     }
+    if(c==0){
+        cout<<"Não ha pedidos rejeitados"<<endl;}
 
     return c;
 }
