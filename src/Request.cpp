@@ -33,7 +33,7 @@ Student Request::getStudent() const {
 /**
  * @brief function to get the type of the request
  *
- * @return
+ * @return The class that the student wants
  *
  * Time complexity O(1)
  */
@@ -44,13 +44,16 @@ ClassUC Request::getClassUc() const {
 /**
  * @brief function to print the details of the request, including the student, wanted class, and request type.
  *
- * @return
+ * @return The type of the request.
+ *
+ * Time complexity: O(1)
  */
 string Request::getType() const {
     return type;
 }
 
 /**
+ * @brief function to print the details of the request, including the student, wanted class, and request type
  *
  * Time complexity O(1)
  */
@@ -62,6 +65,14 @@ void Request::printRequest() {
     wantedClass.print();
     std::cout << "Type: " << type << std::endl;
 }
+
+/**
+ * @brief Function to set the type of the request.
+ *
+ * @param newType The new type of the request.
+ *
+ * Time complexity: O(1)
+ */
 
 void Request::setType(string newType) {
     type=newType;
