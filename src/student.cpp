@@ -107,8 +107,8 @@ void Student::print_classes() const{
  * Time complexity O(1)
  */
 void Student::print() const{
-    cout << "Student: "; print_student();
-    cout << "Classes: "; print_classes();
+    cout << "Estudante: "; print_student();
+    cout << "Turmas: "; print_classes();
     cout<< '\n';
 }
 

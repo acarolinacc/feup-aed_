@@ -461,7 +461,7 @@ bool RequestManager::changeCLass(const Request& request,DataManager &newManager)
             newManager=manager;
             return true;
         } else {
-            cout << "student not found" << endl;
+            cout << "Estudante nao encontrado" << endl;
             return false;
         }
     }
@@ -522,7 +522,7 @@ bool RequestManager::changeUC(const Request &request,DataManager &newManager) {/
             } else if (request.getType()[0] == 'E') {
                 ClassUC newClassUC = findClassinUc(request.getStudent(),uccode);//search for the class that is compatible
                 if (newClassUC.getUcCode().empty()) {
-                    cout << "class not found" << endl;
+                    cout << "Turma não encontrada" << endl;
                     return false;
                 } else {
                     copyStudent.addClassUC(newClassUC);
@@ -534,7 +534,7 @@ bool RequestManager::changeUC(const Request &request,DataManager &newManager) {/
             newManager=manager;
             return true;
         } else {
-            cout << "student not found" << endl;
+            cout << "Estudante nao encontrado" << endl;
             return false;
         }
     }
@@ -558,7 +558,7 @@ void RequestManager::requestProcess(DataManager &newManager) {//if the action is
             }
             else {
                 addDinedRequest(actual_request);
-                cout << "Request was dined,Request info:" << endl;
+                cout << "Pedido foi negado, informação do pedido:" << endl;
                 actual_request.printRequest();
             }
         }
@@ -567,13 +567,13 @@ void RequestManager::requestProcess(DataManager &newManager) {//if the action is
                 addAcceptRequest(actual_request);
             } else {
                 addDinedRequest(actual_request);
-                cout << "Request was dined,Request info:" << endl;
+                cout << "Pedido foi negado, informação do pedido:" << endl;
                 actual_request.printRequest();
             }
         }
         else {//request need to be dined;
             addDinedRequest(actual_request);
-            cout << "Request was dined,Request info:" << endl;
+            cout << "Pedido foi negado, informação do pedido:" << endl;
             actual_request.printRequest();
         }
         requests.pop();//pop the request readed
@@ -682,7 +682,7 @@ void  RequestManager::undorequestClass(const Request& classResquest,DataManager 
  */
 void RequestManager::showAllChanges() {
     if(showrequests()==0 and showAccept()==0 and showDinie()==0 and showUndo()==0){
-        cout<< "There is no registed requests "<<endl;
+        cout<< "Não existe pedidos registados"<<endl;
     }
     else {
         showUndo();
@@ -704,7 +704,7 @@ int RequestManager::showUndo() {
     int c=0;
     queue<Request>undorequests=undoneRequests;
     while (!undorequests.empty()){
-        cout<< "Requests that were undone"<<endl;
+        cout<< "Pedidos que foram desfeitos"<<endl;
         undorequests.front().printRequest();
         undorequests.pop();
         c++;
@@ -723,7 +723,7 @@ int RequestManager::showrequests() {
     int c=0;
     queue<Request>copyRequests=requests;
     while (!copyRequests.empty()){
-        cout<< "Non process requests"<<endl;
+        cout<< "Pedidos não processados"<<endl;
         copyRequests.front().printRequest();
         copyRequests.pop();
         c++;
@@ -744,7 +744,7 @@ int RequestManager::showAccept() {
     int c=0;
     queue<Request>copyAccept=acceptRequest;
     while (!copyAccept.empty()){
-        cout<< "Accepted requests"<<endl;
+        cout<< "Pedidos aceites"<<endl;
         copyAccept.front().printRequest();
         copyAccept.pop();
         c++;
@@ -765,7 +765,7 @@ int RequestManager::showDinie() {
     int c=0;
     queue<Request>copydinied=deniedRequest;
     while (!copydinied.empty()){
-        cout<< "Dinied requests"<<endl;
+        cout<< "Pedidos negados"<<endl;
         copydinied.front().printRequest();
         copydinied.pop();
         c++;
