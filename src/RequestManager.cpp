@@ -196,10 +196,13 @@ bool RequestManager::checkClassStudent(const Request &request) {//check if the s
 }
 
 /**
- * @brief this function checks the validity of a Class or UC request.
+ * @brief this function checks the validity of a Class or UC request
  *
- * @param request The request to be checked.
- * @return True if the request is valid, false otherwise.
+ * @param request The request to be checked
+ *
+ * @return True if the request is valid, false otherwise
+ *
+ * Time complexity O(n), where 'n' is the number of schedules being checked for overlaps
  */
 
 bool RequestManager::checkClassRequest(const Request &request) {
@@ -220,6 +223,13 @@ bool RequestManager::checkClassRequest(const Request &request) {
     return false;
 }
 
+/**
+ * @brief Set the Data Manager for the RequestManager
+ *
+ * @param manager The Data Manager to be set
+ *
+ * Time complexity O(1)
+ */
 void RequestManager::setManager(DataManager manager) {
     this->manager=manager;
 
@@ -232,11 +242,15 @@ void RequestManager::setManager(DataManager manager) {
 RequestManager::RequestManager() = default;
 
 /**
- * @brief this function handles a request to join or leave a UC.
+ * @brief this function handles a request to join or leave a UC
  *
- * @param upNumber The UP number of the student.
- * @param ucCode The code of the UC.
- * @return True if the request was successful, false otherwise.
+ * @param upNumber The UP number of the student
+ *
+ * @param ucCode The code of the UC
+ *
+ * @return True if the request was successful, false otherwise
+ *
+ * Time complexity O(n * m), where 'n' is the number of UCs associated with the student, and 'm' is the average number of schedules within each of these UCs
  */
 
 bool RequestManager::ingressarEmUC(const int &upNumber, const string& ucCode) {//alterar para request
@@ -276,10 +290,13 @@ bool RequestManager::ingressarEmUC(const int &upNumber, const string& ucCode) {/
 }
 
 /**
- * @brief this function retrieves a student based on their UP number.
+ * @brief this function retrieves a student based on their UP number
  *
- * @param upNumber The UP number of the student.
- * @return The student with the given UP number.
+ * @param upNumber The UP number of the student
+ *
+ * @return The student with the given UP number
+ *
+ * Time complexity O(n), where 'n' is the number of students
  */
 Student RequestManager::getStudentByUP(const int &upNumber) {
     for (const Student& student : manager.getStudents()) {
@@ -292,10 +309,13 @@ Student RequestManager::getStudentByUP(const int &upNumber) {
 }
 
 /**
- * @brief this function retrieves a ClassUC object based on its code.
+ * @brief this function retrieves a ClassUC object based on its code
  *
- * @param ucCode The code of the UC.
- * @return The ClassUC object with the given code.
+ * @param ucCode The code of the UC
+ *
+ * @return The ClassUC object with the given code
+ *
+ * Time complexity O(n), where 'n' is the number of ClassUC objects
  */
 
 ClassUC RequestManager::getClassUCByCode(const string& ucCode) {
@@ -310,13 +330,15 @@ ClassUC RequestManager::getClassUCByCode(const string& ucCode) {
 
 
 /**
- * @brief this function checks if there is a schedule conflict between two classes.
+ * @brief this function checks if there is a schedule conflict between two classes
  *
- * @param studentClass The class of the student.
- * @param newClass The new class to be checked for conflict.
- * @return True if there is a schedule conflict, false otherwise.
+ * @param studentClass The class of the student
  *
- * Time Complexity O(n*m), where 'n' is the number of slots in studentClass and 'm' is the number of slots in newClass.
+ * @param newClass The new class to be checked for conflict
+ *
+ * @return True if there is a schedule conflict, false otherwise
+ *
+ * Time Complexity O(n*m), where 'n' is the number of slots in studentClass and 'm' is the number of slots in newClass
  */
 bool RequestManager::haveScheduleConflict(const ClassUC& studentClass, const ClassUC& newClass) const {
     if (studentClass.getUcCode() == newClass.getUcCode()) {
