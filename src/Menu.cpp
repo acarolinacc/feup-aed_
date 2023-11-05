@@ -352,9 +352,9 @@ bool Menu::compararIgnorandoMaiusculas(const string& str1, const string& str2) c
 
 //consultar o horário de uma UC/Turma
 /**
- * @brief function to consult the schedule of a class
+ * @brief this function consults the schedule of a class based on its class code
  *
- * Time complexity O(n), where 'n' is the number of slots in the class schedule.
+ * Time complexity O(n), where 'n' is the number of classes in the system.
  */
 void Menu::consultarHorarioTurma() {
     string classcode;
@@ -365,7 +365,7 @@ void Menu::consultarHorarioTurma() {
     cout << endl;
     const vector<ClassUC>& ucS = management_.getCLass(classcode);
     if (ucS.empty()) {
-        cout << "That's not a valid input." << endl;}
+        cout << "Essa não é uma entrada válida." << endl;}
     else{
         displayClassSchedule(ucS,classcode);
     }
@@ -1046,7 +1046,7 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
     ClassUC old_classUc=ClassUC(ucCode,classCode);
     Request request=Request(student,old_classUc,"SC");
     if(requestManager_.checkClassRequest(request)){
-        cout<<"Valid request"<<endl;
+        cout<<"Pedido Valido"<<endl;
         requestManager_.addResquest(request);
         cout << "Digite o código UC da turma da qual o estudante deseja entrar: "<<endl;
         cin >> ucCode;
@@ -1055,7 +1055,7 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
         ClassUC new_classUc=ClassUC(ucCode,classCode);
         Request request2=Request(student,new_classUc,"EC");
         if(requestManager_.checkClassRequest(request2)){
-            cout<<"Valid request"<<endl;
+            cout<<"Pedido Valido"<<endl;
             requestManager_.addResquest(request2);
         }
         else{ cout<<"Solicitação inválida, faça outra solicitação."<<endl;}
@@ -1088,7 +1088,7 @@ void Menu::sairDeUmaTurma() {
     ClassUC classUc=ClassUC(ucCode,classCode);
     Request request=Request(student,classUc,"SC");
     if(requestManager_.checkClassRequest(request)) {
-        cout<<"Valid request"<<endl;
+        cout<<"Pedido Valido"<<endl;
         requestManager_.addResquest(request);
     }
     else{
