@@ -1,6 +1,7 @@
 #include <iostream>
 #include "DataManager.h"
 #include "ClassUC.h"
+#include <algorithm>
 
 /**
  * @brief this function get a set of all the students in the DataManager
@@ -596,4 +597,20 @@ vector<ClassUC> DataManager::getCLass(const string& classID) {
 }
 
 
+int DataManager::extractLastNumber(const string& classCode) {
+    int lastNumber = 0;
+    size_t pos = classCode.length();
+
+    while (pos > 0 && isdigit(classCode[--pos])) {
+        lastNumber = lastNumber * 10 + (classCode[pos] - '0');
+    }
+
+    return lastNumber;
+}
+
+bool DataManager::sortByLastNumber(const ClassUC& a, const ClassUC& b) {
+    int lastNumberA = extractLastNumber(a.getClassCode());
+    int lastNumberB = extractLastNumber(b.getClassCode());
+    return lastNumberA < lastNumberB;
+}
 
