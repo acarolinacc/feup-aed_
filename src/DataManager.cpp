@@ -556,7 +556,7 @@ vector<Student> DataManager::studentYear(char year) {
                 break;
             }
         }
-        if(verify== true){
+        if(verify==true){
         students_class.push_back(*it);}
         verify=false;
         it++;
