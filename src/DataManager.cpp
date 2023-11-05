@@ -524,6 +524,17 @@ bool DataManager::classUcHaveLessThenXStudents(const ClassUC& classUc, int x) {
     return c<x;
 }
 
+/**
+ * @brief this function sorts a vector of students based on a specified sorting type
+ *
+ *
+ * @param students The vector of Student objects to be sorted
+ *
+ * @param type The sorting type, which can be "alphabetical," "reverse alphabetical," "numerical," or "reverse numerical."
+
+ * Time complexity O(n log n), where 'n' is the number of students in the input vector.
+ */
+
 void DataManager::sortStudent(vector<Student>& students, string type) {
     if (type == "alphabetical") {
         sort(students.begin(), students.end(), [](const Student &a, const Student &b) { return a.getName() < b.getName(); });   //O(d log d) where d is the number of students in a given uc
@@ -544,6 +555,15 @@ void DataManager::sortStudent(vector<Student>& students, string type) {
 
 }
 
+/**
+ * @brief this function retrieves a vector of students based on the class code's year
+ *
+ * @param year The year to filter the students by, typically represented as a character
+ *
+ * @return A vector containing the students whose class code matches the specified year
+ *
+ * Time complexity O(n * m), where 'n' is the number of students and 'm' is the maximum number of class codes a student can have.
+ */
 vector<Student> DataManager::studentYear(char year) {
     vector<Student> students_class;
     bool verify= false;
