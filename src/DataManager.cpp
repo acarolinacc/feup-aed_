@@ -269,19 +269,20 @@ vector<ClassUC> DataManager::classuC_x_year(char year)const{
  *
  * Time complexity O(n), where 'n' is the number of ClassUC objects in the `allUC_
  */
-vector<ClassUC> DataManager::ucWithXStudents(int x){
-    vector<ClassUC> sorted_alluc=sortAllU();
+vector<ClassUC> DataManager::ucWithXStudents(int x) {
+    vector<ClassUC> sorted_alluc = sortAllU();
     vector<ClassUC> uc_classes;
-    string prev=" ";
-    for (const auto& classUc:allUC_){
-        if(numberStudentsUc(classUc.getUcCode())==x and prev!=classUc.getUcCode() ) {
+    string prev = " ";
+    for (const auto& classUc : allUC_) {
+        int numStudents = numberStudentsUc(classUc.getUcCode());
+        if (numStudents <= x && prev != classUc.getUcCode()) {
             uc_classes.push_back(classUc);
         }
-        prev=classUc.getUcCode();
-
+        prev = classUc.getUcCode();
     }
     return uc_classes;
 }
+
 
 
 /**

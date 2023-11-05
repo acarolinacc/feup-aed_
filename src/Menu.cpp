@@ -827,7 +827,7 @@ void Menu::consultarUcComXOcupações() {
         return;
     }
 
-    cout << "UCs com " << x << "estudantes:" << endl;
+    cout << "UCs com no máximo " << x << " estudantes:" << endl;
 
     for (const ClassUC &uc : turmasUc) {
         cout << "Código da UC: " << uc.getUcCode() << endl;
