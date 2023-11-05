@@ -54,13 +54,14 @@ public:
     //auxiliar
     bool classUcHaveLessThenXStudents(const ClassUC& classUc, int x);
     void sortStudent(vector<Student>& students,string type);
+    int extractLastNumber(const string &classCode);
+
+    bool sortByLastNumber(const ClassUC &a, const ClassUC &b);
 
 private:
     set<Student>students;
     vector<Slot> classes;
     vector<ClassUC> allUC_ ;
-
-
 
 };
 

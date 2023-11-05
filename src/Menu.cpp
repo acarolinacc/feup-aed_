@@ -1,5 +1,6 @@
 #include "Menu.h"
 #include "DataManager.h"
+#include <algorithm>
 
 
 #include <iostream>
@@ -356,6 +357,7 @@ bool Menu::compararIgnorandoMaiusculas(const string& str1, const string& str2) c
  *
  * Time complexity O(n), where 'n' is the number of slots in the class schedule.
  */
+
 void Menu::consultarHorarioTurma() {
     string classcode;
 
@@ -363,14 +365,38 @@ void Menu::consultarHorarioTurma() {
     cout << "Digite o Código da Turma: ";
     cin >> classcode;
     cout << endl;
-    const vector<ClassUC>& ucS = management_.getCLass(classcode);
-    if (ucS.empty()) {
-        cout << "That's not a valid input." << endl;}
-    else{
-        displayClassSchedule(ucS,classcode);
-    }
 
+    vector<ClassUC> ucS = management_.getCLass(classcode);
+
+    if (ucS.empty()) {
+        cout << "Isso não é uma entrada válida." << endl;
+    } else {
+        // Pergunte ao usuário a ordem desejada
+        char orderChoice;
+        cout << "Deseja ordenar em ordem crescente (c) ou decrescente (d)? ";
+        cin >> orderChoice;
+
+        if (orderChoice == 'c' || orderChoice == 'C') {
+            // Ordenação crescente com base no último número
+            sort(ucS.begin(), ucS.end(), [this](const ClassUC& a, const ClassUC& b) {
+                return management_.sortByLastNumber(a, b);
+            });
+        } else if (orderChoice == 'd' || orderChoice == 'D') {
+            // Ordenação decrescente com base no último número
+            sort(ucS.begin(), ucS.end(), [this](const ClassUC& a, const ClassUC& b) {
+                return management_.sortByLastNumber(a, b);
+            });
+            // Inverter o vetor para obter a ordem decrescente
+            reverse(ucS.begin(), ucS.end());
+        } else {
+            cout << "Opção inválida." << endl;
+            return;
+        }
+
+        displayClassSchedule(ucS, classcode);
+    }
 }
+
 
 
 /**
