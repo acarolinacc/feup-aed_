@@ -304,10 +304,28 @@ bool Menu::correspondeCodigoUC(const ClassUC& turma, const string& ucCode) const
  *
  * Time complexity is O(n), where 'n' is the number of Slot objects in the ucS
  */
-void Menu::exibirHorarioDaUC(const vector<Slot> ucS,string ucCode) const {
-    cout << ucCode<< endl;
-    for (const Slot& horario : ucS) {
-        cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
+void Menu::exibirHorarioDaUC(const vector<Slot> ucS, string ucID) const {
+    cout << "Horário da UC " << ucID << ":\n";
+
+    bool isValid = false;
+
+    const vector<ClassUC>& allUCs = management_.getAllUC();
+
+    for (const ClassUC& uc : allUCs) {
+        if (compararIgnorandoMaiusculas(ucID, uc.getUcCode())) {
+            isValid = true;
+            cout << "Turma: " << uc.getClassCode() << endl;
+
+            const vector<Slot>& schedule = uc.getSchedule();
+
+            for (const Slot& horario : schedule) {
+                cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
+            }
+        }
+    }
+
+    if (!isValid) {
+        cout << "Código de UC inválido." << endl;
     }
 }
 
