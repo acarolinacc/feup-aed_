@@ -614,3 +614,35 @@ bool DataManager::sortByLastNumber(const ClassUC& a, const ClassUC& b) {
     return lastNumberA < lastNumberB;
 }
 
+int DataManager::extractLastTwoDigits(const string& classCode) {
+    int lastTwoDigits = 0;
+    size_t pos = classCode.length();
+    int digitCount = 0;
+
+    while (pos > 0 && isdigit(classCode[--pos]) && digitCount < 2) {
+        lastTwoDigits = lastTwoDigits * 10 + (classCode[pos] - '0');
+        digitCount++;
+    }
+
+    return lastTwoDigits;
+}
+
+void DataManager::ordenarTurmasPorUltimosDigitos(vector<ClassUC>& turmasUc, char orderChoice) const {
+    if (orderChoice == 'c' || orderChoice == 'C') {
+        sort(turmasUc.begin(), turmasUc.end(), [](const ClassUC& a, const ClassUC& b) {
+            string classCodeA = a.getClassCode();
+            string classCodeB = b.getClassCode();
+            int lastTwoDigitsA = stoi(classCodeA.substr(classCodeA.size() - 2));
+            int lastTwoDigitsB = stoi(classCodeB.substr(classCodeB.size() - 2));
+            return lastTwoDigitsA < lastTwoDigitsB;
+        });
+    } else if (orderChoice == 'd' || orderChoice == 'D') {
+        sort(turmasUc.begin(), turmasUc.end(), [](const ClassUC& a, const ClassUC& b) {
+            string classCodeA = a.getClassCode();
+            string classCodeB = b.getClassCode();
+            int lastTwoDigitsA = stoi(classCodeA.substr(classCodeA.size() - 2));
+            int lastTwoDigitsB = stoi(classCodeB.substr(classCodeB.size() - 2));
+            return lastTwoDigitsA > lastTwoDigitsB;
+        });
+    }
+}

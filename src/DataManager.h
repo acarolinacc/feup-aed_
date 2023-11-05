@@ -58,10 +58,14 @@ public:
 
     bool sortByLastNumber(const ClassUC &a, const ClassUC &b);
 
+    void ordenarTurmasPorUltimosDigitos(vector<ClassUC> &turmasUc, char orderChoice) const;
+
 private:
     set<Student>students;
     vector<Slot> classes;
     vector<ClassUC> allUC_ ;
+
+    int extractLastTwoDigits(const string &classCode);
 
 };
 
