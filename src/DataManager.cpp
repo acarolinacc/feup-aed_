@@ -409,7 +409,7 @@ vector<Student> DataManager::studentsOfClassUc(const ClassUC&  classUc){
 
 vector<Slot> DataManager::getClassUCSchedule(const ClassUC& classUc2) {
     vector<Slot> schedule;
-    for (auto uc : allUC_) {
+    for (const auto& uc : allUC_) {
         if(uc.getClassCode()==classUc2.getClassCode() and uc.getUcCode()==classUc2.getUcCode()){
             schedule = uc.getSchedule();
         }

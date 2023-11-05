@@ -1,5 +1,4 @@
 #include <string>
-#include <utility>
 #include <vector>
 #include <iostream>
 #include "ClassUC.h"
@@ -32,7 +31,7 @@ const string &ClassUC::getUcCode() const {
  *
  * Time complexity O(1)
  */
-void ClassUC::addSlot(Slot b){
+void ClassUC::addSlot(const Slot& b){
     schedule_.push_back(b);
 }
 
