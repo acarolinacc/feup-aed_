@@ -1,0 +1,159 @@
+\doxysection{Slot Class Reference}
+\hypertarget{class_slot}{}\label{class_slot}\index{Slot@{Slot}}
+
+
+class to show the duration of the class, the time of the class, and the day  
+
+
+
+
+{\ttfamily \#include $<$slot.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_slot_a92a49d49328f84e7f8eb6c709d80b33c}{Slot}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the slot class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_slot_a8bc1db8cdaf92cf355285bd33c326bb8}{Slot}} (const string \&day, const float \&start, const float \&duration, const string \&type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_slot}{Slot} class. \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{class_slot_a9dc65cc7af5eeea49d5420c133293a2d}{get\+Day}} () const
+\begin{DoxyCompactList}\small\item\em function to get the day of the slot \end{DoxyCompactList}\item 
+const float \& \mbox{\hyperlink{class_slot_a610bb6cb43b9a74482bb5c93c267c4da}{get\+Start}} () const
+\begin{DoxyCompactList}\small\item\em function to get the start time of the slot \end{DoxyCompactList}\item 
+const float \& \mbox{\hyperlink{class_slot_ac43a54ed248b55c46a64b61e2f678fce}{get\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em function to get duration of the slot \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{class_slot_a3d97de1e0af0b5584af7906cfbedf2bc}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em function to get the type of the slot \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_slot_abf8b5b639de92285fb3f7d33a9994ec2}{get\+End\+Time}} () const
+\begin{DoxyCompactList}\small\item\em function to get the end time of the slot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_slot_a96e361b630aa3cd91e5f96c58267b183}{overlaps}} (const \mbox{\hyperlink{class_slot}{Slot}} \&other) const
+\begin{DoxyCompactList}\small\item\em function to check if the current slot overlaps with another slot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class to show the duration of the class, the time of the class, and the day 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_slot_a92a49d49328f84e7f8eb6c709d80b33c}\label{class_slot_a92a49d49328f84e7f8eb6c709d80b33c} 
+\index{Slot@{Slot}!Slot@{Slot}}
+\index{Slot@{Slot}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{Slot()}{Slot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Slot\+::\+Slot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the slot class. 
+
+Time complexity 0(1) \Hypertarget{class_slot_a8bc1db8cdaf92cf355285bd33c326bb8}\label{class_slot_a8bc1db8cdaf92cf355285bd33c326bb8} 
+\index{Slot@{Slot}!Slot@{Slot}}
+\index{Slot@{Slot}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{Slot()}{Slot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Slot\+::\+Slot (\begin{DoxyParamCaption}\item[{const string \&}]{day,  }\item[{const float \&}]{start,  }\item[{const float \&}]{duration,  }\item[{const string \&}]{type }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_slot}{Slot} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & The day of the slot.\\
+\hline
+{\em start} & The start time of the slot.\\
+\hline
+{\em duration} & The duration of the slot.\\
+\hline
+{\em type} & The type of the slot.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_slot_a9dc65cc7af5eeea49d5420c133293a2d}\label{class_slot_a9dc65cc7af5eeea49d5420c133293a2d} 
+\index{Slot@{Slot}!getDay@{getDay}}
+\index{getDay@{getDay}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{getDay()}{getDay()}}
+{\footnotesize\ttfamily const string \& Slot\+::get\+Day (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get the day of the slot 
+
+\begin{DoxyReturn}{Returns}
+the day of the slot.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_slot_ac43a54ed248b55c46a64b61e2f678fce}\label{class_slot_ac43a54ed248b55c46a64b61e2f678fce} 
+\index{Slot@{Slot}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily const float \& Slot\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get duration of the slot 
+
+\begin{DoxyReturn}{Returns}
+the duration of the slot.
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_slot_abf8b5b639de92285fb3f7d33a9994ec2}\label{class_slot_abf8b5b639de92285fb3f7d33a9994ec2} 
+\index{Slot@{Slot}!getEndTime@{getEndTime}}
+\index{getEndTime@{getEndTime}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{getEndTime()}{getEndTime()}}
+{\footnotesize\ttfamily float Slot\+::get\+End\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get the end time of the slot. 
+
+\begin{DoxyReturn}{Returns}
+the end time of the slot.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_slot_a610bb6cb43b9a74482bb5c93c267c4da}\label{class_slot_a610bb6cb43b9a74482bb5c93c267c4da} 
+\index{Slot@{Slot}!getStart@{getStart}}
+\index{getStart@{getStart}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{getStart()}{getStart()}}
+{\footnotesize\ttfamily const float \& Slot\+::get\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get the start time of the slot 
+
+\begin{DoxyReturn}{Returns}
+the start time of the slot.
+\end{DoxyReturn}
+Time Complexity\+: O(1) \Hypertarget{class_slot_a3d97de1e0af0b5584af7906cfbedf2bc}\label{class_slot_a3d97de1e0af0b5584af7906cfbedf2bc} 
+\index{Slot@{Slot}!getType@{getType}}
+\index{getType@{getType}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily const string \& Slot\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get the type of the slot 
+
+\begin{DoxyReturn}{Returns}
+the type of the slot.
+\end{DoxyReturn}
+Time complexity 0(1) \Hypertarget{class_slot_a96e361b630aa3cd91e5f96c58267b183}\label{class_slot_a96e361b630aa3cd91e5f96c58267b183} 
+\index{Slot@{Slot}!overlaps@{overlaps}}
+\index{overlaps@{overlaps}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{overlaps()}{overlaps()}}
+{\footnotesize\ttfamily bool Slot\+::overlaps (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_slot}{Slot}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+function to check if the current slot overlaps with another slot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other slot to check for overlap.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the slots overlap, otherwise false.
+\end{DoxyReturn}
+Time Complexity\+: O(1) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slot.\+h\item 
+slot.\+cpp\end{DoxyCompactItemize}

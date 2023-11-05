@@ -1,0 +1,606 @@
+\doxysection{Request\+Manager Class Reference}
+\hypertarget{class_request_manager}{}\label{class_request_manager}\index{RequestManager@{RequestManager}}
+
+
+function to manage the requests  
+
+
+
+
+{\ttfamily \#include $<$Request\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_request_manager_a565841e9791a01f0a1fd283edc067a8d}{Request\+Manager}} (\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&manager)
+\begin{DoxyCompactList}\small\item\em this function constructs a \doxylink{class_request_manager}{Request\+Manager} with the given \doxylink{class_data_manager}{Data\+Manager} \end{DoxyCompactList}\item 
+\Hypertarget{class_request_manager_a6f3b3f9c7780a0b0571a5a8040e1b9d0}\label{class_request_manager_a6f3b3f9c7780a0b0571a5a8040e1b9d0} 
+{\bfseries Request\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_request_manager}{Request\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_manager_a0ccdabd2573f817f757cda313ded2a58}{set\+Manager}} (\mbox{\hyperlink{class_data_manager}{Data\+Manager}} manager)
+\begin{DoxyCompactList}\small\item\em Set the Data Manager for the \doxylink{class_request_manager}{Request\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_manager_a062104ba5c07591a8db42e6bc4376af3}{add\+Resquest}} (const \mbox{\hyperlink{class_request}{Request}} \&new\+Request)
+\begin{DoxyCompactList}\small\item\em this function adds a new request to the queue of requests \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_manager_a76e93ce883849c2f52f1ad929fa19389}{add\+Dined\+Request}} (const \mbox{\hyperlink{class_request}{Request}} \&new\+Request)
+\begin{DoxyCompactList}\small\item\em this function adds a denied request to the queue of denied requests \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_manager_a9dab86f8eeda676057c6860a6dd57b93}{add\+Accept\+Request}} (const \mbox{\hyperlink{class_request}{Request}} \&new\+Request)
+\begin{DoxyCompactList}\small\item\em this function adds an accepted request to the queue of accepted requests \end{DoxyCompactList}\item 
+queue$<$ \mbox{\hyperlink{class_request}{Request}} $>$ \mbox{\hyperlink{class_request_manager_a6b2937c5be014e8bbb59b444631df510}{get\+Request}} () const
+\begin{DoxyCompactList}\small\item\em this function gets the queue of requests \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_a0b1c82cd9e6b5412ec99590d40546943}{check\+One\+Class\+Uc\+Per\+Student}} (const \mbox{\hyperlink{class_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em this function checks if a student is already enrolled in another \doxylink{class_class_u_c}{Class\+UC} with the same UC code \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_a8924cfaad86e6a571da9225fffb3c223}{check\+If\+The\+Cap\+Is\+Exceeded}} (const \mbox{\hyperlink{class_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em this function checks if the capacity of a \doxylink{class_class_u_c}{Class\+UC} is exceeded with the addition of a new student \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_a96245cb82d42bcc2c17db9efd2283340}{check\+If\+Balance\+Ocuppation}} (const \mbox{\hyperlink{class_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em this function checks if adding or removing a student from a class will maintain balance in class size \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_a57714538dd796ef98adb0cb7771948df}{check\+If\+The\+Schedules\+Overlap}} (const \mbox{\hyperlink{class_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em this function checks if the schedules of a new student overlap with existing schedules of the \doxylink{class_class_u_c}{Class\+UC} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_ae448548cdb19ee681e09c3e7a000cdb1}{check\+Class\+Request}} (const \mbox{\hyperlink{class_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em this function checks the validity of a Class or UC request \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_a127333d97672005eec3557c6f60fb451}{check\+Class\+Student}} (const \mbox{\hyperlink{class_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em this function checks if the student is enrolled in the class they are trying to leave \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_a9a0524ccfb3a1e371647676db1a86a76}{have\+Schedule\+Conflict}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&student\+Class, const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&new\+Class) const
+\begin{DoxyCompactList}\small\item\em this function checks if there is a schedule conflict between two classes \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_class_u_c}{Class\+UC}} \mbox{\hyperlink{class_request_manager_a1c7598f98ac6907457ea06652e2a7cde}{get\+Class\+UCBy\+Code}} (const string \&uc\+Code)
+\begin{DoxyCompactList}\small\item\em this function retrieves a \doxylink{class_class_u_c}{Class\+UC} object based on its code \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_student}{Student}} \mbox{\hyperlink{class_request_manager_a97717b6171a2dbfc1953e008296e9127}{get\+Student\+By\+UP}} (const int \&up\+Number)
+\begin{DoxyCompactList}\small\item\em this function retrieves a student based on their UP number \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_a1811d642bf2e6bac22c5534040847da5}{ingressar\+Em\+UC}} (const int \&up\+Number, const string \&uc\+Code)
+\begin{DoxyCompactList}\small\item\em this function handles a request to join or leave a UC \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_ad451bd7fa9cd4b1551f148d38a936b55}{sair\+De\+UC}} (int up\+Number, const string \&uc\+Code)
+\begin{DoxyCompactList}\small\item\em this function checks if a student can leave a specific UC \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_manager_afcadd34f6614de1931a7e8b29e67597f}{request\+Process}} (\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&new\+Manager)
+\begin{DoxyCompactList}\small\item\em this function Processes and handle requests by changing the student\textquotesingle{}s UC enrollment and classes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_ad5fb53508fb30ce4ca0e71a59e4a2d48}{Uc\+Process}} (const \mbox{\hyperlink{class_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em this function processes UC-\/related requests \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_a18ce771a40917d1d603e61e65aed8c33}{change\+CLass}} (const \mbox{\hyperlink{class_request}{Request}} \&request, \mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&new\+Manager)
+\begin{DoxyCompactList}\small\item\em this function Changes the class of a student based on a request \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_manager_a0d2a10f7e4633b444bf7d388e9d9ed6a}{change\+UC}} (const \mbox{\hyperlink{class_request}{Request}} \&request, \mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&new\+Manager)
+\begin{DoxyCompactList}\small\item\em this function Processes UC-\/related requests and change the student\textquotesingle{}s UC enrollment \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_class_u_c}{Class\+UC}} \mbox{\hyperlink{class_request_manager_a2bcba5c38226b5e71700425ac3e2f39a}{find\+Classin\+Uc}} (\mbox{\hyperlink{class_student}{Student}} student, const string \&uc\+Code)
+\begin{DoxyCompactList}\small\item\em this function finds a compatible class for the student in a UC \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_manager_aa7849c547c15ca90851373509780c3e8}{undorequest\+UC}} (const \mbox{\hyperlink{class_request}{Request}} \&uc\+Resquest, \mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&newmanager)
+\begin{DoxyCompactList}\small\item\em this function reverts changes made by a UC-\/related request \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_manager_a9e33ae46c730e7db4cdc9fc8ecbc6242}{undorequest\+Class}} (const \mbox{\hyperlink{class_request}{Request}} \&class\+Resquest, \mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&new\+Manager)
+\begin{DoxyCompactList}\small\item\em this function reverts changes made by a class-\/related request \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_manager_a50c85087db6b944b8c94778c5a567eb9}{process\+Undo\+Request}} (\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&new\+Manager)
+\begin{DoxyCompactList}\small\item\em this function Processes and handle undo requests by reverting previous changes to UC enrollment and classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_manager_a540052dcc3ae71227f8f82b10245aa07}{show\+All\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em this function displays information about all requests, accepted and denied, and undone requests \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_manager_a9b96efb0d0537880dbf0444f82c91862}{showrequests}} ()
+\begin{DoxyCompactList}\small\item\em this function display information about pending requests \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_manager_aa418dbfbd40d6f15432b66a20a78d1cb}{show\+Accept}} ()
+\begin{DoxyCompactList}\small\item\em this function displays information about accepted requests \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_manager_a300e250dff44a4cf8bd795b37572b679}{show\+Dinie}} ()
+\begin{DoxyCompactList}\small\item\em this function displays information about denied requests. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_manager_a18421b1751cd75198a5fa14e35564a81}{show\+Undo}} ()
+\begin{DoxyCompactList}\small\item\em this function display information about undone requests \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_manager_add7e00c2fb7c76a109c2c39da39bf86e}{write\+Files}} ()
+\begin{DoxyCompactList}\small\item\em this function writes student information to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_request_manager_abe1ac187abe216c67591a5fcb126f16c}\label{class_request_manager_abe1ac187abe216c67591a5fcb126f16c} 
+int const {\bfseries CAP} =25
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+function to manage the requests 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_request_manager_a565841e9791a01f0a1fd283edc067a8d}\label{class_request_manager_a565841e9791a01f0a1fd283edc067a8d} 
+\index{RequestManager@{RequestManager}!RequestManager@{RequestManager}}
+\index{RequestManager@{RequestManager}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{RequestManager()}{RequestManager()}}
+{\footnotesize\ttfamily Request\+Manager\+::\+Request\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&}]{manager }\end{DoxyParamCaption})}
+
+
+
+this function constructs a \doxylink{class_request_manager}{Request\+Manager} with the given \doxylink{class_data_manager}{Data\+Manager} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & A reference to the \doxylink{class_data_manager}{Data\+Manager}\\
+\hline
+\end{DoxyParams}
+Time complexity O(1) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_request_manager_a9dab86f8eeda676057c6860a6dd57b93}\label{class_request_manager_a9dab86f8eeda676057c6860a6dd57b93} 
+\index{RequestManager@{RequestManager}!addAcceptRequest@{addAcceptRequest}}
+\index{addAcceptRequest@{addAcceptRequest}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{addAcceptRequest()}{addAcceptRequest()}}
+{\footnotesize\ttfamily void Request\+Manager\+::add\+Accept\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{new\+Request }\end{DoxyParamCaption})}
+
+
+
+this function adds an accepted request to the queue of accepted requests 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Request} & The accepted request to be added\\
+\hline
+\end{DoxyParams}
+Time complexity O(1) \Hypertarget{class_request_manager_a76e93ce883849c2f52f1ad929fa19389}\label{class_request_manager_a76e93ce883849c2f52f1ad929fa19389} 
+\index{RequestManager@{RequestManager}!addDinedRequest@{addDinedRequest}}
+\index{addDinedRequest@{addDinedRequest}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{addDinedRequest()}{addDinedRequest()}}
+{\footnotesize\ttfamily void Request\+Manager\+::add\+Dined\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{new\+Request }\end{DoxyParamCaption})}
+
+
+
+this function adds a denied request to the queue of denied requests 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Request} & The denied request to be added\\
+\hline
+\end{DoxyParams}
+Time complexity O(1) \Hypertarget{class_request_manager_a062104ba5c07591a8db42e6bc4376af3}\label{class_request_manager_a062104ba5c07591a8db42e6bc4376af3} 
+\index{RequestManager@{RequestManager}!addResquest@{addResquest}}
+\index{addResquest@{addResquest}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{addResquest()}{addResquest()}}
+{\footnotesize\ttfamily void Request\+Manager\+::add\+Resquest (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{new\+Request }\end{DoxyParamCaption})}
+
+
+
+this function adds a new request to the queue of requests 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Request} & The new request to be added\\
+\hline
+\end{DoxyParams}
+Time complexity O(1) \Hypertarget{class_request_manager_a18ce771a40917d1d603e61e65aed8c33}\label{class_request_manager_a18ce771a40917d1d603e61e65aed8c33} 
+\index{RequestManager@{RequestManager}!changeCLass@{changeCLass}}
+\index{changeCLass@{changeCLass}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{changeCLass()}{changeCLass()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::change\+CLass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request,  }\item[{\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&}]{new\+Manager }\end{DoxyParamCaption})}
+
+
+
+this function Changes the class of a student based on a request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request for class change\\
+\hline
+{\em new\+Manager} & The \doxylink{class_data_manager}{Data\+Manager} to be updated with the changes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the class change was successful, false otherwise
+\end{DoxyReturn}
+Time Complexity O(\+N) where N is the number of UCs the student is enrolled in \Hypertarget{class_request_manager_a0d2a10f7e4633b444bf7d388e9d9ed6a}\label{class_request_manager_a0d2a10f7e4633b444bf7d388e9d9ed6a} 
+\index{RequestManager@{RequestManager}!changeUC@{changeUC}}
+\index{changeUC@{changeUC}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{changeUC()}{changeUC()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::change\+UC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request,  }\item[{\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&}]{new\+Manager }\end{DoxyParamCaption})}
+
+
+
+this function Processes UC-\/related requests and change the student\textquotesingle{}s UC enrollment 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be processed\\
+\hline
+{\em new\+Manager} & The \doxylink{class_data_manager}{Data\+Manager} to be updated with the changes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request was successfully processed, false otherwise
+\end{DoxyReturn}
+Time Complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of UCs \Hypertarget{class_request_manager_ae448548cdb19ee681e09c3e7a000cdb1}\label{class_request_manager_ae448548cdb19ee681e09c3e7a000cdb1} 
+\index{RequestManager@{RequestManager}!checkClassRequest@{checkClassRequest}}
+\index{checkClassRequest@{checkClassRequest}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{checkClassRequest()}{checkClassRequest()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::check\+Class\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request }\end{DoxyParamCaption})}
+
+
+
+this function checks the validity of a Class or UC request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request is valid, false otherwise
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of schedules being checked for overlaps \Hypertarget{class_request_manager_a127333d97672005eec3557c6f60fb451}\label{class_request_manager_a127333d97672005eec3557c6f60fb451} 
+\index{RequestManager@{RequestManager}!checkClassStudent@{checkClassStudent}}
+\index{checkClassStudent@{checkClassStudent}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{checkClassStudent()}{checkClassStudent()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::check\+Class\+Student (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request }\end{DoxyParamCaption})}
+
+
+
+this function checks if the student is enrolled in the class they are trying to leave 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the student is enrolled in the class, false otherwise
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} represents the number of \doxylink{class_class_u_c}{Class\+UC} \Hypertarget{class_request_manager_a96245cb82d42bcc2c17db9efd2283340}\label{class_request_manager_a96245cb82d42bcc2c17db9efd2283340} 
+\index{RequestManager@{RequestManager}!checkIfBalanceOcuppation@{checkIfBalanceOcuppation}}
+\index{checkIfBalanceOcuppation@{checkIfBalanceOcuppation}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{checkIfBalanceOcuppation()}{checkIfBalanceOcuppation()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::check\+If\+Balance\+Ocuppation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request }\end{DoxyParamCaption})}
+
+
+
+this function checks if adding or removing a student from a class will maintain balance in class size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request containing information about the class and the student\textquotesingle{}s action (add or remove)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the addition/removal maintains balance, false otherwise
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of classes in the given UC \Hypertarget{class_request_manager_a8924cfaad86e6a571da9225fffb3c223}\label{class_request_manager_a8924cfaad86e6a571da9225fffb3c223} 
+\index{RequestManager@{RequestManager}!checkIfTheCapIsExceeded@{checkIfTheCapIsExceeded}}
+\index{checkIfTheCapIsExceeded@{checkIfTheCapIsExceeded}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{checkIfTheCapIsExceeded()}{checkIfTheCapIsExceeded()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::check\+If\+The\+Cap\+Is\+Exceeded (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request }\end{DoxyParamCaption})}
+
+
+
+this function checks if the capacity of a \doxylink{class_class_u_c}{Class\+UC} is exceeded with the addition of a new student 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the capacity is not exceeded, false otherwise
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of students associated with the \doxylink{class_class_u_c}{Class\+UC} in the request \Hypertarget{class_request_manager_a57714538dd796ef98adb0cb7771948df}\label{class_request_manager_a57714538dd796ef98adb0cb7771948df} 
+\index{RequestManager@{RequestManager}!checkIfTheSchedulesOverlap@{checkIfTheSchedulesOverlap}}
+\index{checkIfTheSchedulesOverlap@{checkIfTheSchedulesOverlap}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{checkIfTheSchedulesOverlap()}{checkIfTheSchedulesOverlap()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::check\+If\+The\+Schedules\+Overlap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request }\end{DoxyParamCaption})}
+
+
+
+this function checks if the schedules of a new student overlap with existing schedules of the \doxylink{class_class_u_c}{Class\+UC} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is no schedule overlap, false otherwise
+\end{DoxyReturn}
+time complexity of O(n \texorpdfstring{$\ast$}{*} m \texorpdfstring{$\ast$}{*} p), where \textquotesingle{}n\textquotesingle{} is the number of days in the student\textquotesingle{}s schedule \textquotesingle{}m\textquotesingle{} is the number of slots per day in the student\textquotesingle{}s schedule \textquotesingle{}p\textquotesingle{} is the number of slots in the \doxylink{class_class_u_c}{Class\+UC} schedule. \Hypertarget{class_request_manager_a0b1c82cd9e6b5412ec99590d40546943}\label{class_request_manager_a0b1c82cd9e6b5412ec99590d40546943} 
+\index{RequestManager@{RequestManager}!checkOneClassUcPerStudent@{checkOneClassUcPerStudent}}
+\index{checkOneClassUcPerStudent@{checkOneClassUcPerStudent}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{checkOneClassUcPerStudent()}{checkOneClassUcPerStudent()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::check\+One\+Class\+Uc\+Per\+Student (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request }\end{DoxyParamCaption})}
+
+
+
+this function checks if a student is already enrolled in another \doxylink{class_class_u_c}{Class\+UC} with the same UC code 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the student is not already enrolled in a \doxylink{class_class_u_c}{Class\+UC} with the same UC code, false otherwise
+\end{DoxyReturn}
+Time complexity O(n log n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects associated with the student \Hypertarget{class_request_manager_a2bcba5c38226b5e71700425ac3e2f39a}\label{class_request_manager_a2bcba5c38226b5e71700425ac3e2f39a} 
+\index{RequestManager@{RequestManager}!findClassinUc@{findClassinUc}}
+\index{findClassinUc@{findClassinUc}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{findClassinUc()}{findClassinUc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_class_u_c}{Class\+UC}} Request\+Manager\+::find\+Classin\+Uc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_student}{Student}}}]{student,  }\item[{const string \&}]{uc\+Code }\end{DoxyParamCaption})}
+
+
+
+this function finds a compatible class for the student in a UC 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & The student for whom a class needs to be found\\
+\hline
+{\em uc\+Code} & The code of the UC to find a compatible class in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The compatible class if found, an empty \doxylink{class_class_u_c}{Class\+UC} otherwise
+\end{DoxyReturn}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of classes in the specified UC \Hypertarget{class_request_manager_a1c7598f98ac6907457ea06652e2a7cde}\label{class_request_manager_a1c7598f98ac6907457ea06652e2a7cde} 
+\index{RequestManager@{RequestManager}!getClassUCByCode@{getClassUCByCode}}
+\index{getClassUCByCode@{getClassUCByCode}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{getClassUCByCode()}{getClassUCByCode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_class_u_c}{Class\+UC}} Request\+Manager\+::get\+Class\+UCBy\+Code (\begin{DoxyParamCaption}\item[{const string \&}]{uc\+Code }\end{DoxyParamCaption})}
+
+
+
+this function retrieves a \doxylink{class_class_u_c}{Class\+UC} object based on its code 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & The code of the UC\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{class_class_u_c}{Class\+UC} object with the given code
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects \Hypertarget{class_request_manager_a6b2937c5be014e8bbb59b444631df510}\label{class_request_manager_a6b2937c5be014e8bbb59b444631df510} 
+\index{RequestManager@{RequestManager}!getRequest@{getRequest}}
+\index{getRequest@{getRequest}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{getRequest()}{getRequest()}}
+{\footnotesize\ttfamily queue$<$ \mbox{\hyperlink{class_request}{Request}} $>$ Request\+Manager\+::get\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+this function gets the queue of requests 
+
+\begin{DoxyReturn}{Returns}
+A copy of the queue of requests
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of elements in the queue \Hypertarget{class_request_manager_a97717b6171a2dbfc1953e008296e9127}\label{class_request_manager_a97717b6171a2dbfc1953e008296e9127} 
+\index{RequestManager@{RequestManager}!getStudentByUP@{getStudentByUP}}
+\index{getStudentByUP@{getStudentByUP}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{getStudentByUP()}{getStudentByUP()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_student}{Student}} Request\+Manager\+::get\+Student\+By\+UP (\begin{DoxyParamCaption}\item[{const int \&}]{up\+Number }\end{DoxyParamCaption})}
+
+
+
+this function retrieves a student based on their UP number 
+
+
+\begin{DoxyParams}{Parameters}
+{\em up\+Number} & The UP number of the student\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The student with the given UP number
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of students \Hypertarget{class_request_manager_a9a0524ccfb3a1e371647676db1a86a76}\label{class_request_manager_a9a0524ccfb3a1e371647676db1a86a76} 
+\index{RequestManager@{RequestManager}!haveScheduleConflict@{haveScheduleConflict}}
+\index{haveScheduleConflict@{haveScheduleConflict}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{haveScheduleConflict()}{haveScheduleConflict()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::have\+Schedule\+Conflict (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{student\+Class,  }\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{new\+Class }\end{DoxyParamCaption}) const}
+
+
+
+this function checks if there is a schedule conflict between two classes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Class} & The class of the student\\
+\hline
+{\em new\+Class} & The new class to be checked for conflict\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is a schedule conflict, false otherwise
+\end{DoxyReturn}
+Time Complexity O(n\texorpdfstring{$\ast$}{*}m), where \textquotesingle{}n\textquotesingle{} is the number of slots in student\+Class and \textquotesingle{}m\textquotesingle{} is the number of slots in new\+Class \Hypertarget{class_request_manager_a1811d642bf2e6bac22c5534040847da5}\label{class_request_manager_a1811d642bf2e6bac22c5534040847da5} 
+\index{RequestManager@{RequestManager}!ingressarEmUC@{ingressarEmUC}}
+\index{ingressarEmUC@{ingressarEmUC}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{ingressarEmUC()}{ingressarEmUC()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::ingressar\+Em\+UC (\begin{DoxyParamCaption}\item[{const int \&}]{up\+Number,  }\item[{const string \&}]{uc\+Code }\end{DoxyParamCaption})}
+
+
+
+this function handles a request to join or leave a UC 
+
+
+\begin{DoxyParams}{Parameters}
+{\em up\+Number} & The UP number of the student\\
+\hline
+{\em uc\+Code} & The code of the UC\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request was successful, false otherwise
+\end{DoxyReturn}
+Time complexity O(n \texorpdfstring{$\ast$}{*} m), where \textquotesingle{}n\textquotesingle{} is the number of UCs associated with the student, and \textquotesingle{}m\textquotesingle{} is the average number of schedules within each of these UCs \Hypertarget{class_request_manager_a50c85087db6b944b8c94778c5a567eb9}\label{class_request_manager_a50c85087db6b944b8c94778c5a567eb9} 
+\index{RequestManager@{RequestManager}!processUndoRequest@{processUndoRequest}}
+\index{processUndoRequest@{processUndoRequest}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{processUndoRequest()}{processUndoRequest()}}
+{\footnotesize\ttfamily void Request\+Manager\+::process\+Undo\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&}]{new\+Manager }\end{DoxyParamCaption})}
+
+
+
+this function Processes and handle undo requests by reverting previous changes to UC enrollment and classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Manager} & The \doxylink{class_data_manager}{Data\+Manager} to be updated with the changes.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of undo requests in the queue. \Hypertarget{class_request_manager_afcadd34f6614de1931a7e8b29e67597f}\label{class_request_manager_afcadd34f6614de1931a7e8b29e67597f} 
+\index{RequestManager@{RequestManager}!requestProcess@{requestProcess}}
+\index{requestProcess@{requestProcess}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{requestProcess()}{requestProcess()}}
+{\footnotesize\ttfamily void Request\+Manager\+::request\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&}]{new\+Manager }\end{DoxyParamCaption})}
+
+
+
+this function Processes and handle requests by changing the student\textquotesingle{}s UC enrollment and classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Manager} & The \doxylink{class_data_manager}{Data\+Manager} to be updated with the changes.\\
+\hline
+\end{DoxyParams}
+Time Complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of pending requests in the queue \Hypertarget{class_request_manager_ad451bd7fa9cd4b1551f148d38a936b55}\label{class_request_manager_ad451bd7fa9cd4b1551f148d38a936b55} 
+\index{RequestManager@{RequestManager}!sairDeUC@{sairDeUC}}
+\index{sairDeUC@{sairDeUC}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{sairDeUC()}{sairDeUC()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::sair\+De\+UC (\begin{DoxyParamCaption}\item[{int}]{up\+Number,  }\item[{const string \&}]{uc\+Code }\end{DoxyParamCaption})}
+
+
+
+this function checks if a student can leave a specific UC 
+
+
+\begin{DoxyParams}{Parameters}
+{\em up\+Number} & The UP number of the student\\
+\hline
+{\em uc\+Code} & The code of the UC to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the student can leave the UC, false otherwise
+\end{DoxyReturn}
+Time Complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of UCs the student is enrolled in \Hypertarget{class_request_manager_a0ccdabd2573f817f757cda313ded2a58}\label{class_request_manager_a0ccdabd2573f817f757cda313ded2a58} 
+\index{RequestManager@{RequestManager}!setManager@{setManager}}
+\index{setManager@{setManager}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{setManager()}{setManager()}}
+{\footnotesize\ttfamily void Request\+Manager\+::set\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_data_manager}{Data\+Manager}}}]{manager }\end{DoxyParamCaption})}
+
+
+
+Set the Data Manager for the \doxylink{class_request_manager}{Request\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The Data Manager to be set\\
+\hline
+\end{DoxyParams}
+Time complexity O(1) \Hypertarget{class_request_manager_aa418dbfbd40d6f15432b66a20a78d1cb}\label{class_request_manager_aa418dbfbd40d6f15432b66a20a78d1cb} 
+\index{RequestManager@{RequestManager}!showAccept@{showAccept}}
+\index{showAccept@{showAccept}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{showAccept()}{showAccept()}}
+{\footnotesize\ttfamily int Request\+Manager\+::show\+Accept (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function displays information about accepted requests 
+
+\begin{DoxyReturn}{Returns}
+The number of accepted requests
+\end{DoxyReturn}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of accepted requests \Hypertarget{class_request_manager_a540052dcc3ae71227f8f82b10245aa07}\label{class_request_manager_a540052dcc3ae71227f8f82b10245aa07} 
+\index{RequestManager@{RequestManager}!showAllChanges@{showAllChanges}}
+\index{showAllChanges@{showAllChanges}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{showAllChanges()}{showAllChanges()}}
+{\footnotesize\ttfamily void Request\+Manager\+::show\+All\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function displays information about all requests, accepted and denied, and undone requests 
+
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of requests and undo requests \Hypertarget{class_request_manager_a300e250dff44a4cf8bd795b37572b679}\label{class_request_manager_a300e250dff44a4cf8bd795b37572b679} 
+\index{RequestManager@{RequestManager}!showDinie@{showDinie}}
+\index{showDinie@{showDinie}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{showDinie()}{showDinie()}}
+{\footnotesize\ttfamily int Request\+Manager\+::show\+Dinie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function displays information about denied requests. 
+
+\begin{DoxyReturn}{Returns}
+The number of denied requests.
+\end{DoxyReturn}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of denied requests. \Hypertarget{class_request_manager_a9b96efb0d0537880dbf0444f82c91862}\label{class_request_manager_a9b96efb0d0537880dbf0444f82c91862} 
+\index{RequestManager@{RequestManager}!showrequests@{showrequests}}
+\index{showrequests@{showrequests}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{showrequests()}{showrequests()}}
+{\footnotesize\ttfamily int Request\+Manager\+::showrequests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function display information about pending requests 
+
+\begin{DoxyReturn}{Returns}
+The number of pending requests
+\end{DoxyReturn}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of pending requests. \Hypertarget{class_request_manager_a18421b1751cd75198a5fa14e35564a81}\label{class_request_manager_a18421b1751cd75198a5fa14e35564a81} 
+\index{RequestManager@{RequestManager}!showUndo@{showUndo}}
+\index{showUndo@{showUndo}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{showUndo()}{showUndo()}}
+{\footnotesize\ttfamily int Request\+Manager\+::show\+Undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function display information about undone requests 
+
+\begin{DoxyReturn}{Returns}
+The number of undone requests
+\end{DoxyReturn}
+Time Complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of undone requests \Hypertarget{class_request_manager_ad5fb53508fb30ce4ca0e71a59e4a2d48}\label{class_request_manager_ad5fb53508fb30ce4ca0e71a59e4a2d48} 
+\index{RequestManager@{RequestManager}!UcProcess@{UcProcess}}
+\index{UcProcess@{UcProcess}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{UcProcess()}{UcProcess()}}
+{\footnotesize\ttfamily bool Request\+Manager\+::\+Uc\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request }\end{DoxyParamCaption})}
+
+
+
+this function processes UC-\/related requests 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be processed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request was successful, false otherwise
+\end{DoxyReturn}
+Time Complexity O(n) where \textquotesingle{}n\textquotesingle{} is the number of UCs the student is enrolled in \Hypertarget{class_request_manager_a9e33ae46c730e7db4cdc9fc8ecbc6242}\label{class_request_manager_a9e33ae46c730e7db4cdc9fc8ecbc6242} 
+\index{RequestManager@{RequestManager}!undorequestClass@{undorequestClass}}
+\index{undorequestClass@{undorequestClass}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{undorequestClass()}{undorequestClass()}}
+{\footnotesize\ttfamily void Request\+Manager\+::undorequest\+Class (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{class\+Resquest,  }\item[{\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&}]{new\+Manager }\end{DoxyParamCaption})}
+
+
+
+this function reverts changes made by a class-\/related request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Request} & The class-\/related request to be undone\\
+\hline
+{\em new\+Manager} & The \doxylink{class_data_manager}{Data\+Manager} to be updated with the changes\\
+\hline
+\end{DoxyParams}
+Time Complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of classes the student is enrolled in \Hypertarget{class_request_manager_aa7849c547c15ca90851373509780c3e8}\label{class_request_manager_aa7849c547c15ca90851373509780c3e8} 
+\index{RequestManager@{RequestManager}!undorequestUC@{undorequestUC}}
+\index{undorequestUC@{undorequestUC}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{undorequestUC()}{undorequestUC()}}
+{\footnotesize\ttfamily void Request\+Manager\+::undorequest\+UC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{uc\+Resquest,  }\item[{\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&}]{newmanager }\end{DoxyParamCaption})}
+
+
+
+this function reverts changes made by a UC-\/related request 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Request} & The UC-\/related request to be undone\\
+\hline
+{\em new\+Manager} & The \doxylink{class_data_manager}{Data\+Manager} to be updated with the changes\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of UCs the student is enrolled in \Hypertarget{class_request_manager_add7e00c2fb7c76a109c2c39da39bf86e}\label{class_request_manager_add7e00c2fb7c76a109c2c39da39bf86e} 
+\index{RequestManager@{RequestManager}!writeFiles@{writeFiles}}
+\index{writeFiles@{writeFiles}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{writeFiles()}{writeFiles()}}
+{\footnotesize\ttfamily void Request\+Manager\+::write\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function writes student information to a file. 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of students in the list 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Request\+Manager.\+h\item 
+Request\+Manager.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,38 @@
+\doxysection{Request.\+h}
+\hypertarget{_request_8h_source}{}\label{_request_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ FEUP\_AED1\_REQUEST\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ FEUP\_AED1\_REQUEST\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}student.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ClassUC.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_request}{Request}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_request}{Request}}(\mbox{\hyperlink{class_student}{Student}}\ \&student,\mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \&wantedClass,\textcolor{keywordtype}{string}\ type);}
+\DoxyCodeLine{00013\ \ \ \ \ \ \mbox{\hyperlink{class_student}{Student}}\ \mbox{\hyperlink{class_request_aca583762dba5f3e7eb7ef915feebb65b}{getStudent}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \mbox{\hyperlink{class_request_a536d4e12f57818b88448e813509ae996}{getClassUc}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_request_a83531a4385724d438f9abaaf095eba1d}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_a5c6cb9b5ae32ed00394b38637293cb6b}{setType}}(\textcolor{keywordtype}{string}\ newType);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_a5132eaa8a057eacb70c85f361f7f8bc9}{printRequest}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (student\ ==\ other.student)\ \&\&\ (wantedClass\ ==\ other.wantedClass)\ \&\&\ (type\ ==\ other.type);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_student}{Student}}\ student;}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\ wantedClass;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{string}\ type;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//type\ apresenta\ uma\ string\ com\ o\ tipo\ de\ operaçao,\ exemplo\ sair\ uc(SU)}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//Entrar-\/E,Sair-\/S,,Uc-\/U,CLass-\/C}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FEUP\_AED1\_REQUEST\_H}}
+
+\end{DoxyCode}

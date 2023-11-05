@@ -1,0 +1,129 @@
+\doxysection{Uc Class Reference}
+\hypertarget{class_uc}{}\label{class_uc}\index{Uc@{Uc}}
+
+
+class to show the curricular unit  
+
+
+
+
+{\ttfamily \#include $<$uc.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_uc_a72608d4c06aaa746178cc461ec54a03d}{Uc}} (string uc\+Id, int uc\+Year, int uc\+Semester, vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ uc\+Slot)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_uc}{Uc} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_uc_a3256c79ed5d9a8604f5e7649f45acc7f}{get\+Uc\+Year}} () const
+\begin{DoxyCompactList}\small\item\em function to get te year of the UC \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_uc_a3d950eeee649f53cb105693f0cc0821a}{get\+Uc\+Semester}} () const
+\begin{DoxyCompactList}\small\item\em function to get the semester of the UC \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_uc_ad9772667ef7629c048fad72a70431601}{get\+Uc\+Id}} () const
+\begin{DoxyCompactList}\small\item\em function to get the identifier of the \doxylink{class_uc}{Uc} \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \mbox{\hyperlink{class_uc_a639a052eab9fabb6180a6724297d2d7d}{get\+Uc\+Slot}} () const
+\begin{DoxyCompactList}\small\item\em function to get the list of slots \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_uc_a6a7910f656577843d7e27064a147a03c}{add\+Uc\+Slot}} (const \mbox{\hyperlink{class_slot}{Slot}} \&slot)
+\begin{DoxyCompactList}\small\item\em function to add a \doxylink{class_slot}{Slot} to the list of slots associated with the \doxylink{class_uc}{Uc} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class to show the curricular unit 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_uc_a72608d4c06aaa746178cc461ec54a03d}\label{class_uc_a72608d4c06aaa746178cc461ec54a03d} 
+\index{Uc@{Uc}!Uc@{Uc}}
+\index{Uc@{Uc}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{Uc()}{Uc()}}
+{\footnotesize\ttfamily Uc\+::\+Uc (\begin{DoxyParamCaption}\item[{string}]{uc\+Id,  }\item[{int}]{uc\+Year,  }\item[{int}]{uc\+Semester,  }\item[{vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$}]{uc\+Slot }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_uc}{Uc} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Id} & The identifier of the \doxylink{class_uc}{Uc}\\
+\hline
+{\em uc\+Year} & The year of the \doxylink{class_uc}{Uc}\\
+\hline
+{\em uc\+Semester} & The semester of the \doxylink{class_uc}{Uc}\\
+\hline
+{\em uc\+Slot} & A vector of slots associated with the \doxylink{class_uc}{Uc}\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of slots in \textquotesingle{}uc\+Slot\textquotesingle{} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_uc_a6a7910f656577843d7e27064a147a03c}\label{class_uc_a6a7910f656577843d7e27064a147a03c} 
+\index{Uc@{Uc}!addUcSlot@{addUcSlot}}
+\index{addUcSlot@{addUcSlot}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{addUcSlot()}{addUcSlot()}}
+{\footnotesize\ttfamily void Uc\+::add\+Uc\+Slot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_slot}{Slot}} \&}]{slot }\end{DoxyParamCaption})}
+
+
+
+function to add a \doxylink{class_slot}{Slot} to the list of slots associated with the \doxylink{class_uc}{Uc} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slot} & The \doxylink{class_slot}{Slot} to add to the \doxylink{class_uc}{Uc}\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) \Hypertarget{class_uc_ad9772667ef7629c048fad72a70431601}\label{class_uc_ad9772667ef7629c048fad72a70431601} 
+\index{Uc@{Uc}!getUcId@{getUcId}}
+\index{getUcId@{getUcId}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{getUcId()}{getUcId()}}
+{\footnotesize\ttfamily string Uc\+::get\+Uc\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get the identifier of the \doxylink{class_uc}{Uc} 
+
+\begin{DoxyReturn}{Returns}
+the identifier of the \doxylink{class_uc}{Uc}
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_uc_a3d950eeee649f53cb105693f0cc0821a}\label{class_uc_a3d950eeee649f53cb105693f0cc0821a} 
+\index{Uc@{Uc}!getUcSemester@{getUcSemester}}
+\index{getUcSemester@{getUcSemester}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{getUcSemester()}{getUcSemester()}}
+{\footnotesize\ttfamily int Uc\+::get\+Uc\+Semester (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get the semester of the UC 
+
+\begin{DoxyReturn}{Returns}
+the semester of the \doxylink{class_uc}{Uc}.
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_uc_a639a052eab9fabb6180a6724297d2d7d}\label{class_uc_a639a052eab9fabb6180a6724297d2d7d} 
+\index{Uc@{Uc}!getUcSlot@{getUcSlot}}
+\index{getUcSlot@{getUcSlot}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{getUcSlot()}{getUcSlot()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ Uc\+::get\+Uc\+Slot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get the list of slots 
+
+\begin{DoxyReturn}{Returns}
+vector of slot
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_uc_a3256c79ed5d9a8604f5e7649f45acc7f}\label{class_uc_a3256c79ed5d9a8604f5e7649f45acc7f} 
+\index{Uc@{Uc}!getUcYear@{getUcYear}}
+\index{getUcYear@{getUcYear}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{getUcYear()}{getUcYear()}}
+{\footnotesize\ttfamily int Uc\+::get\+Uc\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get te year of the UC 
+
+\begin{DoxyReturn}{Returns}
+the year of the UC
+\end{DoxyReturn}
+Time complexity O(1) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+uc.\+h\item 
+uc.\+cpp\end{DoxyCompactItemize}

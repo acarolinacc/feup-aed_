@@ -1,0 +1,576 @@
+\doxysection{Data\+Manager Class Reference}
+\hypertarget{class_data_manager}{}\label{class_data_manager}\index{DataManager@{DataManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \mbox{\hyperlink{class_data_manager_adc1bfca643b45a6f94b60401a7027c55}{get\+Students}} ()
+\begin{DoxyCompactList}\small\item\em the \doxylink{class_data_manager}{Data\+Manager} class manages data related to students and Ucs. \end{DoxyCompactList}\item 
+const vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \& \mbox{\hyperlink{class_data_manager_a271baf8eef5bb4b08cd9d1f1f8b8679c}{get\+All\+UC}} () const
+\begin{DoxyCompactList}\small\item\em this function gets a constant reference to the vector of all UCs stored in the \doxylink{class_data_manager}{Data\+Manager} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_manager_a5ab7df602ba7dc3e86d887a41e685fc5}{add\+Student}} (const \mbox{\hyperlink{class_student}{Student}} \&student)
+\begin{DoxyCompactList}\small\item\em this function add a student to the \doxylink{class_data_manager}{Data\+Manager}\textquotesingle{}s set of students \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_manager_aa840e2690db444e355bc88769839603d}{add\+Class\+UC}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&class\+UC)
+\begin{DoxyCompactList}\small\item\em this function add a \doxylink{class_class_u_c}{Class\+UC} object to the \doxylink{class_data_manager}{Data\+Manager}\textquotesingle{}s vector of UCs \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_manager_a5944a0ec540868b77ffaa3ca7cd4116d}{set\+Students}} (set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ new\+Students)
+\begin{DoxyCompactList}\small\item\em this function set the students in the \doxylink{class_data_manager}{Data\+Manager} to a new set of students \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_manager_ae2ba0ae8543c40735f6c1aa05eb01ec8}{read\+Classes}} ()
+\begin{DoxyCompactList}\small\item\em this function reads class information from a file and update the \doxylink{class_data_manager}{Data\+Manager}\textquotesingle{}s vector of UCs \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_manager_a3ab33ef02e273e5c03d32c61c6325971}{read\+Student\+Classes}} ()
+\begin{DoxyCompactList}\small\item\em this function reads student class information and update the \doxylink{class_data_manager}{Data\+Manager}\textquotesingle{}s student set. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \mbox{\hyperlink{class_data_manager_a98076cc33ca1409744c52b300c395795}{student\+Year}} (char year)
+\begin{DoxyCompactList}\small\item\em this function retrieves a vector of students based on the class code\textquotesingle{}s year \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \mbox{\hyperlink{class_data_manager_a4e2b4455fdd10c851d505cffe002f3be}{students\+Of\+Class\+Uc}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&class\+Uc)
+\begin{DoxyCompactList}\small\item\em this function gets a vector of students enrolled in a specific \doxylink{class_class_u_c}{Class\+UC} \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \mbox{\hyperlink{class_data_manager_a90f3c3aae38c8703b4db440f6fe11c3b}{UCstudents}} (const string \&uc\+Id) const
+\begin{DoxyCompactList}\small\item\em this function gets a vector of students enrolled in a specific UC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_student}{Student}} \mbox{\hyperlink{class_data_manager_a19dd5f842e3fd2e4a1a4ee0b87df7c32}{find\+Student}} (const \mbox{\hyperlink{class_student}{Student}} \&student)
+\begin{DoxyCompactList}\small\item\em this function finds a specific student \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \mbox{\hyperlink{class_data_manager_a7b7c29e08d25b63be1dc744eb98f4586}{class\+Of\+Uc}} (const string \&uc\+Id) const
+\begin{DoxyCompactList}\small\item\em this function gets a vector of classes associated with a specific UC \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \mbox{\hyperlink{class_data_manager_af4ec69dc1f2ed1b5e38ba31326dec15f}{classu\+C\+\_\+x\+\_\+year}} (char year) const
+\begin{DoxyCompactList}\small\item\em this function gets a vector of \doxylink{class_class_u_c}{Class\+UC} objects associated with a specific year identifier \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \mbox{\hyperlink{class_data_manager_ac1b7324f8db5cc38bba09728c2439d1c}{uc\+With\+XStudents}} (int x)
+\begin{DoxyCompactList}\small\item\em this function gets a vector of \doxylink{class_class_u_c}{Class\+UC} objects with a specific number of enrolled students \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \mbox{\hyperlink{class_data_manager_ae0397e994a02d12f6db593bf242c4ef3}{get\+CLass}} (const string \&class\+ID)
+\begin{DoxyCompactList}\small\item\em this function gets all class instances with a specific class\+ID \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_manager_a439a9a0785637473a298714607cd4dfe}{number\+Students\+Uc}} (const string \&uc\+Id) const
+\begin{DoxyCompactList}\small\item\em this function gets the number of students enrolled in a specific UC \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_manager_ac0a4e0d21429311d3f9d34510d88244b}{studentregister\+UCs}} (int n)
+\begin{DoxyCompactList}\small\item\em this function counts students who are registered in at least \textquotesingle{}n\textquotesingle{} UCs \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \mbox{\hyperlink{class_data_manager_ad17d43c3d7de65c8c55ae8b63bed9d5f}{get\+Class\+UCSchedule}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&class\+Uc2)
+\begin{DoxyCompactList}\small\item\em this function gets the schedule of a specific \doxylink{class_class_u_c}{Class\+UC} \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \mbox{\hyperlink{class_data_manager_a4cfb50425d65461da9361beac580e1d8}{get\+Class\+Schedule}} (const string \&class\+Code)
+\begin{DoxyCompactList}\small\item\em this function gets the schedule of a specific class. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \mbox{\hyperlink{class_data_manager_a46c7c91b9a41dafe9fd79e174b3165f4}{get\+Uc\+Schedule}} (const string \&Uc\+Id)
+\begin{DoxyCompactList}\small\item\em this function gets the schedule of a specific UC (University Course). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_student}{Student}} \mbox{\hyperlink{class_data_manager_a29f59a4e0fa2c43283d4569c25e53241}{get\+Student\+Schedule}} (const \mbox{\hyperlink{class_student}{Student}} \&student)
+\begin{DoxyCompactList}\small\item\em this function gets the schedule of a specific student \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \mbox{\hyperlink{class_data_manager_aa071ce71c8d08a873c082291bfbf0f9b}{sort\+AllU}} ()
+\begin{DoxyCompactList}\small\item\em this function sort the {\ttfamily all\+UC\+\_\+} vector using the {\ttfamily sorter} comparison function \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \mbox{\hyperlink{class_data_manager_a86bd11d24fa368c3de6272c4c31ba76c}{sort\+All\+U\+\_\+occupation}} ()
+\begin{DoxyCompactList}\small\item\em this function sort the {\ttfamily all\+UC\+\_\+} vector by UC student occupation \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_data_manager_a783a3f998f214bd55d5b33961ed28744}{sorter\+Occupation}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&a, const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&b) const
+\begin{DoxyCompactList}\small\item\em this function compares two \doxylink{class_class_u_c}{Class\+UC} objects based on UC student occupation \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_data_manager_a48cf707bc51ed882c2ed2aa3d34923a1}{sorter}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&a, const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&b)
+\begin{DoxyCompactList}\small\item\em Comparison function for sorting \doxylink{class_class_u_c}{Class\+UC} objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_data_manager_a0bb8f0b73dc81554f2827583645fcec0}{class\+Uc\+Have\+Less\+Then\+XStudents}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&class\+Uc, int x)
+\begin{DoxyCompactList}\small\item\em this function checks if a specific \doxylink{class_class_u_c}{Class\+UC} has less than \textquotesingle{}x\textquotesingle{} students \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_manager_a790366e17403aab63cffb6baaf247753}{sort\+Student}} (vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \&students, string type)
+\begin{DoxyCompactList}\small\item\em this function sorts a vector of students based on a specified sorting type \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_manager_acc7ebe30126f809b4587957f1aafcbe2}{extract\+Last\+Number}} (const string \&class\+Code)
+\begin{DoxyCompactList}\small\item\em this function extracts the last numeric component from a class code \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_data_manager_a089d353a843f0ca2691c570e5bef1af5}{sort\+By\+Last\+Number}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&a, const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&b)
+\begin{DoxyCompactList}\small\item\em this function compares two \doxylink{class_class_u_c}{Class\+UC} objects based on the last numeric component of their class codes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_manager_aecb57a3948cca59d03e1e2597ebdd2a0}{ordenar\+Turmas\+Por\+Ultimos\+Digitos}} (vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \&turmas\+Uc, char order\+Choice) const
+\begin{DoxyCompactList}\small\item\em this function orders a vector of \doxylink{class_class_u_c}{Class\+UC} objects based on the last two digits of their class codes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_manager_aa840e2690db444e355bc88769839603d}\label{class_data_manager_aa840e2690db444e355bc88769839603d} 
+\index{DataManager@{DataManager}!addClassUC@{addClassUC}}
+\index{addClassUC@{addClassUC}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{addClassUC()}{addClassUC()}}
+{\footnotesize\ttfamily void Data\+Manager\+::add\+Class\+UC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{class\+UC }\end{DoxyParamCaption})}
+
+
+
+this function add a \doxylink{class_class_u_c}{Class\+UC} object to the \doxylink{class_data_manager}{Data\+Manager}\textquotesingle{}s vector of UCs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+UC} & The \doxylink{class_class_u_c}{Class\+UC} object to be added\\
+\hline
+\end{DoxyParams}
+Time complexity is O(1) \Hypertarget{class_data_manager_a5ab7df602ba7dc3e86d887a41e685fc5}\label{class_data_manager_a5ab7df602ba7dc3e86d887a41e685fc5} 
+\index{DataManager@{DataManager}!addStudent@{addStudent}}
+\index{addStudent@{addStudent}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{addStudent()}{addStudent()}}
+{\footnotesize\ttfamily void Data\+Manager\+::add\+Student (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{student }\end{DoxyParamCaption})}
+
+
+
+this function add a student to the \doxylink{class_data_manager}{Data\+Manager}\textquotesingle{}s set of students 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & The \doxylink{class_student}{Student} object to be added.\\
+\hline
+\end{DoxyParams}
+Time complexity is O(log n), where \textquotesingle{}n\textquotesingle{} is the number of students in the set \Hypertarget{class_data_manager_a7b7c29e08d25b63be1dc744eb98f4586}\label{class_data_manager_a7b7c29e08d25b63be1dc744eb98f4586} 
+\index{DataManager@{DataManager}!classOfUc@{classOfUc}}
+\index{classOfUc@{classOfUc}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{classOfUc()}{classOfUc()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ Data\+Manager\+::class\+Of\+Uc (\begin{DoxyParamCaption}\item[{const string \&}]{uc\+Id }\end{DoxyParamCaption}) const}
+
+
+
+this function gets a vector of classes associated with a specific UC 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Id} & The UC code for which to retrieve associated classes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of classes associated with the specified UC.
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n is the number of classes in the {\ttfamily all\+UC\+\_\+} \Hypertarget{class_data_manager_af4ec69dc1f2ed1b5e38ba31326dec15f}\label{class_data_manager_af4ec69dc1f2ed1b5e38ba31326dec15f} 
+\index{DataManager@{DataManager}!classuC\_x\_year@{classuC\_x\_year}}
+\index{classuC\_x\_year@{classuC\_x\_year}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{classuC\_x\_year()}{classuC\_x\_year()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ Data\+Manager\+::classu\+C\+\_\+x\+\_\+year (\begin{DoxyParamCaption}\item[{char}]{year }\end{DoxyParamCaption}) const}
+
+
+
+this function gets a vector of \doxylink{class_class_u_c}{Class\+UC} objects associated with a specific year identifier 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & The year identifier to filter the classes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_class_u_c}{Class\+UC} objects associated with the specified year
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects in the \`{}all\+UC\+\_\+ \Hypertarget{class_data_manager_a0bb8f0b73dc81554f2827583645fcec0}\label{class_data_manager_a0bb8f0b73dc81554f2827583645fcec0} 
+\index{DataManager@{DataManager}!classUcHaveLessThenXStudents@{classUcHaveLessThenXStudents}}
+\index{classUcHaveLessThenXStudents@{classUcHaveLessThenXStudents}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{classUcHaveLessThenXStudents()}{classUcHaveLessThenXStudents()}}
+{\footnotesize\ttfamily bool Data\+Manager\+::class\+Uc\+Have\+Less\+Then\+XStudents (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{class\+Uc,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+this function checks if a specific \doxylink{class_class_u_c}{Class\+UC} has less than \textquotesingle{}x\textquotesingle{} students 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Uc} & The \doxylink{class_class_u_c}{Class\+UC} to check for student enrollment\\
+\hline
+{\em x} & The threshold number of students to compare against\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{class_class_u_c}{Class\+UC} has fewer than \textquotesingle{}x\textquotesingle{} students, otherwise false
+\end{DoxyReturn}
+Time complexity O(n \texorpdfstring{$\ast$}{*} m), where \textquotesingle{}n\textquotesingle{} is the number of students and \textquotesingle{}m\textquotesingle{} is the average number of UCs associated with each student \Hypertarget{class_data_manager_acc7ebe30126f809b4587957f1aafcbe2}\label{class_data_manager_acc7ebe30126f809b4587957f1aafcbe2} 
+\index{DataManager@{DataManager}!extractLastNumber@{extractLastNumber}}
+\index{extractLastNumber@{extractLastNumber}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{extractLastNumber()}{extractLastNumber()}}
+{\footnotesize\ttfamily int Data\+Manager\+::extract\+Last\+Number (\begin{DoxyParamCaption}\item[{const string \&}]{class\+Code }\end{DoxyParamCaption})}
+
+
+
+this function extracts the last numeric component from a class code 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & The class code string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The last numeric component extracted from the class code
+\end{DoxyReturn}
+Time Complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the length of the class code string. \Hypertarget{class_data_manager_a19dd5f842e3fd2e4a1a4ee0b87df7c32}\label{class_data_manager_a19dd5f842e3fd2e4a1a4ee0b87df7c32} 
+\index{DataManager@{DataManager}!findStudent@{findStudent}}
+\index{findStudent@{findStudent}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{findStudent()}{findStudent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_student}{Student}} Data\+Manager\+::find\+Student (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{student }\end{DoxyParamCaption})}
+
+
+
+this function finds a specific student 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & The \doxylink{class_student}{Student} object to find\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The found \doxylink{class_student}{Student} object
+\end{DoxyReturn}
+Time complexity O(log n), where \textquotesingle{}n\textquotesingle{} is the number of students \Hypertarget{class_data_manager_a271baf8eef5bb4b08cd9d1f1f8b8679c}\label{class_data_manager_a271baf8eef5bb4b08cd9d1f1f8b8679c} 
+\index{DataManager@{DataManager}!getAllUC@{getAllUC}}
+\index{getAllUC@{getAllUC}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{getAllUC()}{getAllUC()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \& Data\+Manager\+::get\+All\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+this function gets a constant reference to the vector of all UCs stored in the \doxylink{class_data_manager}{Data\+Manager} 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the vector of all UCs
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_data_manager_ae0397e994a02d12f6db593bf242c4ef3}\label{class_data_manager_ae0397e994a02d12f6db593bf242c4ef3} 
+\index{DataManager@{DataManager}!getCLass@{getCLass}}
+\index{getCLass@{getCLass}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{getCLass()}{getCLass()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ Data\+Manager\+::get\+CLass (\begin{DoxyParamCaption}\item[{const string \&}]{class\+ID }\end{DoxyParamCaption})}
+
+
+
+this function gets all class instances with a specific class\+ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+ID} & The class ID to search for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_class_u_c}{Class\+UC} instances matching the class ID
+\end{DoxyReturn}
+Time Complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} instances in the \textquotesingle{}all\+UC\+\_\+\textquotesingle{} vector \Hypertarget{class_data_manager_a4cfb50425d65461da9361beac580e1d8}\label{class_data_manager_a4cfb50425d65461da9361beac580e1d8} 
+\index{DataManager@{DataManager}!getClassSchedule@{getClassSchedule}}
+\index{getClassSchedule@{getClassSchedule}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{getClassSchedule()}{getClassSchedule()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ Data\+Manager\+::get\+Class\+Schedule (\begin{DoxyParamCaption}\item[{const string \&}]{class\+Code }\end{DoxyParamCaption})}
+
+
+
+this function gets the schedule of a specific class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & The class code for which to retrieve the schedule.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_slot}{Slot} objects representing the schedule of the specified class.
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects in the all\+UC\+\_\+ \Hypertarget{class_data_manager_ad17d43c3d7de65c8c55ae8b63bed9d5f}\label{class_data_manager_ad17d43c3d7de65c8c55ae8b63bed9d5f} 
+\index{DataManager@{DataManager}!getClassUCSchedule@{getClassUCSchedule}}
+\index{getClassUCSchedule@{getClassUCSchedule}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{getClassUCSchedule()}{getClassUCSchedule()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ Data\+Manager\+::get\+Class\+UCSchedule (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{class\+Uc2 }\end{DoxyParamCaption})}
+
+
+
+this function gets the schedule of a specific \doxylink{class_class_u_c}{Class\+UC} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Uc2} & The \doxylink{class_class_u_c}{Class\+UC} for which to retrieve the schedule\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_slot}{Slot} objects representing the schedule of the specified \doxylink{class_class_u_c}{Class\+UC}
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects in the all\+UC\+\_\+ \Hypertarget{class_data_manager_adc1bfca643b45a6f94b60401a7027c55}\label{class_data_manager_adc1bfca643b45a6f94b60401a7027c55} 
+\index{DataManager@{DataManager}!getStudents@{getStudents}}
+\index{getStudents@{getStudents}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{getStudents()}{getStudents()}}
+{\footnotesize\ttfamily set$<$ \mbox{\hyperlink{class_student}{Student}} $>$ Data\+Manager\+::get\+Students (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+the \doxylink{class_data_manager}{Data\+Manager} class manages data related to students and Ucs. 
+
+this function get a set of all the students in the \doxylink{class_data_manager}{Data\+Manager}
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of students in the \doxylink{class_data_manager}{Data\+Manager} \Hypertarget{class_data_manager_a29f59a4e0fa2c43283d4569c25e53241}\label{class_data_manager_a29f59a4e0fa2c43283d4569c25e53241} 
+\index{DataManager@{DataManager}!getStudentSchedule@{getStudentSchedule}}
+\index{getStudentSchedule@{getStudentSchedule}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{getStudentSchedule()}{getStudentSchedule()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_student}{Student}} Data\+Manager\+::get\+Student\+Schedule (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{student }\end{DoxyParamCaption})}
+
+
+
+this function gets the schedule of a specific student 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & The \doxylink{class_student}{Student} object for which to retrieve the schedule.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_student}{Student} object with an updated schedule based on the student\textquotesingle{}s enrolled classes.
+\end{DoxyReturn}
+Time complexity of O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} \Hypertarget{class_data_manager_a46c7c91b9a41dafe9fd79e174b3165f4}\label{class_data_manager_a46c7c91b9a41dafe9fd79e174b3165f4} 
+\index{DataManager@{DataManager}!getUcSchedule@{getUcSchedule}}
+\index{getUcSchedule@{getUcSchedule}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{getUcSchedule()}{getUcSchedule()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ Data\+Manager\+::get\+Uc\+Schedule (\begin{DoxyParamCaption}\item[{const string \&}]{Uc\+Id }\end{DoxyParamCaption})}
+
+
+
+this function gets the schedule of a specific UC (University Course). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Uc\+Id} & The UC code for which to retrieve the schedule.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_slot}{Slot} objects representing the schedule of the specified UC.
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects in the all\+UC\+\_\+ \Hypertarget{class_data_manager_a439a9a0785637473a298714607cd4dfe}\label{class_data_manager_a439a9a0785637473a298714607cd4dfe} 
+\index{DataManager@{DataManager}!numberStudentsUc@{numberStudentsUc}}
+\index{numberStudentsUc@{numberStudentsUc}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{numberStudentsUc()}{numberStudentsUc()}}
+{\footnotesize\ttfamily int Data\+Manager\+::number\+Students\+Uc (\begin{DoxyParamCaption}\item[{const string \&}]{uc\+Id }\end{DoxyParamCaption}) const}
+
+
+
+this function gets the number of students enrolled in a specific UC 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Id} & The UC code for which to count the enrolled students\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of students enrolled in the specified UC
+\end{DoxyReturn}
+Time complexity O(n \texorpdfstring{$\ast$}{*} m), where \textquotesingle{}n\textquotesingle{} is the number of students and \textquotesingle{}m\textquotesingle{} is the average number of UCs associated with each student \Hypertarget{class_data_manager_aecb57a3948cca59d03e1e2597ebdd2a0}\label{class_data_manager_aecb57a3948cca59d03e1e2597ebdd2a0} 
+\index{DataManager@{DataManager}!ordenarTurmasPorUltimosDigitos@{ordenarTurmasPorUltimosDigitos}}
+\index{ordenarTurmasPorUltimosDigitos@{ordenarTurmasPorUltimosDigitos}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{ordenarTurmasPorUltimosDigitos()}{ordenarTurmasPorUltimosDigitos()}}
+{\footnotesize\ttfamily void Data\+Manager\+::ordenar\+Turmas\+Por\+Ultimos\+Digitos (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \&}]{turmas\+Uc,  }\item[{char}]{order\+Choice }\end{DoxyParamCaption}) const}
+
+
+
+this function orders a vector of \doxylink{class_class_u_c}{Class\+UC} objects based on the last two digits of their class codes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em turmas\+Uc} & A vector of \doxylink{class_class_u_c}{Class\+UC} objects to be ordered\\
+\hline
+{\em order\+Choice} & A character indicating the ordering choice\\
+\hline
+\end{DoxyParams}
+Time Complexity O(n  log n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} \Hypertarget{class_data_manager_ae2ba0ae8543c40735f6c1aa05eb01ec8}\label{class_data_manager_ae2ba0ae8543c40735f6c1aa05eb01ec8} 
+\index{DataManager@{DataManager}!readClasses@{readClasses}}
+\index{readClasses@{readClasses}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{readClasses()}{readClasses()}}
+{\footnotesize\ttfamily void Data\+Manager\+::read\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function reads class information from a file and update the \doxylink{class_data_manager}{Data\+Manager}\textquotesingle{}s vector of UCs 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of entries in the file \Hypertarget{class_data_manager_a3ab33ef02e273e5c03d32c61c6325971}\label{class_data_manager_a3ab33ef02e273e5c03d32c61c6325971} 
+\index{DataManager@{DataManager}!readStudentClasses@{readStudentClasses}}
+\index{readStudentClasses@{readStudentClasses}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{readStudentClasses()}{readStudentClasses()}}
+{\footnotesize\ttfamily void Data\+Manager\+::read\+Student\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function reads student class information and update the \doxylink{class_data_manager}{Data\+Manager}\textquotesingle{}s student set. 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of entries in the file \Hypertarget{class_data_manager_a5944a0ec540868b77ffaa3ca7cd4116d}\label{class_data_manager_a5944a0ec540868b77ffaa3ca7cd4116d} 
+\index{DataManager@{DataManager}!setStudents@{setStudents}}
+\index{setStudents@{setStudents}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{setStudents()}{setStudents()}}
+{\footnotesize\ttfamily void Data\+Manager\+::set\+Students (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_student}{Student}} $>$}]{new\+Students }\end{DoxyParamCaption})}
+
+
+
+this function set the students in the \doxylink{class_data_manager}{Data\+Manager} to a new set of students 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Students} & The new set of students to be stored in the \doxylink{class_data_manager}{Data\+Manager}\\
+\hline
+\end{DoxyParams}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of students in the new set \Hypertarget{class_data_manager_aa071ce71c8d08a873c082291bfbf0f9b}\label{class_data_manager_aa071ce71c8d08a873c082291bfbf0f9b} 
+\index{DataManager@{DataManager}!sortAllU@{sortAllU}}
+\index{sortAllU@{sortAllU}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{sortAllU()}{sortAllU()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ Data\+Manager\+::sort\+AllU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function sort the {\ttfamily all\+UC\+\_\+} vector using the {\ttfamily sorter} comparison function 
+
+This method sorts the {\ttfamily all\+UC\+\_\+} vector based on the comparison function {\ttfamily sorter}
+
+\begin{DoxyReturn}{Returns}
+A sorted vector of \doxylink{class_class_u_c}{Class\+UC} objects
+\end{DoxyReturn}
+Time complexity O(n  log n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects in the {\ttfamily all\+UC\+\_\+} vector \Hypertarget{class_data_manager_a86bd11d24fa368c3de6272c4c31ba76c}\label{class_data_manager_a86bd11d24fa368c3de6272c4c31ba76c} 
+\index{DataManager@{DataManager}!sortAllU\_occupation@{sortAllU\_occupation}}
+\index{sortAllU\_occupation@{sortAllU\_occupation}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{sortAllU\_occupation()}{sortAllU\_occupation()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ Data\+Manager\+::sort\+All\+U\+\_\+occupation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function sort the {\ttfamily all\+UC\+\_\+} vector by UC student occupation 
+
+\begin{DoxyReturn}{Returns}
+A sorted vector of \doxylink{class_class_u_c}{Class\+UC} objects
+\end{DoxyReturn}
+Time complexity O(n log n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects in the {\ttfamily all\+UC\+\_\+} \Hypertarget{class_data_manager_a089d353a843f0ca2691c570e5bef1af5}\label{class_data_manager_a089d353a843f0ca2691c570e5bef1af5} 
+\index{DataManager@{DataManager}!sortByLastNumber@{sortByLastNumber}}
+\index{sortByLastNumber@{sortByLastNumber}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{sortByLastNumber()}{sortByLastNumber()}}
+{\footnotesize\ttfamily bool Data\+Manager\+::sort\+By\+Last\+Number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+this function compares two \doxylink{class_class_u_c}{Class\+UC} objects based on the last numeric component of their class codes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first \doxylink{class_class_u_c}{Class\+UC} object to compare\\
+\hline
+{\em b} & The second \doxylink{class_class_u_c}{Class\+UC} object to compare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the last numeric component of a is less than the last numeric component of b, otherwise, false
+\end{DoxyReturn}
+Time Complexity\+: O(k1 + k2), where \textquotesingle{}k1\textquotesingle{} and \textquotesingle{}k2\textquotesingle{} are the lengths of the class codes of \textquotesingle{}a\textquotesingle{} and \textquotesingle{}b\textquotesingle{}, respectively. \Hypertarget{class_data_manager_a48cf707bc51ed882c2ed2aa3d34923a1}\label{class_data_manager_a48cf707bc51ed882c2ed2aa3d34923a1} 
+\index{DataManager@{DataManager}!sorter@{sorter}}
+\index{sorter@{sorter}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{sorter()}{sorter()}}
+{\footnotesize\ttfamily bool Data\+Manager\+::sorter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Comparison function for sorting \doxylink{class_class_u_c}{Class\+UC} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first \doxylink{class_class_u_c}{Class\+UC} object to compare\\
+\hline
+{\em b} & The second \doxylink{class_class_u_c}{Class\+UC} object to compare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if \textquotesingle{}a\textquotesingle{} should come before \textquotesingle{}b\textquotesingle{} in the sorted order, otherwise false
+\end{DoxyReturn}
+Time complexity O(n \texorpdfstring{$\ast$}{*} m), where \textquotesingle{}n\textquotesingle{} is the number of students and \textquotesingle{}m\textquotesingle{} is the average number of UCs associated with each student \Hypertarget{class_data_manager_a783a3f998f214bd55d5b33961ed28744}\label{class_data_manager_a783a3f998f214bd55d5b33961ed28744} 
+\index{DataManager@{DataManager}!sorterOccupation@{sorterOccupation}}
+\index{sorterOccupation@{sorterOccupation}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{sorterOccupation()}{sorterOccupation()}}
+{\footnotesize\ttfamily bool Data\+Manager\+::sorter\+Occupation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{b }\end{DoxyParamCaption}) const}
+
+
+
+this function compares two \doxylink{class_class_u_c}{Class\+UC} objects based on UC student occupation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first \doxylink{class_class_u_c}{Class\+UC} object to compare\\
+\hline
+{\em b} & The second \doxylink{class_class_u_c}{Class\+UC} object to compare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the UC associated with \textquotesingle{}a\textquotesingle{} has more students enrolled than the UC associated with \textquotesingle{}b\textquotesingle{} ,otherwise false.
+\end{DoxyReturn}
+Time complexity O(n \texorpdfstring{$\ast$}{*} m), where \textquotesingle{}n\textquotesingle{} is the number of students, and \textquotesingle{}m\textquotesingle{} is the average number of UCs associated with each studen \Hypertarget{class_data_manager_a790366e17403aab63cffb6baaf247753}\label{class_data_manager_a790366e17403aab63cffb6baaf247753} 
+\index{DataManager@{DataManager}!sortStudent@{sortStudent}}
+\index{sortStudent@{sortStudent}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{sortStudent()}{sortStudent()}}
+{\footnotesize\ttfamily void Data\+Manager\+::sort\+Student (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \&}]{students,  }\item[{string}]{type }\end{DoxyParamCaption})}
+
+
+
+this function sorts a vector of students based on a specified sorting type 
+
+
+\begin{DoxyParams}{Parameters}
+{\em students} & The vector of \doxylink{class_student}{Student} objects to be sorted\\
+\hline
+{\em type} & The sorting type, which can be "{}alphabetical,"{} "{}reverse alphabetical,"{} "{}numerical,"{} or "{}reverse numerical."{}\\
+\hline
+\end{DoxyParams}
+Time complexity O(n log n), where \textquotesingle{}n\textquotesingle{} is the number of students in the input vector. \Hypertarget{class_data_manager_ac0a4e0d21429311d3f9d34510d88244b}\label{class_data_manager_ac0a4e0d21429311d3f9d34510d88244b} 
+\index{DataManager@{DataManager}!studentregisterUCs@{studentregisterUCs}}
+\index{studentregisterUCs@{studentregisterUCs}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{studentregisterUCs()}{studentregisterUCs()}}
+{\footnotesize\ttfamily int Data\+Manager\+::studentregister\+UCs (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+this function counts students who are registered in at least \textquotesingle{}n\textquotesingle{} UCs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The minimum number of UCs a student should be registered in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The count of students meeting the criteria
+\end{DoxyReturn}
+Time complexity O(n \texorpdfstring{$\ast$}{*} m), where \textquotesingle{}n\textquotesingle{} is the number of students and \textquotesingle{}m\textquotesingle{} is the average number of UCs associated with each student \Hypertarget{class_data_manager_a4e2b4455fdd10c851d505cffe002f3be}\label{class_data_manager_a4e2b4455fdd10c851d505cffe002f3be} 
+\index{DataManager@{DataManager}!studentsOfClassUc@{studentsOfClassUc}}
+\index{studentsOfClassUc@{studentsOfClassUc}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{studentsOfClassUc()}{studentsOfClassUc()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ Data\+Manager\+::students\+Of\+Class\+Uc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{class\+Uc }\end{DoxyParamCaption})}
+
+
+
+this function gets a vector of students enrolled in a specific \doxylink{class_class_u_c}{Class\+UC} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Uc} & The \doxylink{class_class_u_c}{Class\+UC} object for which to retrieve enrolled students\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of students enrolled in the specified \doxylink{class_class_u_c}{Class\+UC}.
+\end{DoxyReturn}
+Time complexity O(n \texorpdfstring{$\ast$}{*} m), where \textquotesingle{}n\textquotesingle{} is the number of students and \textquotesingle{}m\textquotesingle{} is the average number of UCs associated with each student \Hypertarget{class_data_manager_a98076cc33ca1409744c52b300c395795}\label{class_data_manager_a98076cc33ca1409744c52b300c395795} 
+\index{DataManager@{DataManager}!studentYear@{studentYear}}
+\index{studentYear@{studentYear}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{studentYear()}{studentYear()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ Data\+Manager\+::student\+Year (\begin{DoxyParamCaption}\item[{char}]{year }\end{DoxyParamCaption})}
+
+
+
+this function retrieves a vector of students based on the class code\textquotesingle{}s year 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & The year to filter the students by, typically represented as a character\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the students whose class code matches the specified year
+\end{DoxyReturn}
+Time complexity O(n \texorpdfstring{$\ast$}{*} m), where \textquotesingle{}n\textquotesingle{} is the number of students and \textquotesingle{}m\textquotesingle{} is the maximum number of class codes a student can have. \Hypertarget{class_data_manager_a90f3c3aae38c8703b4db440f6fe11c3b}\label{class_data_manager_a90f3c3aae38c8703b4db440f6fe11c3b} 
+\index{DataManager@{DataManager}!UCstudents@{UCstudents}}
+\index{UCstudents@{UCstudents}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{UCstudents()}{UCstudents()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ Data\+Manager\+::\+UCstudents (\begin{DoxyParamCaption}\item[{const string \&}]{uc\+Id }\end{DoxyParamCaption}) const}
+
+
+
+this function gets a vector of students enrolled in a specific UC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Id} & The UC code for which to retrieve enrolled students.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of students who are enrolled in the specified UC.
+\end{DoxyReturn}
+Time complexity O(n \texorpdfstring{$\ast$}{*} m), where \textquotesingle{}n is the number of students and \textquotesingle{}n\textquotesingle{} is the average number of UCs associated with each student \Hypertarget{class_data_manager_ac1b7324f8db5cc38bba09728c2439d1c}\label{class_data_manager_ac1b7324f8db5cc38bba09728c2439d1c} 
+\index{DataManager@{DataManager}!ucWithXStudents@{ucWithXStudents}}
+\index{ucWithXStudents@{ucWithXStudents}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{ucWithXStudents()}{ucWithXStudents()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ Data\+Manager\+::uc\+With\+XStudents (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+this function gets a vector of \doxylink{class_class_u_c}{Class\+UC} objects with a specific number of enrolled students 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The number of students for filtering\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_class_u_c}{Class\+UC} objects with \textquotesingle{}x\textquotesingle{} enrolled students
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects in the \`{}all\+UC\+\_\+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Data\+Manager.\+h\item 
+Data\+Manager.\+cpp\end{DoxyCompactItemize}

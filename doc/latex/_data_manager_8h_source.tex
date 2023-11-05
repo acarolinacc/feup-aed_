@@ -1,0 +1,76 @@
+\doxysection{Data\+Manager.\+h}
+\hypertarget{_data_manager_8h_source}{}\label{_data_manager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATAMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATAMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}student.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}slot.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ClassUC.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_data_manager}{DataManager}}\{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//DataManager();}}
+\DoxyCodeLine{00020\ \ \ \ \ set<Student>\ \mbox{\hyperlink{class_data_manager_adc1bfca643b45a6f94b60401a7027c55}{getStudents}}()\ ;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ vector<ClassUC>\&\ \mbox{\hyperlink{class_data_manager_a271baf8eef5bb4b08cd9d1f1f8b8679c}{getAllUC}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_manager_a5ab7df602ba7dc3e86d887a41e685fc5}{addStudent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student}{Student}}\&\ student);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_manager_aa840e2690db444e355bc88769839603d}{addClassUC}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ classUC);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_manager_a5944a0ec540868b77ffaa3ca7cd4116d}{setStudents}}(\ set<Student>\ newStudents);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//read}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_manager_ae2ba0ae8543c40735f6c1aa05eb01ec8}{readClasses}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_manager_a3ab33ef02e273e5c03d32c61c6325971}{readStudentClasses}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//students}}
+\DoxyCodeLine{00029\ \ \ \ \ vector<Student>\ \mbox{\hyperlink{class_data_manager_a98076cc33ca1409744c52b300c395795}{studentYear}}(\textcolor{keywordtype}{char}\ year);}
+\DoxyCodeLine{00030\ \ \ \ \ vector<Student>\ \mbox{\hyperlink{class_data_manager_a4e2b4455fdd10c851d505cffe002f3be}{studentsOfClassUc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ classUc);}
+\DoxyCodeLine{00031\ \ \ \ \ vector<Student>\ \mbox{\hyperlink{class_data_manager_a90f3c3aae38c8703b4db440f6fe11c3b}{UCstudents}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ ucId)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_student}{Student}}\ \mbox{\hyperlink{class_data_manager_a19dd5f842e3fd2e4a1a4ee0b87df7c32}{findStudent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student}{Student}}\&\ student);\ \textcolor{comment}{//recebe\ um\ id\ e\ um\ nome\ e\ retorna\ o\ estudante\ com\ as\ suas\ turmas;}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//classUc}}
+\DoxyCodeLine{00034\ \ \ \ \ vector<ClassUC>\ \mbox{\hyperlink{class_data_manager_a7b7c29e08d25b63be1dc744eb98f4586}{classOfUc}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ ucId)\textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ vector<ClassUC>\ \mbox{\hyperlink{class_data_manager_af4ec69dc1f2ed1b5e38ba31326dec15f}{classuC\_x\_year}}(\textcolor{keywordtype}{char}\ year)\textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ vector<ClassUC>\ \mbox{\hyperlink{class_data_manager_ac1b7324f8db5cc38bba09728c2439d1c}{ucWithXStudents}}(\textcolor{keywordtype}{int}\ x);}
+\DoxyCodeLine{00037\ \ \ \ \ vector<ClassUC>\ \mbox{\hyperlink{class_data_manager_ae0397e994a02d12f6db593bf242c4ef3}{getCLass}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ classID);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_data_manager_a439a9a0785637473a298714607cd4dfe}{numberStudentsUc}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ ucId)\textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_data_manager_ac0a4e0d21429311d3f9d34510d88244b}{studentregisterUCs}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//shedule}}
+\DoxyCodeLine{00042\ \ \ \ \ vector<Slot>\ \mbox{\hyperlink{class_data_manager_ad17d43c3d7de65c8c55ae8b63bed9d5f}{getClassUCSchedule}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ classUc2);}
+\DoxyCodeLine{00043\ \ \ \ \ vector<Slot>\ \mbox{\hyperlink{class_data_manager_a4cfb50425d65461da9361beac580e1d8}{getClassSchedule}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ classCode);}
+\DoxyCodeLine{00044\ \ \ \ \ vector<Slot>\ \mbox{\hyperlink{class_data_manager_a46c7c91b9a41dafe9fd79e174b3165f4}{getUcSchedule}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ UcId);}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_student}{Student}}\ \mbox{\hyperlink{class_data_manager_a29f59a4e0fa2c43283d4569c25e53241}{getStudentSchedule}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student}{Student}}\&\ student);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//sorter}}
+\DoxyCodeLine{00050\ \ \ \ \ vector<ClassUC>\ \mbox{\hyperlink{class_data_manager_aa071ce71c8d08a873c082291bfbf0f9b}{sortAllU}}();}
+\DoxyCodeLine{00051\ \ \ \ \ vector<ClassUC>\ \mbox{\hyperlink{class_data_manager_a86bd11d24fa368c3de6272c4c31ba76c}{sortAllU\_occupation}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_data_manager_a783a3f998f214bd55d5b33961ed28744}{sorterOccupation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ b)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_data_manager_a48cf707bc51ed882c2ed2aa3d34923a1}{sorter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ b);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//auxiliar}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_data_manager_a0bb8f0b73dc81554f2827583645fcec0}{classUcHaveLessThenXStudents}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ classUc,\ \textcolor{keywordtype}{int}\ x);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_manager_a790366e17403aab63cffb6baaf247753}{sortStudent}}(vector<Student>\&\ students,\textcolor{keywordtype}{string}\ type);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_data_manager_acc7ebe30126f809b4587957f1aafcbe2}{extractLastNumber}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&classCode);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_data_manager_a089d353a843f0ca2691c570e5bef1af5}{sortByLastNumber}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \&a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \&b);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_manager_aecb57a3948cca59d03e1e2597ebdd2a0}{ordenarTurmasPorUltimosDigitos}}(vector<ClassUC>\ \&turmasUc,\ \textcolor{keywordtype}{char}\ orderChoice)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ \ \ set<Student>students;}
+\DoxyCodeLine{00065\ \ \ \ \ vector<Slot>\ classes;}
+\DoxyCodeLine{00066\ \ \ \ \ vector<ClassUC>\ allUC\_\ ;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ extractLastTwoDigits(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&classCode);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+
+\end{DoxyCode}

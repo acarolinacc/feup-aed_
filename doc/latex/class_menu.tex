@@ -1,0 +1,605 @@
+\doxysection{Menu Class Reference}
+\hypertarget{class_menu}{}\label{class_menu}\index{Menu@{Menu}}
+
+
+function for user interface to show the menu  
+
+
+
+
+{\ttfamily \#include $<$Menu.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_menu_a6b610eff063947069555e38da0019e10}{set\+Management}} (const \mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&management)
+\begin{DoxyCompactList}\small\item\em set the \doxylink{class_data_manager}{Data\+Manager} for the \doxylink{class_menu}{Menu} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_menu_a258989505e2076c1cbd5337c32b0618c}{Menu}} (\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&management)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_menu}{Menu} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_ae1ec62e738dda7faaaec850bd0b58ffe}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the main menu loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a7bea400cd47c1590dff3209401c6bbb6}{consultar\+Horarios}} ()
+\begin{DoxyCompactList}\small\item\em Display the menu to consult schedules. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a322a0846d15b0c556fbdbfb66acaca45}{consultar\+Horario\+Aluno}} ()
+\begin{DoxyCompactList}\small\item\em funtion to consult schedule of the student \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_acf37c59c23e4a3ccc4ac9c1a69aa1239}{consultar\+Horario\+Turma}} ()
+\begin{DoxyCompactList}\small\item\em this function consults the schedule of a class based on its class code \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a353bfa8458ddd3cea1be6fc499776f82}{consultar\+Horario\+UC}} ()
+\begin{DoxyCompactList}\small\item\em Function to consult the schedule of a specific UC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a8db2e4128d98bc46ac3a743b85fedb9b}{consultar\+Horario\+UCTurma}} ()
+\begin{DoxyCompactList}\small\item\em function to consult the schedule of a Turma \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_menu_a5cdf0dc64d6375bb15b9c2c3504cab56}{student\+Belongs\+To\+UCAnd\+Class}} (const \mbox{\hyperlink{class_student}{Student}} \&student, const string \&uc\+Code, const string \&class\+Code)
+\begin{DoxyCompactList}\small\item\em this function checks if a student belongs to a specific UC and class within that Uc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a2a76f6aca238a8d02c88e2f53c00cb74}{realizar\+Alteracoes}} ()
+\begin{DoxyCompactList}\small\item\em function to display a menu for performing various types of changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a1c74a771049683ff1761c035499b5b48}{consultar\+Informacoes\+Alunos}} ()
+\begin{DoxyCompactList}\small\item\em function to displays a menu for the student information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a1de407ab761de17a532426fa41ef9582}{consultar\+Alunos\+Por\+Turma}} (string type)
+\begin{DoxyCompactList}\small\item\em function to consult and displays students belonging to a specific UC and class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a9fb202cd8ea865950b9e7c9b6000848c}{consultar\+Alunos\+Por\+Ano}} (string type)
+\begin{DoxyCompactList}\small\item\em Function to consult and display students based on the specified academic year. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_afddbb35193c67019e81f2395542fcac7}{consultar\+Num\+Estudantes\+Inscritos\+N\+\_\+\+UC}} (int n)
+\begin{DoxyCompactList}\small\item\em function to consult and display the number of students registered in at least \textquotesingle{}n\textquotesingle{} UCs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a58a0ead1d96d828e69a064308d45cf0f}{consultar\+Turmas\+Do\+Aluno}} ()
+\begin{DoxyCompactList}\small\item\em function to consult and display the classes of a specific student. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a4a516af83ef2d111f2f72e309181a128}{consultar\+Alunos\+Turma\+Curso\+Ano}} ()
+\begin{DoxyCompactList}\small\item\em Function to consult students by class or year. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a84014840ea264f10e4ba62c12f276eea}{consultar\+Turma\+Ano\+Curso\+UC}} ()
+\begin{DoxyCompactList}\small\item\em this function allows the user to choose between different options on the menu of the course \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_ace3ade5c8c675b34ee1520620fe289a4}{consultar\+Turmas\+UC}} ()
+\begin{DoxyCompactList}\small\item\em function to consult the class of Uc \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a6746010e3da825fa91e31adaff9c613f}{consultar\+Uc\+De\+Um\+Ano}} ()
+\begin{DoxyCompactList}\small\item\em function to consult Uc of a year \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a6e451b1fd4e56707daeff61ee98c6594}{consultar\+Uc\+Com\+XOcupações}} ()
+\begin{DoxyCompactList}\small\item\em function to consult UCs with a minimum number of students \end{DoxyCompactList}\item 
+\Hypertarget{class_menu_a3e610bb4fdb62e9f9321def3465b420e}\label{class_menu_a3e610bb4fdb62e9f9321def3465b420e} 
+string {\bfseries Student\+\_\+sort\+\_\+type} ()
+\item 
+bool \mbox{\hyperlink{class_menu_a7b6879bf1c1ac0baa6ba3e1e1d4e0e68}{is\+Class\+Code\+Valid}} (const vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \&ucS) const
+\begin{DoxyCompactList}\small\item\em function to indicating a valid class code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a374082e1244309fb706b26cc22eaa851}{display\+Class\+Uc\+Schedule}} (const vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \&ucS, const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&class\+Uc) const
+\begin{DoxyCompactList}\small\item\em function to Display the schedule of a specific Class\+Uc \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_ace19f3c559fd3bb2bbba420316a61a1d}{display\+Student\+Schedule}} (const \mbox{\hyperlink{class_student}{Student}} \&student) const
+\begin{DoxyCompactList}\small\item\em function to display thr schedule of a student \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_menu_a3581ab8b1240be906017cfc611d9237c}{corresponde\+Codigo\+Uc\+ETurma}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&turma, const string \&uccode, const string \&classcode) const
+\begin{DoxyCompactList}\small\item\em this function checks if the given \doxylink{class_class_u_c}{Class\+UC} corresponds to the specified UC code and class code \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_ab7238adff62d28458d06df4dd871db80}{display\+Class\+Schedule}} (const vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \&ucS, const string \&turma) const
+\begin{DoxyCompactList}\small\item\em function to displays the schedule for a specific class \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a175f87f611e46a787607f57e76b92eb1}{exibir\+Horario\+Da\+UC}} (const vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ ucS, string uc\+Code) const
+\begin{DoxyCompactList}\small\item\em function to display the schedule for a specific UC \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_menu_a5651f67b5016e6ad3d886a36977f2e92}{comparar\+Ignorando\+Maiusculas}} (const string \&str1, const string \&str2) const
+\begin{DoxyCompactList}\small\item\em function to compare two strings \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_menu_ae2aa5d8d8650a9935f4a86e240e985f8}{corresponde\+Codigo\+UC}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&turma, const string \&uc\+Code) const
+\begin{DoxyCompactList}\small\item\em function to checks if the given \doxylink{class_class_u_c}{Class\+UC} corresponds to the specified UC code \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a7ed30d73ea2f1f71279ced33f658e4cc}{ingressar\+Em\+UC}} ()
+\begin{DoxyCompactList}\small\item\em this function allows a student to enroll in a specific UC if eligible \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a94f9fd47325a4375b7fbe5fd0b88e13a}{sair\+De\+UC}} ()
+\begin{DoxyCompactList}\small\item\em this function allows a student to leave a specific UC \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a9eead271993d8edb262906ca78860e68}{realizar\+Alteracoes\+UC}} ()
+\begin{DoxyCompactList}\small\item\em this function allows the user to perform changes related to UCs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a2a4d9d2a0ee41b97a15e219eb9a06d11}{realizar\+Alteracoes\+Turma}} ()
+\begin{DoxyCompactList}\small\item\em Allows the user to perform various class-\/related operations such as joining, leaving, or changing classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a55754fbb24b3263a31cf5979c89886b8}{ingressar\+Numa\+Turma}} ()
+\begin{DoxyCompactList}\small\item\em Allows a student to join a specific class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a5b716da6e5d54b6da5586ec25141e817}{sair\+De\+Uma\+Turma}} ()
+\begin{DoxyCompactList}\small\item\em this function allows a student to leave a specific class in a specific UC \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a8b05d37477831df8f059ed6746eacea2}{mudar\+De\+Turma}} ()
+\begin{DoxyCompactList}\small\item\em this function allows a student to change from one class to another in a specific UC \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a31161594b3fc426ee586c266ef3c36d9}{confirmar\+\_\+cancelar}} ()
+\begin{DoxyCompactList}\small\item\em this function allows confirming or canceling alterations to classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a4e0c2b5602aae2167185c212629ceb9f}{escrver\+\_\+alteraçoes}} ()
+\begin{DoxyCompactList}\small\item\em this function writes alteration \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a6228cfa4831784907bb932d197e89307}{visualizar\+Historico\+Pedidos}} ()
+\begin{DoxyCompactList}\small\item\em this function allows to visualize the history of requests \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a8c235cc147e8c436d1d7179506d1a4a2}{processar\+Pedidos}} ()
+\begin{DoxyCompactList}\small\item\em this function process the requests \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a08b15092035e804e57571af594eb8ac4}{undo\+Pedidos}} ()
+\begin{DoxyCompactList}\small\item\em this function undoes all pending changes to the class schedule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+function for user interface to show the menu 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_menu_a258989505e2076c1cbd5337c32b0618c}\label{class_menu_a258989505e2076c1cbd5337c32b0618c} 
+\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily Menu\+::\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&}]{management }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_menu}{Menu} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em management} & The \doxylink{class_data_manager}{Data\+Manager} object used to manage data.\\
+\hline
+\end{DoxyParams}
+Time Complexity\+: O(1) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_a5651f67b5016e6ad3d886a36977f2e92}\label{class_menu_a5651f67b5016e6ad3d886a36977f2e92} 
+\index{Menu@{Menu}!compararIgnorandoMaiusculas@{compararIgnorandoMaiusculas}}
+\index{compararIgnorandoMaiusculas@{compararIgnorandoMaiusculas}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{compararIgnorandoMaiusculas()}{compararIgnorandoMaiusculas()}}
+{\footnotesize\ttfamily bool Menu\+::comparar\+Ignorando\+Maiusculas (\begin{DoxyParamCaption}\item[{const string \&}]{str1,  }\item[{const string \&}]{str2 }\end{DoxyParamCaption}) const}
+
+
+
+function to compare two strings 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & the first string to compare\\
+\hline
+{\em str2} & the second string to compare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the two strings are equal, false otherwise.
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the length of the longer of the two input strings. \Hypertarget{class_menu_a31161594b3fc426ee586c266ef3c36d9}\label{class_menu_a31161594b3fc426ee586c266ef3c36d9} 
+\index{Menu@{Menu}!confirmar\_cancelar@{confirmar\_cancelar}}
+\index{confirmar\_cancelar@{confirmar\_cancelar}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{confirmar\_cancelar()}{confirmar\_cancelar()}}
+{\footnotesize\ttfamily void Menu\+::confirmar\+\_\+cancelar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function allows confirming or canceling alterations to classes. 
+
+Time complexity O(1) \Hypertarget{class_menu_a9fb202cd8ea865950b9e7c9b6000848c}\label{class_menu_a9fb202cd8ea865950b9e7c9b6000848c} 
+\index{Menu@{Menu}!consultarAlunosPorAno@{consultarAlunosPorAno}}
+\index{consultarAlunosPorAno@{consultarAlunosPorAno}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarAlunosPorAno()}{consultarAlunosPorAno()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Alunos\+Por\+Ano (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})}
+
+
+
+Function to consult and display students based on the specified academic year. 
+
+Time complexity O(n \texorpdfstring{$\ast$}{*} m), where \textquotesingle{}n\textquotesingle{} is the number of students in the system and \textquotesingle{}m\textquotesingle{} is the average number of classes per student \Hypertarget{class_menu_a1de407ab761de17a532426fa41ef9582}\label{class_menu_a1de407ab761de17a532426fa41ef9582} 
+\index{Menu@{Menu}!consultarAlunosPorTurma@{consultarAlunosPorTurma}}
+\index{consultarAlunosPorTurma@{consultarAlunosPorTurma}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarAlunosPorTurma()}{consultarAlunosPorTurma()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Alunos\+Por\+Turma (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})}
+
+
+
+function to consult and displays students belonging to a specific UC and class. 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of students in the system \Hypertarget{class_menu_a4a516af83ef2d111f2f72e309181a128}\label{class_menu_a4a516af83ef2d111f2f72e309181a128} 
+\index{Menu@{Menu}!consultarAlunosTurmaCursoAno@{consultarAlunosTurmaCursoAno}}
+\index{consultarAlunosTurmaCursoAno@{consultarAlunosTurmaCursoAno}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarAlunosTurmaCursoAno()}{consultarAlunosTurmaCursoAno()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Alunos\+Turma\+Curso\+Ano (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to consult students by class or year. 
+
+Time complexity O(1) \Hypertarget{class_menu_a322a0846d15b0c556fbdbfb66acaca45}\label{class_menu_a322a0846d15b0c556fbdbfb66acaca45} 
+\index{Menu@{Menu}!consultarHorarioAluno@{consultarHorarioAluno}}
+\index{consultarHorarioAluno@{consultarHorarioAluno}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarHorarioAluno()}{consultarHorarioAluno()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Horario\+Aluno (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funtion to consult schedule of the student 
+
+Time complexity O(n) where n is the number of students in the system, as it may require searching for the student by UP number and name. \Hypertarget{class_menu_a7bea400cd47c1590dff3209401c6bbb6}\label{class_menu_a7bea400cd47c1590dff3209401c6bbb6} 
+\index{Menu@{Menu}!consultarHorarios@{consultarHorarios}}
+\index{consultarHorarios@{consultarHorarios}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarHorarios()}{consultarHorarios()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Horarios (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Display the menu to consult schedules. 
+
+Time Complexity\+: O(n), where n is the number of iterations in the schedule consultation menu loop. \Hypertarget{class_menu_acf37c59c23e4a3ccc4ac9c1a69aa1239}\label{class_menu_acf37c59c23e4a3ccc4ac9c1a69aa1239} 
+\index{Menu@{Menu}!consultarHorarioTurma@{consultarHorarioTurma}}
+\index{consultarHorarioTurma@{consultarHorarioTurma}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarHorarioTurma()}{consultarHorarioTurma()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Horario\+Turma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function consults the schedule of a class based on its class code 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of classes in the system. \Hypertarget{class_menu_a353bfa8458ddd3cea1be6fc499776f82}\label{class_menu_a353bfa8458ddd3cea1be6fc499776f82} 
+\index{Menu@{Menu}!consultarHorarioUC@{consultarHorarioUC}}
+\index{consultarHorarioUC@{consultarHorarioUC}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarHorarioUC()}{consultarHorarioUC()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Horario\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to consult the schedule of a specific UC. 
+
+Time complexity O(1) \Hypertarget{class_menu_a8db2e4128d98bc46ac3a743b85fedb9b}\label{class_menu_a8db2e4128d98bc46ac3a743b85fedb9b} 
+\index{Menu@{Menu}!consultarHorarioUCTurma@{consultarHorarioUCTurma}}
+\index{consultarHorarioUCTurma@{consultarHorarioUCTurma}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarHorarioUCTurma()}{consultarHorarioUCTurma()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Horario\+UCTurma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function to consult the schedule of a Turma 
+
+Time complexity O(n) where n is the number of slots. \Hypertarget{class_menu_a1c74a771049683ff1761c035499b5b48}\label{class_menu_a1c74a771049683ff1761c035499b5b48} 
+\index{Menu@{Menu}!consultarInformacoesAlunos@{consultarInformacoesAlunos}}
+\index{consultarInformacoesAlunos@{consultarInformacoesAlunos}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarInformacoesAlunos()}{consultarInformacoesAlunos()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Informacoes\+Alunos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function to displays a menu for the student information. 
+
+Time complexity O(1) \Hypertarget{class_menu_afddbb35193c67019e81f2395542fcac7}\label{class_menu_afddbb35193c67019e81f2395542fcac7} 
+\index{Menu@{Menu}!consultarNumEstudantesInscritosN\_UC@{consultarNumEstudantesInscritosN\_UC}}
+\index{consultarNumEstudantesInscritosN\_UC@{consultarNumEstudantesInscritosN\_UC}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarNumEstudantesInscritosN\_UC()}{consultarNumEstudantesInscritosN\_UC()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Num\+Estudantes\+Inscritos\+N\+\_\+\+UC (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+function to consult and display the number of students registered in at least \textquotesingle{}n\textquotesingle{} UCs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The minimum number of UCs a student must be registered in to be counted.\\
+\hline
+\end{DoxyParams}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of students in the system. \Hypertarget{class_menu_a84014840ea264f10e4ba62c12f276eea}\label{class_menu_a84014840ea264f10e4ba62c12f276eea} 
+\index{Menu@{Menu}!consultarTurmaAnoCursoUC@{consultarTurmaAnoCursoUC}}
+\index{consultarTurmaAnoCursoUC@{consultarTurmaAnoCursoUC}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarTurmaAnoCursoUC()}{consultarTurmaAnoCursoUC()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Turma\+Ano\+Curso\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function allows the user to choose between different options on the menu of the course 
+
+Time complexity O(1) \Hypertarget{class_menu_a58a0ead1d96d828e69a064308d45cf0f}\label{class_menu_a58a0ead1d96d828e69a064308d45cf0f} 
+\index{Menu@{Menu}!consultarTurmasDoAluno@{consultarTurmasDoAluno}}
+\index{consultarTurmasDoAluno@{consultarTurmasDoAluno}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarTurmasDoAluno()}{consultarTurmasDoAluno()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Turmas\+Do\+Aluno (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function to consult and display the classes of a specific student. 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of students in the system. \Hypertarget{class_menu_ace3ade5c8c675b34ee1520620fe289a4}\label{class_menu_ace3ade5c8c675b34ee1520620fe289a4} 
+\index{Menu@{Menu}!consultarTurmasUC@{consultarTurmasUC}}
+\index{consultarTurmasUC@{consultarTurmasUC}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarTurmasUC()}{consultarTurmasUC()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Turmas\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function to consult the class of Uc 
+
+Time complexity\+: O(n + m), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects retrieved for the specified UC, and \textquotesingle{}m\textquotesingle{} is the time complexity of fetching the total number of students for that UC. \Hypertarget{class_menu_a6e451b1fd4e56707daeff61ee98c6594}\label{class_menu_a6e451b1fd4e56707daeff61ee98c6594} 
+\index{Menu@{Menu}!consultarUcComXOcupações@{consultarUcComXOcupações}}
+\index{consultarUcComXOcupações@{consultarUcComXOcupações}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarUcComXOcupações()}{consultarUcComXOcupações()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Uc\+Com\+XOcupações (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function to consult UCs with a minimum number of students 
+
+Time complexity\+: O(n), where \textquotesingle{}n\textquotesingle{} is the number of UCs with student occupancy greater than or equal to \textquotesingle{}x\textquotesingle{}. \Hypertarget{class_menu_a6746010e3da825fa91e31adaff9c613f}\label{class_menu_a6746010e3da825fa91e31adaff9c613f} 
+\index{Menu@{Menu}!consultarUcDeUmAno@{consultarUcDeUmAno}}
+\index{consultarUcDeUmAno@{consultarUcDeUmAno}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{consultarUcDeUmAno()}{consultarUcDeUmAno()}}
+{\footnotesize\ttfamily void Menu\+::consultar\+Uc\+De\+Um\+Ano (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function to consult Uc of a year 
+
+Time complexity\+: O(n + m), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} objects retrieved for the specified year, and \textquotesingle{}m\textquotesingle{} is the sum of the time complexity of fetching UC information for each \doxylink{class_class_u_c}{Class\+UC} object. \Hypertarget{class_menu_ae2aa5d8d8650a9935f4a86e240e985f8}\label{class_menu_ae2aa5d8d8650a9935f4a86e240e985f8} 
+\index{Menu@{Menu}!correspondeCodigoUC@{correspondeCodigoUC}}
+\index{correspondeCodigoUC@{correspondeCodigoUC}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{correspondeCodigoUC()}{correspondeCodigoUC()}}
+{\footnotesize\ttfamily bool Menu\+::corresponde\+Codigo\+UC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{turma,  }\item[{const string \&}]{uc\+Code }\end{DoxyParamCaption}) const}
+
+
+
+function to checks if the given \doxylink{class_class_u_c}{Class\+UC} corresponds to the specified UC code 
+
+
+\begin{DoxyParams}{Parameters}
+{\em turma} & The \doxylink{class_class_u_c}{Class\+UC} object to compare\\
+\hline
+{\em uc\+Code} & The UC code to check for correspondence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if th Uc code corresponds, false otherwise
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the length of the input string uc\+Code \Hypertarget{class_menu_a3581ab8b1240be906017cfc611d9237c}\label{class_menu_a3581ab8b1240be906017cfc611d9237c} 
+\index{Menu@{Menu}!correspondeCodigoUcETurma@{correspondeCodigoUcETurma}}
+\index{correspondeCodigoUcETurma@{correspondeCodigoUcETurma}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{correspondeCodigoUcETurma()}{correspondeCodigoUcETurma()}}
+{\footnotesize\ttfamily bool Menu\+::corresponde\+Codigo\+Uc\+ETurma (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{turma,  }\item[{const string \&}]{uccode,  }\item[{const string \&}]{classcode }\end{DoxyParamCaption}) const}
+
+
+
+this function checks if the given \doxylink{class_class_u_c}{Class\+UC} corresponds to the specified UC code and class code 
+
+
+\begin{DoxyParams}{Parameters}
+{\em turma} & The \doxylink{class_class_u_c}{Class\+UC} object to compare\\
+\hline
+{\em uccode} & The UC code to check\\
+\hline
+{\em classcode} & The class code to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the UC code and class code match (case-\/insensitive), false otherwise
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the length of the longer of the two input strings. \Hypertarget{class_menu_ab7238adff62d28458d06df4dd871db80}\label{class_menu_ab7238adff62d28458d06df4dd871db80} 
+\index{Menu@{Menu}!displayClassSchedule@{displayClassSchedule}}
+\index{displayClassSchedule@{displayClassSchedule}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{displayClassSchedule()}{displayClassSchedule()}}
+{\footnotesize\ttfamily void Menu\+::display\+Class\+Schedule (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_class_u_c}{Class\+UC}} $>$ \&}]{ucS,  }\item[{const string \&}]{turma }\end{DoxyParamCaption}) const}
+
+
+
+function to displays the schedule for a specific class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucS} & The vector of \doxylink{class_slot}{Slot} objects representing the class schedule.\\
+\hline
+{\em turma} & The code of the class for which the schedule is displayed.\\
+\hline
+\end{DoxyParams}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_slot}{Slot} objects in the ucS \Hypertarget{class_menu_a374082e1244309fb706b26cc22eaa851}\label{class_menu_a374082e1244309fb706b26cc22eaa851} 
+\index{Menu@{Menu}!displayClassUcSchedule@{displayClassUcSchedule}}
+\index{displayClassUcSchedule@{displayClassUcSchedule}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{displayClassUcSchedule()}{displayClassUcSchedule()}}
+{\footnotesize\ttfamily void Menu\+::display\+Class\+Uc\+Schedule (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \&}]{ucS,  }\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{class\+Uc }\end{DoxyParamCaption}) const}
+
+
+
+function to Display the schedule of a specific Class\+Uc 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucS} & \\
+\hline
+{\em class\+Uc} & \\
+\hline
+\end{DoxyParams}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of slots in the provided \textquotesingle{}ucS\textquotesingle{} vector. \Hypertarget{class_menu_ace19f3c559fd3bb2bbba420316a61a1d}\label{class_menu_ace19f3c559fd3bb2bbba420316a61a1d} 
+\index{Menu@{Menu}!displayStudentSchedule@{displayStudentSchedule}}
+\index{displayStudentSchedule@{displayStudentSchedule}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{displayStudentSchedule()}{displayStudentSchedule()}}
+{\footnotesize\ttfamily void Menu\+::display\+Student\+Schedule (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{student }\end{DoxyParamCaption}) const}
+
+
+
+function to display thr schedule of a student 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & student object whose schedule should be displayed.\\
+\hline
+\end{DoxyParams}
+Time complexity O(n), where n is the total number of slots in the schedule. \Hypertarget{class_menu_a4e0c2b5602aae2167185c212629ceb9f}\label{class_menu_a4e0c2b5602aae2167185c212629ceb9f} 
+\index{Menu@{Menu}!escrver\_alteraçoes@{escrver\_alteraçoes}}
+\index{escrver\_alteraçoes@{escrver\_alteraçoes}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{escrver\_alteraçoes()}{escrver\_alteraçoes()}}
+{\footnotesize\ttfamily void Menu\+::escrver\+\_\+alteraçoes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function writes alteration 
+
+Time complexity O(1) \Hypertarget{class_menu_a175f87f611e46a787607f57e76b92eb1}\label{class_menu_a175f87f611e46a787607f57e76b92eb1} 
+\index{Menu@{Menu}!exibirHorarioDaUC@{exibirHorarioDaUC}}
+\index{exibirHorarioDaUC@{exibirHorarioDaUC}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{exibirHorarioDaUC()}{exibirHorarioDaUC()}}
+{\footnotesize\ttfamily void Menu\+::exibir\+Horario\+Da\+UC (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$}]{ucS,  }\item[{string}]{uc\+ID }\end{DoxyParamCaption}) const}
+
+
+
+function to display the schedule for a specific UC 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucS} & The vector of \doxylink{class_slot}{Slot} objects representing the UC schedule\\
+\hline
+{\em uc\+Code} & The code of the UC for which the schedule is displayed\\
+\hline
+\end{DoxyParams}
+Time complexity is O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_slot}{Slot} objects in the ucS \Hypertarget{class_menu_a7ed30d73ea2f1f71279ced33f658e4cc}\label{class_menu_a7ed30d73ea2f1f71279ced33f658e4cc} 
+\index{Menu@{Menu}!ingressarEmUC@{ingressarEmUC}}
+\index{ingressarEmUC@{ingressarEmUC}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{ingressarEmUC()}{ingressarEmUC()}}
+{\footnotesize\ttfamily void Menu\+::ingressar\+Em\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function allows a student to enroll in a specific UC if eligible 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} represents the number of students in the system. \Hypertarget{class_menu_a55754fbb24b3263a31cf5979c89886b8}\label{class_menu_a55754fbb24b3263a31cf5979c89886b8} 
+\index{Menu@{Menu}!ingressarNumaTurma@{ingressarNumaTurma}}
+\index{ingressarNumaTurma@{ingressarNumaTurma}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{ingressarNumaTurma()}{ingressarNumaTurma()}}
+{\footnotesize\ttfamily void Menu\+::ingressar\+Numa\+Turma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Allows a student to join a specific class. 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} where \textquotesingle{}n\textquotesingle{} represents the number of students in the system \Hypertarget{class_menu_a7b6879bf1c1ac0baa6ba3e1e1d4e0e68}\label{class_menu_a7b6879bf1c1ac0baa6ba3e1e1d4e0e68} 
+\index{Menu@{Menu}!isClassCodeValid@{isClassCodeValid}}
+\index{isClassCodeValid@{isClassCodeValid}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{isClassCodeValid()}{isClassCodeValid()}}
+{\footnotesize\ttfamily bool Menu\+::is\+Class\+Code\+Valid (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \&}]{ucS }\end{DoxyParamCaption}) const}
+
+
+
+function to indicating a valid class code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucS} & slots associated with a class code.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ucS is empty, or false if its not empty
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_menu_a8b05d37477831df8f059ed6746eacea2}\label{class_menu_a8b05d37477831df8f059ed6746eacea2} 
+\index{Menu@{Menu}!mudarDeTurma@{mudarDeTurma}}
+\index{mudarDeTurma@{mudarDeTurma}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{mudarDeTurma()}{mudarDeTurma()}}
+{\footnotesize\ttfamily void Menu\+::mudar\+De\+Turma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function allows a student to change from one class to another in a specific UC 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of classes \Hypertarget{class_menu_a8c235cc147e8c436d1d7179506d1a4a2}\label{class_menu_a8c235cc147e8c436d1d7179506d1a4a2} 
+\index{Menu@{Menu}!processarPedidos@{processarPedidos}}
+\index{processarPedidos@{processarPedidos}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{processarPedidos()}{processarPedidos()}}
+{\footnotesize\ttfamily void Menu\+::processar\+Pedidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function process the requests 
+
+Time complexity O(1) \Hypertarget{class_menu_a2a76f6aca238a8d02c88e2f53c00cb74}\label{class_menu_a2a76f6aca238a8d02c88e2f53c00cb74} 
+\index{Menu@{Menu}!realizarAlteracoes@{realizarAlteracoes}}
+\index{realizarAlteracoes@{realizarAlteracoes}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{realizarAlteracoes()}{realizarAlteracoes()}}
+{\footnotesize\ttfamily void Menu\+::realizar\+Alteracoes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function to display a menu for performing various types of changes. 
+
+Time complexity O(1) \Hypertarget{class_menu_a2a4d9d2a0ee41b97a15e219eb9a06d11}\label{class_menu_a2a4d9d2a0ee41b97a15e219eb9a06d11} 
+\index{Menu@{Menu}!realizarAlteracoesTurma@{realizarAlteracoesTurma}}
+\index{realizarAlteracoesTurma@{realizarAlteracoesTurma}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{realizarAlteracoesTurma()}{realizarAlteracoesTurma()}}
+{\footnotesize\ttfamily void Menu\+::realizar\+Alteracoes\+Turma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Allows the user to perform various class-\/related operations such as joining, leaving, or changing classes. 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of available classes. \Hypertarget{class_menu_a9eead271993d8edb262906ca78860e68}\label{class_menu_a9eead271993d8edb262906ca78860e68} 
+\index{Menu@{Menu}!realizarAlteracoesUC@{realizarAlteracoesUC}}
+\index{realizarAlteracoesUC@{realizarAlteracoesUC}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{realizarAlteracoesUC()}{realizarAlteracoesUC()}}
+{\footnotesize\ttfamily void Menu\+::realizar\+Alteracoes\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function allows the user to perform changes related to UCs. 
+
+Time complexity O(1) \Hypertarget{class_menu_a94f9fd47325a4375b7fbe5fd0b88e13a}\label{class_menu_a94f9fd47325a4375b7fbe5fd0b88e13a} 
+\index{Menu@{Menu}!sairDeUC@{sairDeUC}}
+\index{sairDeUC@{sairDeUC}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{sairDeUC()}{sairDeUC()}}
+{\footnotesize\ttfamily void Menu\+::sair\+De\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function allows a student to leave a specific UC 
+
+Time complexity O(1) \Hypertarget{class_menu_a5b716da6e5d54b6da5586ec25141e817}\label{class_menu_a5b716da6e5d54b6da5586ec25141e817} 
+\index{Menu@{Menu}!sairDeUmaTurma@{sairDeUmaTurma}}
+\index{sairDeUmaTurma@{sairDeUmaTurma}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{sairDeUmaTurma()}{sairDeUmaTurma()}}
+{\footnotesize\ttfamily void Menu\+::sair\+De\+Uma\+Turma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function allows a student to leave a specific class in a specific UC 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of classes \Hypertarget{class_menu_a6b610eff063947069555e38da0019e10}\label{class_menu_a6b610eff063947069555e38da0019e10} 
+\index{Menu@{Menu}!setManagement@{setManagement}}
+\index{setManagement@{setManagement}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{setManagement()}{setManagement()}}
+{\footnotesize\ttfamily void Menu\+::set\+Management (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data_manager}{Data\+Manager}} \&}]{management }\end{DoxyParamCaption})}
+
+
+
+set the \doxylink{class_data_manager}{Data\+Manager} for the \doxylink{class_menu}{Menu} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em management} & reference to the \doxylink{class_data_manager}{Data\+Manager} object\\
+\hline
+\end{DoxyParams}
+Time Complexity O(1) \Hypertarget{class_menu_ae1ec62e738dda7faaaec850bd0b58ffe}\label{class_menu_ae1ec62e738dda7faaaec850bd0b58ffe} 
+\index{Menu@{Menu}!start@{start}}
+\index{start@{start}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Menu\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the main menu loop. 
+
+Time Complexity\+: O(n), where n is the number of iterations in the main menu loop. \Hypertarget{class_menu_a5cdf0dc64d6375bb15b9c2c3504cab56}\label{class_menu_a5cdf0dc64d6375bb15b9c2c3504cab56} 
+\index{Menu@{Menu}!studentBelongsToUCAndClass@{studentBelongsToUCAndClass}}
+\index{studentBelongsToUCAndClass@{studentBelongsToUCAndClass}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{studentBelongsToUCAndClass()}{studentBelongsToUCAndClass()}}
+{\footnotesize\ttfamily bool Menu\+::student\+Belongs\+To\+UCAnd\+Class (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{student,  }\item[{const string \&}]{uc\+Code,  }\item[{const string \&}]{class\+Code }\end{DoxyParamCaption})}
+
+
+
+this function checks if a student belongs to a specific UC and class within that Uc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & The student to check for enrollment.\\
+\hline
+{\em uc\+Code} & The code of the UC to check for.\\
+\hline
+{\em class\+Code} & The code of the class within the UC to check for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the student belongs to the specific Uc and class, false otherwise
+\end{DoxyReturn}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of \doxylink{class_class_u_c}{Class\+UC} \Hypertarget{class_menu_a08b15092035e804e57571af594eb8ac4}\label{class_menu_a08b15092035e804e57571af594eb8ac4} 
+\index{Menu@{Menu}!undoPedidos@{undoPedidos}}
+\index{undoPedidos@{undoPedidos}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{undoPedidos()}{undoPedidos()}}
+{\footnotesize\ttfamily void Menu\+::undo\+Pedidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function undoes all pending changes to the class schedule. 
+
+Time complexity\+: O(n) where \textquotesingle{}n\textquotesingle{} is the number of requests processed of pending changes \Hypertarget{class_menu_a6228cfa4831784907bb932d197e89307}\label{class_menu_a6228cfa4831784907bb932d197e89307} 
+\index{Menu@{Menu}!visualizarHistoricoPedidos@{visualizarHistoricoPedidos}}
+\index{visualizarHistoricoPedidos@{visualizarHistoricoPedidos}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{visualizarHistoricoPedidos()}{visualizarHistoricoPedidos()}}
+{\footnotesize\ttfamily void Menu\+::visualizar\+Historico\+Pedidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function allows to visualize the history of requests 
+
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the number of requests in each queue. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Menu.\+h\item 
+Menu.\+cpp\end{DoxyCompactItemize}

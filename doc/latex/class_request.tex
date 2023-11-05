@@ -1,0 +1,127 @@
+\doxysection{Request Class Reference}
+\hypertarget{class_request}{}\label{class_request}\index{Request@{Request}}
+
+
+function to register the requests made by the students  
+
+
+
+
+{\ttfamily \#include $<$Request.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_request_aa0f1b3421bf405f48a9b508b38ac672f}{Request}} (\mbox{\hyperlink{class_student}{Student}} \&student, \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&wanted\+Class, string type)
+\begin{DoxyCompactList}\small\item\em Constructor for the request class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_student}{Student}} \mbox{\hyperlink{class_request_aca583762dba5f3e7eb7ef915feebb65b}{get\+Student}} () const
+\begin{DoxyCompactList}\small\item\em function to get the \doxylink{class_class_u_c}{Class\+UC} associated with the request. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_class_u_c}{Class\+UC}} \mbox{\hyperlink{class_request_a536d4e12f57818b88448e813509ae996}{get\+Class\+Uc}} () const
+\begin{DoxyCompactList}\small\item\em function to get the type of the request \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_request_a83531a4385724d438f9abaaf095eba1d}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em function to print the details of the request, including the student, wanted class, and request type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_a5c6cb9b5ae32ed00394b38637293cb6b}{set\+Type}} (string new\+Type)
+\begin{DoxyCompactList}\small\item\em Function to set the type of the request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_request_a5132eaa8a057eacb70c85f361f7f8bc9}{print\+Request}} ()
+\begin{DoxyCompactList}\small\item\em function to print the details of the request, including the student, wanted class, and request type \end{DoxyCompactList}\item 
+\Hypertarget{class_request_a88ea4106208b6926c793238b170fa70b}\label{class_request_a88ea4106208b6926c793238b170fa70b} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{class_request}{Request}} \&other) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+function to register the requests made by the students 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_request_aa0f1b3421bf405f48a9b508b38ac672f}\label{class_request_aa0f1b3421bf405f48a9b508b38ac672f} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_student}{Student}} \&}]{student,  }\item[{\mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{wanted\+Class,  }\item[{string}]{type }\end{DoxyParamCaption})}
+
+
+
+Constructor for the request class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+The} & student making the request.\\
+\hline
+{\em wanted\+Class} & The class that the student wants.\\
+\hline
+{\em type} & The type of the request.\\
+\hline
+\end{DoxyParams}
+Time complexity O(1) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_request_a536d4e12f57818b88448e813509ae996}\label{class_request_a536d4e12f57818b88448e813509ae996} 
+\index{Request@{Request}!getClassUc@{getClassUc}}
+\index{getClassUc@{getClassUc}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getClassUc()}{getClassUc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_class_u_c}{Class\+UC}} Request\+::get\+Class\+Uc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get the type of the request 
+
+\begin{DoxyReturn}{Returns}
+The class that the student wants
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_request_aca583762dba5f3e7eb7ef915feebb65b}\label{class_request_aca583762dba5f3e7eb7ef915feebb65b} 
+\index{Request@{Request}!getStudent@{getStudent}}
+\index{getStudent@{getStudent}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getStudent()}{getStudent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_student}{Student}} Request\+::get\+Student (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to get the \doxylink{class_class_u_c}{Class\+UC} associated with the request. 
+
+\begin{DoxyReturn}{Returns}
+the class that the student wants
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_request_a83531a4385724d438f9abaaf095eba1d}\label{class_request_a83531a4385724d438f9abaaf095eba1d} 
+\index{Request@{Request}!getType@{getType}}
+\index{getType@{getType}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily string Request\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function to print the details of the request, including the student, wanted class, and request type. 
+
+\begin{DoxyReturn}{Returns}
+The type of the request.
+\end{DoxyReturn}
+Time complexity\+: O(1) \Hypertarget{class_request_a5132eaa8a057eacb70c85f361f7f8bc9}\label{class_request_a5132eaa8a057eacb70c85f361f7f8bc9} 
+\index{Request@{Request}!printRequest@{printRequest}}
+\index{printRequest@{printRequest}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{printRequest()}{printRequest()}}
+{\footnotesize\ttfamily void Request\+::print\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function to print the details of the request, including the student, wanted class, and request type 
+
+Time complexity O(1) \Hypertarget{class_request_a5c6cb9b5ae32ed00394b38637293cb6b}\label{class_request_a5c6cb9b5ae32ed00394b38637293cb6b} 
+\index{Request@{Request}!setType@{setType}}
+\index{setType@{setType}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void Request\+::set\+Type (\begin{DoxyParamCaption}\item[{string}]{new\+Type }\end{DoxyParamCaption})}
+
+
+
+Function to set the type of the request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Type} & The new type of the request.\\
+\hline
+\end{DoxyParams}
+Time complexity\+: O(1) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Request.\+h\item 
+Request.\+cpp\end{DoxyCompactItemize}

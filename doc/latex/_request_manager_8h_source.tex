@@ -1,0 +1,89 @@
+\doxysection{Request\+Manager.\+h}
+\hypertarget{_request_manager_8h_source}{}\label{_request_manager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FEUP\_AED1\_REQUESTMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FEUP\_AED1\_REQUESTMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}DataManager.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}student.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Request.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_request_manager}{RequestManager}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_request_manager_a6f3b3f9c7780a0b0571a5a8040e1b9d0}{RequestManager}}(\mbox{\hyperlink{class_data_manager}{DataManager}}\ \&manager);}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_request_manager_a6f3b3f9c7780a0b0571a5a8040e1b9d0}{RequestManager}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_manager_a0ccdabd2573f817f757cda313ded2a58}{setManager}}(\mbox{\hyperlink{class_data_manager}{DataManager}}\ manager);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_manager_a062104ba5c07591a8db42e6bc4376af3}{addResquest}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ newRequest);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_manager_a76e93ce883849c2f52f1ad929fa19389}{addDinedRequest}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ newRequest);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_manager_a9dab86f8eeda676057c6860a6dd57b93}{addAcceptRequest}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ newRequest);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ queue<Request>\ \mbox{\hyperlink{class_request_manager_a6b2937c5be014e8bbb59b444631df510}{getRequest}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//class\ Changes:}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_a0b1c82cd9e6b5412ec99590d40546943}{checkOneClassUcPerStudent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_a8924cfaad86e6a571da9225fffb3c223}{checkIfTheCapIsExceeded}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_a96245cb82d42bcc2c17db9efd2283340}{checkIfBalanceOcuppation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \mbox{\hyperlink{class_request_manager_a57714538dd796ef98adb0cb7771948df}{checkIfTheSchedulesOverlap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_ae448548cdb19ee681e09c3e7a000cdb1}{checkClassRequest}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_a127333d97672005eec3557c6f60fb451}{checkClassStudent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//uc\ changes;}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_a9a0524ccfb3a1e371647676db1a86a76}{haveScheduleConflict}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \&studentClass,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \&newClass)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \mbox{\hyperlink{class_request_manager_a1c7598f98ac6907457ea06652e2a7cde}{getClassUCByCode}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&ucCode);}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_student}{Student}}\ \mbox{\hyperlink{class_request_manager_a97717b6171a2dbfc1953e008296e9127}{getStudentByUP}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&upNumber);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_a1811d642bf2e6bac22c5534040847da5}{ingressarEmUC}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&upNumber,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&ucCode);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_ad451bd7fa9cd4b1551f148d38a936b55}{sairDeUC}}(\textcolor{keywordtype}{int}\ upNumber,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&ucCode);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//processRequest}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_manager_afcadd34f6614de1931a7e8b29e67597f}{requestProcess}}(\mbox{\hyperlink{class_data_manager}{DataManager}}\ \&newManager);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_ad5fb53508fb30ce4ca0e71a59e4a2d48}{UcProcess}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_a18ce771a40917d1d603e61e65aed8c33}{changeCLass}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request,\mbox{\hyperlink{class_data_manager}{DataManager}}\ \&newManager);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_manager_a0d2a10f7e4633b444bf7d388e9d9ed6a}{changeUC}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request,\mbox{\hyperlink{class_data_manager}{DataManager}}\ \&newManager);}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \mbox{\hyperlink{class_request_manager_a2bcba5c38226b5e71700425ac3e2f39a}{findClassinUc}}(\mbox{\hyperlink{class_student}{Student}}\ student,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ ucCode);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//processUndoRequest}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_manager_aa7849c547c15ca90851373509780c3e8}{undorequestUC}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ ucResquest,\mbox{\hyperlink{class_data_manager}{DataManager}}\&\ newmanager);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_manager_a9e33ae46c730e7db4cdc9fc8ecbc6242}{undorequestClass}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ classResquest,\mbox{\hyperlink{class_data_manager}{DataManager}}\ \&newManager);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_manager_a50c85087db6b944b8c94778c5a567eb9}{processUndoRequest}}(\mbox{\hyperlink{class_data_manager}{DataManager}}\ \&newManager);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//historico\ de\ pedidos}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_manager_a540052dcc3ae71227f8f82b10245aa07}{showAllChanges}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_request_manager_a9b96efb0d0537880dbf0444f82c91862}{showrequests}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_request_manager_aa418dbfbd40d6f15432b66a20a78d1cb}{showAccept}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_request_manager_a300e250dff44a4cf8bd795b37572b679}{showDinie}}();}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_request_manager_a18421b1751cd75198a5fa14e35564a81}{showUndo}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//escrever\ os\ dados}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_manager_add7e00c2fb7c76a109c2c39da39bf86e}{writeFiles}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keyword}{const}\ CAP=25;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \ \ queue<Request>\ requests;}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_data_manager}{DataManager}}\ manager;}
+\DoxyCodeLine{00077\ \ \ \ \ queue<Request>acceptRequest;}
+\DoxyCodeLine{00078\ \ \ \ \ queue<Request>deniedRequest;}
+\DoxyCodeLine{00079\ \ \ \ \ queue<Request>\ undoneRequests;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FEUP\_AED1\_REQUESTMANAGER\_H}}
+
+\end{DoxyCode}

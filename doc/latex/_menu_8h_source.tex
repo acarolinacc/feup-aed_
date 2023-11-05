@@ -1,0 +1,91 @@
+\doxysection{Menu.\+h}
+\hypertarget{_menu_8h_source}{}\label{_menu_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ MENU\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ MENU\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}DataManager.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}RequestManager.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menu}{Menu}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a6b610eff063947069555e38da0019e10}{setManagement}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_data_manager}{DataManager}}\ \&management);}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_menu}{Menu}}(\mbox{\hyperlink{class_data_manager}{DataManager}}\&\ management);}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_ae1ec62e738dda7faaaec850bd0b58ffe}{start}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a7bea400cd47c1590dff3209401c6bbb6}{consultarHorarios}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a322a0846d15b0c556fbdbfb66acaca45}{consultarHorarioAluno}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_acf37c59c23e4a3ccc4ac9c1a69aa1239}{consultarHorarioTurma}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a353bfa8458ddd3cea1be6fc499776f82}{consultarHorarioUC}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a8db2e4128d98bc46ac3a743b85fedb9b}{consultarHorarioUCTurma}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_a5cdf0dc64d6375bb15b9c2c3504cab56}{studentBelongsToUCAndClass}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student}{Student}}\&\ student,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ ucCode,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ classCode);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a2a76f6aca238a8d02c88e2f53c00cb74}{realizarAlteracoes}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a1c74a771049683ff1761c035499b5b48}{consultarInformacoesAlunos}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a1de407ab761de17a532426fa41ef9582}{consultarAlunosPorTurma}}(\textcolor{keywordtype}{string}\ type);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a9fb202cd8ea865950b9e7c9b6000848c}{consultarAlunosPorAno}}(\textcolor{keywordtype}{string}\ type);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_afddbb35193c67019e81f2395542fcac7}{consultarNumEstudantesInscritosN\_UC}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a58a0ead1d96d828e69a064308d45cf0f}{consultarTurmasDoAluno}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a4a516af83ef2d111f2f72e309181a128}{consultarAlunosTurmaCursoAno}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a84014840ea264f10e4ba62c12f276eea}{consultarTurmaAnoCursoUC}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_menu_ace3ade5c8c675b34ee1520620fe289a4}{consultarTurmasUC}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a6746010e3da825fa91e31adaff9c613f}{consultarUcDeUmAno}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a6e451b1fd4e56707daeff61ee98c6594}{consultarUcComXOcupações}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{string}\ Student\_sort\_type();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_a7b6879bf1c1ac0baa6ba3e1e1d4e0e68}{isClassCodeValid}}(\textcolor{keyword}{const}\ vector<Slot>\&\ ucS)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a374082e1244309fb706b26cc22eaa851}{displayClassUcSchedule}}(\ \textcolor{keyword}{const}\ vector<Slot>\&\ ucS,\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ classUc)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_ace19f3c559fd3bb2bbba420316a61a1d}{displayStudentSchedule}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student}{Student}}\ \&student)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_a3581ab8b1240be906017cfc611d9237c}{correspondeCodigoUcETurma}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \&turma,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&uccode,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&classcode)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_ab7238adff62d28458d06df4dd871db80}{displayClassSchedule}}(\textcolor{keyword}{const}\ vector<ClassUC>\&\ ucS,\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ turma)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a175f87f611e46a787607f57e76b92eb1}{exibirHorarioDaUC}}(\textcolor{keyword}{const}\ vector<Slot>\ ucS,\textcolor{keywordtype}{string}\ ucCode)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_a5651f67b5016e6ad3d886a36977f2e92}{compararIgnorandoMaiusculas}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_ae2aa5d8d8650a9935f4a86e240e985f8}{correspondeCodigoUC}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \&turma,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&ucCode)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a7ed30d73ea2f1f71279ced33f658e4cc}{ingressarEmUC}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a94f9fd47325a4375b7fbe5fd0b88e13a}{sairDeUC}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a9eead271993d8edb262906ca78860e68}{realizarAlteracoesUC}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a2a4d9d2a0ee41b97a15e219eb9a06d11}{realizarAlteracoesTurma}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a55754fbb24b3263a31cf5979c89886b8}{ingressarNumaTurma}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a5b716da6e5d54b6da5586ec25141e817}{sairDeUmaTurma}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a8b05d37477831df8f059ed6746eacea2}{mudarDeTurma}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a31161594b3fc426ee586c266ef3c36d9}{confirmar\_cancelar}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a4e0c2b5602aae2167185c212629ceb9f}{escrver\_alteraçoes}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a6228cfa4831784907bb932d197e89307}{visualizarHistoricoPedidos}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a8c235cc147e8c436d1d7179506d1a4a2}{processarPedidos}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a08b15092035e804e57571af594eb8ac4}{undoPedidos}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_request_manager}{RequestManager}}\ requestManager\_;}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_data_manager}{DataManager}}\ management;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_data_manager}{DataManager}}\&\ management\_;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00089\ }
+
+\end{DoxyCode}

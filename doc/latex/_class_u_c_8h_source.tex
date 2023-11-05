@@ -1,0 +1,35 @@
+\doxysection{Class\+UC.\+h}
+\hypertarget{_class_u_c_8h_source}{}\label{_class_u_c_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CLASSUC\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CLASSUC\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}slot.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_class_u_c}{ClassUC}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_class_u_c_aac43f807b12bf4ef933e24158f245cb2}{ClassUC}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_class_u_c_aac43f807b12bf4ef933e24158f245cb2}{ClassUC}}(\textcolor{keyword}{const}\ std::string\ \&ucCode,\ \textcolor{keyword}{const}\ std::string\ \&classCode,\ \textcolor{keyword}{const}\ std::vector<Slot>\ \&schedule);}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_class_u_c_aac43f807b12bf4ef933e24158f245cb2}{ClassUC}}(\textcolor{keyword}{const}\ std::string\ \&ucCode,\ \textcolor{keyword}{const}\ std::string\ \&classCode);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_class_u_c_ad384fd7f43a8a9f6e99caf7c759c7bdd}{addSlot}}(\mbox{\hyperlink{class_slot}{Slot}}\ slot);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_class_u_c_af33ebe4f2193d6af040f646260f8b1f3}{setSlots}}(vector<Slot>\ slots);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_class_u_c_afc655b5009fcf1eaf5f41810cf9135ea}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_class_u_c_a4f74754bae3540ef5db8e8d58aaef186}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_class_u_c_ad087b25484a122b4873e79d4ee490ea1}{getClassCode}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_class_u_c_aa521d5885d6c59b7c3ad08d2d5d189af}{getUcCode}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Slot>\ \&\mbox{\hyperlink{class_class_u_c_a2183361f47afebd7247791fe7e8be2d0}{getSchedule}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_class_u_c_aa4fabc4feb4e7a974693735c4498d4dd}{sortShedule}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_class_u_c_a1754c75e63c041727a7eaae1dca5b653}{print}}();}
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ ucCode\_;}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ classCode\_;}
+\DoxyCodeLine{00030\ \ \ \ \ std::vector<Slot>\ schedule\_;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

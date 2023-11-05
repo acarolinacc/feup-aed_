@@ -1,0 +1,50 @@
+\doxysection{student.\+h}
+\hypertarget{student_8h_source}{}\label{student_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STUDENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STUDENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}slot.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}ClassUC.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_student}{Student}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ name);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_student_a81285fde9a9cb150f49621ac58bdb085}{getCode}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_a1df6c28e6416e20d338b9ff11bdc1e04}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_ae3a24a4efc84b9e760afeb72599232ed}{setCLassUc}}(\ vector<ClassUC>\ classe);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a2c1c76675f2bcaa4803f1a91c9c28064}{removeSchedule}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ classUc);}
+\DoxyCodeLine{00026\ \ \ \ \ map<ClassUC,\ vector<Slot>>\ \mbox{\hyperlink{class_student_a882d387959902eb4b7db652cf5bfd6a8}{getSchedule}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a968ef9463cd6e942094688270f2ebd27}{addSchedule}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ classUc,\ \textcolor{keyword}{const}\ vector<Slot>\&\ slot)\ ;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a29a8d80148f53883a02a5478d75718b5}{addClassUC}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_class_u_c}{ClassUC}}\&\ newClassUc);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_a44b0dc0efbc95f687706f28363e897db}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student}{Student}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_a8f7c31ed0e331481ac58f12b2e822047}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student}{Student}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_adda6ad7b0a3edd737b1a132731608fae}{print\_student}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a1b7408a1bc8788dedf95b70c64cda1fa}{print\_classes}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_abdbb14cd83ef23c09f811bd1e30ddd4f}{print}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a45fa6a2b0de9db31ffb6c9079cfb4555}{sortSchedule}}();}
+\DoxyCodeLine{00035\ \ \ \ \ vector<ClassUC>\mbox{\hyperlink{class_student_a57609764e0cf63fb96e725949b0dbfdd}{getclassUC}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ code;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{00040\ \ \ \ \ vector<ClassUC>\ classes;}
+\DoxyCodeLine{00041\ \ \ \ \ map<ClassUC,vector<Slot>>\ schedule;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

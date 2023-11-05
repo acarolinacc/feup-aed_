@@ -1,0 +1,206 @@
+\doxysection{Class\+UC Class Reference}
+\hypertarget{class_class_u_c}{}\label{class_class_u_c}\index{ClassUC@{ClassUC}}
+
+
+class to show the class uc  
+
+
+
+
+{\ttfamily \#include $<$Class\+UC.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_class_u_c_aac43f807b12bf4ef933e24158f245cb2}{Class\+UC}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_class_u_c}{Class\+UC}. \end{DoxyCompactList}\item 
+\Hypertarget{class_class_u_c_a5772484936b211975a49f2f3a9a668c0}\label{class_class_u_c_a5772484936b211975a49f2f3a9a668c0} 
+{\bfseries Class\+UC} (const std\+::string \&uc\+Code, const std\+::string \&class\+Code, const std\+::vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \&schedule)
+\item 
+\mbox{\hyperlink{class_class_u_c_a63a77c043927c852b95665f7b53c9ad4}{Class\+UC}} (const std\+::string \&uc\+Code, const std\+::string \&class\+Code)
+\begin{DoxyCompactList}\small\item\em this function Parameterizes constructor for \doxylink{class_class_u_c}{Class\+UC} with unique code and class code, but no schedule \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_class_u_c_ad384fd7f43a8a9f6e99caf7c759c7bdd}{add\+Slot}} (\mbox{\hyperlink{class_slot}{Slot}} slot)
+\begin{DoxyCompactList}\small\item\em this function adds a time slot to the class\textquotesingle{}s schedule \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_class_u_c_af33ebe4f2193d6af040f646260f8b1f3}{set\+Slots}} (vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ slots)
+\begin{DoxyCompactList}\small\item\em this function sets the schedule of time slots for the class \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_class_u_c_afc655b5009fcf1eaf5f41810cf9135ea}{operator$<$}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&other) const
+\begin{DoxyCompactList}\small\item\em this function compares two \doxylink{class_class_u_c}{Class\+UC} objects based on their UC codes \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_class_u_c_a4f74754bae3540ef5db8e8d58aaef186}{operator==}} (const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&other) const
+\begin{DoxyCompactList}\small\item\em this function check if two \doxylink{class_class_u_c}{Class\+UC} objects are equal based on their UC and class codes \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_class_u_c_ad087b25484a122b4873e79d4ee490ea1}{get\+Class\+Code}} () const
+\begin{DoxyCompactList}\small\item\em this function gets the code of the class \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_class_u_c_aa521d5885d6c59b7c3ad08d2d5d189af}{get\+Uc\+Code}} () const
+\begin{DoxyCompactList}\small\item\em this function gets the UC code of the class \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \& \mbox{\hyperlink{class_class_u_c_a2183361f47afebd7247791fe7e8be2d0}{get\+Schedule}} () const
+\begin{DoxyCompactList}\small\item\em this function get the schedule of time slots for the class \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_class_u_c_aa4fabc4feb4e7a974693735c4498d4dd}{sort\+Shedule}} ()
+\begin{DoxyCompactList}\small\item\em this function sort the schedule of time slots in ascending order of start times \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_class_u_c_a1754c75e63c041727a7eaae1dca5b653}{print}} ()
+\begin{DoxyCompactList}\small\item\em this function prints the details of the class, including its UC code and class code \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class to show the class uc 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_class_u_c_aac43f807b12bf4ef933e24158f245cb2}\label{class_class_u_c_aac43f807b12bf4ef933e24158f245cb2} 
+\index{ClassUC@{ClassUC}!ClassUC@{ClassUC}}
+\index{ClassUC@{ClassUC}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{ClassUC()}{ClassUC()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Class\+UC\+::\+Class\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \doxylink{class_class_u_c}{Class\+UC}. 
+
+Time complexity O(1) \Hypertarget{class_class_u_c_a63a77c043927c852b95665f7b53c9ad4}\label{class_class_u_c_a63a77c043927c852b95665f7b53c9ad4} 
+\index{ClassUC@{ClassUC}!ClassUC@{ClassUC}}
+\index{ClassUC@{ClassUC}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{ClassUC()}{ClassUC()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Class\+UC\+::\+Class\+UC (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uc\+Code,  }\item[{const std\+::string \&}]{class\+Code }\end{DoxyParamCaption})}
+
+
+
+this function Parameterizes constructor for \doxylink{class_class_u_c}{Class\+UC} with unique code and class code, but no schedule 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & The unique code of the class\\
+\hline
+{\em class\+Code} & The class code\\
+\hline
+\end{DoxyParams}
+Time complexity O(1) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_class_u_c_ad384fd7f43a8a9f6e99caf7c759c7bdd}\label{class_class_u_c_ad384fd7f43a8a9f6e99caf7c759c7bdd} 
+\index{ClassUC@{ClassUC}!addSlot@{addSlot}}
+\index{addSlot@{addSlot}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{addSlot()}{addSlot()}}
+{\footnotesize\ttfamily void Class\+UC\+::add\+Slot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_slot}{Slot}}}]{b }\end{DoxyParamCaption})}
+
+
+
+this function adds a time slot to the class\textquotesingle{}s schedule 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The time slot to add\\
+\hline
+\end{DoxyParams}
+Time complexity O(1) \Hypertarget{class_class_u_c_ad087b25484a122b4873e79d4ee490ea1}\label{class_class_u_c_ad087b25484a122b4873e79d4ee490ea1} 
+\index{ClassUC@{ClassUC}!getClassCode@{getClassCode}}
+\index{getClassCode@{getClassCode}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{getClassCode()}{getClassCode()}}
+{\footnotesize\ttfamily const string \& Class\+UC\+::get\+Class\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+this function gets the code of the class 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to code
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_class_u_c_a2183361f47afebd7247791fe7e8be2d0}\label{class_class_u_c_a2183361f47afebd7247791fe7e8be2d0} 
+\index{ClassUC@{ClassUC}!getSchedule@{getSchedule}}
+\index{getSchedule@{getSchedule}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{getSchedule()}{getSchedule()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \& Class\+UC\+::get\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+this function get the schedule of time slots for the class 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the schedule
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_class_u_c_aa521d5885d6c59b7c3ad08d2d5d189af}\label{class_class_u_c_aa521d5885d6c59b7c3ad08d2d5d189af} 
+\index{ClassUC@{ClassUC}!getUcCode@{getUcCode}}
+\index{getUcCode@{getUcCode}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{getUcCode()}{getUcCode()}}
+{\footnotesize\ttfamily const string \& Class\+UC\+::get\+Uc\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+this function gets the UC code of the class 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the UC code
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_class_u_c_afc655b5009fcf1eaf5f41810cf9135ea}\label{class_class_u_c_afc655b5009fcf1eaf5f41810cf9135ea} 
+\index{ClassUC@{ClassUC}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Class\+UC\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+this function compares two \doxylink{class_class_u_c}{Class\+UC} objects based on their UC codes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{class_class_u_c}{Class\+UC} object to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the current object\textquotesingle{}s UC code is less than the other\textquotesingle{}s UC code
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_class_u_c_a4f74754bae3540ef5db8e8d58aaef186}\label{class_class_u_c_a4f74754bae3540ef5db8e8d58aaef186} 
+\index{ClassUC@{ClassUC}!operator==@{operator==}}
+\index{operator==@{operator==}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Class\+UC\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_class_u_c}{Class\+UC}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+this function check if two \doxylink{class_class_u_c}{Class\+UC} objects are equal based on their UC and class codes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{class_class_u_c}{Class\+UC} object to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the UC and class codes are equal
+\end{DoxyReturn}
+Time complexity O(1) \Hypertarget{class_class_u_c_a1754c75e63c041727a7eaae1dca5b653}\label{class_class_u_c_a1754c75e63c041727a7eaae1dca5b653} 
+\index{ClassUC@{ClassUC}!print@{print}}
+\index{print@{print}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Class\+UC\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function prints the details of the class, including its UC code and class code 
+
+Time complexity O(1) \Hypertarget{class_class_u_c_af33ebe4f2193d6af040f646260f8b1f3}\label{class_class_u_c_af33ebe4f2193d6af040f646260f8b1f3} 
+\index{ClassUC@{ClassUC}!setSlots@{setSlots}}
+\index{setSlots@{setSlots}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{setSlots()}{setSlots()}}
+{\footnotesize\ttfamily void Class\+UC\+::set\+Slots (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$}]{slots }\end{DoxyParamCaption})}
+
+
+
+this function sets the schedule of time slots for the class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slots} & The new schedule of time slots\\
+\hline
+\end{DoxyParams}
+Time complexity O(n), where \textquotesingle{}n\textquotesingle{} is the size of the slots \Hypertarget{class_class_u_c_aa4fabc4feb4e7a974693735c4498d4dd}\label{class_class_u_c_aa4fabc4feb4e7a974693735c4498d4dd} 
+\index{ClassUC@{ClassUC}!sortShedule@{sortShedule}}
+\index{sortShedule@{sortShedule}!ClassUC@{ClassUC}}
+\doxysubsubsection{\texorpdfstring{sortShedule()}{sortShedule()}}
+{\footnotesize\ttfamily void Class\+UC\+::sort\+Shedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function sort the schedule of time slots in ascending order of start times 
+
+Time complexity O(n log n), where \textquotesingle{}n\textquotesingle{} is the size of the \textquotesingle{}schedule\textquotesingle{} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Class\+UC.\+h\item 
+Class\+UC.\+cpp\end{DoxyCompactItemize}
