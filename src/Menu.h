@@ -78,7 +78,6 @@ public:
 
 private:
     RequestManager requestManager_;
-   // DataManager management;
 
     DataManager& management_;
 
