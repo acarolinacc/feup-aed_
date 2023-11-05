@@ -549,7 +549,7 @@ void DataManager::sortStudent(vector<Student>& students, string type) {
         sort(students.rbegin(), students.rend(),[](const Student &a, const Student &b) { return a.getCode() > b.getCode(); }); //O(d log d)
     }
     else {
-        cout << "Tipo invalid" << endl;
+        cout << "Tipo invalido" << endl;
         return;
     }
 
