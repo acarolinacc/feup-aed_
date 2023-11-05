@@ -784,6 +784,12 @@ int RequestManager::showDinie() {
     return c;
 }
 
+/**
+ * @brief this function writes student information to a file.
+ *
+ * Time complexity O(n), where 'n' is the number of students in the list
+ */
+
 void RequestManager::writeFiles() {
     ofstream  file;
     set<Student> students=manager.getStudents();
