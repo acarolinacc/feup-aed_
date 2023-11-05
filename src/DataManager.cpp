@@ -269,19 +269,20 @@ vector<ClassUC> DataManager::classuC_x_year(char year)const{
  *
  * Time complexity O(n), where 'n' is the number of ClassUC objects in the `allUC_
  */
-vector<ClassUC> DataManager::ucWithXStudents(int x){
-    vector<ClassUC> sorted_alluc=sortAllU();
+vector<ClassUC> DataManager::ucWithXStudents(int x) {
+    vector<ClassUC> sorted_alluc = sortAllU();
     vector<ClassUC> uc_classes;
-    string prev=" ";
-    for (const auto& classUc:allUC_){
-        if(numberStudentsUc(classUc.getUcCode())==x and prev!=classUc.getUcCode() ) {
+    string prev = " ";
+    for (const auto& classUc : allUC_) {
+        int numStudents = numberStudentsUc(classUc.getUcCode());
+        if (numStudents <= x && prev != classUc.getUcCode()) {
             uc_classes.push_back(classUc);
         }
-        prev=classUc.getUcCode();
-
+        prev = classUc.getUcCode();
     }
     return uc_classes;
 }
+
 
 
 /**
@@ -586,6 +587,16 @@ vector<Student> DataManager::studentYear(char year) {
 
 }
 
+/**
+ * @brief this function gets all class instances with a specific classID
+ *
+ * @param classID The class ID to search for
+ *
+ * @return A vector of ClassUC instances matching the class ID
+ *
+ * Time Complexity O(n), where 'n' is the number of ClassUC instances in the 'allUC_' vector
+ */
+
 vector<ClassUC> DataManager::getCLass(const string& classID) {
     vector<ClassUC> classes;
     for (const ClassUC& uc : allUC_) {
@@ -597,6 +608,15 @@ vector<ClassUC> DataManager::getCLass(const string& classID) {
 }
 
 
+/**
+ * @brief this function extracts the last numeric component from a class code
+ *
+ * @param classCode The class code string
+ *
+ * @return The last numeric component extracted from the class code
+ *
+ * Time Complexity: O(n), where 'n' is the length of the class code string.
+ */
 int DataManager::extractLastNumber(const string& classCode) {
     int lastNumber = 0;
     size_t pos = classCode.length();
@@ -608,9 +628,70 @@ int DataManager::extractLastNumber(const string& classCode) {
     return lastNumber;
 }
 
+/**
+ * @brief this function compares two ClassUC objects based on the last numeric component of their class codes
+ *
+ * @param a The first ClassUC object to compare
+ *
+ * @param b The second ClassUC object to compare
+ *
+ * @return True if the last numeric component of a is less than the last numeric component of b, otherwise, false
+ *
+ * Time Complexity: O(k1 + k2), where 'k1' and 'k2' are the lengths of the class codes of 'a' and 'b', respectively.
+ */
 bool DataManager::sortByLastNumber(const ClassUC& a, const ClassUC& b) {
     int lastNumberA = extractLastNumber(a.getClassCode());
     int lastNumberB = extractLastNumber(b.getClassCode());
     return lastNumberA < lastNumberB;
 }
 
+/**
+ * @brief this function extracts the last two numeric digits from a string
+ *
+ * @param classCode The string from which to extract the last two digits
+ *
+ * @return An integer representing the last two numeric digits in the string
+ *
+ * Time Complexity: O(min(2, k)), where 'k' is the length of the input string 'classCode'.
+ */
+int DataManager::extractLastTwoDigits(const string& classCode) {
+    int lastTwoDigits = 0;
+    size_t pos = classCode.length();
+    int digitCount = 0;
+
+    while (pos > 0 && isdigit(classCode[--pos]) && digitCount < 2) {
+        lastTwoDigits = lastTwoDigits * 10 + (classCode[pos] - '0');
+        digitCount++;
+    }
+
+    return lastTwoDigits;
+}
+
+/**
+ * @brief this function orders a vector of ClassUC objects based on the last two digits of their class codes
+ *
+ * @param turmasUc A vector of ClassUC objects to be ordered
+ *
+ * @param orderChoice A character indicating the ordering choice
+ *
+ * Time Complexity O(n  log n), where 'n' is the number of ClassUC
+ */
+void DataManager::ordenarTurmasPorUltimosDigitos(vector<ClassUC>& turmasUc, char orderChoice) const {
+    if (orderChoice == 'c' || orderChoice == 'C') {
+        sort(turmasUc.begin(), turmasUc.end(), [](const ClassUC& a, const ClassUC& b) {
+            string classCodeA = a.getClassCode();
+            string classCodeB = b.getClassCode();
+            int lastTwoDigitsA = stoi(classCodeA.substr(classCodeA.size() - 2));
+            int lastTwoDigitsB = stoi(classCodeB.substr(classCodeB.size() - 2));
+            return lastTwoDigitsA < lastTwoDigitsB;
+        });
+    } else if (orderChoice == 'd' || orderChoice == 'D') {
+        sort(turmasUc.begin(), turmasUc.end(), [](const ClassUC& a, const ClassUC& b) {
+            string classCodeA = a.getClassCode();
+            string classCodeB = b.getClassCode();
+            int lastTwoDigitsA = stoi(classCodeA.substr(classCodeA.size() - 2));
+            int lastTwoDigitsB = stoi(classCodeB.substr(classCodeB.size() - 2));
+            return lastTwoDigitsA > lastTwoDigitsB;
+        });
+    }
+}

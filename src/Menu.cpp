@@ -8,7 +8,7 @@
 /**
  * @brief Constructor for the Menu class
  *
- * @param management
+ * @param management The DataManager object used to manage data.
  *
  * Time Complexity: O(1)
  */
@@ -353,9 +353,9 @@ bool Menu::compararIgnorandoMaiusculas(const string& str1, const string& str2) c
 
 //consultar o horário de uma UC/Turma
 /**
- * @brief function to consult the schedule of a class
+ * @brief this function consults the schedule of a class based on its class code
  *
- * Time complexity O(n), where 'n' is the number of slots in the class schedule.
+ * Time complexity O(n), where 'n' is the number of classes in the system.
  */
 
 void Menu::consultarHorarioTurma() {
@@ -365,8 +365,13 @@ void Menu::consultarHorarioTurma() {
     cout << "Digite o Código da Turma: ";
     cin >> classcode;
     cout << endl;
-
     vector<ClassUC> ucS = management_.getCLass(classcode);
+    if (ucS.empty()) {
+        cout << "Essa não é uma entrada válida." << endl;}
+    else{
+        displayClassSchedule(ucS,classcode);
+    }
+    
 
     if (ucS.empty()) {
         cout << "Isso não é uma entrada válida." << endl;
@@ -748,19 +753,23 @@ void Menu::consultarTurmasUC() {
     cin >> ucId;
     vector<ClassUC> turmasUc = management_.classOfUc(ucId);
 
+    char orderChoice;
+    cout << "Deseja ordenar em ordem crescente (c) ou decrescente (d)? ";
+    cin >> orderChoice;
+
+    management_.ordenarTurmasPorUltimosDigitos(turmasUc, orderChoice);
+
     for (ClassUC &uc : turmasUc) {
-        //std::cout << "UC Code: " << uc.getUcCode() << std::endl;
-        std::cout << "Código da Turma: " << uc.getClassCode() << std::endl;
+        cout << "Código da Turma: " << uc.getClassCode() << endl;
         cout << "-------------------------" << endl;
     }
 
     string ucCode;
-
     for (ClassUC &uc : turmasUc) {
         ucCode = uc.getUcCode();
     }
 
-    std::cout << "Número de estudantes da UC: " << management_.numberStudentsUc(ucCode) << endl;
+    cout << "Número de estudantes da UC: " << management_.numberStudentsUc(ucCode) << endl;
 }
 
 /**
@@ -779,20 +788,28 @@ void Menu::consultarUcDeUmAno() {
         return;
     }
 
-    vector<ClassUC> turmasUc = management_.classuC_x_year(ano);
+    vector<ClassUC> ucs = management_.classuC_x_year(ano);
 
-    if (turmasUc.empty()) {
+    char orderChoice;
+    cout << "Deseja ordenar em ordem crescente (c) ou decrescente (d)? ";
+    cin >> orderChoice;
+
+    management_.ordenarTurmasPorUltimosDigitos(ucs, orderChoice);
+
+    if (ucs.empty()) {
         cout << "Não foram encontradas UCs para o ano " << ano << "." << endl;
         return;
     }
+
     cout << "UCs do ano " << ano << ":" << endl;
-    for (ClassUC &uc: turmasUc) {
-        std::cout << "Código da UC: " << uc.getUcCode() << std::endl;
-        std::cout << "Código da Turma: " << uc.getClassCode() << std::endl;
-        std::cout << "Número de total de estudantes da UC (" << uc.getUcCode() <<") : " << management_.numberStudentsUc(uc.getUcCode()) << endl;
+    for (ClassUC &uc : ucs) {
+        cout << "Código da UC: " << uc.getUcCode() << endl;
+        cout << "Código da Turma: " << uc.getClassCode() << endl;
+        cout << "Número total de estudantes da UC (" << uc.getUcCode() << ") : " << management_.numberStudentsUc(uc.getUcCode()) << endl;
         cout << "-------------------------" << endl;
     }
 }
+
 /**
  * @brief function to consult UCs with a minimum number of students
  *
@@ -810,7 +827,7 @@ void Menu::consultarUcComXOcupações() {
         return;
     }
 
-    cout << "UCs com " << x << "estudantes:" << endl;
+    cout << "UCs com no máximo " << x << " estudantes:" << endl;
 
     for (const ClassUC &uc : turmasUc) {
         cout << "Código da UC: " << uc.getUcCode() << endl;
@@ -1072,7 +1089,7 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
     ClassUC old_classUc=ClassUC(ucCode,classCode);
     Request request=Request(student,old_classUc,"SC");
     if(requestManager_.checkClassRequest(request)){
-        cout<<"Valid request"<<endl;
+        cout<<"Pedido Valido"<<endl;
         requestManager_.addResquest(request);
         cout << "Digite o código UC da turma da qual o estudante deseja entrar: "<<endl;
         cin >> ucCode;
@@ -1081,7 +1098,7 @@ void Menu::mudarDeTurma() {//this type of request is 2 request in one:
         ClassUC new_classUc=ClassUC(ucCode,classCode);
         Request request2=Request(student,new_classUc,"EC");
         if(requestManager_.checkClassRequest(request2)){
-            cout<<"Valid request"<<endl;
+            cout<<"Pedido Valido"<<endl;
             requestManager_.addResquest(request2);
         }
         else{ cout<<"Solicitação inválida, faça outra solicitação."<<endl;}
@@ -1114,7 +1131,7 @@ void Menu::sairDeUmaTurma() {
     ClassUC classUc=ClassUC(ucCode,classCode);
     Request request=Request(student,classUc,"SC");
     if(requestManager_.checkClassRequest(request)) {
-        cout<<"Valid request"<<endl;
+        cout<<"Pedido Valido"<<endl;
         requestManager_.addResquest(request);
     }
     else{
@@ -1203,6 +1220,8 @@ void Menu::undoPedidos() {
 }
 /**
  * @brief this function writes alteration
+ *
+ * Time complexity O(1)
  */
 void Menu::escrver_alteraçoes() {
     char result;
