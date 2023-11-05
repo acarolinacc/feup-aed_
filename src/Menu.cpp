@@ -1220,6 +1220,8 @@ void Menu::undoPedidos() {
 }
 /**
  * @brief this function writes alteration
+ *
+ * Time complexity O(1)
  */
 void Menu::escrver_alteraçoes() {
     char result;
