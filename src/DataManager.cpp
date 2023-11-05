@@ -85,61 +85,57 @@ const vector<ClassUC> &DataManager::getAllUC() const {
  * Time complexity O(n), where 'n' is the number of entries in the file
  */
 void DataManager::readClasses() {
+    const string fileName = "../data/classes.csv";
+    ifstream file(fileName);
 
-    string fname = "../data/classes.csv";
-    ifstream file(fname);
+    if (!file.is_open()) {
+        cerr << "Não foi possível abrir o arquivo classes.csv." << endl;
+        return;
+    }
 
-    string line = "";
-    string str = "";
-    string previousUC = ""; //compares current uc code with the last one
+    string previousUC;
+    string line;
     vector<string> temp;
 
+    // Skip the header line
+    getline(file, line);
 
-    if (file.is_open()) {
-        getline(file, line); //skip the first line, since is useless in this context
-        while (getline(file, line)) {
-            temp.clear();
-            istringstream iss(line);
+    while (getline(file, line)) {
+        temp.clear();
+        istringstream iss(line);
+        string str;
 
-            while (getline(iss, str, ',')) {
-                temp.push_back(str);
-            }
-
-
-            string classCode = temp[0];
-            string ucCode = temp[1];
-            string day = temp[2];
-            string start = temp[3];
-            string duration = temp[4];
-            string type = temp[5];
-            Slot slot (day, stof(start), stof(duration), type);
-
-
-
-            if (ucCode != previousUC) {
-
-                allUC_.push_back(ClassUC(ucCode,classCode,{slot}));
-
-            } else {
-                bool ucAlreadyIn = false;
-                for (ClassUC& uc: allUC_) {
-                    if (classCode == uc.getClassCode() && ucCode == uc.getUcCode()) {
-                        uc.addSlot(slot);
-                        ucAlreadyIn = true;
-                    }
-                }
-                if (!ucAlreadyIn) { allUC_.push_back(ClassUC(ucCode, classCode, {slot})); }
-
-            }
-
-            previousUC=ucCode;
+        while (getline(iss, str, ',')) {
+            temp.push_back(str);
         }
 
+        if (temp.size() < 6) {
+            cerr << "Ignoring invalid data: " << line << endl;
+            continue;
+        }
+
+        const string classCode = temp[0];
+        const string ucCode = temp[1];
+        const string day = temp[2];
+        const string start = temp[3];
+        const string duration = temp[4];
+        const string type = temp[5];
+        Slot slot(day, stof(start), stof(duration), type);
+
+        auto findUC = find_if(allUC_.begin(), allUC_.end(), [&](const ClassUC& uc) {
+            return uc.getClassCode() == classCode && uc.getUcCode() == ucCode;
+        });
+
+        if (findUC != allUC_.end()) {
+            findUC->addSlot(slot);
+        } else {
+            allUC_.push_back(ClassUC(ucCode, classCode, {slot}));
+        }
+
+        previousUC = ucCode;
     }
-    else {cout << "Não foi possivel abrir o ficheiro classes.csv." << endl; }
-
-
 }
+
 
 
 /**
@@ -411,7 +407,7 @@ vector<Student> DataManager::studentsOfClassUc(const ClassUC&  classUc){
 
 vector<Slot> DataManager::getClassUCSchedule(const ClassUC& classUc2) {
     vector<Slot> schedule;
-    for (auto uc : allUC_) {
+    for (const auto& uc : allUC_) {
         if(uc.getClassCode()==classUc2.getClassCode() and uc.getUcCode()==classUc2.getUcCode()){
             schedule = uc.getSchedule();
         }

@@ -367,13 +367,6 @@ void Menu::consultarHorarioTurma() {
     cout << endl;
     vector<ClassUC> ucS = management_.getCLass(classcode);
     if (ucS.empty()) {
-        cout << "Essa não é uma entrada válida." << endl;}
-    else{
-        displayClassSchedule(ucS,classcode);
-    }
-    
-
-    if (ucS.empty()) {
         cout << "Isso não é uma entrada válida." << endl;
     } else {
         // Pergunte ao usuário a ordem desejada
@@ -831,7 +824,6 @@ void Menu::consultarUcComXOcupações() {
 
     for (const ClassUC &uc : turmasUc) {
         cout << "Código da UC: " << uc.getUcCode() << endl;
-        cout << "Código da Turma: " << uc.getClassCode() << endl;
         cout << "Número de estudantes: " << management_.numberStudentsUc(uc.getUcCode()) << endl;
         cout << "-------------------------" << endl;
     }
@@ -922,12 +914,12 @@ void Menu::ingressarEmUC() {
     cout << "--------------------------------------------------\n";
     int upNumber;
     string studentName;
-    cout << "Digite o número UP do estudante: ";
+    cout << "Digite o número UP do estudante: "<< endl;;
     cin >> upNumber;
-    cout <<"Digite o nome de estudante: ";
+    cout <<"Digite o nome de estudante: "<< endl;;
     cin>>studentName;
     string ucCode;
-    cout << "Digite o código da UC da qual o estudante deseja entrar: ";
+    cout << "Digite o código da UC da qual o estudante deseja entrar: "<< endl;;
     cin >> ucCode;
     Student student=Student(upNumber,studentName);
     student=management_.findStudent(student);//students got the classes
@@ -975,12 +967,12 @@ ClassUC findCLassByuc(Student student,string uc_code,DataManager manager){
 void Menu::sairDeUC() {
     int upNumber;
     string studentName;
-    cout << "Digite o número UP do estudante: ";
+    cout << "Digite o número UP do estudante: "<< endl;;
     cin >> upNumber;
-    cout <<"Digite o nome de estudante: ";
+    cout <<"Digite o nome de estudante: "<< endl;;
     cin>>studentName;
     string ucCode;
-    cout << "Digite o código da UC da qual o estudante deseja sair: ";
+    cout << "Digite o código da UC da qual o estudante deseja sair: "<< endl;;
     cin >> ucCode;
     Student student=Student(upNumber,studentName);
     student=management_.findStudent(student);//students got the classes
@@ -1178,8 +1170,8 @@ void Menu::confirmar_cancelar(){
         cout << "╔═══════════════════════════════════╗" << endl;
         cout << "║  Realizar Alterações nas turma    ║" << endl;
         cout << "║                                   ║" << endl;
-        cout << "║ 1. Aceitar alterações             ║" << endl;
-        cout << "║ 2. Cancelar alterações/fechar     ║" << endl;
+        cout << "║ 1. Aceitar alterações/fechar      ║" << endl;
+        cout << "║ 2. Cancelar alterações            ║" << endl;
         cout << "║ 3. Voltar ao menu principal       ║" << endl;
         cout << "║                                   ║" << endl;
         cout << "╚═══════════════════════════════════╝" << endl;
