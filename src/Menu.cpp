@@ -748,19 +748,23 @@ void Menu::consultarTurmasUC() {
     cin >> ucId;
     vector<ClassUC> turmasUc = management_.classOfUc(ucId);
 
+    char orderChoice;
+    cout << "Deseja ordenar em ordem crescente (c) ou decrescente (d)? ";
+    cin >> orderChoice;
+
+    management_.ordenarTurmasPorUltimosDigitos(turmasUc, orderChoice);
+
     for (ClassUC &uc : turmasUc) {
-        //std::cout << "UC Code: " << uc.getUcCode() << std::endl;
-        std::cout << "Código da Turma: " << uc.getClassCode() << std::endl;
+        cout << "Código da Turma: " << uc.getClassCode() << endl;
         cout << "-------------------------" << endl;
     }
 
     string ucCode;
-
     for (ClassUC &uc : turmasUc) {
         ucCode = uc.getUcCode();
     }
 
-    std::cout << "Número de estudantes da UC: " << management_.numberStudentsUc(ucCode) << endl;
+    cout << "Número de estudantes da UC: " << management_.numberStudentsUc(ucCode) << endl;
 }
 
 /**
@@ -779,20 +783,28 @@ void Menu::consultarUcDeUmAno() {
         return;
     }
 
-    vector<ClassUC> turmasUc = management_.classuC_x_year(ano);
+    vector<ClassUC> ucs = management_.classuC_x_year(ano);
 
-    if (turmasUc.empty()) {
+    char orderChoice;
+    cout << "Deseja ordenar em ordem crescente (c) ou decrescente (d)? ";
+    cin >> orderChoice;
+
+    management_.ordenarTurmasPorUltimosDigitos(ucs, orderChoice);
+
+    if (ucs.empty()) {
         cout << "Não foram encontradas UCs para o ano " << ano << "." << endl;
         return;
     }
+
     cout << "UCs do ano " << ano << ":" << endl;
-    for (ClassUC &uc: turmasUc) {
-        std::cout << "Código da UC: " << uc.getUcCode() << std::endl;
-        std::cout << "Código da Turma: " << uc.getClassCode() << std::endl;
-        std::cout << "Número de total de estudantes da UC (" << uc.getUcCode() <<") : " << management_.numberStudentsUc(uc.getUcCode()) << endl;
+    for (ClassUC &uc : ucs) {
+        cout << "Código da UC: " << uc.getUcCode() << endl;
+        cout << "Código da Turma: " << uc.getClassCode() << endl;
+        cout << "Número total de estudantes da UC (" << uc.getUcCode() << ") : " << management_.numberStudentsUc(uc.getUcCode()) << endl;
         cout << "-------------------------" << endl;
     }
 }
+
 /**
  * @brief function to consult UCs with a minimum number of students
  *
