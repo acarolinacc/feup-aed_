@@ -8,7 +8,7 @@
 /**
  * @brief Constructor for the Menu class
  *
- * @param management
+ * @param management The DataManager object used to manage data.
  *
  * Time Complexity: O(1)
  */
