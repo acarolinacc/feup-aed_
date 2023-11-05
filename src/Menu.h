@@ -4,6 +4,7 @@
 
 #include "DataManager.h"
 #include "RequestManager.h"
+#include <algorithm>
 
 /**
  * @brief function for user interface to show the menu
@@ -45,7 +46,7 @@ public:
 
     void displayStudentSchedule(const Student &student) const;
     bool correspondeCodigoUcETurma(const ClassUC &turma, const string &uccode, const string &classcode) const;
-    void displayClassSchedule(const vector<Slot>& ucS,const string& turma) const;
+    void displayClassSchedule(const vector<ClassUC>& ucS,const string& turma) const;
     void exibirHorarioDaUC(const vector<Slot> ucS,string ucCode) const;
     bool compararIgnorandoMaiusculas(const string &str1, const string &str2) const;
     bool correspondeCodigoUC(const ClassUC &turma, const string &ucCode) const;

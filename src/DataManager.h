@@ -34,6 +34,7 @@ public:
     vector<ClassUC> classOfUc(const string& ucId)const;
     vector<ClassUC> classuC_x_year(char year)const;
     vector<ClassUC> ucWithXStudents(int x);
+    vector<ClassUC> getCLass(const string& classID);
 
     int numberStudentsUc(const string& ucId)const;
     int studentregisterUCs(int n);

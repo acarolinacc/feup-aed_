@@ -221,7 +221,6 @@ void Menu::consultarHorarioUCTurma() {
     if (isClassCodeValid(ucS)) {
         cout << "That's not a valid input." << endl;}
     else{
-        cout << ucS.size();
         displayClassUcSchedule(ucS,classUc1);
     }
 }
@@ -249,7 +248,7 @@ bool Menu::isClassCodeValid(const vector<Slot>& ucS) const {
  *
  */
 void Menu::displayClassUcSchedule(const vector<Slot>& ucS,const ClassUC& classUc) const {
-    cout << "UcCode:"<< classUc.getUcCode()<<"ClassCode:"<<classUc.getClassCode()<<  endl;
+    cout << "UcCode:"<< classUc.getUcCode()<<"||"<<"ClassCode:"<<classUc.getClassCode()<<  endl;
     for (const Slot& a : ucS) {
         cout << '\t' << a.getDay() << ' ' << a.getStart() << ' ' << a.getDuration() << ' ' << a.getType() << '\n';
     }
@@ -346,8 +345,8 @@ void Menu::consultarHorarioTurma() {
     cout << "Digite o Código da Turma: ";
     cin >> classcode;
     cout << endl;
-    const vector<Slot>& ucS = management_.getClassSchedule(classcode);
-    if (isClassCodeValid(ucS)) {
+    const vector<ClassUC>& ucS = management_.getCLass(classcode);
+    if (ucS.empty()) {
         cout << "That's not a valid input." << endl;}
     else{
         displayClassSchedule(ucS,classcode);
@@ -383,10 +382,15 @@ bool Menu::correspondeCodigoUcETurma(const ClassUC& turma, const string& uccode,
  *
  * Time complexity O(n), where 'n' is the number of Slot objects in the ucS
  */
-void Menu::displayClassSchedule(const vector<Slot>& ucS,const string& turma) const {
+void Menu::displayClassSchedule(const vector<ClassUC>& ucS,const string& turma) const {
+    ClassUC prevClass;
     cout << "class code:"<<turma << endl;
-    for (const Slot& horario : ucS) {
-        cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' ' << horario.getType() << '\n';
+    for(const ClassUC classes :ucS) {
+        cout<<"Uc code is:"<<classes.getUcCode()<<endl;
+        for (const Slot &horario: classes.getSchedule()) {
+            cout << '\t' << horario.getDay() << ' ' << horario.getStart() << ' ' << horario.getDuration() << ' '
+                 << horario.getType() << '\n';
+        }
     }
 }
 
@@ -446,9 +450,9 @@ void Menu::consultarTurmasDoAluno() {
     int id;
     string name;
     cout << "--------------------------------------------------\n";
-    cout << "Introduza o número UP:";
+    cout << "Introduza o número UP:"<< endl;
     cin >> id;
-    cout << "Introduza o nome do estudante:";
+    cout << "Introduza o nome do estudante:"<< endl;
     cin >>name;
     cout << endl;
     Student student=Student(id,name);
@@ -551,11 +555,11 @@ void Menu::consultarAlunosPorTurma(string type) {
     cout << "Consulta de Alunos por UCs e Turmas" << endl;
 
     string ucCode;
-    cout << "Por favor, insira o código da UC: ";
+    cout << "Por favor, insira o código da UC: "<< endl;
     cin >> ucCode;
 
     string classCode;
-    cout << "Por favor, insira o código da turma: ";
+    cout << "Por favor, insira o código da turma: "<< endl;
     cin >> classCode;
     ClassUC classUc=ClassUC(ucCode,classCode);
 
@@ -762,7 +766,7 @@ void Menu::consultarUcComXOcupações() {
         return;
     }
 
-    cout << "UCs com " << x << " ou mais estudantes:" << endl;
+    cout << "UCs com " << x << "estudantes:" << endl;
 
     for (const ClassUC &uc : turmasUc) {
         cout << "Código da UC: " << uc.getUcCode() << endl;

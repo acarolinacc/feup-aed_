@@ -585,5 +585,15 @@ vector<Student> DataManager::studentYear(char year) {
 
 }
 
+vector<ClassUC> DataManager::getCLass(const string& classID) {
+    vector<ClassUC> classes;
+    for (const ClassUC& uc : allUC_) {
+        if (uc.getClassCode() == classID) {
+            classes.push_back(uc);
+        }
+    }
+        return classes;
+}
+
 
 
