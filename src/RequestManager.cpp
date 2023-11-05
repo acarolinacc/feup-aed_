@@ -593,11 +593,11 @@ void RequestManager::processUndoRequest(DataManager &newManager) {
         Request lastAcceptedRequest = acceptRequest.front();
         if(lastAcceptedRequest.getType()[1]=='U'){
             undorequestUC(lastAcceptedRequest,newManager);
-
+            undoneRequests.push(lastAcceptedRequest);
         }
         else if(lastAcceptedRequest.getType()[1]=='C'){
             undorequestClass(lastAcceptedRequest,newManager);
-
+            undoneRequests.push(lastAcceptedRequest);
         }
         else{//if the undo request is not accepted
 
@@ -701,8 +701,6 @@ int RequestManager::showUndo() {
     queue<Request>undorequests=undoneRequests;
     while (!undorequests.empty()){
 
-        cout<< "Pedidos que foram desfeitos"<<endl;
-
         cout<< "Pedidos que foram cancelados"<<endl;
         undorequests.front().printRequest();
         undorequests.pop();
@@ -725,7 +723,6 @@ int RequestManager::showrequests() {
     int c=0;
     queue<Request>copyRequests=requests;
     while (!copyRequests.empty()){
-        cout<< "Pedidos não processados"<<endl;
         cout<< "Pedidos para serem processados"<<endl;
         copyRequests.front().printRequest();
         copyRequests.pop();
@@ -772,7 +769,6 @@ int RequestManager::showDinie() {
     int c=0;
     queue<Request>copydinied=deniedRequest;
     while (!copydinied.empty()){
-        cout<< "Pedidos negados"<<endl;
         cout<< "Pedidos rejeitados"<<endl;
         copydinied.front().printRequest();
         copydinied.pop();
